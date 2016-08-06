@@ -1,0 +1,23 @@
+{
+  "name": "arnellebalane.com",
+  "description": "my personal website",
+  "main": "server.js",
+  "authors": [
+    "Arnelle Balane <arnellebalane@gmail.com> (arnellebalane.com)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "arnellebalane",
+    "personal",
+    "website"
+  ],
+  "homepage": "https://github.com/arnellebalane/arnellebalane.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "arnellebalane.com",
+  "version": "0.0.0",
+  "description": "my personal website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "arnellebalane",
+    "personal",
+    "website"
+  ],
+  "author": "Arnelle Balane <arnellebalane@gmail.com> (arnellebalane.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnellebalane/arnellebalane.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arnellebalane/arnellebalane.com/issues"
+  },
+  "homepage": "https://github.com/arnellebalane/arnellebalane.com#readme"
+}
