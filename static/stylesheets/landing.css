@@ -4,15 +4,62 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    font-size: 5rem;
+    font-size: 5vmin;
+}
+
+
+.hero__avatar {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
 }
 
 
 .hero__text {
+    margin-top: 0.5em;
     font-size: 1em;
 }
 
 
 .hero__subtext {
+    margin-bottom: 1.25em;
     font-size: 0.5em;
+}
+
+
+
+/** social links styles **/
+
+.social-link {
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    text-indent: 100vh;
+    background: #fff center center no-repeat;
+    background-size: 60%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.social-link:hover,
+.social-link:focus {
+    transform: scale(1.15);
+}
+
+
+.social-link.facebook {
+    background-image: url("../images/facebook.png");
+}
+
+.social-link.twitter {
+    background-image: url("../images/twitter.png");
+}
+
+.social-link.github {
+    background-image: url("../images/github.png");
+}
+
+.social-link.website {
+    background-image: url("../images/website.png");
 }
