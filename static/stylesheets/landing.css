@@ -1,0 +1,18 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 7.2rem;
+}
+
+
+.hero__text {
+    font-size: 1em;
+}
+
+
+.hero__subtext {
+    font-size: 0.5em;
+}
