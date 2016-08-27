@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
-import cssmin from 'gulp-cssmin';
+import cleancss from 'gulp-clean-css';
 import autoprefixer from 'gulp-autoprefixer';
 import imagemin from 'gulp-imagemin';
 import sourcemaps from 'gulp-sourcemaps';
@@ -20,7 +20,7 @@ gulp.task('buildstyles', () => {
     return gulp.src(PATHS.stylesheets, { base: 'static' })
         .pipe(sourcemaps.init())
         .pipe(autoprefixer())
-        .pipe(cssmin())
+        .pipe(cleancss())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(BUILD_DIRECTORY));
 });
