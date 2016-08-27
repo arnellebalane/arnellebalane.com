@@ -43,4 +43,15 @@ gulp.task('optimizeimages', () => {
 });
 
 
-gulp.task('default', ['buildstyles', 'buildscripts', 'optimizeimages']);
+gulp.task('copystatic', () => {
+    return gulp.src(PATHS.fonts, { base: 'static' })
+        .pipe(gulp.dest(BUILD_DIRECTORY));
+});
+
+
+gulp.task('default', [
+    'buildstyles',
+    'buildscripts',
+    'optimizeimages',
+    'copystatic'
+]);
