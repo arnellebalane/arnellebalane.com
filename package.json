@@ -4,7 +4,7 @@
   "description": "my personal website",
   "main": "server.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon server.js -e html,css,js,json",
+    "start": "./node_modules/.bin/nodemon ./bin/www -e html,css,js,json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/arnellebalane/arnellebalane.com#readme",
   "dependencies": {
     "consolidate": "^0.14.1",
+    "errorhandler": "^1.4.3",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "nconf": "^0.8.4",

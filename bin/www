@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+const winston = require('winston');
+const errorhandler = require('errorhandler');
+const config = require('../config');
+
+const app = require('../app');
+
+
+if (config.get('NODE_ENV') === 'production') {
+    app.use((req, res) => res.status(404).render('errors/404.html'));
+    app.use((err, req, res, next) => res.status(500).render('errors/500.html'));
+}
+
+
+app.listen(config.get('PORT'),
+    () => winston.info(`Server is now running at port ${config.get('PORT')}`));
