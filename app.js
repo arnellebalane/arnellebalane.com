@@ -3,12 +3,14 @@ const express = require('express');
 const consolidate = require('consolidate');
 const favicon = require('serve-favicon');
 const morgan = require('morgan');
+const helmet = require('helmet');
 const config = require('./config');
 
 
 const app = express();
 
 app.use(favicon(path.join(__dirname, 'static', 'images', 'favicon.ico')));
+app.use(helmet({ nocache: false }));
 app.use(morgan('dev'));
 
 app.engine('html', consolidate.nunjucks);
