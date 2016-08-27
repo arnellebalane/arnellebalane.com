@@ -3,6 +3,7 @@ import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
 import cssmin from 'gulp-cssmin';
 import autoprefixer from 'gulp-autoprefixer';
+import imagemin from 'gulp-imagemin';
 import sourcemaps from 'gulp-sourcemaps';
 
 
@@ -35,4 +36,11 @@ gulp.task('buildscripts', () => {
 });
 
 
-gulp.task('default', ['buildstyles', 'buildscripts']);
+gulp.task('optimizeimages', () => {
+    return gulp.src(PATHS.images, { base: 'static' })
+        .pipe(imagemin())
+        .pipe(gulp.dest(BUILD_DIRECTORY));
+});
+
+
+gulp.task('default', ['buildstyles', 'buildscripts', 'optimizeimages']);
