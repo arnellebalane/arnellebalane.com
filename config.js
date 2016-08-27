@@ -6,7 +6,8 @@ nconf
     .env()
     .file({ file: 'config.json' })
     .defaults({
-        PORT: 3000
+        PORT: 3000,
+        NODE_ENV: 'development'
     });
 
 

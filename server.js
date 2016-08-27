@@ -19,7 +19,12 @@ app.listen(config.get('PORT'), function() {
 });
 
 
-app.use('/static', express.static(path.join(__dirname, 'static')));
+if (config.get('NODE_ENV') === 'production') {
+    app.use('/static', express.static(path.join(__dirname, 'build')));
+} else {
+    app.use('/static', express.static(path.join(__dirname, 'static')));
+}
+
 
 app.get('/', function(request, response) {
     response.render('index.html');
