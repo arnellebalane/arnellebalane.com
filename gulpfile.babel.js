@@ -17,7 +17,7 @@ const BUILD_DIRECTORY = 'build';
 
 
 gulp.task('buildstyles', () => {
-    return gulp.src(PATHS.stylesheets, { base: 'static' })
+    return gulp.src(PATHS.stylesheets, { base: '.' })
         .pipe(sourcemaps.init())
         .pipe(autoprefixer())
         .pipe(cleancss())
@@ -27,7 +27,7 @@ gulp.task('buildstyles', () => {
 
 
 gulp.task('buildscripts', () => {
-    return gulp.src(PATHS.javascripts, { base: 'static' })
+    return gulp.src(PATHS.javascripts, { base: '.' })
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(uglify())
@@ -37,14 +37,14 @@ gulp.task('buildscripts', () => {
 
 
 gulp.task('optimizeimages', () => {
-    return gulp.src(PATHS.images, { base: 'static' })
+    return gulp.src(PATHS.images, { base: '.' })
         .pipe(imagemin())
         .pipe(gulp.dest(BUILD_DIRECTORY));
 });
 
 
 gulp.task('copystatic', () => {
-    return gulp.src(PATHS.fonts, { base: 'static' })
+    return gulp.src(PATHS.fonts, { base: '.' })
         .pipe(gulp.dest(BUILD_DIRECTORY));
 });
 

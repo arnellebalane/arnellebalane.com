@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 if (config.get('NODE_ENV') === 'production') {
-    app.use('/static', express.static(path.join(__dirname, 'build')));
+    app.use('/static', express.static(path.join(__dirname, 'build', 'static')));
 } else {
     app.use('/static', express.static(path.join(__dirname, 'static')));
 }
