@@ -29,7 +29,7 @@
     flex-direction: column;
     min-height: 100vh;
     padding: 1em 0;
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
     color: #fff;
@@ -37,9 +37,11 @@
 
 
 .hero__avatar {
+    display: block;
     width: 4em;
     height: 4em;
-    margin-top: auto;
+    margin: auto;
+    margin-bottom: 0;
     border-radius: 50%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
@@ -65,6 +67,7 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 2em;
+    text-align: center;
 }
 
 
