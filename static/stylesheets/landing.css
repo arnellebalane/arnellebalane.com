@@ -1,23 +1,22 @@
-.blury-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    -webkit-filter: blur(3.5em);
-}
-
-.blury-background::before {
-    content: "";
-    position: absolute;
-    top: -7.5em;
-    left: -7.5em;
-    right: -7.5em;
-    bottom: -7.5em;
-    background: url("../images/background-1.jpg") center center no-repeat;
+body {
+    background: url("../images/background.jpg") center center no-repeat;
     background-size: cover;
 }
+
+
+@media all and (min-width: 640px), (min-device-width: 640px) {
+    body {
+        background-image: url("../images/background@2x.jpg");
+    }
+}
+
+
+@media all and (min-width: 1280px), (min-device-width: 1280px) {
+    body {
+        background-image: url("../images/background@3x.jpg");
+    }
+}
+
 
 
 /** hero styles **/
