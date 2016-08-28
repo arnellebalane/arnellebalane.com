@@ -1,3 +1,9 @@
+body {
+    background-attachment: fixed;
+}
+
+
+
 /** hero styles **/
 
 .hero {
