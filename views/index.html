@@ -25,6 +25,20 @@
 
             body {
                 font-size: 1.6rem;
+                background: url("/static/images/background.jpg") center center no-repeat;
+                background-size: cover;
+            }
+
+            @media all and (min-width: 640px), (min-device-width: 640px) {
+                body {
+                    background-image: url("/static/images/background@2x.jpg");
+                }
+            }
+
+            @media all and (min-width: 1280px), (min-device-width: 1280px) {
+                body {
+                    background-image: url("/static/images/background@3x.jpg");
+                }
             }
 
             .hero {
