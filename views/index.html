@@ -9,7 +9,9 @@
         <link rel="stylesheet" href="/static/stylesheets/base.css">
         <link rel="stylesheet" href="/static/stylesheets/landing.css">
 
-        {% include 'partials/google-analytics.html' %}
+        {% if settings.env != 'development' %}
+            {% include 'partials/google-analytics.html' %}
+        {% endif %}
     </head>
 
     <body>
