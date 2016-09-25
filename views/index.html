@@ -7,92 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon shortcut" href="/static/images/favicon.ico">
-
-        <noscript id="deferred-styles">
-            <link rel="stylesheet" href="/static/stylesheets/fonts.css">
-            <link rel="stylesheet" href="/static/stylesheets/base.css">
-            <link rel="stylesheet" href="/static/stylesheets/landing.css">
-        </noscript>
+        <link rel="stylesheet" href="/static/stylesheets/fonts.css">
+        <link rel="stylesheet" href="/static/stylesheets/base.css">
+        <link rel="stylesheet" href="/static/stylesheets/landing.css">
 
         {% if settings.env != 'development' %}
             {% include 'partials/google-analytics.html' %}
         {% endif %}
-
-        <style>
-            html {
-                font-size: 62.5%;
-            }
-
-            body {
-                font-size: 1.6rem;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                background: url("/static/images/background.jpg") center center no-repeat;
-                background-size: cover;
-            }
-
-            @media all and (min-width: 640px), (min-device-width: 640px) {
-                body {
-                    background-image: url("/static/images/background@2x.jpg");
-                }
-            }
-
-            @media all and (min-width: 1280px), (min-device-width: 1280px) {
-                body {
-                    background-image: url("/static/images/background@3x.jpg");
-                }
-            }
-
-            .hero {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                min-height: 100vh;
-                padding: 1em 0;
-                font-size: 3rem;
-                text-align: center;
-            }
-
-            .hero__avatar {
-                display: block;
-                width: 4em;
-                height: 4em;
-                margin-top: auto;
-                border-radius: 50%;
-            }
-
-            .hero__text {
-                margin-top: 0.5em;
-                margin-bottom: 0;
-                font-size: 1em;
-            }
-
-            .hero__subtext {
-                margin-top: 0;
-                margin-bottom: 1em;
-                font-size: 0.5em;
-            }
-
-            .social-links {
-                margin-bottom: 2em;
-            }
-
-            .social-link {
-                display: inline-block;
-                width: 1.25em;
-                height: 1.25em;
-                text-indent: 100vh;
-                border-radius: 50%;
-                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-                overflow: hidden;
-            }
-
-            .copyright {
-                margin-top: auto;
-                font-size: 0.25em;
-            }
-        </style>
     </head>
 
     <body>
@@ -109,24 +30,5 @@
             </div>
             <small class="copyright">&copy; 2016 Arnelle Balane</small>
         </div>
-
-        <script>
-            var loadDeferredStyles = function() {
-                var stylesNode = document.getElementById('deferred-styles');
-                var replacement = document.createElement('div');
-                replacement.innerHTML = stylesNode.textContent;
-                document.body.appendChild(replacement);
-                stylesNode.parentElement.removeChild(stylesNode);
-            };
-            var raf = requestAnimationFrame || mozRequestAnimationFrame
-                || webkitRequestAnimationFrame || msRequestAnimationFrame;
-            if (raf) {
-                raf(function() {
-                    window.setTimeout(loadDeferredStyles, 0);
-                });
-            } else {
-                window.addEventListener('load', loadDeferredStyles);
-            }
-        </script>
     </body>
 </html>
