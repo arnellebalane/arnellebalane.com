@@ -17,6 +17,14 @@ body {
 }
 
 
+@media all and (min-device-width: 960px) {
+    .hero__avatar {
+        width: 5em;
+        height: 5em;
+    }
+}
+
+
 
 /** social links styles **/
 
@@ -53,4 +61,21 @@ body {
 
 .social-link.website {
     background-image: url("../images/website.png");
+}
+
+
+@media all and (min-device-width: 960px) {
+    .social-link {
+        width: 1em;
+        height: 1em;
+        margin: 0.15em;
+    }
+}
+
+
+
+/** copyright text styles **/
+
+.copyright {
+    font-size: 0.4em;
 }
