@@ -18,7 +18,7 @@ const PATHS = {
 const BUILD_DIRECTORY = 'build';
 
 
-gulp.task('buildstyles', () => {
+gulp.task('buildstyles', _ => {
     return gulp.src(PATHS.stylesheets, { base: '.' })
         .pipe(sourcemaps.init())
         .pipe(autoprefixer())
@@ -28,7 +28,7 @@ gulp.task('buildstyles', () => {
 });
 
 
-gulp.task('buildscripts', () => {
+gulp.task('buildscripts', _ => {
     return gulp.src(PATHS.javascripts, { base: '.' })
         .pipe(sourcemaps.init())
         .pipe(babel())
@@ -38,7 +38,7 @@ gulp.task('buildscripts', () => {
 });
 
 
-gulp.task('buildviews', () => {
+gulp.task('buildviews', _ => {
     return gulp.src(PATHS.views, { base: '.' })
         .pipe(htmlmin({
             collapseBooleanAttributes: true,
@@ -51,14 +51,14 @@ gulp.task('buildviews', () => {
 });
 
 
-gulp.task('optimizeimages', () => {
+gulp.task('optimizeimages', _ => {
     return gulp.src(PATHS.images, { base: '.' })
         .pipe(imagemin())
         .pipe(gulp.dest(BUILD_DIRECTORY));
 });
 
 
-gulp.task('copystatic', () => {
+gulp.task('copystatic', _ => {
     return gulp.src(PATHS.fonts, { base: '.' })
         .pipe(gulp.dest(BUILD_DIRECTORY));
 });
