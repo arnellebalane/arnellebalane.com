@@ -24,9 +24,7 @@ if (config.get('NODE_ENV') === 'production') {
 }
 
 
-app.get('/', function(req, res) {
-    res.render('index.html');
-});
+app.get('/', (req, res) => res.render('index.html'));
 
 
 module.exports = app;
