@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const winston = require('winston');
-const http2 = require('http2');
+const spdy = require('spdy');
 const config = require('../config');
 
 const app = require('../app');
@@ -20,7 +20,7 @@ if (config.get('NODE_ENV') === 'production') {
         key: fs.readFileSync(config.get('CERT_KEY_PATH')),
         cert: fs.readFileSync(config.get('CERT_PATH'))
     };
-    server = http2.createServer(options, app);
+    server = spdy.createServer(options, app);
 }
 
 server.listen(config.get('PORT'),

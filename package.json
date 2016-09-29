@@ -26,12 +26,12 @@
     "consolidate": "^0.14.1",
     "express": "^4.14.0",
     "helmet": "^2.1.2",
-    "http2": "^3.3.6",
     "morgan": "^1.7.0",
     "nconf": "^0.8.4",
     "nodemon": "^1.10.0",
     "nunjucks": "^2.4.2",
     "serve-favicon": "^2.3.0",
+    "spdy": "^3.4.2",
     "winston": "^2.2.0"
   },
   "devDependencies": {
