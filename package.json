@@ -31,7 +31,6 @@
     "nodemon": "^1.10.0",
     "nunjucks": "^2.4.2",
     "serve-favicon": "^2.3.0",
-    "spdy": "^3.4.2",
     "winston": "^2.2.0"
   },
   "devDependencies": {

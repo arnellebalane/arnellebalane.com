@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
 const winston = require('winston');
-const spdy = require('spdy');
 const config = require('../config');
 
 const app = require('../app');
-let server = app;
 
 
 if (config.get('NODE_ENV') === 'production') {
@@ -15,13 +12,5 @@ if (config.get('NODE_ENV') === 'production') {
 }
 
 
-if (config.get('NODE_ENV') === 'production') {
-    const options = {
-        key: fs.readFileSync(config.get('CERT_KEY_PATH')),
-        cert: fs.readFileSync(config.get('CERT_PATH'))
-    };
-    server = spdy.createServer(options, app);
-}
-
-server.listen(config.get('PORT'),
+app.listen(config.get('PORT'),
     _ => winston.info(`Server is now running at port ${config.get('PORT')}`));
