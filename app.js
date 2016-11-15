@@ -9,13 +9,12 @@ const config = require('./config');
 
 const app = express();
 
-app.use(favicon(path.join(__dirname, 'static', 'images', 'favicon.ico')));
-app.use(helmet({ nocache: false }));
-app.use(morgan('dev'));
-
 app.engine('html', consolidate.nunjucks);
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(favicon(path.join(__dirname, 'static', 'images', 'favicon.ico')));
+app.use(helmet({ nocache: false }));
+app.use(morgan('dev'));
 
 if (config.get('NODE_ENV') === 'production') {
     app.use('/static', express.static(path.join(__dirname, 'build', 'static')));
@@ -23,8 +22,7 @@ if (config.get('NODE_ENV') === 'production') {
     app.use('/static', express.static(path.join(__dirname, 'static')));
 }
 
-
-app.get('/', (req, res) => res.render('index.html'));
+app.use(require('./lib/routes'));
 
 
 module.exports = app;
