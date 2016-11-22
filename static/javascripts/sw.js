@@ -7,12 +7,15 @@ const paths = [
     '/static/stylesheets/landing.css',
     '/static/javascripts/sw-register.js',
     '/static/images/avatar.jpg',
+    '/static/images/background.jpg',
+    '/static/images/background@2x.jpg',
     '/static/images/background@3x.jpg',
     '/static/images/facebook.png',
     '/static/images/twitter.png',
     '/static/images/github.png',
     '/static/images/website.png',
-    '/static/fonts/quicksand/bold.woff2'
+    '/static/fonts/quicksand/bold.woff2',
+    "/static/manifest.json"
 ];
 
 
