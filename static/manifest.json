@@ -1,0 +1,17 @@
+{
+  "name": "Arnelle Balane",
+  "short_name": "Arnelle Balane",
+  "description": "Arnelle Balane's Website",
+  "icons": [
+    {
+      "src": "/static/images/icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "theme_color": "#83bcb5",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait"
+}
