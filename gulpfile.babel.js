@@ -13,7 +13,8 @@ const PATHS = {
     stylesheets: 'static/stylesheets/**/*.css',
     javascripts: 'static/javascripts/**/*.js',
     images: 'static/images/**/*',
-    fonts: 'static/fonts/**/*'
+    fonts: 'static/fonts/**/*',
+    manifest: 'static/manifest.json'
 };
 const BUILD_DIRECTORY = 'build';
 
@@ -59,7 +60,7 @@ gulp.task('optimizeimages', _ => {
 
 
 gulp.task('copystatic', _ => {
-    return gulp.src(PATHS.fonts, { base: '.' })
+    return gulp.src([PATHS.fonts, PATHS.manifest], { base: '.' })
         .pipe(gulp.dest(BUILD_DIRECTORY));
 });
 
