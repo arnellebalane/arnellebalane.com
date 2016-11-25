@@ -12,7 +12,7 @@ const app = express();
 app.engine('html', consolidate.nunjucks);
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(favicon(path.join(__dirname, 'static', 'images', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'static', 'images', 'favicon.png')));
 app.use(helmet({ nocache: false }));
 app.use(morgan('dev'));
 
