@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 const winston = require('winston');
-const config = require('../config');
+const config = require('../server/config');
 
-const app = require('../app');
+const app = require('../server');
 
 
 if (config.get('NODE_ENV') === 'production') {
