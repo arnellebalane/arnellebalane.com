@@ -9,12 +9,12 @@ import sourcemaps from 'gulp-sourcemaps';
 
 
 const PATHS = {
-    views: 'views/**/*.html',
-    stylesheets: 'static/stylesheets/**/*.css',
-    javascripts: 'static/javascripts/**/*.js',
-    images: 'static/images/**/*',
-    fonts: 'static/fonts/**/*',
-    manifest: 'static/manifest.json'
+    views: 'server/views/**/*.html',
+    stylesheets: 'public/stylesheets/**/*.css',
+    javascripts: 'public/javascripts/**/*.js',
+    images: 'public/images/**/*',
+    fonts: 'public/fonts/**/*',
+    manifest: 'public/manifest.json'
 };
 const BUILD_DIRECTORY = 'build';
 
