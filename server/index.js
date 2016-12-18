@@ -17,9 +17,9 @@ app.use(helmet({ nocache: false }));
 app.use(morgan('dev'));
 
 if (config.get('NODE_ENV') === 'production') {
-    app.use('/static', express.static(path.join(__dirname, '..', 'build', 'static')));
+    app.use('/static', express.static(path.join(__dirname, '..', 'build', 'public')));
 } else {
-    app.use('/static', express.static(path.join(__dirname, '..', 'static')));
+    app.use('/static', express.static(path.join(__dirname, '..', 'public')));
 }
 
 app.use(require('./routes'));
