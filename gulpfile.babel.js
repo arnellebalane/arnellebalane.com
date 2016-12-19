@@ -8,6 +8,7 @@ import imagemin from 'gulp-imagemin';
 import sourcemaps from 'gulp-sourcemaps';
 import cache from 'gulp-cached';
 import del from 'del';
+import runsequence from 'run-sequence';
 
 
 const PATHS = {
@@ -77,7 +78,9 @@ gulp.task('copystatic', _ => {
 });
 
 
-gulp.task('build', ['buildstyles', 'buildscripts', 'buildviews', 'optimizeimages', 'copystatic']);
+gulp.task('build', _ => {
+    return runsequence('clean', ['buildstyles', 'buildscripts', 'buildviews', 'optimizeimages', 'copystatic']);
+});
 
 
 gulp.task('watch', _ => {
