@@ -65,10 +65,16 @@ gulp.task('copystatic', _ => {
 });
 
 
-gulp.task('default', [
-    'buildstyles',
-    'buildscripts',
-    'buildviews',
-    'optimizeimages',
-    'copystatic'
-]);
+gulp.task('build', ['buildstyles', 'buildscripts', 'buildviews', 'optimizeimages', 'copystatic']);
+
+
+gulp.task('watch', _ => {
+    gulp.watch(PATHS.stylesheets, ['buildstyles']);
+    gulp.watch(PATHS.javascripts, ['buildscripts']);
+    gulp.watch(PATHS.views, ['buildviews']);
+    gulp.watch(PATHS.images, ['optimizeimages']);
+    gulp.watch([PATHS.fonts, PATHS.manifest], ['copystatic']);
+});
+
+
+gulp.task('default', ['build', 'watch']);
