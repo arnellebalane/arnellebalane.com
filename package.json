@@ -24,6 +24,7 @@
   "homepage": "https://github.com/arnellebalane/arnellebalane.com#readme",
   "dependencies": {
     "consolidate": "^0.14.1",
+    "del": "^2.2.2",
     "express": "^4.14.0",
     "gulp-cached": "^1.1.1",
     "helmet": "^2.1.2",

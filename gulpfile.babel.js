@@ -7,6 +7,7 @@ import htmlmin from 'gulp-htmlmin';
 import imagemin from 'gulp-imagemin';
 import sourcemaps from 'gulp-sourcemaps';
 import cache from 'gulp-cached';
+import del from 'del';
 
 
 const PATHS = {
@@ -18,6 +19,11 @@ const PATHS = {
     manifest: 'public/manifest.json'
 };
 const BUILD_DIRECTORY = 'build';
+
+
+gulp.task('clean', _ => {
+    return del(BUILD_DIRECTORY);
+});
 
 
 gulp.task('buildstyles', _ => {
