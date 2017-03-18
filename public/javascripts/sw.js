@@ -13,7 +13,9 @@ const paths = [
     '/static/images/facebook.png',
     '/static/images/twitter.png',
     '/static/images/github.png',
-    '/static/images/website.png',
+    '/static/images/stackoverflow.png',
+    '/static/images/speakerdeck.png',
+    '/static/images/blog.png',
     '/static/fonts/quicksand/bold.woff2',
     "/static/manifest.json"
 ];
