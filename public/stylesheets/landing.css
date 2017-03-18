@@ -94,8 +94,16 @@ body {
     background-image: url("../images/github.png");
 }
 
-.social-link.website {
-    background-image: url("../images/website.png");
+.social-link.stackoverflow {
+    background-image: url("../images/stackoverflow.png");
+}
+
+.social-link.speakerdeck {
+    background-image: url("../images/speakerdeck.png");
+}
+
+.social-link.blog {
+    background-image: url("../images/blog.png");
 }
 
 
