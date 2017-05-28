@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+const app = require('../source/app');
+
+app.listen(3000, () => console.log('Server now running at port 3000'));
