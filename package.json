@@ -2,7 +2,7 @@
   "name": "arnellebalane.com",
   "version": "1.0.0",
   "description": "my personal website",
-  "main": "source/app.js",
+  "main": "app.js",
   "scripts": {
     "start": "node bin/www",
     "dev": "nodemon bin/www"
