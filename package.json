@@ -14,7 +14,9 @@
     "consolidate": "^0.14.5",
     "express": "^4.15.3",
     "morgan": "^1.8.2",
-    "nunjucks": "^3.0.1"
+    "nconf": "^0.8.4",
+    "nunjucks": "^3.0.1",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

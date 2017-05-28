@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+const winston = require('winston');
+const config = require('../config');
 const app = require('../source/app');
 
-app.listen(3000, () => console.log('Server now running at port 3000'));
+app.listen(config.get('PORT'),
+    () => winston.info(`Server now running at port ${config.get('PORT')}`));
