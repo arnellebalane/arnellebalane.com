@@ -6,11 +6,14 @@
 }
 
 html {
+    --primary-color: #ffeb3b;
+
     font-size: 62.5%;
 }
 
 body {
     height: 100vh;
+    border: 1rem solid var(--primary-color);
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
     color: #333;
@@ -21,4 +24,29 @@ input,
 button {
     font: inherit;
     color: inherit;
+}
+
+.wrapper {
+    width: 90vw;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+
+/** Header **/
+
+.site-header {
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.site-header p {
+    margin: 0;
+}
+
+.title {
+    margin: 2rem 0 1rem 0;
+    font-family: "Luna", sans-serif;
+    font-size: 2.4em;
+    font-weight: 400;
 }
