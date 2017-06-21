@@ -5,6 +5,12 @@
 
 @font-face {
     font-family: "Open Sans";
+    font-weight: 300;
+    src: url("../fonts/OpenSansLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Open Sans";
     font-weight: 400;
     src: url("../fonts/OpenSansRegular.ttf") format("truetype");
 }
