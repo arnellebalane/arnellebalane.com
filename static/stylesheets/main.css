@@ -34,6 +34,17 @@ p:not(:last-of-type) {
     margin-bottom: 1.5em;
 }
 
+p a {
+    text-decoration: none;
+    text-shadow: 1px 1px 0 var(--primary-color);
+}
+
+p a:hover,
+p a:focus {
+    position: relative;
+    background-color: var(--primary-color);
+}
+
 .wrapper {
     width: 90vw;
     max-width: 60rem;
