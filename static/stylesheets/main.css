@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     border: 1rem solid var(--primary-color);
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
@@ -26,9 +26,18 @@ button {
     color: inherit;
 }
 
+p:not(:first-of-type) {
+    margin-top: 1.5em;
+}
+
+p:not(:last-of-type) {
+    margin-bottom: 1.5em;
+}
+
 .wrapper {
     width: 90vw;
-    max-width: 80rem;
+    max-width: 60rem;
+    padding-bottom: 8rem;
     margin: 0 auto;
 }
 
