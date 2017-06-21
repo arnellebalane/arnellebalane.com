@@ -160,9 +160,8 @@ blockquote time {
 /** Talk **/
 
 .no-talk {
-    padding: 0 8rem;
+    padding: 0 8rem 0 4rem;
     font-size: 0.8em;
-    text-align: center;
 }
 
 
