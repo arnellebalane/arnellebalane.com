@@ -126,6 +126,12 @@ p a:focus {
     font-size: 0.8em;
 }
 
+.project:hover .name,
+.project:focus .name {
+    display: inline-block;
+    background-color: var(--primary-color);
+}
+
 
 /** Blog **/
 
@@ -140,6 +146,11 @@ blockquote a {
     font-size: 1.6em;
     font-weight: 300;
     text-decoration: none;
+}
+
+blockquote a:hover,
+blockquote a:focus {
+    background-color: var(--primary-color);
 }
 
 blockquote a::before,
