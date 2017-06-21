@@ -164,3 +164,18 @@ blockquote time {
     font-size: 0.8em;
     text-align: center;
 }
+
+
+/** Avatar **/
+
+.avatar-label {
+    text-align: center;
+}
+
+.avatar {
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    margin: 2.4rem auto 0 auto;
+    border-radius: 50%;
+}
