@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Luna";
+    src: url("../fonts/Luna.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-weight: 300;
+    src: url("../fonts/OpenSansLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-weight: 400;
+    src: url("../fonts/OpenSansRegular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-weight: 700;
+    src: url("../fonts/OpenSansBold.ttf") format("truetype");
+}
