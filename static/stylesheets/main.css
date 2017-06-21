@@ -59,3 +59,53 @@ p:not(:last-of-type) {
     font-size: 2.4em;
     font-weight: 400;
 }
+
+
+/** Projects **/
+
+.projects {
+    padding: 0 4rem;
+    list-style: none;
+}
+
+.projects li {
+    margin: 1rem 0;
+}
+
+.project {
+    display: inline-block;
+    padding-left: 4rem;
+    position: relative;
+    text-decoration: none;
+}
+
+.project::before {
+    content: "";
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    top: calc(50% - 3.2rem / 2);
+    left: 0;
+    background: center center no-repeat;
+    opacity: 0.5;
+}
+
+.project.github::before {
+    background-image: url("../images/github.png");
+}
+
+.project.codepen::before {
+    background-image: url("../images/codepen.png");
+}
+
+.project p {
+    margin: 0;
+}
+
+.project p:only-child {
+    line-height: 4rem;
+}
+
+.project .description {
+    font-size: 0.8em;
+}
