@@ -41,6 +41,10 @@ p:not(:last-of-type) {
     margin: 0 auto;
 }
 
+.separator {
+    height: 1.6em;
+}
+
 
 /** Header **/
 
@@ -65,6 +69,7 @@ p:not(:last-of-type) {
 
 .projects {
     padding: 0 4rem;
+    margin: 1rem 0;
     list-style: none;
 }
 
@@ -87,7 +92,7 @@ p:not(:last-of-type) {
     top: calc(50% - 3.2rem / 2);
     left: 0;
     background: center center no-repeat;
-    opacity: 0.5;
+    opacity: 0.25;
 }
 
 .project.github::before {
@@ -107,5 +112,46 @@ p:not(:last-of-type) {
 }
 
 .project .description {
+    font-size: 0.8em;
+}
+
+
+/** Blog **/
+
+blockquote {
+    padding: 0 4rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+blockquote a {
+    position: relative;
+    font-size: 1.6em;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+blockquote a::before,
+blockquote a::after {
+    margin: 0 0.5rem;
+    position: absolute;
+    font-family: serif;
+    font-size: 1.25em;
+    opacity: 0.25;
+}
+
+blockquote a::before {
+    content: "“";
+    right: 100%;
+}
+
+blockquote a::after {
+    content: "”";
+    left: 100%;
+}
+
+blockquote time {
+    display: block;
+    margin-top: 0.75em;
     font-size: 0.8em;
 }
