@@ -42,3 +42,41 @@ self.addEventListener('fetch', (e) => {
             .catch(console.error)
     );
 });
+
+self.addEventListener('push', (e) => {
+    const notification = e.data ? e.data.json() : {
+        title: 'Hello there!',
+        body: 'It\'s me, Arnelle!',
+        icon: 'static/images/icon-144.png'
+    };
+    e.waitUntil(
+        self.registration.showNotification(notification.title, {
+            body: notification.body,
+            icon: notification.icon,
+            tag: 'arnelle-balane'
+        });
+    );
+});
+
+self.addEventListener('notificationclick', (e) => {
+    const options = { tag: 'arnelle-balane' };
+    e.waitUntil(
+        self.registration.getNotifications(options)
+            .then((notifications) => notifications.forEach((notification) => (
+                notification.close()
+            )))
+            .then(() => self.clients.matchAll({
+                includeControlled: true,
+                type: 'window'
+            }))
+            .then((clients) => {
+                if (clients.length > 0) {
+                    clients[0].navigate('/');
+                    clients[0].focus()
+                } else {
+                    self.clients.openWindow('/');
+                }
+            })
+            .catch(console.error)
+    );
+});
