@@ -33,3 +33,12 @@ self.addEventListener('activate', (e) => {
             .catch(console.error)
     );
 });
+
+self.addEventListener('fetch', (e) => {
+    e.respondWith(
+        caches.open(CACHE_NAME)
+            .then((cache) => cache.match(e.request))
+            .then((response) => response || fetch(e.request))
+            .catch(console.error)
+    );
+});
