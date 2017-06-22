@@ -54,7 +54,7 @@ self.addEventListener('push', (e) => {
             body: notification.body,
             icon: notification.icon,
             tag: 'arnelle-balane'
-        });
+        })
     );
 });
 
