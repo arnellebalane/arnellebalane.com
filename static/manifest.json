@@ -3,15 +3,15 @@
   "short_name": "arnelle",
   "description": "Arnelle's Personal Website",
   "icons": [{
-    "src": "static/images/icon-144.png",
+    "src": "/static/images/icon-144.png",
     "type": "image/png",
     "sizes": "144x144"
   }, {
-    "src": "static/images/icon-192.png",
+    "src": "/static/images/icon-192.png",
     "type": "image/png",
     "sizes": "192x192"
   }, {
-    "src": "static/images/icon-512.png",
+    "src": "/static/images/icon-512.png",
     "type": "image/png",
     "sizes": "512x512"
   }],
