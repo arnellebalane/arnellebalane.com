@@ -46,7 +46,7 @@ p a:focus {
 }
 
 .wrapper {
-    width: 90vw;
+    width: calc(100vw - 6rem);
     max-width: 60rem;
     padding-bottom: 8rem;
     margin: 0 auto;
@@ -73,6 +73,12 @@ p a:focus {
     font-family: "Luna", sans-serif;
     font-size: 2.4em;
     font-weight: 400;
+}
+
+@media all and (max-width: 500px) {
+    .title {
+        font-size: 1.6em;
+    }
 }
 
 
@@ -132,6 +138,12 @@ p a:focus {
     background-color: var(--primary-color);
 }
 
+@media all and (max-width: 500px) {
+    .projects {
+        padding: 0;
+    }
+}
+
 
 /** Blog **/
 
@@ -178,12 +190,24 @@ blockquote time {
     font-size: 0.8em;
 }
 
+@media all and (max-width: 500px) {
+    blockquote {
+        padding: 0;
+    }
+}
+
 
 /** Talk **/
 
 .no-talk {
     padding: 0 8rem 0 4rem;
     font-size: 0.8em;
+}
+
+@media all and (max-width: 500px) {
+    .no-talk {
+        padding: 0;
+    }
 }
 
 
