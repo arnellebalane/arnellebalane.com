@@ -1,7 +1,7 @@
 importScripts('sw-offline-google-analytics.js');
 goog.offlineGoogleAnalytics.initialize();
 
-const CACHE_NAME = 'arnelle-v1.2';
+const CACHE_NAME = 'arnelle-v1.3';
 const CACHE_PATHS = [
     '/',
     '/static/manifest.json',
@@ -14,6 +14,7 @@ const CACHE_PATHS = [
     '/static/fonts/Luna.ttf',
     '/static/fonts/OpenSansRegular.ttf',
     '/static/fonts/OpenSansLight.ttf',
+    '/sw-offline-google-analytics.js'
 ];
 
 self.addEventListener('install', (e) => {
