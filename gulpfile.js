@@ -4,10 +4,12 @@ const pump = require('pump');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const cssnano = require('gulp-cssnano');
+const htmlmin = require('gulp-htmlmin');
 
 const paths = {
     stylesheets: './static/stylesheets/**/*.css',
-    javascripts: './static/javascripts/**/*.js'
+    javascripts: './static/javascripts/**/*.js',
+    templates: './views/**/*.html'
 };
 const buildDirectory = path.join(__dirname, 'build');
 
@@ -28,4 +30,17 @@ gulp.task('build:js', (cb) => {
     ], cb);
 });
 
-gulp.task('build', ['build:css', 'build:js']);
+gulp.task('build:html', (cb) => {
+    pump([
+        gulp.src(paths.templates, { base: '.' }),
+        htmlmin({
+            collapseBooleanAttributes: true,
+            collapseWhitespace: true,
+            minifyCSS: true,
+            minifyJS: true
+        }),
+        gulp.dest(buildDirectory)
+    ], cb);
+});
+
+gulp.task('build', ['build:css', 'build:js', 'build:html']);
