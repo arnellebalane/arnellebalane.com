@@ -5,7 +5,6 @@ const CACHE_NAME = 'arnelle-v1.3';
 const CACHE_PATHS = [
     '/',
     '/static/manifest.json',
-    '/static/stylesheets/fonts.css',
     '/static/stylesheets/main.css',
     '/static/javascripts/main.js',
     '/static/images/avatar.webp',
