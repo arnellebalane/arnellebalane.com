@@ -1,18 +1,18 @@
 @font-face {
     font-family: "Luna";
-    src: url("../fonts/Luna.ttf") format("truetype");
+    src: url("../fonts/Luna.woff") format("woff");
 }
 
 @font-face {
     font-family: "Open Sans";
     font-weight: 300;
-    src: url("../fonts/OpenSansLight.ttf") format("truetype");
+    src: url("../fonts/OpenSansLight.woff") format("woff");
 }
 
 @font-face {
     font-family: "Open Sans";
     font-weight: 400;
-    src: url("../fonts/OpenSansRegular.ttf") format("truetype");
+    src: url("../fonts/OpenSansRegular.woff") format("woff");
 }
 
 

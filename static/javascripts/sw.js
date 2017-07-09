@@ -9,9 +9,9 @@ const CACHE_PATHS = [
     '/static/javascripts/main.js',
     '/static/images/avatar.webp',
     '/static/images/sprites.webp',
-    '/static/fonts/Luna.ttf',
-    '/static/fonts/OpenSansRegular.ttf',
-    '/static/fonts/OpenSansLight.ttf',
+    '/static/fonts/Luna.woff',
+    '/static/fonts/OpenSansRegular.woff',
+    '/static/fonts/OpenSansLight.woff',
     '/sw-offline-google-analytics.js'
 ];
 
