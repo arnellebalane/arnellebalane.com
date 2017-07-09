@@ -11,6 +11,7 @@ const paths = {
     stylesheets: './static/stylesheets/**/*.css',
     javascripts: './static/javascripts/**/*.js',
     images: './static/images/**/*',
+    fonts: './static/fonts/**/*',
     templates: './views/**/*.html',
 };
 const buildDirectory = path.join(__dirname, 'build');
@@ -53,4 +54,11 @@ gulp.task('build:images', (cb) => {
     ], cb);
 });
 
-gulp.task('build', ['build:css', 'build:js', 'build:html', 'build:images']);
+gulp.task('copy', (cb) => {
+    pump([
+        gulp.src(paths.fonts, { base: '.' }),
+        gulp.dest(buildDirectory)
+    ], cb);
+});
+
+gulp.task('build', ['build:css', 'build:js', 'build:html', 'build:images', 'copy']);
