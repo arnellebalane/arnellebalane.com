@@ -1,18 +1,21 @@
 @font-face {
     font-family: "Luna";
     src: url("../fonts/Luna.woff") format("woff");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Open Sans";
     font-weight: 300;
     src: url("../fonts/OpenSansLight.woff") format("woff");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Open Sans";
     font-weight: 400;
     src: url("../fonts/OpenSansRegular.woff") format("woff");
+    font-display: swap;
 }
 
 
@@ -34,6 +37,7 @@ body {
     border: 1rem solid var(--primary-color);
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
     color: #333;
 }
 
