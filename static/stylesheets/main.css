@@ -108,7 +108,7 @@ p a:focus {
     position: absolute;
     top: calc(50% - 3.2rem / 2);
     left: 0;
-    background: url("../images/sprites.png") no-repeat;
+    background: url("../images/sprites.webp") no-repeat;
     opacity: 0.25;
 }
 
