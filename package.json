@@ -31,7 +31,8 @@
     "gulp-imagemin": "^3.3.0",
     "gulp-uglify": "^3.0.0",
     "nodemon": "^1.11.0",
-    "pump": "^1.0.2"
+    "pump": "^1.0.2",
+    "run-sequence": "^2.0.0"
   },
   "babel": {
     "presets": [

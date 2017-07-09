@@ -7,6 +7,7 @@ const uglify = require('gulp-uglify');
 const cssnano = require('gulp-cssnano');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
+const runsequence = require('run-sequence');
 
 const paths = {
     stylesheets: './static/stylesheets/**/*.css',
@@ -64,4 +65,7 @@ gulp.task('copy', (cb) => {
 
 gulp.task('delete', () => del(buildDirectory));
 
-gulp.task('build', ['build:css', 'build:js', 'build:html', 'build:images', 'copy']);
+gulp.task('build', () => runsequence(
+    'delete',
+    ['build:css', 'build:js', 'build:html', 'build:images', 'copy']
+));
