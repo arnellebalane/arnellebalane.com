@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const consolidate = require('consolidate');
+const helmet = require('helmet');
 const morgan = require('morgan');
 const favicon = require('serve-favicon');
 const config = require('./config');
@@ -22,6 +23,7 @@ const OFFLINE_GOOGLE_ANALYTICS_PATH = path.join(__dirname, 'node_modules',
 app.engine('html', consolidate.nunjucks);
 app.set('views', VIEWS_PATH);
 
+app.use(helmet());
 app.use(morgan('dev'));
 app.use(favicon(FAVICON_PATH));
 app.use('/static', express.static(STATIC_PATH));
