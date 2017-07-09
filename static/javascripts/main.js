@@ -16,7 +16,6 @@ function handleRegisterFailure(error) {
 
 // Dynamically load external stylesheets
 const stylesheets = [
-    'static/stylesheets/fonts.css',
     'static/stylesheets/main.css'
 ];
 const head = document.querySelector('head');
