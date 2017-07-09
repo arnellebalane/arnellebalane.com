@@ -13,8 +13,11 @@ const paths = {
     stylesheets: './static/stylesheets/**/*.css',
     javascripts: './static/javascripts/**/*.js',
     images: './static/images/**/*',
-    fonts: './static/fonts/**/*',
     templates: './views/**/*.html',
+    copy: [
+        './static/fonts/**/*',
+        './static/manifest.json'
+    ]
 };
 const buildDirectory = path.join(__dirname, 'build');
 
@@ -58,7 +61,7 @@ gulp.task('build:images', (cb) => {
 
 gulp.task('copy', (cb) => {
     pump([
-        gulp.src(paths.fonts, { base: '.' }),
+        gulp.src(paths.copy, { base: '.' }),
         gulp.dest(buildDirectory)
     ], cb);
 });
