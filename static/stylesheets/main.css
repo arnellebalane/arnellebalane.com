@@ -108,16 +108,16 @@ p a:focus {
     position: absolute;
     top: calc(50% - 3.2rem / 2);
     left: 0;
-    background: center center no-repeat;
+    background: url("../images/sprites.png") no-repeat;
     opacity: 0.25;
 }
 
 .project.github::before {
-    background-image: url("../images/github.png");
+    background-position: 0 0;
 }
 
 .project.codepen::before {
-    background-image: url("../images/codepen.png");
+    background-position: -3.2rem 0;
 }
 
 .project p {
