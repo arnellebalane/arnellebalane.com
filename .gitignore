@@ -2,3 +2,4 @@ node_modules
 secrets.json
 process.json
 .DS_Store
+build
