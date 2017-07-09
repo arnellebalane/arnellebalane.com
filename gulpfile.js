@@ -1,6 +1,7 @@
 const path = require('path');
 const gulp = require('gulp');
 const pump = require('pump');
+const del = require('del');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const cssnano = require('gulp-cssnano');
@@ -60,5 +61,7 @@ gulp.task('copy', (cb) => {
         gulp.dest(buildDirectory)
     ], cb);
 });
+
+gulp.task('delete', () => del(buildDirectory));
 
 gulp.task('build', ['build:css', 'build:js', 'build:html', 'build:images', 'copy']);
