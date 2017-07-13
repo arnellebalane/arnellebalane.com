@@ -13,7 +13,9 @@
     </head>
 
     <body>
-        {% include 'partials/analytics.html' %}
+        {% if req.hostname !== 'localhost' %}
+            {% include 'partials/analytics.html' %}
+        {% endif %}
 
         <main class="wrapper">
             <header class="site-header">

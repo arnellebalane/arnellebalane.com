@@ -22,6 +22,10 @@ app.use('/static', express.static(STATIC_PATH));
 app.use('/sw.js', express.static(SERVICE_WORKER_PATH));
 app.use('/sw-offline-google-analytics.js',
     express.static(OFFLINE_GOOGLE_ANALYTICS_PATH));
+app.use((req, res, next) => {
+    res.locals.req = req;
+    next();
+});
 
 app.get('/', (req, res) => res.render('index.html'));
 
