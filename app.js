@@ -3,6 +3,7 @@ const express = require('express');
 const consolidate = require('consolidate');
 const morgan = require('morgan');
 const favicon = require('serve-favicon');
+const request = require('request');
 
 const app = express();
 
@@ -30,7 +31,15 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => res.render('index.html'));
 
 app.get('/github-activity', (req, res) => {
-    res.json('{}');
+    const options = {
+        url: 'https://api.github.com/users/arnellebalane/repos?sort=created&type=owner',
+        headers: {
+            'User-Agent': 'arnellebalane'
+        }
+    };
+    request(options, (err, response, body) => {
+        res.json(JSON.parse(body));
+    });
 });
 
 module.exports = app;
