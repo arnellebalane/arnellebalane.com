@@ -125,7 +125,7 @@ p a:focus {
 }
 
 .project p:only-child {
-    line-height: 4rem;
+    margin: calc((4rem - 1.375em) / 2) 0;
 }
 
 .project .description {
