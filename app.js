@@ -37,7 +37,19 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => res.render('index.html'));
+app.get('/', (req, res) => {
+    const pushAssets = [
+        '<static/stylesheets/main.css>; rel=preload; as=style',
+        '<static/javascripts/main.js>; rel=preload; as=script',
+        '<static/images/avatar.webp>; rel=preload; as=image',
+        '<static/images/sprites.webp>; rel=preload; as=image',
+        '<static/fonts/Luna.woff>; rel=preload; as=font',
+        '<static/fonts/OpenSansLight.woff>; rel=preload; as=font',
+        '<static/fonts/OpenSansRegular.woff>; rel=preload; as=font'
+    ];
+    res.set('Link', pushAssets.join(', '));
+    res.render('index.html');
+});
 
 app.get('/github-activity', (req, res) => {
     fetchRepositoriesActivity().then((repositories) => {
