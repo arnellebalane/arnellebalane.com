@@ -42,10 +42,7 @@ app.get('/', (req, res) => {
         '<static/stylesheets/main.css>; rel=preload; as=style',
         '<static/javascripts/main.js>; rel=preload; as=script',
         '<static/images/avatar.webp>; rel=preload; as=image',
-        '<static/images/sprites.webp>; rel=preload; as=image',
-        '<static/fonts/Luna.woff>; rel=preload; as=font',
-        '<static/fonts/OpenSansLight.woff>; rel=preload; as=font',
-        '<static/fonts/OpenSansRegular.woff>; rel=preload; as=font'
+        '<static/images/sprites.webp>; rel=preload; as=image'
     ];
     res.set('Link', pushAssets.join(', '));
     res.render('index.html');
