@@ -1,13 +1,11 @@
-fetch('/github-activity')
-    .then((response) => response.json())
-    .then((response) => {
-        const projects = $('.projects');
-        response.forEach((project) => {
-            const projectTemplate = $('template#project').innerHTML;
-            const rendered = element(template(projectTemplate, project));
-            projects.appendChild(rendered);
-        });
+mirror('/github-activity').then((response) => {
+    const projects = $('.projects');
+    response.forEach((project) => {
+        const projectTemplate = $('template#project').innerHTML;
+        const rendered = element(template(projectTemplate, project));
+        projects.appendChild(rendered);
     });
+});
 
 function $(selector, context = document) {
     return context.querySelector(selector);
