@@ -6,6 +6,8 @@ const morgan = require('morgan');
 const favicon = require('serve-favicon');
 const config = require('./config');
 
+const { fetchRepositoriesActivity } = require('./lib/github');
+
 const app = express();
 
 const VIEWS_PATH = config.get('NODE_ENV') === 'production'
@@ -30,7 +32,22 @@ app.use('/static', express.static(STATIC_PATH));
 app.use('/sw.js', express.static(SERVICE_WORKER_PATH));
 app.use('/sw-offline-google-analytics.js',
     express.static(OFFLINE_GOOGLE_ANALYTICS_PATH));
+app.use((req, res, next) => {
+    res.locals.req = req;
+    next();
+});
 
 app.get('/', (req, res) => res.render('index.html'));
+
+app.get('/github-activity', (req, res) => {
+    fetchRepositoriesActivity().then((repositories) => {
+        const recentActiveRepos = repositories.slice(0, 3).map((repository) => ({
+            name: repository.name,
+            description: repository.description,
+            url: repository.html_url
+        }))
+        res.json(recentActiveRepos);
+    });
+});
 
 module.exports = app;

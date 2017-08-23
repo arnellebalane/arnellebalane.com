@@ -147,7 +147,7 @@ p a:focus {
 }
 
 .project p:only-child {
-    line-height: 4rem;
+    margin: calc((4rem - 1.375em) / 2) 0;
 }
 
 .project .description {
@@ -245,4 +245,41 @@ blockquote time {
     height: 8rem;
     margin: 2.4rem auto 0 auto;
     border-radius: 50%;
+}
+
+
+
+/** Utilities **/
+
+.loader:empty {
+    height: 1.5em;
+    position: relative;
+}
+
+.loader:empty::before {
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border: 3px solid var(--primary-color);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 1.5em / 2);
+    left: calc(50% - 1.5em / 2);
+    animation: rotate 500ms linear infinite;
+}
+
+
+
+/** Animation Definitions **/
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

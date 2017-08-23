@@ -38,7 +38,9 @@
     </head>
 
     <body>
-        {% include 'partials/analytics.html' %}
+        {% if req.hostname !== 'localhost' %}
+            {% include 'partials/analytics.html' %}
+        {% endif %}
 
         <main class="wrapper">
             <header class="site-header">
@@ -53,26 +55,19 @@
 
             <p>Here are some things that I've worked on recently:</p>
 
-            <ol class="projects">
+            <ol class="projects loader"></ol>
+            <template id="project">
+                {% raw %}
                 <li>
-                    <a class="project github" href="https://github.com/arnellebalane/notifications-audio-player" target="_blank" rel="noopener">
-                        <p class="name">notifications-audio-player</p>
-                        <p class="description">Experiment application on showing audio visualizations via notifications</p>
+                    <a class="project github" href="{{ url }}" target="_blank" rel="noopener">
+                        <p class="name">{{ name }}</p>
+                        {{ #description }}
+                        <p class="description">{{ description }}</p>
+                        {{ /description }}
                     </a>
                 </li>
-                <li>
-                    <a class="project github" href="https://github.com/arnellebalane/shape-detection-demo" target="_blank" rel="noopener">
-                        <p class="name">shape-detection-demo</p>
-                        <p class="description">Shape Detection API Demo Application</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="project github" href="https://github.com/arnellebalane/hermes" target="_blank" rel="noopener">
-                        <p class="name">hermes</p>
-                        <p class="description">client-side messaging channel for sending data from one browser tab to another</p>
-                    </a>
-                </li>
-            </ol>
+                {% endraw %}
+            </template>
 
             <div class="separator"></div>
 

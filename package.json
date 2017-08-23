@@ -17,6 +17,7 @@
     "morgan": "^1.8.2",
     "nconf": "^0.8.4",
     "nunjucks": "^3.0.1",
+    "request": "^2.81.0",
     "serve-favicon": "^2.4.3",
     "sw-offline-google-analytics": "^0.0.25",
     "winston": "^2.3.1"
