@@ -7,6 +7,7 @@ const CACHE_PATHS = [
     '/static/manifest.json',
     '/static/stylesheets/main.css',
     '/static/javascripts/main.js',
+    '/static/javascripts/lib/idb-fetch-mirror.js',
     '/static/images/avatar.webp',
     '/static/images/sprites.webp',
     '/static/fonts/Luna.woff',
