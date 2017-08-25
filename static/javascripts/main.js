@@ -1,7 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    fetchDeferredStyles();
     registerServiceWorker();
     fetchApiData();
 });
+
+
+
+// Fetch deferred styles
+
+function fetchDeferredStyles() {
+    const stage = document.createElement('div');
+    stage.innerHTML = $('#deferred-styles').textContent;
+    Array.from(stage.children).forEach((link) => document.body.appendChild(link));
+}
 
 
 
