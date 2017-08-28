@@ -9,28 +9,7 @@
 
         <link rel="manifest" href="static/manifest.json">
 
-        <style>
-            html {
-                font-size: 62.5%;
-            }
-
-            body {
-                border: 1rem solid #ffeb3b;
-                margin: 0;
-                font-family: sans-serif;
-                font-size: 1.6rem;
-            }
-
-            .wrapper {
-                width: calc(100vw - 6rem);
-                max-width: 60rem;
-                margin: 0 auto;
-            }
-
-            .site-header {
-                text-align: center;
-            }
-        </style>
+        {% include 'partials/critical-css.html' %}
 
         <noscript id="deferred-styles">
             <link rel="stylesheet" href="static/stylesheets/main.css">
