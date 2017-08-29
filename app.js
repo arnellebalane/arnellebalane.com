@@ -60,4 +60,9 @@ app.get('/github-activity', (req, res) => {
     });
 });
 
+// AMP Route Definitions
+app.get('/amp', (req, res) => {
+    res.render('amp/index.html');
+});
+
 module.exports = app;
