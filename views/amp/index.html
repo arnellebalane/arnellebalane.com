@@ -23,21 +23,21 @@
         <style amp-custom>
             @font-face {
                 font-family: "Luna";
-                src: url("/static/fonts/Luna.woff") format("woff");
+                src: url("static/fonts/Luna.woff") format("woff");
                 font-display: swap;
             }
 
             @font-face {
                 font-family: "Open Sans";
                 font-weight: 300;
-                src: url("/static/fonts/OpenSansLight.woff") format("woff");
+                src: url("static/fonts/OpenSansLight.woff") format("woff");
                 font-display: swap;
             }
 
             @font-face {
                 font-family: "Open Sans";
                 font-weight: 400;
-                src: url("/static/fonts/OpenSansRegular.woff") format("woff");
+                src: url("static/fonts/OpenSansRegular.woff") format("woff");
                 font-display: swap;
             }
 
@@ -146,7 +146,7 @@
                 position: absolute;
                 top: calc(50% - 3.2rem / 2);
                 left: 0;
-                background: url("../images/sprites.webp") no-repeat;
+                background: url("static/images/sprites.webp") no-repeat;
                 opacity: 0.25;
             }
 
@@ -299,7 +299,18 @@
 
             <p>Here are some things that I've worked on recently:</p>
 
-            <ol class="projects"></ol>
+            <ol class="projects">
+                {% for project in projects %}
+                    <li>
+                        <a class="project github" href="{{ project.url }}" target="_blank" rel="noopener">
+                            <p class="name">{{ project.name }}</p>
+                            {% if project.description %}
+                                <p class="description">{{ project.description }}</p>
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ol>
 
             <div class="separator"></div>
 
