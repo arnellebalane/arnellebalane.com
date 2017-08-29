@@ -1,7 +1,7 @@
 importScripts('sw-offline-google-analytics.js');
 goog.offlineGoogleAnalytics.initialize();
 
-const CACHE_NAME = 'arnelle-v1.5';
+const CACHE_NAME = 'arnelle-v1.6';
 const CACHE_PATHS = [
     '/',
     '/static/manifest.json',
