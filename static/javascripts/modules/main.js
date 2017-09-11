@@ -1,14 +1,10 @@
-import { $, template, element } from './utils';
-import ifm from '../lib/idb-fetch-mirror';
+import { $, template, element } from './lib/utils.js';
+import ifm from './lib/idb-fetch-mirror.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    registerServiceWorker();
     fetchApiData();
+    registerServiceWorker();
 });
-
-
-
-// Fetch api data from backend
 
 function fetchApiData() {
     ifm.mirror('/github-activity').then((response) => {
@@ -21,22 +17,10 @@ function fetchApiData() {
     });
 }
 
-
-
-// Make web app "progressive"
-
 function registerServiceWorker() {
-    if ('serviceWorker' in navigator) {
+    if (navigator.serviceWorker) {
         navigator.serviceWorker.register('sw.js')
-            .then(handleRegisterSuccess)
-            .catch(handleRegisterFailure);
+            .then(() => console.log('Service worker registered.'))
+            .catch((error) => console.error(error));
     }
-}
-
-function handleRegisterSuccess(registration) {
-    console.log('Service Worker Registered');
-}
-
-function handleRegisterFailure(error) {
-    console.error(error);
 }
