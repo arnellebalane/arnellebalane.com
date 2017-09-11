@@ -40,8 +40,9 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     const pushAssets = [
         '<static/stylesheets/main.css>; rel=preload; as=style',
-        '<static/javascripts/main.js>; rel=preload; as=script',
-        '<static/javascripts/lib/idb-fetch-mirror.js>; rel=preload; as=script',
+        '<static/javascripts/regular/main.js>; rel=preload; as=script',
+        '<static/javascripts/regular/lib/idb-fetch-mirror.js>; rel=preload; as=script',
+        '<static/javascripts/regular/lib/utils.js>; rel=preload; as=script',
         '<static/images/avatar.webp>; rel=preload; as=image',
         '<static/images/sprites.webp>; rel=preload; as=image'
     ];
