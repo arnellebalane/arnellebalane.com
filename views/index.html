@@ -84,7 +84,9 @@
             <img class="avatar" src="static/images/avatar.webp" alt="Arnelle Balane">
         </main>
 
-        <script defer src="static/javascripts/lib/idb-fetch-mirror.js"></script>
-        <script defer src="static/javascripts/main.js"></script>
+        <script type="module" src="static/javascripts/modules/main.js"></script>
+        <script defer nomodule src="static/javascripts/regular/lib/idb-fetch-mirror.js"></script>
+        <script defer nomodule src="static/javascripts/regular/lib/utils.js"></script>
+        <script defer nomodule src="static/javascripts/regular/main.js"></script>
     </body>
 </html>
