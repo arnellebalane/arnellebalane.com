@@ -1,5 +1,5 @@
 import { $, template, element } from './lib/utils.js';
-import ifm from './lib/idb-fetch-mirror.js';
+import { mirror } from './lib/idb-fetch-mirror.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchApiData();
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchApiData() {
-    ifm.mirror('/github-activity').then((response) => {
+    mirror('/github-activity').then((response) => {
         const projects = $('.projects');
         response.forEach((project) => {
             const projectTemplate = $('template#project').innerHTML;
