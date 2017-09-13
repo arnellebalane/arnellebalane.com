@@ -11,12 +11,16 @@ const runsequence = require('run-sequence');
 
 const paths = {
     stylesheets: './static/stylesheets/**/*.css',
-    javascripts: './static/javascripts/**/*.js',
+    javascripts: [
+        './static/javascripts/regular/**/*.js',
+        './static/javascripts/sw.js'
+    ],
     images: './static/images/**/*',
     templates: './views/**/*.html',
     copy: [
         './static/fonts/**/*',
-        './static/manifest.json'
+        './static/manifest.json',
+        './static/javascripts/modules/**/*'
     ]
 };
 const buildDirectory = path.join(__dirname, 'build');
