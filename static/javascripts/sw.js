@@ -13,6 +13,7 @@ const CACHE_PATHS = [
     '/static/javascripts/modules/lib/idb-fetch-mirror.js',
     '/static/javascripts/modules/lib/utils.js',
     '/static/images/avatar.png',
+    '/static/images/avatar.webp',
     '/static/images/sprites.png',
     '/static/fonts/Luna.woff',
     '/static/fonts/OpenSansRegular.woff',

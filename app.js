@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
         '<static/javascripts/regular/main.js>; rel=preload; as=script',
         '<static/javascripts/regular/lib/idb-fetch-mirror.js>; rel=preload; as=script',
         '<static/javascripts/regular/lib/utils.js>; rel=preload; as=script',
-        '<static/images/avatar.png>; rel=preload; as=image',
+        '<static/images/avatar.webp>; rel=preload; as=image',
         '<static/images/sprites.png>; rel=preload; as=image'
     ];
     res.set('Link', pushAssets.join(', '));
