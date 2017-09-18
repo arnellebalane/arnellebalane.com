@@ -1,5 +1,5 @@
 import { $, template, element } from './lib/utils.js';
-import { mirror } from './lib/idb-fetch-mirror.js';
+import mirror from './lib/idb-fetch-mirror.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchApiData();

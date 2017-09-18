@@ -37,7 +37,7 @@ function put(key, value) {
     }));
 }
 
-export function mirror(path) {
+export default function mirror(path) {
     const fetchPromise = fetch(path)
         .then((response) => response.json())
         .then((response) => {
