@@ -50,6 +50,6 @@ const ifm = (() => {
         return get(path).then((response) => response || fetchPromise);
     }
 
-    return { mirror };
+    return mirror;
 
 })();
