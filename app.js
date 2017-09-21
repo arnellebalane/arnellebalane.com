@@ -37,6 +37,9 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/github', require('./lib/github/routes'));
+app.use('/amp', require('./lib/amp/routes'));
+
 app.get('/', (req, res) => {
     const pushAssets = [
         '<static/stylesheets/main.css>; rel=preload; as=style',
@@ -45,31 +48,6 @@ app.get('/', (req, res) => {
     ];
     res.set('Link', pushAssets.join(', '));
     res.render('index.html');
-});
-
-app.get('/github-activity', (req, res) => {
-    fetchRepositoriesActivity().then((repositories) => {
-        const recentActiveRepos = repositories.slice(0, 3).map((repository) => ({
-            name: repository.name,
-            description: repository.description,
-            url: repository.html_url
-        }))
-        res.json(recentActiveRepos);
-    });
-});
-
-// AMP Route Definitions
-app.get('/amp', (req, res) => {
-    fetchRepositoriesActivity(false).then((repositories) => {
-        const context = {
-            projects: repositories.slice(0, 3).map((repository) => ({
-                name: repository.name,
-                description: repository.description,
-                url: repository.html_url
-            }))
-        };
-        res.render('amp/index.html', context);
-    });
 });
 
 module.exports = app;

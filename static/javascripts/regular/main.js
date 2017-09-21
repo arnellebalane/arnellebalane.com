@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchApiData() {
-    ifm('/github-activity').then((response) => {
+    ifm('/github').then((response) => {
         const projects = $('.projects');
         response.forEach((project) => {
             const projectTemplate = $('template#project').innerHTML;
