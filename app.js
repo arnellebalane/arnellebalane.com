@@ -7,8 +7,6 @@ const morgan = require('morgan');
 const favicon = require('serve-favicon');
 const config = require('./config');
 
-const { fetchRepositoriesActivity } = require('./lib/github');
-
 const app = express();
 
 const VIEWS_PATH = config.get('NODE_ENV') === 'production'
