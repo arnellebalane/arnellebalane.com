@@ -15,6 +15,7 @@
     "consolidate": "^0.14.5",
     "date-fns": "^1.28.5",
     "express": "^4.15.3",
+    "firebase-admin": "^5.2.1",
     "helmet": "^3.6.1",
     "morgan": "^1.8.2",
     "nconf": "^0.8.4",
