@@ -38,6 +38,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/github', require('./lib/github/routes'));
+app.use('/medium', require('./lib/medium/routes'));
 app.use('/amp', require('./lib/amp/routes'));
 
 app.get('/', (req, res) => {
