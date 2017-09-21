@@ -20,11 +20,9 @@ function fetchAndRenderGithubData() {
 
 function fetchAndRenderMediumData() {
     mirror('/medium').then((response) => {
-        const post = $('.latest-post');
-        post.cite = response.url;
-        $('a', post).href = response.url;
-        $('a', post).textContent = response.title;
-        $('time', post).textContent = response.date;
+        const latestPostTemplate = $('template#latest-post').innerHTML;
+        const rendered = element(template(latestPostTemplate, response));
+        $('.latest-post-placeholder').replaceWith(rendered);
     });
 }
 
