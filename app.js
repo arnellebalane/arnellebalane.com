@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const bodyparser = require('body-parser');
 const consolidate = require('consolidate');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -27,6 +28,7 @@ app.set('views', VIEWS_PATH);
 
 app.use(helmet());
 app.use(morgan('dev'));
+app.use(bodyparser.json());
 app.use(favicon(FAVICON_PATH));
 app.use('/static', express.static(STATIC_PATH));
 app.use('/sw.js', express.static(SERVICE_WORKER_PATH));
