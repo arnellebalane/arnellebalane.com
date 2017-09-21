@@ -2,11 +2,12 @@ import { $, template, element } from './lib/utils.js';
 import mirror from './lib/idb-fetch-mirror.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchApiData();
+    fetchAndRenderGithubData();
+    fetchAndRenderMediumData();
     registerServiceWorker();
 });
 
-function fetchApiData() {
+function fetchAndRenderGithubData() {
     mirror('/github').then((response) => {
         const projects = $('.projects');
         response.forEach((project) => {
@@ -14,6 +15,16 @@ function fetchApiData() {
             const rendered = element(template(projectTemplate, project));
             projects.appendChild(rendered);
         });
+    });
+}
+
+function fetchAndRenderMediumData() {
+    mirror('/medium').then((response) => {
+        const post = $('.latest-post');
+        post.cite = response.url;
+        $('a', post).href = response.url;
+        $('a', post).textContent = response.title;
+        $('time', post).textContent = response.date;
     });
 }
 
