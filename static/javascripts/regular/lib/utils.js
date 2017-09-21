@@ -12,7 +12,7 @@ function template(tmpl, context = {}) {
             const pattern = new RegExp(`{{\\s*#${key}\\s*}}[\\s\\S]+?{{\\s*/${key}\\s*}}`, 'm');
             rendered = rendered.replace(pattern, '');
         }
-        const pattern = new RegExp(`{{\\s*${key}\\s*}}`);
+        const pattern = new RegExp(`{{\\s*${key}\\s*}}`, 'g');
         return rendered.replace(pattern, value);
     }, tmpl);
 }
