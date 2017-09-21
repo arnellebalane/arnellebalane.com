@@ -319,11 +319,9 @@
 
             <p>This is the last thing that I posted in there:</p>
 
-            <blockquote cite="https://blog.arnellebalane.com/introduction-to-the-shape-detection-api-e07425396861">
-                <a href="https://blog.arnellebalane.com/the-credential-management-api-7eb5650d23ca" target="_blank" rel="noopener">
-                    The Credential Management API
-                </a>
-                <time>August 27, 2017</time>
+            <blockquote cite="{{ latestPost.url }}">
+                <a href="{{ latestPost.url }}" target="_blank" rel="noopener">{{ latestPost.title }}</a>
+                <time>{{ latestPost.date }}</time>
             </blockquote>
 
             <div class="separator"></div>
