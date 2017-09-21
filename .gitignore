@@ -1,5 +1,6 @@
 node_modules
 secrets.json
 process.json
+firebase-service-account.json
 .DS_Store
 build
