@@ -11,6 +11,7 @@
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.1",
     "consolidate": "^0.14.5",
     "date-fns": "^1.28.5",
     "express": "^4.15.3",
