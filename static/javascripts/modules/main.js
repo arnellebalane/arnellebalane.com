@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchApiData() {
-    mirror('/github-activity').then((response) => {
+    mirror('/github').then((response) => {
         const projects = $('.projects');
         response.forEach((project) => {
             const projectTemplate = $('template#project').innerHTML;
