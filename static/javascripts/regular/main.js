@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchAndRenderGithubData();
     fetchAndRenderMediumData();
     registerServiceWorker();
+    enablePushNotificationsSubscriptions();
 });
 
 function fetchAndRenderGithubData() {

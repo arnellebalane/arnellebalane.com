@@ -32,6 +32,7 @@ function enableUnsubscribe() {
 
 function handleSubscribed(subscription) {
     subscribedStatus.classList.remove('hidden');
+    unsubscribedStatus.classList.add('hidden');
     if (subscription) {
         // TODO: Send subscription details to server
     }
@@ -39,6 +40,7 @@ function handleSubscribed(subscription) {
 
 function handleUnsubscribed() {
     unsubscribedStatus.classList.remove('hidden');
+    subscribedStatus.classList.add('hidden');
 }
 
 export default function enablePushNotificationsSubscriptions() {
@@ -46,6 +48,7 @@ export default function enablePushNotificationsSubscriptions() {
         navigator.serviceWorker.ready.then((registration) => {
             currentRegistration = registration;
             registration.pushManager.getSubscription().then((subscription) => {
+                console.log(subscription);
                 if (subscription) {
                     handleSubscribed();
                 } else {
