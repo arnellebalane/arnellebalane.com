@@ -25,7 +25,8 @@ function enableUnsubscribe() {
         e.preventDefault();
 
         currentRegistration.pushManager.getSubscription()
-            .then((subscription) => subscription.unsubscribe())
+            .then((subscription) =>
+                subscription.unsubscribe().then(() => subscription))
             .then(handleUnsubscribed);
     });
 }
@@ -34,13 +35,16 @@ function handleSubscribed(subscription) {
     subscribedStatus.classList.remove('hidden');
     unsubscribedStatus.classList.add('hidden');
     if (subscription) {
-        // TODO: Send subscription details to server
+        // TODO: Save subscription details to server
     }
 }
 
-function handleUnsubscribed() {
+function handleUnsubscribed(subscription) {
     unsubscribedStatus.classList.remove('hidden');
     subscribedStatus.classList.add('hidden');
+    if (subscription) {
+        // TODO: Remove subscription details from server.
+    }
 }
 
 export default function enablePushNotificationsSubscriptions() {
