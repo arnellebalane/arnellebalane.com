@@ -1,10 +1,12 @@
 import { $, template, element } from './lib/utils.js';
 import mirror from './lib/idb-fetch-mirror.js';
+import enablePushNotificationsSubscriptions from './lib/push-notifications.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndRenderGithubData();
     fetchAndRenderMediumData();
     registerServiceWorker();
+    enablePushNotificationsSubscriptions();
 });
 
 function fetchAndRenderGithubData() {

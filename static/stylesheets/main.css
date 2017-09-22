@@ -78,6 +78,10 @@ p a:focus {
     height: 1.6em;
 }
 
+.hidden {
+    display: none !important;
+}
+
 
 /** Header **/
 
