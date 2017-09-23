@@ -173,6 +173,16 @@ p a:focus {
 
 /** Blog **/
 
+.subscribed a {
+    text-shadow: none;
+    color: #aaa;
+}
+
+.subscribed a:hover,
+.subscribed a:focus {
+    background-color: #eee;
+}
+
 blockquote {
     padding: 0 4rem;
     margin: 1rem 0;
