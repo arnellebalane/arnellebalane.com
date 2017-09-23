@@ -53,38 +53,35 @@ self.addEventListener('fetch', (e) => {
 
 self.addEventListener('push', (e) => {
     const notification = e.data ? e.data.json() : {
-        title: 'Hello there!',
-        body: 'It\'s me, Arnelle!',
-        icon: 'static/images/icon-144.png'
+        title: 'Arnelle posted a new article',
+        body: 'Tap to check it out',
+        icon: 'static/images/icon-144.png',
+        data: 'https://arnellebalane.com/'
     };
     e.waitUntil(
         self.registration.showNotification(notification.title, {
             body: notification.body,
             icon: notification.icon,
-            tag: 'arnelle-balane'
+            tag: 'blog-post'
         })
     );
 });
 
 self.addEventListener('notificationclick', (e) => {
-    const options = { tag: 'arnelle-balane' };
+    e.notification.close();
     e.waitUntil(
-        self.registration.getNotifications(options)
-            .then((notifications) => notifications.forEach((notification) => (
-                notification.close()
-            )))
-            .then(() => self.clients.matchAll({
-                includeControlled: true,
-                type: 'window'
-            }))
-            .then((clients) => {
-                if (clients.length > 0) {
-                    clients[0].navigate('/');
-                    clients[0].focus()
-                } else {
-                    self.clients.openWindow('/');
-                }
-            })
-            .catch(console.error)
+        self.clients.matchAll({
+            includeControlled: true,
+            type: window
+        })
+        .then((clients) => {
+            if (clients.length > 0) {
+                clients[0].navigate(e.notification.data);
+                clients[0].focus()
+            } else {
+                self.clients.openWindow(e.notification.data);
+            }
+        })
+        .catch(console.error)
     );
 });
