@@ -23,6 +23,7 @@
     "request": "^2.81.0",
     "serve-favicon": "^2.4.3",
     "sw-offline-google-analytics": "^0.0.25",
+    "web-push": "^3.2.3",
     "winston": "^2.3.1"
   },
   "devDependencies": {
