@@ -62,6 +62,7 @@ self.addEventListener('push', (e) => {
         self.registration.showNotification(notification.title, {
             body: notification.body,
             icon: notification.icon,
+            data: notification.data,
             tag: 'blog-post'
         })
     );
