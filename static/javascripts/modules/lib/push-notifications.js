@@ -4,6 +4,8 @@ const subscribeElement = $('.unsubscribed a');
 const unsubscribeElement = $('.subscribed a');
 const subscribedStatus = $('.subscribed');
 const unsubscribedStatus = $('.unsubscribed');
+const subscribePath = '/subscriptions/add';
+const unsubscribePath = '/subscriptions/remove';
 
 let currentRegistration;
 
@@ -35,7 +37,13 @@ function handleSubscribed(subscription) {
     subscribedStatus.classList.remove('hidden');
     unsubscribedStatus.classList.add('hidden');
     if (subscription) {
-        // TODO: Save subscription details to server
+        fetch(subscribePath, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(subscription.toJSON())
+        });
     }
 }
 
@@ -43,7 +51,13 @@ function handleUnsubscribed(subscription) {
     unsubscribedStatus.classList.remove('hidden');
     subscribedStatus.classList.add('hidden');
     if (subscription) {
-        // TODO: Remove subscription details from server.
+        fetch(unsubscribePath, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(subscription.toJSON())
+        });
     }
 }
 
