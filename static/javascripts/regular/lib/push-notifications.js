@@ -4,6 +4,8 @@ const enablePushNotificationsSubscriptions = (() => {
     const unsubscribeElement = $('.subscribed a');
     const subscribedStatus = $('.subscribed');
     const unsubscribedStatus = $('.unsubscribed');
+    const subscribePath = '/subscriptions/add';
+    const unsubscribePath = '/subscriptions/remove';
 
     let currentRegistration;
 
@@ -25,7 +27,8 @@ const enablePushNotificationsSubscriptions = (() => {
             e.preventDefault();
 
             currentRegistration.pushManager.getSubscription()
-                .then((subscription) => subscription.unsubscribe())
+                .then((subscription) =>
+                    subscription.unsubscribe().then(() => subscription))
                 .then(handleUnsubscribed);
         });
     }
@@ -34,13 +37,28 @@ const enablePushNotificationsSubscriptions = (() => {
         subscribedStatus.classList.remove('hidden');
         unsubscribedStatus.classList.add('hidden');
         if (subscription) {
-            // TODO: Send subscription details to server
+            fetch(subscribePath, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(subscription.toJSON())
+            });
         }
     }
 
-    function handleUnsubscribed() {
+    function handleUnsubscribed(subscription) {
         unsubscribedStatus.classList.remove('hidden');
         subscribedStatus.classList.add('hidden');
+        if (subscription) {
+            fetch(unsubscribePath, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(subscription.toJSON())
+            });
+        }
     }
 
     function enablePushNotificationsSubscriptions() {
@@ -48,12 +66,7 @@ const enablePushNotificationsSubscriptions = (() => {
             navigator.serviceWorker.ready.then((registration) => {
                 currentRegistration = registration;
                 registration.pushManager.getSubscription().then((subscription) => {
-                    console.log(subscription);
-                    if (subscription) {
-                        handleSubscribed();
-                    } else {
-                        handleUnsubscribed();
-                    }
+                    return subscription ? handleSubscribed() : handleUnsubscribed();
                 });
 
                 enableSubcribe();
