@@ -1,21 +1,21 @@
 @font-face {
     font-family: "Luna";
     src: url("../fonts/Luna.woff") format("woff");
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
     font-family: "Open Sans";
     font-weight: 300;
     src: url("../fonts/OpenSansLight.woff") format("woff");
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
     font-family: "Open Sans";
     font-weight: 400;
     src: url("../fonts/OpenSansRegular.woff") format("woff");
-    font-display: swap;
+    font-display: block;
 }
 
 
