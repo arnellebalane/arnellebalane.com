@@ -37,13 +37,7 @@ function handleSubscribed(subscription) {
     subscribedStatus.classList.remove('hidden');
     unsubscribedStatus.classList.add('hidden');
     if (subscription) {
-        fetch(subscribePath, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(subscription.toJSON())
-        });
+        postDataToServer(subscribePath, subscription.toJSON());
     }
 }
 
@@ -51,14 +45,18 @@ function handleUnsubscribed(subscription) {
     unsubscribedStatus.classList.remove('hidden');
     subscribedStatus.classList.add('hidden');
     if (subscription) {
-        fetch(unsubscribePath, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(subscription.toJSON())
-        });
+        postDataToServer(unsubscribePath, subscription.toJSON());
     }
+}
+
+function postDataToServer(path, data) {
+    return fetch(path, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
 }
 
 export default function enablePushNotificationsSubscriptions() {
@@ -66,12 +64,7 @@ export default function enablePushNotificationsSubscriptions() {
         navigator.serviceWorker.ready.then((registration) => {
             currentRegistration = registration;
             registration.pushManager.getSubscription().then((subscription) => {
-                console.log(subscription);
-                if (subscription) {
-                    handleSubscribed();
-                } else {
-                    handleUnsubscribed();
-                }
+                return subscription ? handleSubscribed() : handleUnsubscribed();
             });
 
             enableSubcribe();
