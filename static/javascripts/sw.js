@@ -72,7 +72,7 @@ self.addEventListener('notificationclick', (e) => {
     e.waitUntil(
         self.clients.matchAll({
             includeControlled: true,
-            type: window
+            type: 'window'
         })
         .then((clients) => {
             if (clients.length > 0) {
