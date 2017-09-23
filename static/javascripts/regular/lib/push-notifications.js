@@ -13,7 +13,7 @@ const enablePushNotificationsSubscriptions = (() => {
         subscribeElement.addEventListener('click', (e) => {
             e.preventDefault();
 
-            const applicationServerKey = 'BJeWDJWeRl6IcbvYP6Gq7W3Sur17XbZ__8j9EtBqR-pUHAZxAS5VeHfll-EWoGdl4db9pipN94Hr_OXhyJ5Fuyg';
+            const applicationServerKey = 'BLyRbV4pjlil_T2QuuzwxXdJnY_TAJpJ6v5-u9MOBbmTqwbriRaiZlMNmg9vQksT2Vs7NiHWb_1chRs4Vi7-xyk';
             const options = {
                 applicationServerKey: publicKeyToUint8Array(applicationServerKey),
                 userVisibleOnly: true
