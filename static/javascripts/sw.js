@@ -23,28 +23,28 @@ const CACHE_PATHS = [
     '/sw-offline-google-analytics.js'
 ];
 
-self.addEventListener('install', (e) => {
+addEventListener('install', (e) => {
     e.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => cache.addAll(CACHE_PATHS))
             .then(() => console.log('Assets cached for offline use'))
-            .then(() => self.skipWaiting())
+            .then(() => skipWaiting())
             .catch(console.error)
     );
 });
 
-self.addEventListener('activate', (e) => {
+addEventListener('activate', (e) => {
     e.waitUntil(
         caches.keys()
             .then((keys) => Promise.all(keys.map((key) => (
                 key === CACHE_NAME ? null : caches.delete(key)
             ))))
-            .then(() => self.clients.claim())
+            .then(() => clients.claim())
             .catch(console.error)
     );
 });
 
-self.addEventListener('fetch', (e) => {
+addEventListener('fetch', (e) => {
     e.respondWith(
         caches.open(CACHE_NAME)
             .then((cache) => cache.match(e.request))
@@ -53,7 +53,7 @@ self.addEventListener('fetch', (e) => {
     );
 });
 
-self.addEventListener('push', (e) => {
+addEventListener('push', (e) => {
     const notification = e.data ? e.data.json() : {
         title: 'Arnelle posted a new article',
         body: 'Tap to check it out',
@@ -61,7 +61,7 @@ self.addEventListener('push', (e) => {
         data: 'https://arnellebalane.com/'
     };
     e.waitUntil(
-        self.registration.showNotification(notification.title, {
+        registration.showNotification(notification.title, {
             body: notification.body,
             icon: notification.icon,
             data: notification.data,
@@ -70,11 +70,11 @@ self.addEventListener('push', (e) => {
     );
 });
 
-self.addEventListener('notificationclick', (e) => {
+addEventListener('notificationclick', (e) => {
     e.notification.close();
     e.waitUntil(
-        self.clients.matchAll({
-            includeControlled: true,
+        clients.matchAll({
+            includeUncontrolled: true,
             type: 'window'
         })
         .then((clients) => {
@@ -82,7 +82,7 @@ self.addEventListener('notificationclick', (e) => {
                 clients[0].navigate(e.notification.data);
                 clients[0].focus()
             } else {
-                self.clients.openWindow(e.notification.data);
+                clients.openWindow(e.notification.data);
             }
         })
         .catch(console.error)
