@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node bin/www",
-    "dev": "nodemon bin/www"
+    "dev": "nodemon bin/www",
+    "populate-data": "scripts/fetch-github-data.js && scripts/fetch-medium-data.js"
   },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
