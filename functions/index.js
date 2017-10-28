@@ -6,7 +6,7 @@ const database = admin.database();
 
 exports.githubDataWebhook = functions.https.onRequest((req, res) => {
     if (req.method !== 'POST') {
-        return res.sendStatus(404);
+        return res.sendStatus(405);
     }
     database.ref('data/github').once('value', (snapshot) => {
         const githubData = snapshot.val();
@@ -14,4 +14,13 @@ exports.githubDataWebhook = functions.https.onRequest((req, res) => {
         snapshot.ref.set(updatedData)
             .then(() => res.sendStatus(200));
     });
+});
+
+exports.mediumDataWebhook = functions.https.onRequest((req, res) => {
+    if (req.method !== 'POST') {
+        return res.sendStatus(405);
+    }
+    const updatedData = [req.body];
+    database.ref('data/medium').set(updatedData)
+        .then(() => res.sendStatus(200));
 });
