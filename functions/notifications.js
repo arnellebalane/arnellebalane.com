@@ -1,9 +1,8 @@
 const functions = require('firebase-functions');
-const admin = require('firebase-admin');
 const webpush = require('web-push');
+const admin = require('./admin');
 const secrets = require('./secrets.json');
 
-admin.initializeApp(functions.config().firebase);
 const database = admin.database();
 
 function getSubscriptions() {
@@ -22,7 +21,7 @@ function sendNotification(subscription, payload) {
         vapidDetails: {
             subject: 'https://arnellebalane.com/',
             publicKey: secrets.VAPID_PUBLIC_KEY,
-            privateKey: secrets.VAPID_PRIVATE_KEy
+            privateKey: secrets.VAPID_PRIVATE_KEY
         }
     });
 }
