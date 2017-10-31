@@ -71,7 +71,17 @@
 
             <p>Occasionally, I give talks and do workshops about Web-related technologies like Javascript, Firebase, or Progressive Web Apps. You can find slides I used for my previous talks in <a href="https://speakerdeck.com/arnellebalane" target="_blank" rel="noopener">Speaker Deck</a>.</p>
 
-            <p class="no-talk">Supposedly this paragraph will tell you about my upcoming talk, but I don't have one at the moment.</p>
+            <p class="upcoming-talk-placeholder loader"></p>
+            <template id="upcoming-talk">
+                {% raw %}
+                {{ #topic }}
+                <p class="upcoming-talk">I will be in {{ event }} on {{ date }} to share about {{ topic }}. See you there!</p>
+                {{ /topic }}
+                {{ ^topic }}
+                <p class="no-talk">Supposedly this paragraph will tell you about my upcoming talk, but I don't have one at the moment.</p>
+                {{ /topic }}
+                {% endraw %}
+            </template>
 
             <div class="separator"></div>
 
