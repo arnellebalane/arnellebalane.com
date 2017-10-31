@@ -3,7 +3,7 @@ export function $(selector, context = document) {
 }
 
 export function template(tmpl, context = {}) {
-    return Object.keys(context).reduce((rendered, key) => {
+    let rendered = Object.keys(context).reduce((rendered, key) => {
         const value = context[key];
         if (value) {
             const pattern = new RegExp(`{{\\s*[#/]${key}\\s*}}`, 'g');
@@ -15,6 +15,11 @@ export function template(tmpl, context = {}) {
         const pattern = new RegExp(`{{\\s*${key}\\s*}}`, 'g');
         return rendered.replace(pattern, value);
     }, tmpl);
+
+    const pattern = new RegExp(`{{\\s*#.+?\\s*}}[\\s\\S]+?{{\\s*/.+?\\s*}}`, 'm');
+    rendered = rendered.replace(pattern, '');
+
+    return rendered;
 }
 
 export function element(tmpl, stage = document.createElement('div')) {
