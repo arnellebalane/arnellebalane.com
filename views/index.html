@@ -28,9 +28,9 @@
                 <p>I'm just another Web Developer</p>
             </header>
 
-            <p>Just like other developers, I write code. They're all scattered across the Internet, but you can find most of the cool ones in my <a href="https://github.com/arnellebalane" target="_blank" rel="noopener">Github</a> profile. I love Javascript and the Web, so you'll see mostly Web-related projects where I build awesome things with different Web APIs and other tech.</p>
+            <p>Just like other developers, I write code. They're all scattered across the Internet, but you can find most of the cool ones in my <a href="https://github.com/arnellebalane" target="_blank" rel="noopener noreferer">Github</a> profile. I love Javascript and the Web, so you'll see mostly Web-related projects where I build awesome things with different Web APIs and other tech.</p>
 
-            <p>I also do frontend work, as you'll see in my <a href="https://codepen.io/arnellebalane" target="_blank" rel="noopener">Codepen</a> profile. If you want to know how I built those, you can check out my live streams and videos over at my <a href="https://www.youtube.com/channel/UC3-k6RL1rVSXzHI8IU7u3NA" target="_blank" rel="noopener">Youtube</a> and <a href="http://liveedu.tv/arnellebalane/" target="_blank" rel="noopener">LiveEdu.tv</a> channels.</p>
+            <p>I also do frontend work, as you'll see in my <a href="https://codepen.io/arnellebalane" target="_blank" rel="noopener noreferer">Codepen</a> profile. If you want to know how I built those, you can check out my live streams and videos over at my <a href="https://www.youtube.com/channel/UC3-k6RL1rVSXzHI8IU7u3NA" target="_blank" rel="noopener noreferer">Youtube</a> and <a href="http://liveedu.tv/arnellebalane/" target="_blank" rel="noopener noreferer">LiveEdu.tv</a> channels.</p>
 
             <p>Here are some things that I've worked on recently:</p>
 
@@ -38,7 +38,7 @@
             <template id="project">
                 {% raw %}
                 <li>
-                    <a class="project github" href="{{ url }}" target="_blank" rel="noopener">
+                    <a class="project github" href="{{ url }}" target="_blank" rel="noopener noreferer">
                         <p class="name">{{ name }}</p>
                         {{ #description }}
                         <p class="description">{{ description }}</p>
@@ -50,7 +50,7 @@
 
             <div class="separator"></div>
 
-            <p>I also write blog posts about random things that I learned or tried out recently. They're mostly Web stuff. If you're interested in reading some of them, you can do so at <a href="http://blog.arnellebalane.com/" target="_blank" rel="noopener">my blog</a>.</p>
+            <p>I also write blog posts about random things that I learned or tried out recently. They're mostly Web stuff. If you're interested in reading some of them, you can do so at <a href="http://blog.arnellebalane.com/" target="_blank" rel="noopener noreferer">my blog</a>.</p>
 
             <p class="unsubscribed hidden">You can <a href="#">subscribe</a> to push notifications if you want to be notified whenever I publish a new article.</p>
             <p class="subscribed hidden">You are already subscribed to push notifications and will get notified whenever I publish a new article. <a href="#">Unsubscribe</a>.</p>
@@ -61,7 +61,7 @@
             <template id="latest-post">
                 {% raw %}
                 <blockquote class="latest-post" cite="{{ url }}">
-                    <a href="{{ url }}" target="_blank" rel="noopener">{{ title }}</a>
+                    <a href="{{ url }}" target="_blank" rel="noopener noreferer">{{ title }}</a>
                     <time>{{ date }}</time>
                 </blockquote>
                 {% endraw %}
@@ -69,13 +69,13 @@
 
             <div class="separator"></div>
 
-            <p>Occasionally, I give talks and do workshops about Web-related technologies like Javascript, Firebase, or Progressive Web Apps. You can find slides I used for my previous talks in <a href="https://speakerdeck.com/arnellebalane" target="_blank" rel="noopener">Speaker Deck</a>.</p>
+            <p>Occasionally, I give talks and do workshops about Web-related technologies like Javascript, Firebase, or Progressive Web Apps. You can find slides I used for my previous talks in <a href="https://speakerdeck.com/arnellebalane" target="_blank" rel="noopener noreferer">Speaker Deck</a>.</p>
 
             <p class="upcoming-talk-placeholder loader"></p>
             <template id="upcoming-talk">
                 {% raw %}
                 {{ #topic }}
-                <p class="upcoming-talk">I will be in <a href="{{ event_url }}" rel="noopener">{{ event }}</a> on {{ date }} to share about <strong>{{ topic }}</strong>. See you there!</p>
+                <p class="upcoming-talk">I will be in <a href="{{ event_url }}" rel="noopener noreferer">{{ event }}</a> on {{ date }} to share about <strong>{{ topic }}</strong>. See you there!</p>
                 {{ /topic }}
                 {{ ^topic }}
                 <p class="no-talk">Supposedly this paragraph will tell you about my upcoming talk, but I don't have one at the moment.</p>
@@ -86,9 +86,9 @@
             <div class="separator"></div>
 
             <p>Here are other links that you might be interested in (they all lead to me):
-                <a href="https://stackoverflow.com/users/story/1343333" target="_blank" rel="noopener">StackOverflow</a>,
-                <a href="https://www.linkedin.com/in/arnellebalane/" target="_blank" rel="noopener">LinkedIn</a>,
-                <a href="https://twitter.com/arnellebalane" target="_blank" rel="noopener">Twitter</a>.
+                <a href="https://stackoverflow.com/users/story/1343333" target="_blank" rel="noopener noreferer">StackOverflow</a>,
+                <a href="https://www.linkedin.com/in/arnellebalane/" target="_blank" rel="noopener noreferer">LinkedIn</a>,
+                <a href="https://twitter.com/arnellebalane" target="_blank" rel="noopener noreferer">Twitter</a>.
             </p>
 
             <p>If there's anything that you would like to tell me, you can email me at <a href="mailto:arnellebalane@gmail.com">arnellebalane@gmail.com</a>.</p>
