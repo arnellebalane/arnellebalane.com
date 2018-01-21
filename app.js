@@ -21,7 +21,7 @@ const OFFLINE_GOOGLE_ANALYTICS_PATH = path.join(__dirname, 'node_modules',
     'sw-offline-google-analytics', 'build', 'importScripts',
     'sw-offline-google-analytics.prod.v0.0.25.js');
 const expressStaticOptions = {
-    maxage: '1h'
+    maxage: '1d'
 };
 
 app.engine('html', consolidate.nunjucks);
