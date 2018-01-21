@@ -4,7 +4,7 @@ goog.offlineGoogleAnalytics.initialize();
 const CACHE_NAME = 'arnelle-v1.13';
 const CACHE_PATHS = [
     '/',
-    '/static/manifest.json',
+    '/static/manifest.webmanifest',
     '/static/stylesheets/main.css',
     '/static/javascripts/regular/main.js',
     '/static/javascripts/regular/lib/idb-fetch-mirror.js',

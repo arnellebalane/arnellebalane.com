@@ -19,7 +19,7 @@ const paths = {
     templates: './views/**/*.html',
     copy: [
         './static/fonts/**/*',
-        './static/manifest.json',
+        './static/manifest.webmanifest',
         './static/javascripts/modules/**/*'
     ]
 };
