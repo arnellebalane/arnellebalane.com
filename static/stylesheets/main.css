@@ -67,6 +67,10 @@ p a:focus {
     background-color: var(--primary-color);
 }
 
+p strong {
+    color: #666;
+}
+
 .wrapper {
     width: calc(100vw - 6rem);
     max-width: 60rem;
