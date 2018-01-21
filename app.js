@@ -39,6 +39,7 @@ app.use((req, res, next) => {
 
 app.use('/github', require('./lib/github/routes'));
 app.use('/medium', require('./lib/medium/routes'));
+app.use('/upcoming-talk', require('./lib/talks/routes'));
 app.use('/amp', require('./lib/amp/routes'));
 app.use('/subscriptions', require('./lib/notifications/routes'));
 
