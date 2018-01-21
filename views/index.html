@@ -75,7 +75,7 @@
             <template id="upcoming-talk">
                 {% raw %}
                 {{ #topic }}
-                <p class="upcoming-talk">I will be in {{ event }} on {{ date }} to share about {{ topic }}. See you there!</p>
+                <p class="upcoming-talk">I will be in <a href="{{ event_url }}" rel="noopener">{{ event }}</a> on {{ date }} to share about <strong>{{ topic }}</strong>. See you there!</p>
                 {{ /topic }}
                 {{ ^topic }}
                 <p class="no-talk">Supposedly this paragraph will tell you about my upcoming talk, but I don't have one at the moment.</p>

@@ -5,6 +5,7 @@ import enablePushNotificationsSubscriptions from './lib/push-notifications.js';
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndRenderGithubData();
     fetchAndRenderMediumData();
+    fetchAndRenderTalkData();
     registerServiceWorker();
     enablePushNotificationsSubscriptions();
 });
@@ -26,6 +27,15 @@ function fetchAndRenderMediumData() {
         const rendered = element(template(latestPostTemplate, response));
         $('.latest-post-placeholder').replaceWith(rendered);
     });
+}
+
+function fetchAndRenderTalkData() {
+    mirror('/upcoming-talk').then((response) => {
+        response = response || {};
+        const upcomingTalkTemplate = $('template#upcoming-talk').innerHTML;
+        const rendered = element(template(upcomingTalkTemplate, response));
+        $('.upcoming-talk-placeholder').replaceWith(rendered);
+    })
 }
 
 function registerServiceWorker() {
