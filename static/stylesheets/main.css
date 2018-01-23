@@ -8,15 +8,17 @@
 @font-face {
     font-family: "Open Sans";
     font-weight: 300;
-    src: url("../fonts/OpenSansLight.woff") format("woff");
+    src: url("../fonts/OpenSansLight.subset.woff") format("woff");
     font-display: block;
+    unicode-range: U+0021-007E;
 }
 
 @font-face {
     font-family: "Open Sans";
     font-weight: 400;
-    src: url("../fonts/OpenSansRegular.woff") format("woff");
+    src: url("../fonts/OpenSansRegular.subset.woff") format("woff");
     font-display: block;
+    unicode-range: U+0021-007E;
 }
 
 
