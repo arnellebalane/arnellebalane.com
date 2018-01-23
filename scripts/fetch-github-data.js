@@ -2,7 +2,7 @@
 const request = require('request');
 const { database } = require('../lib/firebase');
 
-const username = 'arnellebalane';
+const username = process.env.GITHUB_USERNAME || 'arnellebalane';
 const endpoint = `https://api.github.com/users/${username}/repos?type=owner&sort=created`;
 
 const options = {

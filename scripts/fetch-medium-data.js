@@ -4,7 +4,7 @@ const { format } = require('date-fns');
 const { database } = require('../lib/firebase');
 const config = require('../config');
 
-const username = 'arnelle-balane';
+const username = process.env.MEDIUM_USERNAME || 'arnelle-balane';
 const endpoint = `https://medium.com/${username}/latest/`;
 
 const options = {
