@@ -9,7 +9,7 @@
 @font-face {
     font-family: "Open Sans";
     font-weight: 300;
-    src: local("Open Sans"),
+    src: local("Open Sans Light"),
         url("../fonts/OpenSansLight.subset.woff") format("woff");
     font-display: fallback;
     unicode-range: U+0021-007E;
