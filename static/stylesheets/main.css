@@ -1,7 +1,8 @@
 @font-face {
     font-family: "Luna";
-    src: url("../fonts/Luna.woff") format("woff");
+    src: url("../fonts/Luna.subset.woff") format("woff");
     font-display: block;
+    unicode-range: U+0041, U+0042, U+0061, U+0065 U+006C, U+006E, U+0072;
 }
 
 @font-face {
