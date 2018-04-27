@@ -12,7 +12,9 @@
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "0.18.0"
+  },
   "devDependencies": {
     "babel-preset-env": "1.6.1",
     "babel-register": "6.26.0",
