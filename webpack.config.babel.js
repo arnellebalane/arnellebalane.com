@@ -31,6 +31,10 @@ export default {
                 projects: require('./data/projects.json'),
                 articles: require('./data/articles.json'),
                 events: require('./data/events.json')
+            },
+            minify: {
+                collapseBooleanAttributes: true,
+                collapseWhitespace: true
             }
         }),
         new MiniCssExtractPlugin({
