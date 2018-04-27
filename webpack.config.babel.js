@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import OptimizeCssAssetsWebpackPlugin from 'optimize-css-assets-webpack-plugin';
 import PwaManifestPlugin from 'webpack-pwa-manifest';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -44,6 +45,9 @@ export default {
         }),
         new MiniCssExtractPlugin({
             filename: 'index.[hash:6].css'
+        }),
+        new OptimizeCssAssetsWebpackPlugin({
+            assetNameRegExp: /\.css$/
         }),
         new PwaManifestPlugin({
             filename: '[name].[hash:6].[ext]',
