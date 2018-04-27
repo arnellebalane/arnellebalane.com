@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import PwaManifestPlugin from 'webpack-pwa-manifest';
@@ -26,6 +27,9 @@ export default {
         } ]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'source/index.html'),
             data: {

@@ -129,5 +129,9 @@
                 <img class="avatar" src="<%= require('./images/avatar.png') %>" alt="Arnelle Balane">
             </picture>
         </div>
+
+        <% if (process.env.NODE_ENV === 'production') { %>
+        <script src='https://www.google-analytics.com/analytics.js'></script>
+        <% } %>
     </body>
 </html>
