@@ -4,6 +4,7 @@
   "description": "my personal website",
   "main": "index.js",
   "scripts": {
+    "prebuild": "rm -rf build",
     "build": "webpack",
     "build:watch": "webpack --watch"
   },
