@@ -1,4 +1,4 @@
-const dataChanger = require('./data-changer');
+const dataChanger = require('./utils/data-changer');
 
 const dataPath = 'data/projects.json';
 const endpoint = `/repos/arnellebalane/arnellebalane.com/contents/${dataPath}`;
