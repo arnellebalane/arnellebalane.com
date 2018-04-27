@@ -26,7 +26,12 @@ export default {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'source/index.html')
+            template: path.resolve(__dirname, 'source/index.html'),
+            data: {
+                projects: require('./data/projects.json'),
+                articles: require('./data/articles.json'),
+                events: require('./data/events.json')
+            }
         }),
         new MiniCssExtractPlugin({
             filename: 'index.css'

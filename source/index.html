@@ -34,12 +34,19 @@
             <p>Here are some things that I've worked on recently:</p>
 
             <ol id="projects-container" class="projects">
-                <li v-for="project in projects">
-                    <a :href="project.url" class="project github" target="_blank" rel="noopener noreferrer">
-                        <p class="name">{{ project.name }}</p>
-                        <p class="description" v-if="description">{{ project.description }}</p>
+                <% projects = htmlWebpackPlugin.options.data.projects %>
+
+                <% _.forEach(projects, function(project) { %>
+                <li>
+                    <a href="<%= project.url %>" class="project github" target="_blank" rel="noopener noreferrer">
+                        <p class="name"><%= project.name %></p>
+
+                        <% if (project.description) { %>
+                        <p class="description"><%= project.description %></p>
+                        <% } %>
                     </a>
                 </li>
+                <% }); %>
             </ol>
 
             <div class="separator"></div>
@@ -53,8 +60,10 @@
             <p>This is the latest post that I published:</p>
 
             <blockquote id="articles-container" class="latest-article">
-                <a :href="article.url" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
-                <time>{{ article.date }}</time>
+                <% article = htmlWebpackPlugin.options.data.articles[0] %>
+
+                <a href="<%= article.url %>" target="_blank" rel="noopener noreferrer"><%= article.title %></a>
+                <time><%= article.date %></time>
             </blockquote>
 
             <div class="separator"></div>
@@ -66,15 +75,19 @@
             </p>
 
             <div id="events-container" class="upcoming-event">
+                <%= event = htmlWebpackPlugin.options.data.events[0] %>
+
+                <% if (event) { %>
                 <p v-if="event" class="upcoming-talk">
-                    I will be in <a :href="event.url" target="_blank" rel="noopener noreferrer">{{ event.name }}</a>
-                    on {{ event.date }} to share about <strong>{{ event.topic }}</strong>.
+                    I will be in <a href="<%= event.url %>" target="_blank" rel="noopener noreferrer"><%= event.name %></a>
+                    on <%= event.date %> to share about <strong><%= event.topic %></strong>.
                     See you there!
                 </p>
-
+                <% } else { %>
                 <p v-else class="no-upcoming-talk">
                     Supposedly this paragraph will tell you about my upcoming talk, but I don't have one at the moment.
                 </p>
+                <% } %>
             </div>
 
             <p>Here are other links that you might be interested in (they all lead to me):
