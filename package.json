@@ -2,7 +2,7 @@
   "name": "arnellebalane.com",
   "version": "1.0.0",
   "description": "my personal website",
-  "main": "app.js",
+  "main": "index.js",
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
   "license": "MIT"
