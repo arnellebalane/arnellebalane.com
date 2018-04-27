@@ -1,0 +1,17 @@
+[
+  {
+    "name": "arnellebalane/github-file-icon",
+    "description": "🌈 🗂 A browser extension which gives different filetypes different icons on GitHub, Gitlab, Bitbucket, gitea and gogs.",
+    "url": "https://github.com/arnellebalane/github-file-icon"
+  },
+  {
+    "name": "arnellebalane/parrot-airborne",
+    "description": "Control Parrot Airborne minidrones using the Web Bluetooth API",
+    "url": "https://github.com/arnellebalane/parrot-airborne"
+  },
+  {
+    "name": "arnellebalane/intersection-observer-api-demo",
+    "description": "Demo application using the Intersection Observer API",
+    "url": "https://github.com/arnellebalane/intersection-observer-api-demo"
+  }
+]

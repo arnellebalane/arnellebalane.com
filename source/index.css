@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Luna";
     src: local("Luna"),
-        url("../fonts/Luna.subset.woff") format("woff");
+        url("fonts/Luna.subset.woff") format("woff");
     font-display: swap;
     unicode-range: U+0041, U+0042, U+0061, U+0065 U+006C, U+006E, U+0072;
 }
@@ -10,7 +10,7 @@
     font-family: "Open Sans";
     font-weight: 300;
     src: local("Open Sans Light"),
-        url("../fonts/OpenSansLight.subset.woff") format("woff");
+        url("fonts/OpenSansLight.subset.woff") format("woff");
     font-display: fallback;
     unicode-range: U+0021-007E;
 }
@@ -19,7 +19,7 @@
     font-family: "Open Sans";
     font-weight: 400;
     src: local("Open Sans"),
-        url("../fonts/OpenSansRegular.subset.woff") format("woff");
+        url("fonts/OpenSansRegular.subset.woff") format("woff");
     font-display: fallback;
     unicode-range: U+0021-007E;
 }
@@ -144,7 +144,7 @@ p strong {
     position: absolute;
     top: calc(50% - 3.2rem / 2);
     left: 0;
-    background: url("../images/sprites.png") no-repeat;
+    background: url("images/sprites.png") no-repeat;
     opacity: 0.25;
 }
 
@@ -245,13 +245,13 @@ blockquote time {
 
 /** Talk **/
 
-.no-talk {
+.no-upcoming-talk {
     padding: 0 8rem 0 4rem;
     font-size: 0.8em;
 }
 
 @media all and (max-width: 500px) {
-    .no-talk {
+    .no-upcoming-talk {
         padding: 0;
     }
 }
@@ -269,41 +269,4 @@ blockquote time {
     height: 8rem;
     margin: 2.4rem auto 0 auto;
     border-radius: 50%;
-}
-
-
-
-/** Utilities **/
-
-.loader:empty {
-    height: 1.5em;
-    position: relative;
-}
-
-.loader:empty::before {
-    content: "";
-    width: 1.5em;
-    height: 1.5em;
-    border: 3px solid var(--primary-color);
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    position: absolute;
-    top: calc(50% - 1.5em / 2);
-    left: calc(50% - 1.5em / 2);
-    animation: rotate 500ms linear infinite;
-}
-
-
-
-/** Animation Definitions **/
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
 }

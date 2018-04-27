@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffeb3b">
+        <meta name="description" content="Personal website of Arnelle Balane">
+
+        <meta property="fb:app_id" content="">
+        <meta property="og:title" content="Arnelle Balane" itemprop="name">
+        <meta property="og:description" content="Just another Web developer's personal website." itemprop="description">
+        <meta property="og:image" content="https://arnellebalane.com<%= require('./images/icon-200.png') %>">
+        <meta property="og:url" content="https://arnellebalane.com/">
+        <meta property="og:type" content="website">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@arnellebalane">
+        <meta name="twitter:title" content="Arnelle Balane">
+        <meta name="twitter:description" content="Just another Web developer's personal website.">
+        <meta name="twitter:image" content="https://arnellebalane.com<%= require('./images/icon-200.png') %>">
+        <meta name="twitter:image:alt" content="Arnelle Balane">
+
+        <link itemprop="image" href="https://arnellebalane.com<%= require('./images/icon-200.png') %>">
+        <link rel="icon" href="<%= require('./images/icon-16.png') %>">
+
+        <title>Arnelle Balane</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header class="site-header">
+                <p>Hello, my name is</p>
+                <h1 class="title">Arnelle Balane</h1>
+                <p>I'm just another Web Developer</p>
+            </header>
+
+            <p>
+                Just like other developers, I write code. They're all scattered across the Internet,
+                but you can find most of the cool ones in my
+                <a href="https://github.com/arnellebalane" target="_blank" rel="noopener noreferrer">Github</a> profile.
+                I love Javascript and the Web, so you'll see mostly Web-related projects where I build awesome
+                things with different Web APIs and other tech.
+            </p>
+
+            <p>
+                I also do frontend work, as you'll see in my
+                <a href="https://codepen.io/arnellebalane" target="_blank" rel="noopener noreferrer">Codepen</a> profile.
+                If you want to know how I built those, you can check out my live streams and videos over at my
+                <a href="https://www.youtube.com/channel/UC3-k6RL1rVSXzHI8IU7u3NA" target="_blank" rel="noopener noreferrer">Youtube</a> and
+                <a href="http://liveedu.tv/arnellebalane/" target="_blank" rel="noopener noreferrer">LiveEdu.tv</a> channels.
+            </p>
+
+            <p>Here are some things that I've worked on recently:</p>
+
+            <ol id="projects-container" class="projects">
+                <% projects = htmlWebpackPlugin.options.data.projects %>
+
+                <% _.forEach(projects, function(project) { %>
+                <li>
+                    <a href="<%= project.url %>" class="project github" target="_blank" rel="noopener noreferrer">
+                        <p class="name"><%= project.name %></p>
+
+                        <% if (project.description) { %>
+                        <p class="description"><%= project.description %></p>
+                        <% } %>
+                    </a>
+                </li>
+                <% }); %>
+            </ol>
+
+            <div class="separator"></div>
+
+            <p>
+                I also write blog posts about random things that I learned or tried out recently. They're mostly Web stuff.
+                If you're interested in reading some of them, you can do so at
+                <a href="http://blog.arnellebalane.com/" target="_blank" rel="noopener noreferrer">my blog</a>.
+            </p>
+
+            <p>This is the latest post that I published:</p>
+
+            <blockquote id="articles-container" class="latest-article">
+                <% article = htmlWebpackPlugin.options.data.articles[0] %>
+
+                <a href="<%= article.url %>" target="_blank" rel="noopener noreferrer"><%= article.title %></a>
+                <time><%= article.date %></time>
+            </blockquote>
+
+            <div class="separator"></div>
+
+            <p>
+                Occasionally, I give talks and do workshops about Web-related technologies like Javascript,
+                Firebase, or Progressive Web Apps. You can find slides I used for my previous talks in
+                <a href="https://speakerdeck.com/arnellebalane" target="_blank" rel="noopener noreferrer">Speaker Deck</a>.
+            </p>
+
+            <div id="events-container" class="upcoming-event">
+                <%= event = htmlWebpackPlugin.options.data.events[0] %>
+
+                <% if (event) { %>
+                <p v-if="event" class="upcoming-talk">
+                    I will be in <a href="<%= event.url %>" target="_blank" rel="noopener noreferrer"><%= event.name %></a>
+                    on <%= event.date %> to share about <strong><%= event.topic %></strong>.
+                    See you there!
+                </p>
+                <% } else { %>
+                <p v-else class="no-upcoming-talk">
+                    Supposedly this paragraph will tell you about my upcoming talk, but I don't have one at the moment.
+                </p>
+                <% } %>
+            </div>
+
+            <p>Here are other links that you might be interested in (they all lead to me):
+                <a href="https://stackoverflow.com/users/story/1343333" target="_blank" rel="noopener noreferrer">StackOverflow</a>,
+                <a href="https://www.linkedin.com/in/arnellebalane/" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
+                <a href="https://twitter.com/arnellebalane" target="_blank" rel="noopener noreferrer">Twitter</a>.
+            </p>
+
+            <p>
+                If there's anything that you would like to tell me, you can email me at
+                <a href="mailto:arnellebalane@gmail.com">arnellebalane@gmail.com</a>.
+            </p>
+
+            <div class="separator"></div>
+
+            <p class="avatar-label">Oh and by the way, this is what I look like:</p>
+
+            <picture class="avatar">
+                <source srcset="<%= require('./images/avatar.webp') %>" type="image/webp">
+                <img class="avatar" src="<%= require('./images/avatar.png') %>" alt="Arnelle Balane">
+            </picture>
+        </div>
+
+        <% if (process.env.NODE_ENV === 'production') { %>
+        <script src='https://www.google-analytics.com/analytics.js'></script>
+        <% } %>
+    </body>
+</html>
