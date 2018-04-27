@@ -1,5 +1,6 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -14,7 +15,7 @@ export default {
     module: {
         rules: [ {
             test: /\.css$/,
-            use: ['style-loader', 'css-loader']
+            use: [MiniCssExtractPlugin.loader, 'css-loader']
         }, {
             test: /\.(png|webp|woff2?)$/,
             loader: 'file-loader',
@@ -26,6 +27,9 @@ export default {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'source/index.html')
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'index.css'
         })
     ]
 };
