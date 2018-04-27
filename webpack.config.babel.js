@@ -11,6 +11,18 @@ export default {
         filename: 'index.bundle.js'
     },
     mode: NODE_ENV,
+    module: {
+        rules: [ {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        }, {
+            test: /\.(png|webp|woff2?)$/,
+            loader: 'file-loader',
+            options: {
+                name: '[name].[ext]'
+            }
+        } ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'source/index.html')
