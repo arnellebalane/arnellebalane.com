@@ -1,6 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import PwaManifestPlugin from 'webpack-pwa-manifest';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -39,6 +40,21 @@ export default {
         }),
         new MiniCssExtractPlugin({
             filename: 'index.[hash:6].css'
+        }),
+        new PwaManifestPlugin({
+            filename: '[name].[hash:6].[ext]',
+            name: 'Arnelle Balane',
+            short_name: 'arnelle',
+            description: 'Arnelle\'s Personal Website',
+            icons: [ {
+                src: path.resolve(__dirname, 'source/images/icon-512.png'),
+                sizes: [16, 144, 192, 200, 512]
+            } ],
+            theme_color: '#ffeb3b',
+            background_color: '#ffffff',
+            display: 'fullscreen',
+            start_url: '/',
+            scope: '/'
         })
     ]
 };
