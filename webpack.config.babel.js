@@ -9,7 +9,7 @@ export default {
     output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
-        filename: 'index.bundle.js'
+        filename: 'index.[hash:6].js'
     },
     mode: NODE_ENV,
     module: {
@@ -20,7 +20,7 @@ export default {
             test: /\.(png|webp|woff2?)$/,
             loader: 'file-loader',
             options: {
-                name: '[name].[ext]'
+                name: '[name].[hash:6].[ext]'
             }
         } ]
     },
@@ -38,7 +38,7 @@ export default {
             }
         }),
         new MiniCssExtractPlugin({
-            filename: 'index.css'
+            filename: 'index.[hash:6].css'
         })
     ]
 };
