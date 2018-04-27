@@ -6,7 +6,8 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "webpack",
-    "build:watch": "webpack --watch"
+    "build:watch": "webpack --watch",
+    "test": "echo 'NO TESTS YET, BUT THIS SHOULD PASS!'"
   },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
