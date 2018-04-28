@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf build",
-    "build": "webpack && netlify-lambda build functions",
+    "build": "webpack",
     "build:watch": "webpack --watch",
+    "prebuild:functions": "rm -rf build-functions",
+    "build:functions": "netlify-lambda build functions",
+    "build:all": "npm-run-all --parallel build build:functions",
     "test": "echo 'NO TESTS YET, BUT THIS SHOULD PASS!'"
   },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
