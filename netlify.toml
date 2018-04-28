@@ -1,0 +1,12 @@
+[build]
+  publish = "build"
+  command = "npm run build"
+  functions = "build-functions"
+
+[context.production.environment]
+  NODE_ENV = "production"
+  NPM_CONFIG_PRODUCTION = "false"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "production"
+  NPM_CONFIG_PRODUCTION = "false"
