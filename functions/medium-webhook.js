@@ -1,11 +1,12 @@
+const requestValidator = require('./utils/request-validator');
 const dataChanger = require('./utils/data-changer');
 
 const dataPath = 'data/articles.json';
 const endpoint = `/repos/arnellebalane/arnellebalane.com/contents/${dataPath}`;
 
 exports.handler = (event, context, callback) => {
-    if (event.httpMethod !== 'POST') {
-        return callback(null, { statusCode: 404 });
+    if (!requestValidator(event)) {
+        return callback(null, { statusCode: 400 });
     }
 
     dataChanger.getData(endpoint).then(({ content, sha }) => {
