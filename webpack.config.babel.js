@@ -4,17 +4,21 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCssAssetsWebpackPlugin from 'optimize-css-assets-webpack-plugin';
 import PwaManifestPlugin from 'webpack-pwa-manifest';
+import WorkboxWebpackPlugin from 'workbox-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 export default {
     entry: path.resolve(__dirname, 'source/index.js'),
+
     output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
         filename: 'index.[hash:6].js'
     },
+
     mode: NODE_ENV,
+
     module: {
         rules: [ {
             test: /\.css$/,
@@ -27,10 +31,12 @@ export default {
             }
         } ]
     },
+
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
         }),
+
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'source/index.html'),
             data: {
@@ -43,12 +49,15 @@ export default {
                 collapseWhitespace: true
             }
         }),
+
         new MiniCssExtractPlugin({
             filename: 'index.[hash:6].css'
         }),
+
         new OptimizeCssAssetsWebpackPlugin({
             assetNameRegExp: /\.css$/
         }),
+
         new PwaManifestPlugin({
             filename: '[name].[hash:6].[ext]',
             name: 'Arnelle Balane',
@@ -63,6 +72,12 @@ export default {
             display: 'fullscreen',
             start_url: '/',
             scope: '/'
+        }),
+
+        new WorkboxWebpackPlugin.GenerateSW({
+            swDest: 'sw.js',
+            skipWaiting: true,
+            clientsClaim: true
         })
     ]
 };
