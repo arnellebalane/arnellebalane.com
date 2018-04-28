@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf build",
-    "build": "webpack",
+    "build": "webpack && netlify-lambda build functions",
     "build:watch": "webpack --watch",
     "test": "echo 'NO TESTS YET, BUT THIS SHOULD PASS!'"
   },
