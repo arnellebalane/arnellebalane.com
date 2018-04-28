@@ -6,18 +6,17 @@ axios.defaults.headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
 const dataPath = 'data/articles.json';
 const endpoint = `/repos/arnellebalane/arnellebalane.com/contents/${dataPath}`;
 
-async function getData(endpoint) {
-    const { data } = await axios.get(endpoint);
-    const content = Buffer.from(data.content, 'base64').toString('utf8');
-
-    return {
-        sha: data.sha,
-        content: JSON.parse(content)
-    };
+function getData(endpoint) {
+    return axios.get(endpoint)
+        .then(response => response.data)
+        .then(data => ({
+            content: Buffer.from(data.content, 'base64').toString('utf8'),
+            sha: data.sha
+        }));
 }
 
-async function setData(endpoint, options) {
-    await axios.put(endpoint, {
+function setData(endpoint, options) {
+    return axios.put(endpoint, {
         path: options.path,
         message: options.message,
         content: Buffer.from(options.content).toString('base64'),
@@ -34,17 +33,16 @@ exports.handler = async (event, context, callback) => {
         return callback(null, { statusCode: 404 });
     }
 
-    const body = JSON.parse(event.body);
-    const { sha } = await getData(endpoint);
+    getData(endpoint).then(({ content, sha }) => {
+        const body = JSON.parse(event.body);
+        const updated = [ body ];
+        const options = {
+            path: dataPath,
+            message: 'Updated articles.json data file',
+            content: JSON.stringify(updated),
+            sha
+        };
 
-    const updated = [ body ];
-    const options = {
-        path: dataPath,
-        message: 'Updated articles.json data file',
-        content: JSON.stringify(updated),
-        sha
-    };
-    await setData(endpoint, options);
-
-    callback(null, { statusCode: 200 });
+        return setData(endpoint, options);
+    }).then(() => callback(null, { statusCode: 200 }));
 };
