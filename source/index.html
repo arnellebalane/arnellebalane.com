@@ -29,7 +29,7 @@
             @font-face {
                 font-family: "Luna";
                 src: local("Luna"),
-                    url("fonts/Luna.subset.woff") format("woff");
+                    url("<%= require('./fonts/Luna.subset.woff') %>") format("woff");
                 font-display: swap;
                 unicode-range: U+0041, U+0042, U+0061, U+0065 U+006C, U+006E, U+0072;
             }
@@ -38,7 +38,7 @@
                 font-family: "Open Sans";
                 font-weight: 300;
                 src: local("Open Sans Light"),
-                    url("fonts/OpenSansLight.subset.woff") format("woff");
+                    url("<%= require('./fonts/OpenSansLight.subset.woff') %>") format("woff");
                 font-display: fallback;
                 unicode-range: U+0021-007E;
             }
@@ -47,7 +47,7 @@
                 font-family: "Open Sans";
                 font-weight: 400;
                 src: local("Open Sans"),
-                    url("fonts/OpenSansRegular.subset.woff") format("woff");
+                    url("<%= require('./fonts/OpenSansRegular.subset.woff') %>") format("woff");
                 font-display: fallback;
                 unicode-range: U+0021-007E;
             }
