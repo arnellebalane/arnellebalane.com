@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCssAssetsWebpackPlugin from 'optimize-css-assets-webpack-plugin';
 import PwaManifestPlugin from 'webpack-pwa-manifest';
 import WorkboxWebpackPlugin from 'workbox-webpack-plugin';
+import PreloadWebpackPlugin from 'preload-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -49,6 +50,8 @@ export default {
                 collapseWhitespace: true
             }
         }),
+
+        new PreloadWebpackPlugin(),
 
         new MiniCssExtractPlugin({
             filename: 'index.[hash].css'
