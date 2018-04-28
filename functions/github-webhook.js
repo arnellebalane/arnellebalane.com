@@ -14,7 +14,7 @@ exports.handler = (event, context, callback) => {
         const options = {
             path: dataPath,
             message: 'Updated projects.json data file',
-            content: JSON.stringify(updated),
+            content: JSON.stringify(updated, false, ' '.repeat(4)),
             sha
         };
 
