@@ -14,7 +14,7 @@ export default {
     output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
-        filename: 'index.[hash:6].js'
+        filename: 'index.[hash].js'
     },
 
     mode: NODE_ENV,
@@ -27,7 +27,7 @@ export default {
             test: /\.(png|webp|woff2?)$/,
             loader: 'file-loader',
             options: {
-                name: '[name].[hash:6].[ext]'
+                name: '[name].[hash].[ext]'
             }
         } ]
     },
@@ -51,7 +51,7 @@ export default {
         }),
 
         new MiniCssExtractPlugin({
-            filename: 'index.[hash:6].css'
+            filename: 'index.[hash].css'
         }),
 
         new OptimizeCssAssetsWebpackPlugin({
@@ -59,7 +59,7 @@ export default {
         }),
 
         new PwaManifestPlugin({
-            filename: '[name].[hash:6].[ext]',
+            filename: '[name].[hash][ext]',
             name: 'Arnelle Balane',
             short_name: 'arnelle',
             description: 'Arnelle\'s Personal Website',
