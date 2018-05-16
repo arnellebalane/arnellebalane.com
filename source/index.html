@@ -91,17 +91,17 @@
             <p>
                 Just like other developers, I write code. They're all scattered across the Internet,
                 but you can find most of the cool ones in my
-                <a href="https://github.com/arnellebalane" target="_blank" rel="noopener noreferrer">Github</a> profile.
+                <a href="https://github.com/arnellebalane" target="_blank" rel="noopener noreferrer" class="github-link">Github</a> profile.
                 I love Javascript and the Web, so you'll see mostly Web-related projects where I build awesome
                 things with different Web APIs and other tech.
             </p>
 
             <p>
                 I also do frontend work, as you'll see in my
-                <a href="https://codepen.io/arnellebalane" target="_blank" rel="noopener noreferrer">Codepen</a> profile.
+                <a href="https://codepen.io/arnellebalane" target="_blank" rel="noopener noreferrer" class="codepen-link">Codepen</a> profile.
                 If you want to know how I built those, you can check out my live streams and videos over at my
-                <a href="https://www.youtube.com/channel/UC3-k6RL1rVSXzHI8IU7u3NA" target="_blank" rel="noopener noreferrer">Youtube</a> and
-                <a href="http://liveedu.tv/arnellebalane/" target="_blank" rel="noopener noreferrer">LiveEdu.tv</a> channels.
+                <a href="https://www.youtube.com/channel/UC3-k6RL1rVSXzHI8IU7u3NA" target="_blank" rel="noopener noreferrer" class="youtube-link">Youtube</a> and
+                <a href="http://liveedu.tv/arnellebalane/" target="_blank" rel="noopener noreferrer" class="liveedu-link">LiveEdu.tv</a> channels.
             </p>
 
             <p>Here are some things that I've worked on recently:</p>
@@ -111,7 +111,7 @@
 
                 <% _.forEach(projects, function(project) { %>
                 <li>
-                    <a href="<%= project.url %>" class="project github" target="_blank" rel="noopener noreferrer">
+                    <a href="<%= project.url %>" class="project github" target="_blank" rel="noopener noreferrer" class="github-link">
                         <p class="name"><%= project.name %></p>
 
                         <% if (project.description) { %>
@@ -127,7 +127,7 @@
             <p>
                 I also write blog posts about random things that I learned or tried out recently. They're mostly Web stuff.
                 If you're interested in reading some of them, you can do so at
-                <a href="http://blog.arnellebalane.com/" target="_blank" rel="noopener noreferrer">my blog</a>.
+                <a href="http://blog.arnellebalane.com/" target="_blank" rel="noopener noreferrer" class="medium-link">my blog</a>.
             </p>
 
             <p>This is the latest post that I published:</p>
@@ -135,7 +135,7 @@
             <blockquote id="articles-container" class="latest-article">
                 <% article = htmlWebpackPlugin.options.data.articles[0] %>
 
-                <a href="<%= article.url %>" target="_blank" rel="noopener noreferrer"><%= article.title %></a>
+                <a href="<%= article.url %>" target="_blank" rel="noopener noreferrer" class="medium-link"><%= article.title %></a>
                 <time><%= article.date %></time>
             </blockquote>
 
@@ -144,7 +144,7 @@
             <p>
                 Occasionally, I give talks and do workshops about Web-related technologies like Javascript,
                 Firebase, or Progressive Web Apps. You can find slides I used for my previous talks in
-                <a href="https://speakerdeck.com/arnellebalane" target="_blank" rel="noopener noreferrer">Speaker Deck</a>.
+                <a href="https://speakerdeck.com/arnellebalane" target="_blank" rel="noopener noreferrer" class="speakerdeck-link">Speaker Deck</a>.
             </p>
 
             <div id="events-container" class="upcoming-event">
@@ -152,7 +152,7 @@
 
                 <% if (event) { %>
                 <p v-if="event" class="upcoming-talk">
-                    I will be in <a href="<%= event.url %>" target="_blank" rel="noopener noreferrer"><%= event.name %></a>
+                    I will be in <a href="<%= event.url %>" target="_blank" rel="noopener noreferrer" class="event-link"><%= event.name %></a>
                     on <%= event.date %> to share about <strong><%= event.topic %></strong>.
                     See you there!
                 </p>
@@ -164,22 +164,22 @@
             </div>
 
             <p>Here are other links that you might be interested in (they all lead to me):
-                <a href="https://stackoverflow.com/users/story/1343333" target="_blank" rel="noopener noreferrer">StackOverflow</a>,
-                <a href="https://www.linkedin.com/in/arnellebalane/" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
-                <a href="https://twitter.com/arnellebalane" target="_blank" rel="noopener noreferrer">Twitter</a>.
+                <a href="https://stackoverflow.com/users/story/1343333" target="_blank" rel="noopener noreferrer" class="stackoverflow-link">StackOverflow</a>,
+                <a href="https://www.linkedin.com/in/arnellebalane/" target="_blank" rel="noopener noreferrer" class="linkedin-link">LinkedIn</a>,
+                <a href="https://twitter.com/arnellebalane" target="_blank" rel="noopener noreferrer" class="twitter-link">Twitter</a>.
             </p>
 
             <p>
                 If there's anything that you would like to tell me, you can email me at
-                <a href="mailto:arnellebalane@gmail.com">arnellebalane@gmail.com</a>.
+                <a href="mailto:arnellebalane@gmail.com" class="email-link">arnellebalane@gmail.com</a>.
             </p>
 
             <div class="separator"></div>
 
             <p class="avatar-label">Oh and by the way, this is what I look like:</p>
 
-            <amp-img class="avatar" src="<%= require('./images/avatar.webp') %>" alt="Arnelle's Avatar" width="80" height="80">
-                <amp-img fallback class="avatar" src="<%= require('./images/avatar.png') =>" alt="Arnelle's Avatar" width="80" height="80"></amp-img>
+            <amp-img src="<%= require('./images/avatar.webp') %>" alt="Arnelle's Avatar" width="80" height="80" class="avatar">
+                <amp-img fallback src="<%= require('./images/avatar.png') =>" alt="Arnelle's Avatar" width="80" height="80" class="avatar"></amp-img>
             </amp-img>
         </div>
     </body>
