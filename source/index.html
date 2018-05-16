@@ -177,10 +177,9 @@
 
             <p class="avatar-label">Oh and by the way, this is what I look like:</p>
 
-            <picture class="avatar">
-                <source srcset="<%= require('./images/avatar.webp') %>" type="image/webp">
-                <img class="avatar" src="<%= require('./images/avatar.png') %>" alt="Arnelle Balane">
-            </picture>
+            <amp-img class="avatar" src="<%= require('./images/avatar.webp') %>" alt="Arnelle's Avatar" width="80" height="80">
+                <amp-img fallback class="avatar" src="<%= require('./images/avatar.png') =>" alt="Arnelle's Avatar" width="80" height="80"></amp-img>
+            </amp-img>
         </div>
     </body>
 </html>
