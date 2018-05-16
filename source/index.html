@@ -152,13 +152,13 @@
                 <%= event = htmlWebpackPlugin.options.data.events[0] %>
 
                 <% if (event) { %>
-                <p v-if="event" class="upcoming-talk">
+                <p class="upcoming-talk">
                     I will be in <a href="<%= event.url %>" target="_blank" rel="noopener noreferrer" class="event-link"><%= event.name %></a>
                     on <%= event.date %> to share about <strong><%= event.topic %></strong>.
                     See you there!
                 </p>
                 <% } else { %>
-                <p v-else class="no-upcoming-talk">
+                <p class="no-upcoming-talk">
                     Supposedly this paragraph will tell you about my upcoming talk, but I don't have one at the moment.
                 </p>
                 <% } %>
