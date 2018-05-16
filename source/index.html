@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffeb3b">
@@ -181,6 +182,8 @@
             <amp-img src="<%= require('./images/avatar.webp') %>" alt="Arnelle's Avatar" width="80" height="80" class="avatar">
                 <amp-img fallback src="<%= require('./images/avatar.png') =>" alt="Arnelle's Avatar" width="80" height="80" class="avatar"></amp-img>
             </amp-img>
+
+            <amp-install-serviceworker src="<%= htmlWebpackPlugin.options.baseUrl %>/sw.js"></amp-install-serviceworker>
         </div>
     </body>
 </html>
