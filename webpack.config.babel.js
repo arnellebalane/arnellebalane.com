@@ -45,6 +45,7 @@ export default {
                 articles: require('./data/articles.json'),
                 events: require('./data/events.json')
             },
+            baseUrl: process.env.BASE_URL || 'https://arnellebalane.com',
             minify: {
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true
