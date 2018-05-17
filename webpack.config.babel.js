@@ -8,6 +8,7 @@ import WorkboxWebpackPlugin from 'workbox-webpack-plugin';
 import PreloadWebpackPlugin from 'preload-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const isProdEnv = NODE_ENV === 'production';
 
 export default {
     entry: path.resolve(__dirname, 'source/index.js'),
@@ -47,9 +48,11 @@ export default {
             },
             baseUrl: process.env.BASE_URL || 'https://arnellebalane.com',
             minify: {
-                collapseBooleanAttributes: true,
-                collapseWhitespace: true
-            }
+                collapseBooleanAttributes: isProdEnv,
+                collapseWhitespace: isProdEnv,
+                minifyCSS: isProdEnv
+            },
+            chunks: []
         }),
 
         new PreloadWebpackPlugin(),
