@@ -1,5 +1,10 @@
 [
     {
+        "name": "arnellebalane/lazy-loading-example",
+        "description": " ",
+        "url": " https://github.com/arnellebalane/lazy-loading-example"
+    },
+    {
         "name": "arnellebalane/progressive-image-loading-examples",
         "description": " ",
         "url": " https://github.com/arnellebalane/progressive-image-loading-examples"
@@ -8,10 +13,5 @@
         "name": "arnellebalane/push-notification-example",
         "description": " ",
         "url": " https://github.com/arnellebalane/push-notification-example"
-    },
-    {
-        "name": "arnellebalane/samples",
-        "description": " A repo containing samples tied to new functionality in each release of Google Chrome.",
-        "url": " https://github.com/arnellebalane/samples"
     }
 ]
