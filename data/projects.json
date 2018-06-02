@@ -1,17 +1,17 @@
 [
     {
         "name": "arnellebalane/vue-intersect",
-        "description": " ",
+        "description": "VueJS plugin that reports element intersections using the IntersectionObserver API",
         "url": " https://github.com/arnellebalane/vue-intersect"
     },
     {
-        "name": "arnellebalane/scroll-inertia",
-        "description": " ",
-        "url": " https://github.com/arnellebalane/scroll-inertia"
+        "name": "arnellebalane/navigation-scroll-spy",
+        "description": "Navigation scroll spy demo using IntersectionObserver API and VueJS",
+        "url": " https://github.com/arnellebalane/navigation-scroll-spy"
     },
     {
-        "name": "arnellebalane/navigation-scroll-spy",
-        "description": " ",
-        "url": " https://github.com/arnellebalane/navigation-scroll-spy"
+        "name": "arnellebalane/vue-scrolling-card-list",
+        "description": "Scrolling card list demo using IntersectionObserver API and VueJS",
+        "url": "https://github.com/arnellebalane/vue-scrolling-card-list"
     }
 ]
