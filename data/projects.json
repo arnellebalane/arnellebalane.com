@@ -1,17 +1,17 @@
 [
     {
-        "name": "arnellebalane/lazy-loading-example",
+        "name": "arnellebalane/vue-intersect",
         "description": " ",
-        "url": " https://github.com/arnellebalane/lazy-loading-example"
+        "url": " https://github.com/arnellebalane/vue-intersect"
     },
     {
-        "name": "arnellebalane/progressive-image-loading-examples",
+        "name": "arnellebalane/scroll-inertia",
         "description": " ",
-        "url": " https://github.com/arnellebalane/progressive-image-loading-examples"
+        "url": " https://github.com/arnellebalane/scroll-inertia"
     },
     {
-        "name": "arnellebalane/push-notification-example",
+        "name": "arnellebalane/navigation-scroll-spy",
         "description": " ",
-        "url": " https://github.com/arnellebalane/push-notification-example"
+        "url": " https://github.com/arnellebalane/navigation-scroll-spy"
     }
 ]
