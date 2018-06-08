@@ -104,6 +104,30 @@ p strong {
     font-weight: 400;
 }
 
+.toggle-theme {
+    position: absolute;
+    top: 3.2rem;
+    right: 3.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: none;
+    background: url("images/sprites.png") no-repeat;
+    background-position: -6.4rem 0;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.25;
+    transition: opacity 200ms ease;
+}
+
+.toggle-theme:hover,
+.toggle-theme:focus {
+    opacity: 0.5;
+}
+
+html.dark .toggle-theme {
+    background-image: url("images/sprites-dark.png");
+}
+
 @media all and (max-width: 500px) {
     .title {
         font-size: 1.6em;
