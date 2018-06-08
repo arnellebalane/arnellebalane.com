@@ -26,7 +26,7 @@ export default {
             test: /\.css$/,
             use: [MiniCssExtractPlugin.loader, 'css-loader']
         }, {
-            test: /\.(png|webp|woff2?)$/,
+            test: /\.(jpe?g|png|webp|woff2?)$/,
             loader: 'file-loader',
             options: {
                 name: '[name].[hash].[ext]'
@@ -46,13 +46,7 @@ export default {
                 articles: require('./data/articles.json'),
                 events: require('./data/events.json')
             },
-            baseUrl: process.env.BASE_URL || 'https://arnellebalane.com',
-            minify: {
-                collapseBooleanAttributes: isProdEnv,
-                collapseWhitespace: isProdEnv,
-                minifyCSS: isProdEnv
-            },
-            chunks: []
+            baseUrl: process.env.BASE_URL || 'https://arnellebalane.com'
         }),
 
         new PreloadWebpackPlugin(),
