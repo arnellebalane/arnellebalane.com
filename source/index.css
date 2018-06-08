@@ -149,6 +149,11 @@ p strong {
     background-position: -3.2rem 0;
 }
 
+html.dark .project::before {
+    background-image: url("images/sprites-dark.png");
+    opacity: 0.5;
+}
+
 .project p {
     margin: 0;
 }
