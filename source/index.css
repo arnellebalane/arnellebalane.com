@@ -28,6 +28,8 @@ body {
     -webkit-font-smoothing: antialiased;
     color: var(--text-color);
     background-color: var(--background-color);
+    transition: 200ms ease-out;
+    transition-property: background-color, border-color;
 }
 
 a,
