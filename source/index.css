@@ -7,17 +7,29 @@
 
 html {
     --primary-color: #ffeb3b;
+    --border-color: var(--primary-color);
+    --text-color: #333;
+    --background-color: #fff;
 
     font-size: 62.5%;
 }
 
+html.dark {
+    --border-color: #ccc;
+    --text-color: #ccc;
+    --background-color: #181818;
+}
+
 body {
     min-height: 100vh;
-    border: 1rem solid var(--primary-color);
+    border: 1rem solid var(--border-color);
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
     -webkit-font-smoothing: antialiased;
-    color: #333;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: 200ms ease-out;
+    transition-property: background-color, border-color;
 }
 
 a,
@@ -44,6 +56,16 @@ p a:hover,
 p a:focus {
     position: relative;
     background-color: var(--primary-color);
+}
+
+html.dark p a {
+    text-shadow: none;
+    color: var(--primary-color);
+}
+
+html.dark p a:hover,
+html.dark p a:focus {
+    color: var(--background-color);
 }
 
 p strong {
@@ -82,6 +104,30 @@ p strong {
     font-family: "Luna", sans-serif;
     font-size: 2.4em;
     font-weight: 400;
+}
+
+.toggle-theme {
+    position: absolute;
+    top: 3.2rem;
+    right: 3.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: none;
+    background: url("images/sprites.png") no-repeat;
+    background-position: -6.4rem 0;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.25;
+    transition: opacity 200ms ease;
+}
+
+.toggle-theme:hover,
+.toggle-theme:focus {
+    opacity: 0.5;
+}
+
+html.dark .toggle-theme {
+    background-image: url("images/sprites-dark.png");
 }
 
 @media all and (max-width: 500px) {
@@ -129,6 +175,11 @@ p strong {
     background-position: -3.2rem 0;
 }
 
+html.dark .project::before {
+    background-image: url("images/sprites-dark.png");
+    opacity: 0.5;
+}
+
 .project p {
     margin: 0;
 }
@@ -145,6 +196,11 @@ p strong {
 .project:focus .name {
     display: inline-block;
     background-color: var(--primary-color);
+}
+
+html.dark .project:hover .name,
+html.dark .project:focus .name {
+    color: var(--background-color);
 }
 
 @media all and (max-width: 500px) {
@@ -182,6 +238,11 @@ blockquote a {
 blockquote a:hover,
 blockquote a:focus {
     background-color: var(--primary-color);
+}
+
+html.dark blockquote a:hover,
+html.dark blockquote a:focus {
+    color: var(--background-color);
 }
 
 blockquote a::before,
