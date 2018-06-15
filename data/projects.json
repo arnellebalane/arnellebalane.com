@@ -1,5 +1,10 @@
 [
     {
+        "name": "arnellebalane/coffeeshops",
+        "description": " An app that shows nearby coffeeshops on a map",
+        "url": " https://github.com/arnellebalane/coffeeshops"
+    },
+    {
         "name": "arnellebalane/share-your-profile-widget",
         "description": " ",
         "url": " https://github.com/arnellebalane/share-your-profile-widget"
@@ -8,10 +13,5 @@
         "name": "arnellebalane/vue-parcel",
         "description": " A vue-cli template for a VueJS project that's bundled using Parcel",
         "url": " https://github.com/arnellebalane/vue-parcel"
-    },
-    {
-        "name": "arnellebalane/search-categories-interaction",
-        "description": " ",
-        "url": " https://github.com/arnellebalane/search-categories-interaction"
     }
 ]
