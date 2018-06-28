@@ -1,17 +1,17 @@
 [
     {
-        "name": "arnellebalane/share-your-profile-widget",
-        "description": " ",
-        "url": " https://github.com/arnellebalane/share-your-profile-widget"
+        "name": "arnellebalane/contained-position-fixed",
+        "description": " CSS Containment Property Demo",
+        "url": " https://github.com/arnellebalane/contained-position-fixed"
     },
     {
-        "name": "arnellebalane/vue-parcel",
-        "description": " A vue-cli template for a VueJS project that's bundled using Parcel",
-        "url": " https://github.com/arnellebalane/vue-parcel"
+        "name": "arnellebalane/hubblesite-graphql",
+        "description": " A GraphQL wrapper to the HubbleSite API",
+        "url": " https://github.com/arnellebalane/hubblesite-graphql"
     },
     {
-        "name": "arnellebalane/search-categories-interaction",
-        "description": " ",
-        "url": " https://github.com/arnellebalane/search-categories-interaction"
+        "name": "arnellebalane/websockets",
+        "description": " A socket.io-like WebSocket server and client library on top of `ws`",
+        "url": " https://github.com/arnellebalane/websockets"
     }
 ]
