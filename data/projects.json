@@ -1,5 +1,10 @@
 [
     {
+        "name": "arnellebalane/sublime-open-in-git-repository",
+        "description": " Sublime Text plugin for opening the remote git url for the current file.",
+        "url": " https://github.com/arnellebalane/sublime-open-in-git-repository"
+    },
+    {
         "name": "arnellebalane/mdi-cli",
         "description": " Generate material design icons from the command line",
         "url": " https://github.com/arnellebalane/mdi-cli"
@@ -8,10 +13,5 @@
         "name": "arnellebalane/twitter-django-vue",
         "description": " A Twitter clone application built with Django and VueJS",
         "url": " https://github.com/arnellebalane/twitter-django-vue"
-    },
-    {
-        "name": "arnellebalane/volcano-server",
-        "description": " ",
-        "url": " https://github.com/arnellebalane/volcano-server"
     }
 ]
