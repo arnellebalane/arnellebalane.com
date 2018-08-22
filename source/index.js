@@ -21,6 +21,5 @@ if (window.AmbientLightSensor) {
             html.classList.remove('dark');
         }
     });
-    // sensor.addEventListener('error', console.error);
     sensor.start();
 }

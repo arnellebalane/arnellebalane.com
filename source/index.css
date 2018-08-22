@@ -139,6 +139,7 @@ p strong {
     width: 3.2rem;
     height: 3.2rem;
     border: none;
+    font-size: 0;
     background: url("images/sprites.png") no-repeat;
     background-position: -6.4rem 0;
     cursor: pointer;
