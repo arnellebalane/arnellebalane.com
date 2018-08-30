@@ -1,5 +1,10 @@
 [
     {
+        "name": "arnellebalane/web-share-target-api-demo",
+        "description": " Web Share Target API demo application",
+        "url": " https://github.com/arnellebalane/web-share-target-api-demo"
+    },
+    {
         "name": "arnellebalane/mdi-core",
         "description": " Node module for generating Material Design icons",
         "url": " https://github.com/arnellebalane/mdi-core"
@@ -8,10 +13,5 @@
         "name": "arnellebalane/package_control_channel",
         "description": " Default channel file for Package Control. Follow the directions at:",
         "url": " https://github.com/arnellebalane/package_control_channel"
-    },
-    {
-        "name": "arnellebalane/sublime-open-in-git-repository",
-        "description": " Sublime Text plugin for opening the remote git url for the current file.",
-        "url": " https://github.com/arnellebalane/sublime-open-in-git-repository"
     }
 ]
