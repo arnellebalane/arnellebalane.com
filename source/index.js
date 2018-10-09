@@ -15,9 +15,9 @@ if (window.AmbientLightSensor) {
     const sensor = new AmbientLightSensor({ frequency: 10 });
 
     sensor.addEventListener('reading', e => {
-        if (sensor.illuminance < 25) {
+        if (sensor.illuminance < 20) {
             html.classList.add('dark');
-        } else {
+        } else if (sensor.illuminance > 30) {
             html.classList.remove('dark');
         }
     });
