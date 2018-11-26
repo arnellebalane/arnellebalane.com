@@ -1,4 +1,4 @@
-module.exports = function requestValidator(event) {
-    return event.httpMethod === 'POST'
-        && event.queryStringParameters['verify-token'] === process.env.WEBHOOK_VERIFY_TOKEN;
+module.exports = function requestValidator(e) {
+    return e.httpMethod === 'POST'
+        && e.queryStringParameters['verify-token'] === process.env.WEBHOOK_VERIFY_TOKEN;
 };

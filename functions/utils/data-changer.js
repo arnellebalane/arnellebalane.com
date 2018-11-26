@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 axios.defaults.baseURL = 'https://api.github.com';
-axios.defaults.headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+axios.defaults.headers.Authorization = `token ${process.env.GITHUB_TOKEN}`;
 
 exports.getData = function getData(endpoint) {
     return axios.get(endpoint)
