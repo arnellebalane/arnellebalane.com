@@ -11,7 +11,8 @@
     "build:static": "webpack",
     "prebuild:functions": "npm run clean:functions",
     "build:functions": "netlify-lambda build functions",
-    "build": "npm-run-all --parallel build:static build:functions"
+    "build": "npm-run-all --parallel build:static build:functions",
+    "lint:js": "eslint source/**/*.js"
   },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
@@ -45,5 +46,23 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "arnellebalane",
+      "arnellebalane/rules/plugins/unicorn"
+    ],
+    "plugins": [
+      "unicorn"
+    ],
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true
+    },
+    "globals": {
+      "AmbientLightSensor": true
+    }
   }
 }
