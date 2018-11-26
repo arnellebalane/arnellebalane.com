@@ -56,7 +56,9 @@ export default {
             }
         }),
 
-        new PreloadWebpackPlugin(),
+        new PreloadWebpackPlugin({
+            include: 'initial'
+        }),
 
         new MiniCssExtractPlugin({
             filename: 'index.[hash].css'
