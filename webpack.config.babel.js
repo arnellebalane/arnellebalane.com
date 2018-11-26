@@ -7,8 +7,11 @@ import PwaManifestPlugin from 'webpack-pwa-manifest';
 import WorkboxWebpackPlugin from 'workbox-webpack-plugin';
 import PreloadWebpackPlugin from 'preload-webpack-plugin';
 
+import projectsData from './data/projects.json';
+import articlesData from './data/articles.json';
+import eventsData from './data/events.json';
+
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const isProdEnv = NODE_ENV === 'production';
 
 export default {
     entry: path.resolve(__dirname, 'source/index.js'),
@@ -22,7 +25,7 @@ export default {
     mode: NODE_ENV,
 
     module: {
-        rules: [ {
+        rules: [{
             test: /\.css$/,
             use: [MiniCssExtractPlugin.loader, 'css-loader']
         }, {
@@ -31,7 +34,7 @@ export default {
             options: {
                 name: '[name].[hash].[ext]'
             }
-        } ]
+        }]
     },
 
     plugins: [
@@ -42,9 +45,9 @@ export default {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'source/index.html'),
             data: {
-                projects: require('./data/projects.json'),
-                articles: require('./data/articles.json'),
-                events: require('./data/events.json')
+                projects: projectsData,
+                articles: articlesData,
+                events: eventsData
             },
             baseUrl: process.env.BASE_URL || 'https://arnellebalane.com',
             minify: {
@@ -63,21 +66,23 @@ export default {
             assetNameRegExp: /\.css$/
         }),
 
+        /* eslint-disable camelcase */
         new PwaManifestPlugin({
             filename: '[name].[hash][ext]',
             name: 'Arnelle Balane',
             short_name: 'arnelle',
             description: 'Arnelle\'s Personal Website',
-            icons: [ {
+            icons: [{
                 src: path.resolve(__dirname, 'source/images/icon-512.png'),
                 sizes: [16, 144, 192, 200, 512]
-            } ],
+            }],
             theme_color: '#ffeb3b',
             background_color: '#ffffff',
             display: 'fullscreen',
             start_url: '/',
             scope: '/'
         }),
+        /* eslint-enable camelcase */
 
         new WorkboxWebpackPlugin.GenerateSW({
             swDest: 'sw.js',
