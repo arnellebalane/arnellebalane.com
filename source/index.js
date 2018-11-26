@@ -12,9 +12,9 @@ themeButton.addEventListener('click', () => {
 });
 
 if (window.AmbientLightSensor) {
-    const sensor = new AmbientLightSensor({ frequency: 10 });
+    const sensor = new AmbientLightSensor({frequency: 10});
 
-    sensor.addEventListener('reading', e => {
+    sensor.addEventListener('reading', () => {
         if (sensor.illuminance < 20) {
             html.classList.add('dark');
         } else if (sensor.illuminance > 30) {
