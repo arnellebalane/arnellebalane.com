@@ -4,15 +4,14 @@
   "description": "my personal website",
   "main": "index.js",
   "scripts": {
-    "clean": "npm-run-all --parallel prebuild prebuild:functions",
-    "prebuild": "rm -rf build",
-    "build": "webpack",
-    "build:watch": "webpack --watch",
-    "prebuild:functions": "rm -rf build-functions",
+    "clean:static": "rm -rf build",
+    "clean:functions": "rm -rf build-functions",
+    "clean": "npm-run-all --parallel clean:static clean:functions",
+    "prebuild:static": "npm run clean:static",
+    "build:static": "webpack",
+    "prebuild:functions": "npm run clean:functions",
     "build:functions": "netlify-lambda build functions",
-    "prebuild:all": "npm run clean",
-    "build:all": "npm-run-all --parallel build build:functions",
-    "test": "echo 'NO TESTS YET, BUT THIS SHOULD PASS!'"
+    "build": "npm-run-all --parallel build:static build:functions"
   },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
