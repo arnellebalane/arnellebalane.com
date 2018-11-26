@@ -6,6 +6,7 @@ import OptimizeCssAssetsWebpackPlugin from 'optimize-css-assets-webpack-plugin';
 import PwaManifestPlugin from 'webpack-pwa-manifest';
 import WorkboxWebpackPlugin from 'workbox-webpack-plugin';
 import PreloadWebpackPlugin from 'preload-webpack-plugin';
+import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin';
 
 import projectsData from './data/projects.json';
 import articlesData from './data/articles.json';
@@ -90,6 +91,16 @@ export default {
             swDest: 'sw.js',
             skipWaiting: true,
             clientsClaim: true
+        }),
+
+        new HtmlCriticalWebpackPlugin({
+            base: 'build',
+            src: 'index.html',
+            dest: 'index.html',
+            inline: true,
+            minify: true,
+            width: 375,
+            height: 800
         })
     ]
 };
