@@ -1,17 +1,17 @@
 [
     {
-        "name": "arnellebalane/stylelint-config-arnellebalane",
-        "description": " My personal Stylelint configuration",
-        "url": " https://github.com/arnellebalane/stylelint-config-arnellebalane"
-    },
-    {
-        "name": "arnellebalane/debounce",
-        "description": " Limit the rate at which a callback function is executed",
-        "url": " https://github.com/arnellebalane/debounce"
-    },
-    {
         "name": "arnellebalane/master-tab",
         "description": " Controls which tab should be the master tab when opening a page in multiple browser tabs",
         "url": " https://github.com/arnellebalane/master-tab"
+    },
+    {
+        "name": "arnellebalane/event-emitter",
+        "description": " JavaScript EventEmitter implementation",
+        "url": " https://github.com/arnellebalane/event-emitter"
+    },
+    {
+        "name": "arnellebalane/web-share-target-api-demo",
+        "description": " Web Share Target API demo application",
+        "url": " https://github.com/arnellebalane/web-share-target-api-demo"
     }
 ]
