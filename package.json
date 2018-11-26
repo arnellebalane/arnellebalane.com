@@ -13,7 +13,8 @@
     "build:functions": "netlify-lambda build functions",
     "build": "npm-run-all --parallel build:static build:functions",
     "lint:js": "eslint source/**/*.js",
-    "lint:css": "stylelint source/**/*.css"
+    "lint:css": "stylelint source/**/*.css",
+    "lint": "npm-run-all --sequential lint:js lint:css"
   },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
