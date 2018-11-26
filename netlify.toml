@@ -1,6 +1,6 @@
 [build]
   publish = "build"
-  command = "npm run build:all"
+  command = "npm run build"
   functions = "build-functions"
 
 [context.production.environment]
