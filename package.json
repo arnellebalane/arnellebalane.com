@@ -78,5 +78,14 @@
     "rules": {
       "no-descending-specificity": null
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "npm run lint:js",
+    "*.css": "npm run lint:css"
   }
 }
