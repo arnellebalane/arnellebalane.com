@@ -16,7 +16,7 @@
     "lint:css": "stylelint \"source/**/*.css\"",
     "lint": "npm-run-all --sequential lint:js lint:css",
     "serve": "webpack-dev-server --compress",
-    "lighthouse": "lighthouse-ci https://deploy-preview-$TRAVIS_PULL_REQUEST--arnellebalane.netlify.com"
+    "lighthouse": "lighthouse-ci https://deploy-preview-$TRAVIS_PULL_REQUEST--arnellebalane.netlify.com --performance=95 --pwa=100 --accessibility=100 --best-practices=100"
   },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
