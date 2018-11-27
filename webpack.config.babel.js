@@ -71,7 +71,7 @@ export default {
 
         /* eslint-disable camelcase */
         new PwaManifestPlugin({
-            filename: '[name].[hash][ext]',
+            filename: '[name].[hash].[ext]',
             name: 'Arnelle Balane',
             short_name: 'arnelle',
             description: 'Arnelle\'s Personal Website',
