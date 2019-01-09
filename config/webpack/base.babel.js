@@ -1,11 +1,10 @@
 import path from 'path';
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
+import config from '../index';
 
 const imagesRegex = /\.(png|jpe?g|gif|svg)$/;
 
 export default {
-    mode: NODE_ENV,
+    mode: config.NODE_ENV,
 
     module: {
         rules: [{
