@@ -9,7 +9,7 @@ function resolvePath(relativePath) {
 }
 
 export default merge(baseWebpackConfig, {
-    entry: '@/index.js',
+    entry: '@/index.tsx',
 
     output: {
         path: resolvePath('build'),
