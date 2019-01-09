@@ -3,8 +3,12 @@
     margin-top: 3.6rem;
 }
 
-.home p {
-    margin: 1.8rem 0;
+.home p:not(:first-child) {
+    margin-top: 1.8rem;
+}
+
+.home p:not(:last-child) {
+    margin-bottom: 1.8rem;
 }
 
 .home a {
