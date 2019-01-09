@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Avatar from '@/images/avatar.jpg';
 import style from './Navbar.css';
 
@@ -10,9 +11,9 @@ export default function Navbar(props) {
                 src={Avatar}
             />
 
-            <h1 className={style.title}>
+            <Link to="/" className={style.title}>
                 @arnellebalane
-            </h1>
+            </Link>
 
             <button className={style.menu}>
                 Toggle Menu

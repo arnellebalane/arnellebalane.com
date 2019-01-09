@@ -5,12 +5,12 @@ import Home from './pages/Home.tsx';
 
 export default function App(props) {
     return (
-        <React.Fragment>
-            <Navbar />
+        <BrowserRouter>
+            <React.Fragment>
+                <Navbar />
 
-            <BrowserRouter>
                 <Route path="/" exact component={Home} />
-            </BrowserRouter>
-        </React.Fragment>
+            </React.Fragment>
+        </BrowserRouter>
     );
 };
