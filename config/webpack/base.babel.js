@@ -9,7 +9,10 @@ export default {
     module: {
         rules: [{
             test: imagesRegex,
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+                name: '[name].[hash:6].[ext]'
+            }
         }]
     },
 
