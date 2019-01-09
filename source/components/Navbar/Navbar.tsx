@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Avatar from '@/images/avatar.jpg';
 import style from './Navbar.css';
 
