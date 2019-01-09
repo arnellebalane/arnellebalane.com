@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Header from './components/Header/Header.tsx';
 import Footer from './components/Footer/Footer.tsx';
 import Home from './pages/Home/Home.tsx';
@@ -12,7 +12,9 @@ export default function App(props) {
                 <Header />
 
                 <main className={style.content}>
-                    <Route path="/" exact component={Home} />
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                    </Switch>
                 </main>
 
                 <Footer />
