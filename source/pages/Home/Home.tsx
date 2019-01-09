@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import style from './Home.css';
 
 function link(text, href) {
     return href.startsWith('https://')
@@ -8,6 +9,7 @@ function link(text, href) {
 }
 
 export default function Home(props) {
+    const name = link('Arnelle Balane', '/');
     const articles = link('articles', '/articles');
     const projects = link('projects', '/projects')
     const github = link('GitHub', 'https://github.com/arnellebalane');
@@ -20,10 +22,9 @@ export default function Home(props) {
     const channelfix = link('ChannelFix', 'https://channelfix.com/');
 
     return (
-        <div>
+        <div className={style.home}>
             <p>
-                Hi! I'm <b>Arnelle Balane</b>, a software developer from
-                Cebu, Philippines.
+                Hi! I'm {name}, a software developer from Cebu, Philippines.
             </p>
 
             <p>
