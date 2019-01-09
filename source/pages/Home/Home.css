@@ -1,8 +1,3 @@
-.home {
-    padding: 0 2.4rem;
-    margin-top: 3.6rem;
-}
-
 .home p:not(:first-child) {
     margin-top: 1.8rem;
 }

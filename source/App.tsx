@@ -11,7 +11,9 @@ export default function App(props) {
             <div className={style.wrapper}>
                 <Navbar />
 
-                <Route path="/" exact component={Home} />
+                <main className={style.content}>
+                    <Route path="/" exact component={Home} />
+                </main>
 
                 <Footer />
             </div>
