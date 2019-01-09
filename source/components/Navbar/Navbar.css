@@ -6,6 +6,7 @@
 }
 
 .avatar {
+    display: block;
     width: 3.6rem;
     height: 3.6rem;
     border-radius: 50%;
@@ -15,6 +16,7 @@
 .title {
     font-size: 2rem;
     font-weight: 800;
+    text-decoration: none
 }
 
 .menu {

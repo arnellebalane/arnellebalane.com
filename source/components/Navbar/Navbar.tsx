@@ -6,10 +6,12 @@ import style from './Navbar.css';
 export default function Navbar(props) {
     return (
         <header className={style.header}>
-            <img
-                className={style.avatar}
-                src={Avatar}
-            />
+            <Link to="/">
+                <img
+                    className={style.avatar}
+                    src={Avatar}
+                />
+            </Link>
 
             <Link to="/" className={style.title}>
                 @arnellebalane
