@@ -33,7 +33,7 @@ export default function Home(props) {
             </p>
 
             <p>
-                You can find most of my work in my {github} and codepen} profiles,
+                You can find most of my work in my {github} and {codepen} profiles,
                 or in the {projects} page.
             </p>
 
