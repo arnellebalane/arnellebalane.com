@@ -1,6 +1,7 @@
 import path from 'path';
 import config from '../index';
 
+const javascriptRegex = /\.(js|ts|jsx|tsx)$/;
 const imagesRegex = /\.(png|jpe?g|gif|svg)$/;
 
 export default {
@@ -8,6 +9,9 @@ export default {
 
     module: {
         rules: [{
+            test: javascriptRegex,
+            loader: 'babel-loader'
+        }, {
             test: imagesRegex,
             loader: 'file-loader',
             options: {
