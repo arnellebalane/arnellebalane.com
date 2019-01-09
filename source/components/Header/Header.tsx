@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Avatar from '@/images/avatar.jpg';
-import style from './Navbar.css';
+import style from './Header.css';
 
-export default function Navbar(props) {
+export default function Header(props) {
     return (
         <header className={style.header}>
             <Link to="/">
