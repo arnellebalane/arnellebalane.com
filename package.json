@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "my personal website",
   "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config config/webpack/build.babel.js"
+  },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
   "license": "MIT",
