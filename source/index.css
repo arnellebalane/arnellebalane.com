@@ -20,6 +20,8 @@ body {
     min-height: 100vh;
     font-family: "SF Pro Display";
     font-size: 1.8rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: var(--text-color);
 }
 
