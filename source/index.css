@@ -22,3 +22,9 @@ body {
     font-size: 1.8rem;
     color: var(--text-color);
 }
+
+a,
+button {
+    font: inherit;
+    color: inherit;
+}
