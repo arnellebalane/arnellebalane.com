@@ -1,0 +1,8 @@
+.footer {
+    padding: 2.4rem;
+}
+
+.footer small {
+    font-size: 1.6rem;
+    color: var(--secondary-text-color);
+}
