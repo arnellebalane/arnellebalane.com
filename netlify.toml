@@ -1,24 +1,9 @@
 [build]
   publish = "build"
   command = "npm run build"
-  functions = "build-functions"
-
-[context.production.environment]
-  NODE_ENV = "production"
-  NPM_CONFIG_PRODUCTION = "false"
-
-[context.deploy-preview.environment]
-  NODE_ENV = "production"
-  NPM_CONFIG_PRODUCTION = "false"
 
 [[headers]]
   for = "/*"
 
   [headers.values]
     Cache-Control = "public,max-age=31536000"
-
-[[headers]]
-  for = "/sw.js"
-
-  [headers.values]
-    Cache-Control = "no-cache"
