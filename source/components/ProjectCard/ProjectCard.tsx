@@ -32,9 +32,7 @@ function ProjectCardDetail(props) {
     );
 }
 
-export default function ProjectCard(props) {
-    const project = props.project;
-
+export default function ProjectCard({project}) {
     return (
         <article className={shared.card}>
             <a

@@ -1,9 +1,7 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
-export default function RepositoryCard(props) {
-    const repository = props.repository;
-
+export default function RepositoryCard({repository}) {
     return (
         <article className={shared.card}>
             <a
