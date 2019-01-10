@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import RepositoryCard from '@/components/RepositoryCard/RepositoryCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
@@ -36,9 +35,14 @@ export default function Repositories(props) {
                 <RepositoryCard key={repository.name} repository={repository} />
             ))}
 
-            <Link className={shared.link} to="#">
+            <a
+                className={shared.link}
+                href="https://github.com/arnellebalane?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 See more repositories
-            </Link>
+            </a>
         </div>
     );
 };
