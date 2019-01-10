@@ -35,4 +35,6 @@
 
 .detailValue:not(:last-child)::after {
     content: ", ";
+    font-weight: 400;
+    text-decoration: none;
 }
