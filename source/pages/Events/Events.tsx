@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import EventCard from '@/components/EventCard/EventCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
@@ -38,6 +39,10 @@ export default function Events(props) {
             {events.map(event => (
                 <EventCard key={event.title} event={event} />
             ))}
+
+            <Link className={shared.link} to="#">
+                See older events
+            </Link>
         </div>
     );
 };
