@@ -1,4 +1,4 @@
-.article {
+.card {
     margin: 3.6rem 0;
 }
 
@@ -11,7 +11,7 @@
     font-weight: 800;
 }
 
-.datePublished {
+.subtitle {
     margin-top: 4px;
     font-size: 1.2rem;
     font-weight: 600;
@@ -19,6 +19,6 @@
     color: var(--secondary-text-color);
 }
 
-.summary {
+.content {
     margin-top: 8px;
 }
