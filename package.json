@@ -8,7 +8,7 @@
     "prebuild": "npm run clean",
     "build": "NODE_ENV=production webpack --config config/webpack/build.babel.js",
     "serve": "webpack-dev-server --config config/webpack/build.babel.js --history-api-fallback",
-    "lint": "eslint 'source/**/*.{ts,tsx,js,jsx}'"
+    "lint": "eslint '{source,config}/**/*.{ts,tsx,js,jsx}'"
   },
   "repository": "git@github.com:arnellebalane/arnellebalane.com.git",
   "author": "Arnelle Balane <arnellebalane@gmail.com>",
