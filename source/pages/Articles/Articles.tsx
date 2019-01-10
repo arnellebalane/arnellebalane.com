@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import ArticleCard from '@/components/ArticleCard/ArticleCard.tsx';
-import style from './ArticleList.css';
+import style from './Articles.css';
 
 const articles = [{
     title: 'Using the Ambient Light Sensor API to add brightness-sensitive dark mode to my website',

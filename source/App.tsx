@@ -6,7 +6,7 @@ import asyncComponent from './lib/asyncComponent.tsx'
 import style from './App.css';
 
 const Home = asyncComponent(React.lazy(() => import('./pages/Home/Home.tsx')));
-const ArticleList = asyncComponent(React.lazy(() => import('./pages/ArticleList/ArticleList.tsx')));
+const Articles = asyncComponent(React.lazy(() => import('./pages/Articles/Articles.tsx')));
 
 export default function App(props) {
     return (
@@ -17,7 +17,7 @@ export default function App(props) {
                 <main className={style.content}>
                     <Switch>
                         <Route path="/" exact component={Home} />
-                        <Route path="/articles" exact component={ArticleList} />
+                        <Route path="/articles" exact component={Articles} />
                     </Switch>
                 </main>
 
