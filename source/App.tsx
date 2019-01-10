@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {Route, Switch, withRouter} from 'react-router-dom';
 import Header from './components/Header/Header.tsx';
 import Footer from './components/Footer/Footer.tsx';
 import asyncComponent from './lib/asyncComponent.tsx'
@@ -11,8 +11,16 @@ const Projects = asyncComponent(React.lazy(() => import('./pages/Projects/Projec
 const Repositories = asyncComponent(React.lazy(() => import('./pages/Repositories/Repositories.tsx')));
 const Events = asyncComponent(React.lazy(() => import('./pages/Events/Events.tsx')));
 
-export default function App(props) {
+function App(props) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    useEffect(() => {
+        return props.history.listen(() => {
+            if (isMenuOpen) {
+                setIsMenuOpen(false);
+            }
+        });
+    });
 
     const mainContentClasses = [
         style.content,
@@ -20,25 +28,25 @@ export default function App(props) {
     ].filter(Boolean).join(' ');
 
     return (
-        <BrowserRouter>
-            <div className={style.wrapper}>
-                <Header
-                    isMenuOpen={isMenuOpen}
-                    onToggleMenu={() => setIsMenuOpen(!isMenuOpen)}
-                />
+        <div className={style.wrapper}>
+            <Header
+                isMenuOpen={isMenuOpen}
+                onToggleMenu={() => setIsMenuOpen(!isMenuOpen)}
+            />
 
-                <main className={mainContentClasses}>
-                    <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/articles" exact component={Articles} />
-                        <Route path="/projects" exact component={Projects} />
-                        <Route path="/repositories" exact component={Repositories} />
-                        <Route path="/events" exact component={Events} />
-                    </Switch>
-                </main>
+            <main className={mainContentClasses}>
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/articles" exact component={Articles} />
+                    <Route path="/projects" exact component={Projects} />
+                    <Route path="/repositories" exact component={Repositories} />
+                    <Route path="/events" exact component={Events} />
+                </Switch>
+            </main>
 
-                <Footer />
-            </div>
-        </BrowserRouter>
+            <Footer />
+        </div>
     );
 };
+
+export default withRouter(App);
