@@ -8,6 +8,7 @@ import style from './App.css';
 const Home = asyncComponent(React.lazy(() => import('./pages/Home/Home.tsx')));
 const Articles = asyncComponent(React.lazy(() => import('./pages/Articles/Articles.tsx')));
 const Projects = asyncComponent(React.lazy(() => import('./pages/Projects/Projects.tsx')));
+const Repositories = asyncComponent(React.lazy(() => import('./pages/Repositories/Repositories.tsx')));
 
 export default function App(props) {
     return (
@@ -20,6 +21,7 @@ export default function App(props) {
                         <Route path="/" exact component={Home} />
                         <Route path="/articles" exact component={Articles} />
                         <Route path="/projects" exact component={Projects} />
+                        <Route path="/repositories" exact component={Repositories} />
                     </Switch>
                 </main>
 
