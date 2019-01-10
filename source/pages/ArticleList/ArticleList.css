@@ -1,0 +1,16 @@
+.heading {
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.link {
+    font-style: italic;
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
+
+.link:hover,
+.link:focus {
+    text-decoration: underline;
+}

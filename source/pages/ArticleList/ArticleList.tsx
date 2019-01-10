@@ -1,5 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import ArticleCard from '@/components/ArticleCard/ArticleCard.tsx';
+import style from './ArticleList.css';
 
 const articles = [{
     title: 'Using the Ambient Light Sensor API to add brightness-sensitive dark mode to my website',
@@ -21,11 +23,15 @@ const articles = [{
 export default function ArticleList(props) {
     return (
         <div>
-            <h1>Articles</h1>
+            <h1 className={style.heading}>Articles</h1>
 
             {articles.map(article => (
                 <ArticleCard key={article.url} article={article} />
             ))}
+
+            <Link className={style.link} to="#">
+                See older articles
+            </Link>
         </div>
     );
 };

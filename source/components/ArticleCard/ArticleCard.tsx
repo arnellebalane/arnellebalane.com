@@ -1,20 +1,28 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import style from './ArticleCard.css';
 
 export default function ArticleCard(props) {
     const article = props.article;
 
     return (
-        <article>
-            <Link to={article.url}>
-                <h1>{article.title}</h1>
+        <article className={style.article}>
+            <Link className={style.link} to={article.url}>
+                <h1 className={style.title}>
+                    {article.title}
+                </h1>
             </Link>
 
-            <time dateTime={article.date_published}>
+            <time
+                className={style.datePublished}
+                dateTime={article.date_published}
+            >
                 {article.date_published}
             </time>
 
-            <p>{article.summary}</p>
+            <p className={style.summary}>
+                {article.summary}
+            </p>
         </article>
     );
 };
