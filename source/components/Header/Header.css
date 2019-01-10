@@ -29,7 +29,14 @@
     margin-left: auto;
     font-size: 0;
     background: center center no-repeat;
-    background-image: url("~@/images/menu.png");
     background-size: contain;
     cursor: pointer;
+}
+
+.menuOpen {
+    background-image: url("~@/images/close.png");
+}
+
+.menuClose {
+    background-image: url("~@/images/menu.png");
 }

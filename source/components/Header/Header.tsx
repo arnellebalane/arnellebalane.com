@@ -4,7 +4,12 @@ import Menu from '@/components/Menu/Menu.tsx';
 import Avatar from '@/images/avatar.jpg';
 import style from './Header.css';
 
-export default function Header(props) {
+export default function Header({isMenuOpen, onToggleMenu}) {
+    const toggleMenuClasses = [
+        style.menu,
+        isMenuOpen ? style.menuOpen : style.menuClose
+    ].join(' ');
+
     return (
         <header className={style.header}>
             <Link className={style.avatarLink} to="/">
@@ -18,11 +23,11 @@ export default function Header(props) {
                 @arnellebalane
             </Link>
 
-            <button className={style.menu}>
+            <button className={toggleMenuClasses} onClick={onToggleMenu}>
                 Toggle Menu
             </button>
 
-            <Menu />
+            <Menu isOpen={isMenuOpen} />
         </header>
     );
 };

@@ -2,9 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import style from './Menu.css';
 
-export default function Menu(props) {
+export default function Menu({isOpen}) {
+    const menuClasses = [
+        style.menu,
+        !isOpen && style.hidden
+    ].filter(Boolean).join(' ');
+
     return (
-        <nav className={style.menu}>
+        <nav className={menuClasses}>
             <Link className={style.link} to="/articles">
                 Articles
             </Link>

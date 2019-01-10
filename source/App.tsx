@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Header from './components/Header/Header.tsx';
 import Footer from './components/Footer/Footer.tsx';
@@ -12,12 +12,22 @@ const Repositories = asyncComponent(React.lazy(() => import('./pages/Repositorie
 const Events = asyncComponent(React.lazy(() => import('./pages/Events/Events.tsx')));
 
 export default function App(props) {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const mainContentClasses = [
+        style.content,
+        isMenuOpen && style.hidden
+    ].filter(Boolean).join(' ');
+
     return (
         <BrowserRouter>
             <div className={style.wrapper}>
-                <Header />
+                <Header
+                    isMenuOpen={isMenuOpen}
+                    onToggleMenu={() => setIsMenuOpen(!isMenuOpen)}
+                />
 
-                <main className={style.content}>
+                <main className={mainContentClasses}>
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/articles" exact component={Articles} />
