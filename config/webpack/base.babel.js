@@ -1,7 +1,7 @@
 import path from 'path';
 import config from '..';
 
-const javascriptRegex = /\.(js|ts|jsx|tsx)$/;
+const typescriptRegex = /\.tsx?$/;
 const stylesheetRegex = /\.(css)$/;
 const imagesRegex = /\.(png|jpe?g|gif|svg)$/;
 
@@ -10,7 +10,7 @@ export default {
 
     module: {
         rules: [{
-            test: javascriptRegex,
+            test: typescriptRegex,
             loader: 'babel-loader'
         }, {
             test: stylesheetRegex,
