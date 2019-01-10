@@ -17,7 +17,7 @@ export default function App(props) {
                 <main className={style.content}>
                     <Switch>
                         <Route path="/" exact component={Home} />
-                        <Route path="/articles" component={ArticleList} />
+                        <Route path="/articles" exact component={ArticleList} />
                     </Switch>
                 </main>
 
