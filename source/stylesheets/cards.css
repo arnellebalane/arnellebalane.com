@@ -22,3 +22,17 @@
 .content {
     margin-top: 8px;
 }
+
+.detail {
+    margin-top: 8px;
+    font-size: 1.6rem;
+    color: var(--secondary-text-color);
+}
+
+.detailValue {
+    font-weight: 600;
+}
+
+.detailValue:not(:last-child)::after {
+    content: ", ";
+}

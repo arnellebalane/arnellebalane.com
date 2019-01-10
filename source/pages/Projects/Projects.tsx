@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectCard from '@/components/ProjectCard/ProjectCard.tsx';
+import shared from '@/stylesheets/pages.css';
 
 const projects = [{
     title: 'Streaks',
@@ -39,7 +40,9 @@ const projects = [{
 export default function Projects(props) {
     return (
         <div>
-            <h1>Projects</h1>
+            <h1 className={shared.heading}>
+                Projects
+            </h1>
 
             {projects.map(project => (
                 <ProjectCard key={project.title} project={project} />
