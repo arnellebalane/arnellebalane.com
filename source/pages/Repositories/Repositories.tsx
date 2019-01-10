@@ -20,11 +20,11 @@ const repositories = [{
 }, {
     name: 'sublime-open-in-git-repository',
     description: 'Sublime Text plugin for opening the remote git url for the current file.',
-    url:  'https://github.com/arnellebalane/sublime-open-in-git-repository',
+    url: 'https://github.com/arnellebalane/sublime-open-in-git-repository',
     language: 'Python'
 }];
 
-export default function Repositories(props) {
+export default function Repositories() {
     return (
         <div>
             <h1 className={shared.heading}>
@@ -45,4 +45,4 @@ export default function Repositories(props) {
             </a>
         </div>
     );
-};
+}

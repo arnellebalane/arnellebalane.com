@@ -24,7 +24,7 @@ const projects = [{
     url: 'https://endpoints.uncaughtexception.wtf/',
     details: [{
         label: 'Roles',
-        value: ['Design','Frontend Development']
+        value: ['Design', 'Frontend Development']
     }, {
         label: 'Articles',
         value: [{
@@ -37,7 +37,7 @@ const projects = [{
     }]
 }];
 
-export default function Projects(props) {
+export default function Projects() {
     return (
         <div>
             <h1 className={shared.heading}>
@@ -49,4 +49,4 @@ export default function Projects(props) {
             ))}
         </div>
     );
-};
+}

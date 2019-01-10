@@ -20,7 +20,7 @@ const articles = [{
     summary: 'This article explains the concepts of the Intersection Observer API and shows how it can be used.'
 }];
 
-export default function ArticleList(props) {
+export default function ArticleList() {
     return (
         <div>
             <h1 className={shared.heading}>
@@ -31,9 +31,9 @@ export default function ArticleList(props) {
                 <ArticleCard key={article.url} article={article} />
             ))}
 
-            <Link className={shared.link} to="#">
+            <Link className={shared.link} to="#">
                 See older articles
             </Link>
         </div>
     );
-};
+}

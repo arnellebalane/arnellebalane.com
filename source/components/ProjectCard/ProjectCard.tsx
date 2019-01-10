@@ -1,7 +1,7 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
-function ProjectCardDetail(props) {
+function ProjectCardDetail(props) {
     const {label, value} = props.detail;
     const detailValue = value.map((detail, i) => {
         if (typeof detail === 'string') {
@@ -50,9 +50,9 @@ export default function ProjectCard({project}) {
                 {project.description}
             </p>
 
-            {project.details.map((detail, i) => (
+            {project.details.map((detail, i) => (
                 <ProjectCardDetail key={i} detail={detail} />
             ))}
         </article>
     );
-};
+}

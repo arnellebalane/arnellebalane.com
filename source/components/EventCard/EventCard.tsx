@@ -17,37 +17,38 @@ function EventCardDetail({detail}) {
     return null;
 }
 
-export default function EventCard({event}) {
-    const details = event.details;
+export default function EventCard(props) {
+    const eventItem = props.event;
+    const details = eventItem.details;
 
     return (
         <article className={shared.card}>
             <a
                 className={shared.link}
-                href={event.url}
+                href={eventItem.url}
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 <h1 className={shared.title}>
-                    {event.title}
+                    {eventItem.title}
                 </h1>
             </a>
 
-            <time className={shared.subtitle} dateTime={event.date}>
-                {event.date}
+            <time className={shared.subtitle} dateTime={eventItem.date}>
+                {eventItem.date}
             </time>
 
             <p className={shared.content}>
-                {event.description}
+                {eventItem.description}
             </p>
 
             {details && details.length > 0 && (
                 <p className={shared.detail}>
                     {details.map((detail, i) => (
-                        <EventCardDetail key={i} detail={detail} />
+                        <EventItemCardDetail key={i} detail={detail} />
                     ))}
                 </p>
             )}
         </article>
     );
-};
+}

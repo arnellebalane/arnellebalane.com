@@ -24,4 +24,4 @@ export default function RepositoryCard({repository}) {
             </p>
         </article>
     );
-};
+}

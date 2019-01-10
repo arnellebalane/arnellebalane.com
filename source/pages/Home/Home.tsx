@@ -8,10 +8,10 @@ function link(text, href) {
         : <Link to={href}>{text}</Link>;
 }
 
-export default function Home(props) {
-    const name = link('Arnelle Balane', '/');
+export default function Home() {
+    const arnelle = link('Arnelle Balane', '/');
     const articles = link('articles', '/articles');
-    const projects = link('projects', '/projects')
+    const projects = link('projects', '/projects');
     const github = link('GitHub', 'https://github.com/arnellebalane');
     const codepen = link('Codepen', 'https://codepen.io/arnellebalane');
     const youtube = link('Youtube', 'https://www.youtube.com/channel/UC3-k6RL1rVSXzHI8IU7u3NA');
@@ -24,7 +24,7 @@ export default function Home(props) {
     return (
         <div className={style.home}>
             <p>
-                Hi! I'm {name}, a software developer from Cebu, Philippines.
+                Hi! I'm {arnelle}, a software developer from Cebu, Philippines.
             </p>
 
             <p>
@@ -55,4 +55,4 @@ export default function Home(props) {
             <p>Have a great day!</p>
         </div>
     );
-};
+}

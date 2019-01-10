@@ -6,4 +6,4 @@ export default function asyncComponent(WrappedComponent) {
             <WrappedComponent {...props} />
         </React.Suspense>
     );
-};
+}

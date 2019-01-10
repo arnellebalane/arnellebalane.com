@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import EventCard from '@/components/EventCard/EventCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
@@ -29,15 +29,15 @@ const events = [{
     }]
 }];
 
-export default function Events(props) {
+export default function Events() {
     return (
         <div>
             <h1 className={shared.heading}>
                 Events
             </h1>
 
-            {events.map(event => (
-                <EventCard key={event.title} event={event} />
+            {events.map(eventItem => (
+                <EventCard key={eventItem.title} event={eventItem} />
             ))}
 
             <Link className={shared.link} to="#">
@@ -45,4 +45,4 @@ export default function Events(props) {
             </Link>
         </div>
     );
-};
+}

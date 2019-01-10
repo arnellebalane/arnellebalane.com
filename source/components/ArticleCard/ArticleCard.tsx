@@ -23,4 +23,4 @@ export default function ArticleCard({article}) {
             </p>
         </article>
     );
-};
+}

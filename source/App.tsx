@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import Header from './components/Header/Header.tsx';
 import Footer from './components/Footer/Footer.tsx';
-import asyncComponent from './lib/asyncComponent.tsx'
+import asyncComponent from './lib/asyncComponent.tsx';
 import style from './App.css';
 
 const Home = asyncComponent(React.lazy(() => import('./pages/Home/Home.tsx')));
@@ -12,15 +12,13 @@ const Repositories = asyncComponent(React.lazy(() => import('./pages/Repositorie
 const Events = asyncComponent(React.lazy(() => import('./pages/Events/Events.tsx')));
 
 function App(props) {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    useEffect(() => {
-        return props.history.listen(() => {
-            if (isMenuOpen) {
-                setIsMenuOpen(false);
-            }
-        });
-    });
+    useEffect(() => props.history.listen(() => {
+        if (isMenuOpen) {
+            setIsMenuOpen(false);
+        }
+    }));
 
     const mainContentClasses = [
         style.content,
@@ -47,6 +45,6 @@ function App(props) {
             <Footer />
         </div>
     );
-};
+}
 
 export default withRouter(App);

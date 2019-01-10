@@ -28,4 +28,4 @@ export default function Menu({isOpen}) {
             {createLink('Events', '/events')}
         </nav>
     );
-};
+}

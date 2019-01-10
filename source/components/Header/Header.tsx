@@ -30,4 +30,4 @@ export default function Header({isMenuOpen, onToggleMenu}) {
             <Menu isOpen={isMenuOpen} />
         </header>
     );
-};
+}
