@@ -6,14 +6,14 @@ import style from './Header.css';
 export default function Header(props) {
     return (
         <header className={style.header}>
-            <Link to="/">
+            <Link className={style.avatarLink} to="/">
                 <img
                     className={style.avatar}
                     src={Avatar}
                 />
             </Link>
 
-            <Link to="/" className={style.title}>
+            <Link className={style.title} to="/">
                 @arnellebalane
             </Link>
 
