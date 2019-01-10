@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 const {
     NODE_ENV = 'development',
     CONTEXT = 'production',

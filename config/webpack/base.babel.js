@@ -1,5 +1,5 @@
 import path from 'path';
-import config from '../index';
+import config from '..';
 
 const javascriptRegex = /\.(js|ts|jsx|tsx)$/;
 const stylesheetRegex = /\.(css)$/;

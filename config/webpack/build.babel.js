@@ -2,10 +2,10 @@ import path from 'path';
 import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import baseWebpackConfig from './base.babel';
-import config from '../index';
+import config from '..';
 
 function resolvePath(relativePath) {
-    return path.resolve(__dirname, `../../${relativePath}`)
+    return path.resolve(__dirname, `../../${relativePath}`);
 }
 
 export default merge(baseWebpackConfig, {
