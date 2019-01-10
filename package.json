@@ -41,47 +41,5 @@
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14",
     "webpack-merge": "4.2.1"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ],
-    "plugins": [
-      "@babel/plugin-syntax-dynamic-import"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "arnellebalane",
-      "arnellebalane/rules/plugins/unicorn",
-      "plugin:react/recommended"
-    ],
-    "plugins": [
-      "unicorn",
-      "react"
-    ],
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 2017,
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    },
-    "rules": {
-      "react/prop-types": [
-        "off"
-      ]
-    }
   }
 }

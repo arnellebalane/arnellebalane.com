@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "arnellebalane",
+    "arnellebalane/rules/plugins/unicorn",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "unicorn",
+    "react"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/prop-types": [
+      "off"
+    ]
+  }
+}
