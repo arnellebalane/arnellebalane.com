@@ -29,3 +29,7 @@
 .link:not(:last-child) {
     margin-bottom: 2.4rem;
 }
+
+.activeLink {
+    font-weight: 800;
+}

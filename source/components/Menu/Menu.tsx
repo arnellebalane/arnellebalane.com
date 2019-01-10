@@ -1,6 +1,18 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import style from './Menu.css';
+
+function createLink(text, url) {
+    return (
+        <NavLink
+            className={style.link}
+            activeClassName={style.activeLink}
+            to={url}
+        >
+            {text}
+        </NavLink>
+    );
+}
 
 export default function Menu({isOpen}) {
     const menuClasses = [
@@ -10,18 +22,10 @@ export default function Menu({isOpen}) {
 
     return (
         <nav className={menuClasses}>
-            <Link className={style.link} to="/articles">
-                Articles
-            </Link>
-            <Link className={style.link} to="/projects">
-                Projects
-            </Link>
-            <Link className={style.link} to="/repositories">
-                Repositories
-            </Link>
-            <Link className={style.link} to="/events">
-                Events
-            </Link>
+            {createLink('Articles', '/articles')}
+            {createLink('Projects', '/projects')}
+            {createLink('Repositories', '/repositories')}
+            {createLink('Events', '/events')}
         </nav>
     );
 };
