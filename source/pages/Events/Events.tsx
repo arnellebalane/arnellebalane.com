@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import EventCard from '@/components/EventCard/EventCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
+/* eslint-disable max-len */
 const events = [{
     title: 'Devfest GDayX Cebu 2017',
     date: 'November 2017',
@@ -28,6 +29,7 @@ const events = [{
         url: 'https://speakerdeck.com/arnellebalane/introduction-to-firebase'
     }]
 }];
+/* eslint-enable max-len */
 
 export default function Events() {
     return (

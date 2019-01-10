@@ -2,6 +2,7 @@ import React from 'react';
 import ProjectCard from '@/components/ProjectCard/ProjectCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
+/* eslint-disable max-len */
 const projects = [{
     title: 'Streaks',
     description: 'Keep track of anything using Github-style daily streaks.',
@@ -36,6 +37,7 @@ const projects = [{
         }]
     }]
 }];
+/* eslint-enable max-len */
 
 export default function Projects() {
     return (

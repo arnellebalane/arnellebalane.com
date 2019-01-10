@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import ArticleCard from '@/components/ArticleCard/ArticleCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
+/* eslint-disable max-len, camelcase */
 const articles = [{
     title: 'Using the Ambient Light Sensor API to add brightness-sensitive dark mode to my website',
     url: '/articles/1',
@@ -19,6 +20,7 @@ const articles = [{
     date_published: 'February 25, 2018',
     summary: 'This article explains the concepts of the Intersection Observer API and shows how it can be used.'
 }];
+/* eslint-enable max-len, camelcase */
 
 export default function ArticleList() {
     return (
