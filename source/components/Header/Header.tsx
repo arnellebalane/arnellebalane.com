@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Menu from '@/components/Menu/Menu.tsx';
 import Avatar from '@/images/avatar.jpg';
 import style from './Header.css';
 
@@ -20,6 +21,8 @@ export default function Header(props) {
             <button className={style.menu}>
                 Toggle Menu
             </button>
+
+            <Menu />
         </header>
     );
 };

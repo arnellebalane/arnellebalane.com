@@ -1,0 +1,28 @@
+.menu {
+    padding: 3.6rem 2.4rem;
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.link {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+    text-decoration: underline;
+}
+
+.link:not(:first-child) {
+    margin-top: 2.4rem;
+}
+
+.link:not(:last-child) {
+    margin-bottom: 2.4rem;
+}
