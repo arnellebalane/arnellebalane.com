@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Menu from '@/components/Menu/Menu.tsx';
-import Avatar from '@/images/avatar.jpg';
 import style from './Header.css';
 
 export default function Header({isMenuOpen, onToggleMenu}) {
@@ -15,7 +14,7 @@ export default function Header({isMenuOpen, onToggleMenu}) {
             <Link className={style.avatarLink} to="/">
                 <img
                     className={style.avatar}
-                    src={Avatar}
+                    src={require('@/images/avatar.jpg')}
                 />
             </Link>
 
