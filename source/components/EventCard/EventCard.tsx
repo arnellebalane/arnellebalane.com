@@ -45,7 +45,7 @@ export default function EventCard(props) {
             {details && details.length > 0 && (
                 <p className={shared.detail}>
                     {details.map((detail, i) => (
-                        <EventItemCardDetail key={i} detail={detail} />
+                        <EventCardDetail key={i} detail={detail} />
                     ))}
                 </p>
             )}

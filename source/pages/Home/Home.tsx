@@ -24,11 +24,11 @@ export default function Home() {
     return (
         <div className={style.home}>
             <p>
-                Hi! I'm {arnelle}, a software developer from Cebu, Philippines.
+                Hi! I&apos;m {arnelle}, a software developer from Cebu, Philippines.
             </p>
 
             <p>
-                I share about things that I'm building, recently learned, or
+                I share about things that I am building, recently learned, or
                 just random stuff through my {articles}.
             </p>
 
