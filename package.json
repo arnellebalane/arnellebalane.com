@@ -54,10 +54,12 @@
   "eslintConfig": {
     "extends": [
       "arnellebalane",
-      "arnellebalane/rules/plugins/unicorn"
+      "arnellebalane/rules/plugins/unicorn",
+      "plugin:react/recommended"
     ],
     "plugins": [
-      "unicorn"
+      "unicorn",
+      "react"
     ],
     "parser": "babel-eslint",
     "parserOptions": {
