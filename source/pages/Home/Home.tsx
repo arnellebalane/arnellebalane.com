@@ -43,7 +43,7 @@ export default function Home() {
             </p>
 
             <p>
-                Right now I’m working as a Frontend Developer for {channelfix},
+                Right now I work as a Frontend Developer for {channelfix},
                 a startup company in Cebu.
             </p>
 
