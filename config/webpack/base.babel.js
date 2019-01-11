@@ -1,4 +1,5 @@
 import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import config from '..';
 
 const typescriptRegex = /\.tsx?$/;
@@ -19,7 +20,7 @@ export default {
         }, {
             test: stylesheetRegex,
             use: [{
-                loader: 'style-loader'
+                loader: MiniCssExtractPlugin.loader
             }, {
                 loader: 'css-loader',
                 options: {
@@ -39,5 +40,12 @@ export default {
         alias: {
             '@': path.resolve(__dirname, '../../source')
         }
-    }
+    },
+
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].[hash:6].css',
+            chunkFilename: '[name].[hash:6].css'
+        })
+    ]
 };
