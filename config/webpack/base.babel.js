@@ -1,5 +1,7 @@
 import path from 'path';
+import TerserPlugin from 'terser-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import config from '..';
 
 const typescriptRegex = /\.tsx?$/;
@@ -47,5 +49,21 @@ export default {
             filename: '[name].[hash:6].css',
             chunkFilename: '[name].[hash:6].css'
         })
-    ]
+    ],
+
+    /*
+     *  https://github.com/webpack-contrib/mini-css-extract-plugin#minimizing-for-production
+     *  Using TerserPlugin instead of UglifyJsPlugin because the former can
+     *  minify ES2015+ code.
+     */
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true
+            }),
+            new OptimizeCssAssetsPlugin()
+        ]
+    }
 };
