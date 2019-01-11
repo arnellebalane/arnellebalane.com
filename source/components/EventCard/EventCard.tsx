@@ -1,7 +1,28 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
-function EventCardDetail({detail}) {
+interface EventType {
+    title: string,
+    date: string,
+    description: string,
+    url: string,
+    details: Array<EventDetailType>
+}
+
+interface EventDetailType {
+    type: string,
+    url: string
+}
+
+interface EventCardDetailProps {
+    detail: EventDetailType
+}
+
+interface EventCardProps {
+    event: EventType
+}
+
+function EventCardDetail({detail}: EventCardDetailProps) {
     if (detail.type === 'slides') {
         return (
             <a
@@ -17,7 +38,7 @@ function EventCardDetail({detail}) {
     return null;
 }
 
-export default function EventCard(props) {
+export default function EventCard(props: EventCardProps) {
     const eventItem = props.event;
     const details = eventItem.details;
 

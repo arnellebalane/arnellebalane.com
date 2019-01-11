@@ -2,7 +2,11 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import style from './Menu.css';
 
-function createLink(text, url) {
+interface MenuProps {
+    isOpen: boolean
+}
+
+function createLink(text: string, url: string) {
     return (
         <NavLink
             className={style.link}
@@ -14,7 +18,7 @@ function createLink(text, url) {
     );
 }
 
-export default function Menu({isOpen}) {
+export default function Menu({isOpen}: MenuProps) {
     const menuClasses = [
         style.menu,
         !isOpen && style.hidden

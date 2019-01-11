@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import style from './Home.css';
 
-function link(text, href) {
+function link(text: string, href: string) {
     return href.startsWith('https://')
         ? <a href={href} target="_blank" rel="noopener noreferrer">{text}</a>
         : <Link to={href}>{text}</Link>;

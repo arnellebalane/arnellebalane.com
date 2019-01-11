@@ -3,7 +3,12 @@ import {Link} from 'react-router-dom';
 import Menu from '@/components/Menu/Menu.tsx';
 import style from './Header.css';
 
-export default function Header({isMenuOpen, onToggleMenu}) {
+interface HeaderProps {
+    isMenuOpen: boolean,
+    onToggleMenu(): void
+}
+
+export default function Header({isMenuOpen, onToggleMenu}: HeaderProps) {
     const toggleMenuClasses = [
         style.menu,
         isMenuOpen ? style.menuOpen : style.menuClose

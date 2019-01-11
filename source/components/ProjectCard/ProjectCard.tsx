@@ -1,7 +1,32 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
-function ProjectCardDetail(props) {
+interface ProjectType {
+    title: string,
+    description: string,
+    url: string,
+    details: Array<ProjectDetailType>
+}
+
+interface ProjectDetailType {
+    label: string,
+    value:  Array<ProjectDetailValueType | string>
+}
+
+interface ProjectDetailValueType {
+    text: string,
+    url: string
+}
+
+interface ProjectCardDetailProps {
+    detail: ProjectDetailType
+}
+
+interface ProjectCardProps {
+    project: ProjectType
+}
+
+function ProjectCardDetail(props: ProjectCardDetailProps) {
     const {label, value} = props.detail;
     const detailValue = value.map((detail, i) => {
         if (typeof detail === 'string') {
@@ -32,7 +57,7 @@ function ProjectCardDetail(props) {
     );
 }
 
-export default function ProjectCard({project}) {
+export default function ProjectCard({project}: ProjectCardProps) {
     return (
         <article className={shared.card}>
             <a

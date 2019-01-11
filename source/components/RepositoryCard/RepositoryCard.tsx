@@ -1,7 +1,18 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
-export default function RepositoryCard({repository}) {
+interface RepositoryType {
+    name: string,
+    description: string,
+    url: string,
+    language: string
+}
+
+interface RepositoryCardProps {
+    repository: RepositoryType
+}
+
+export default function RepositoryCard({repository}: RepositoryCardProps) {
     return (
         <article className={shared.card}>
             <a
