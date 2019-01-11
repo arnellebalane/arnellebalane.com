@@ -1,21 +1,21 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
+interface ProjectDetailValueType {
+    text: string,
+    url: string
+}
+
+interface ProjectDetailType {
+    label: string,
+    value: Array<ProjectDetailValueType | string>
+}
+
 interface ProjectType {
     title: string,
     description: string,
     url: string,
     details: Array<ProjectDetailType>
-}
-
-interface ProjectDetailType {
-    label: string,
-    value:  Array<ProjectDetailValueType | string>
-}
-
-interface ProjectDetailValueType {
-    text: string,
-    url: string
 }
 
 interface ProjectCardDetailProps {

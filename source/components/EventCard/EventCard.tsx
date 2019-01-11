@@ -1,17 +1,17 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
+interface EventDetailType {
+    type: string,
+    url: string
+}
+
 interface EventType {
     title: string,
     date: string,
     description: string,
     url: string,
     details: Array<EventDetailType>
-}
-
-interface EventDetailType {
-    type: string,
-    url: string
 }
 
 interface EventCardDetailProps {
