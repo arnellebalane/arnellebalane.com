@@ -1,12 +1,12 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
-interface EventDetailType {
+type EventDetailType = {
     type: string,
     url: string
 }
 
-interface EventType {
+type EventType = {
     title: string,
     date: string,
     description: string,
@@ -14,11 +14,11 @@ interface EventType {
     details: Array<EventDetailType>
 }
 
-interface EventCardDetailProps {
+type EventCardDetailProps = {
     detail: EventDetailType
 }
 
-interface EventCardProps {
+type EventCardProps = {
     event: EventType
 }
 

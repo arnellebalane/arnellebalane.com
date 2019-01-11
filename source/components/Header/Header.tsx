@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Menu from '@/components/Menu/Menu.tsx';
 import style from './Header.css';
 
-interface HeaderProps {
+type HeaderProps = {
     isMenuOpen: boolean,
     onToggleMenu(): void
 }

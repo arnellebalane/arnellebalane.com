@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import style from './Menu.css';
 
-interface MenuProps {
+type MenuProps = {
     isOpen: boolean
 }
 

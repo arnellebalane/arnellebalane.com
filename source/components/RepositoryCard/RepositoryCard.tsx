@@ -1,14 +1,14 @@
 import React from 'react';
 import shared from '@/stylesheets/cards.css';
 
-interface RepositoryType {
+type RepositoryType = {
     name: string,
     description: string,
     url: string,
     language: string
 }
 
-interface RepositoryCardProps {
+type RepositoryCardProps = {
     repository: RepositoryType
 }
 

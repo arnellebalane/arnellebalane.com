@@ -2,14 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import shared from '@/stylesheets/cards.css';
 
-interface ArticleType {
+type ArticleType = {
     title: string,
     url: string,
     date_published: string,
     summary: string
 }
 
-interface ArticleCardProps {
+type ArticleCardProps = {
     article: ArticleType
 }
 
