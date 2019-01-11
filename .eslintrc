@@ -26,8 +26,7 @@
     }
   },
   "rules": {
-    "react/prop-types": [
-      "off"
-    ]
+    "global-require": ["off"],
+    "react/prop-types": ["off"]
   }
 }
