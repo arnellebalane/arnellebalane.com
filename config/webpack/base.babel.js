@@ -22,7 +22,9 @@ export default {
         }, {
             test: stylesheetRegex,
             use: [{
-                loader: MiniCssExtractPlugin.loader
+                loader: config.NODE_ENV === 'production'
+                    ? MiniCssExtractPlugin.loader
+                    : 'style-loader'
             }, {
                 loader: 'css-loader',
                 options: {
