@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import ArticleCard from '@/components/ArticleCard/ArticleCard.tsx';
+import ArticleCard from './components/ArticleCard/ArticleCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
 /* eslint-disable max-len, camelcase */

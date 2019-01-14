@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectCard from '@/components/ProjectCard/ProjectCard.tsx';
+import ProjectCard from './components/ProjectCard/ProjectCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
 /* eslint-disable max-len */

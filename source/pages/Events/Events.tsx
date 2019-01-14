@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import EventCard from '@/components/EventCard/EventCard.tsx';
+import EventCard from './components/EventCard/EventCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
 /* eslint-disable max-len */

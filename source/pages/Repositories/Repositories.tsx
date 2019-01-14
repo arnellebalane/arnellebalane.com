@@ -1,5 +1,5 @@
 import React from 'react';
-import RepositoryCard from '@/components/RepositoryCard/RepositoryCard.tsx';
+import RepositoryCard from './components/RepositoryCard/RepositoryCard.tsx';
 import shared from '@/stylesheets/pages.css';
 
 const repositories = [{
