@@ -1,12 +1,7 @@
-import path from 'path';
 import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import baseWebpackConfig from './base.babel';
+import baseWebpackConfig, {resolvePath} from './base.babel';
 import config from '..';
-
-function resolvePath(relativePath) {
-    return path.resolve(__dirname, `../../${relativePath}`);
-}
 
 export default merge(baseWebpackConfig, {
     entry: '@/index.tsx',
