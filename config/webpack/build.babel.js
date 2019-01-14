@@ -1,6 +1,6 @@
 import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import baseWebpackConfig, {resolvePath} from './base.babel';
+import baseWebpackConfig, {resolvePath} from './base';
 import config from '..';
 
 export default merge(baseWebpackConfig, {
