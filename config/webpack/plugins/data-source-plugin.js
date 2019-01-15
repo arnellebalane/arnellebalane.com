@@ -13,9 +13,14 @@ export default class DataSourcePlugin {
         };
     }
 
-    async apply(compiler) {
+    apply() {
+        // TODO: Implement this plugin!
+    }
+
+    async getDataSources() {
         const sourceDirFiles = await readDir(this.options.sourceDir);
-        const dataSources = sourceDirFiles.reduce((sources, filename) => {
+
+        return sourceDirFiles.reduce((sources, filename) => {
             if (filename.endsWith('.json')) {
                 const source = path.basename(filename, '.json');
                 const sourcePath = path.join(this.options.sourceDir, filename);
@@ -23,17 +28,5 @@ export default class DataSourcePlugin {
             }
             return sources;
         }, {});
-
-        compiler.hooks.emit.tap('DataSourcePlugin', compilation => {
-            Object.entries(dataSources).forEach(([key, value]) => {
-                const filename = `${this.options.namespace}/${key}.json`;
-                const contents = JSON.stringify(value);
-
-                compilation.assets[filename] = {
-                    source: () => contents,
-                    size: () => contents.length
-                };
-            });
-        });
     }
 }
