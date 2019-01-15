@@ -24,7 +24,7 @@ export default class DataSourcePlugin {
             return sources;
         }, {});
 
-        compiler.plugin('emit', (compilation, callback) => {
+        compiler.hooks.emit.tap('DataSourcePlugin', compilation => {
             Object.entries(dataSources).forEach(([key, value]) => {
                 const filename = `${this.options.namespace}/${key}.json`;
                 const contents = JSON.stringify(value);
@@ -34,7 +34,6 @@ export default class DataSourcePlugin {
                     size: () => contents.length
                 };
             });
-            callback();
         });
     }
 }
