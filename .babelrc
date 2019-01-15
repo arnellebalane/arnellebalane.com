@@ -4,7 +4,6 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-syntax-dynamic-import",
-    "transform-modern-regexp"
+    "@babel/plugin-syntax-dynamic-import"
   ]
 }
