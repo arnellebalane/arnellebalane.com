@@ -4,6 +4,7 @@ import path from 'path';
 import util from 'util';
 
 const readDir = util.promisify(fs.readdir);
+const readFile = util.promisify(fs.readFile);
 
 function orderDataSourceBy(data, orderKey, isDescending) {
     const normalize = value => {
@@ -23,7 +24,7 @@ function orderDataSourceBy(data, orderKey, isDescending) {
     });
 }
 
-function processDataSource(filename, options) {
+async function processDataSource(filename, options) {
     const key = path.join(options.namespace, filename);
     const basename = path.basename(filename, '.json');
     let content = require(path.join(options.sourceDir, filename));
@@ -32,7 +33,27 @@ function processDataSource(filename, options) {
         return [{key, content}];
     }
 
-    const {orderBy} = options.dataSourceConfigs[basename];
+    const {sourceDir, orderBy} = options.dataSourceConfigs[basename];
+
+    if (sourceDir) {
+        const sourceDirFiles = await readDir(sourceDir);
+        const sourceFiles = await Promise.all(sourceDirFiles
+            .filter(sourceName => sourceName.endsWith('.md'))
+            .map(async sourceName => ({
+                filename: sourceName,
+                content: (await readFile(path.join(sourceDir, sourceName))).toString('ascii')
+            })));
+        content = sourceFiles.map(sourceFile => sourceFile.content
+            // eslint-disable-next-line unicorn/no-unsafe-regex
+            .match(/^---.+?---(\r?\n)+/s)[0].trim().split(/\r?\n/)
+            .reduce((result, row) => {
+                if (row !== '---') {
+                    const [property, value] = row.split(/:\s+/, 2);
+                    result[property] = value;
+                }
+                return result;
+            }, {}));
+    }
 
     if (orderBy) {
         const isDescending = orderBy.startsWith('-');
@@ -62,11 +83,16 @@ export default class DataSourcePlugin {
     }
 
     apply(compiler) {
-        compiler.hooks.emit.tapPromise('DataSourcePlugin', () => {
-            const dataSources = getDataSources(this.options);
-            console.log(util.inspect(dataSources, {
-                depth: Infinity
-            }));
+        compiler.hooks.emit.tapPromise('DataSourcePlugin', async compilation => {
+            const dataSources = await getDataSources(this.options);
+
+            dataSources.forEach(({key, content}) => {
+                content = JSON.stringify(content);
+                compilation.assets[key] = {
+                    source: () => content,
+                    size: () => content.length
+                };
+            });
         });
     }
 }
