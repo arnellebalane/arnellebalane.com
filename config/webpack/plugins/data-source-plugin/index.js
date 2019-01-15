@@ -1,77 +1,100 @@
 import '@babel/polyfill';
-import fs from 'fs';
 import path from 'path';
-import util from 'util';
+import {
+    getFilesWithExtension,
+    readFileContents,
+    separateFrontMatterAndContent
+} from './utils';
 
-const readDir = util.promisify(fs.readdir);
-const readFile = util.promisify(fs.readFile);
+function getResourcePath(resource, options) {
+    return path.join(options.sourceDir, resource);
+}
 
-function orderDataSourceBy(data, orderKey, isDescending) {
-    const normalize = value => {
-        const date = new Date(value);
-        if (!Number.isNaN(date.valueOf())) {
-            return date;
-        } else if (typeof value === 'string' && /^\d+$/.test(value)) {
-            return parseInt(value, 10);
-        }
-        return value;
+function getAssetKey(asset, options) {
+    return path.join(options.namespace, asset);
+}
+
+function finalizeDataSourceAsset(asset) {
+    const content = typeof asset._finalize === 'function'
+        ? asset._finalize(asset.content)
+        : asset.content;
+    const size = typeof asset._getSize === 'function'
+        ? asset._getSize(asset.content)
+        : content.length;
+
+    return {
+        content,
+        size,
+        key: asset.key
     };
+}
 
-    return [...data].sort((a, b) => {
-        const _a = normalize(a[orderKey]);
-        const _b = normalize(b[orderKey]);
-        return (_a - _b) * (isDescending ? -1 : 1);
+async function getDataSourceAssetsForResource(resourceName, options) {
+    const resourceConfig = options.resourceConfigs[resourceName];
+    const resourceEntryFiles = await getFilesWithExtension(resourceConfig.sourceDir, 'md');
+
+    const relativeSourceDir = resourceConfig.sourceDir.replace(options.sourceDir, '');
+
+    /* eslint-disable function-paren-newline */
+    const resourceEntries = (await Promise.all(
+        resourceEntryFiles.map(async entryFile => {
+            const entryPath = path.join(resourceConfig.sourceDir, entryFile);
+            const entryContents = await readFileContents(entryPath);
+            const {frontMatter, content} = separateFrontMatterAndContent(entryContents) || {};
+
+            return {
+                content,
+                frontMatter,
+                key: getAssetKey(path.join(relativeSourceDir, entryFile), options),
+                path: entryPath
+            };
+        })
+    )).filter(({frontMatter}) => {
+        if (!frontMatter) {
+            return false;
+        } else if (typeof resourceConfig.shouldInclude === 'function') {
+            return resourceConfig.shouldInclude(frontMatter);
+        }
+        return true;
     });
+    /* eslint-enable function-paren-newline */
+
+    const resourceAssets = [{
+        key: getAssetKey(`${resourceName}.json`, options),
+        content: resourceEntries,
+        _finalize: content => JSON.stringify(content, null, '  '),
+        _getSize: content => JSON.stringify(content, null, '  ').length
+    }];
+
+    return resourceAssets;
 }
 
-async function processDataSource(filename, options) {
-    const key = path.join(options.namespace, filename);
-    const basename = path.basename(filename, '.json');
-    let content = require(path.join(options.sourceDir, filename));
+async function getDataSourceAssets(options) {
+    const resourceFiles = await getFilesWithExtension(options.sourceDir, 'json');
+    let assets = [];
 
-    if (!(basename in options.dataSourceConfigs)) {
-        return [{key, content}];
+    for (let i = 0; i < resourceFiles.length; i++) {
+        const resourceFile = resourceFiles[i];
+        const resourceName = path.basename(resourceFile, '.json');
+
+        if (resourceName in options.resourceConfigs
+        && options.resourceConfigs[resourceName].sourceDir) {
+            assets = [
+                ...assets,
+                ...(await getDataSourceAssetsForResource(resourceName, options))
+            ];
+        } else {
+            const resourcePath = getResourcePath(resourceFile, options);
+            assets = [...assets, {
+                key: getAssetKey(resourceFile, options),
+                content: require(resourcePath),
+                _finalize: content => JSON.stringify(content, null, '  '),
+                _getSize: content => JSON.stringify(content, null, '  ').length
+            }];
+        }
     }
 
-    const {sourceDir, orderBy} = options.dataSourceConfigs[basename];
-
-    if (sourceDir) {
-        const sourceDirFiles = await readDir(sourceDir);
-        const sourceFiles = await Promise.all(sourceDirFiles
-            .filter(sourceName => sourceName.endsWith('.md'))
-            .map(async sourceName => ({
-                filename: sourceName,
-                content: (await readFile(path.join(sourceDir, sourceName))).toString('ascii')
-            })));
-        content = sourceFiles.map(sourceFile => sourceFile.content
-            // eslint-disable-next-line unicorn/no-unsafe-regex
-            .match(/^---.+?---(\r?\n)+/s)[0].trim().split(/\r?\n/)
-            .reduce((result, row) => {
-                if (row !== '---') {
-                    const [property, value] = row.split(/:\s+/, 2);
-                    result[property] = value;
-                }
-                return result;
-            }, {}));
-    }
-
-    if (orderBy) {
-        const isDescending = orderBy.startsWith('-');
-        const orderKey = isDescending ? orderBy.substring(1) : orderBy;
-        content = orderDataSourceBy(content, orderKey, isDescending);
-    }
-
-    return [{key, content}];
-}
-
-async function getDataSources(options) {
-    const sourceDirFiles = await readDir(options.sourceDir);
-
-    const dataSources = await Promise.all(sourceDirFiles
-        .filter(filename => filename.endsWith('.json'))
-        .map(filename => processDataSource(filename, options)));
-
-    return [].concat(...dataSources);
+    return assets.map(finalizeDataSourceAsset);
 }
 
 export default class DataSourcePlugin {
@@ -84,13 +107,12 @@ export default class DataSourcePlugin {
 
     apply(compiler) {
         compiler.hooks.emit.tapPromise('DataSourcePlugin', async compilation => {
-            const dataSources = await getDataSources(this.options);
+            const dataSources = await getDataSourceAssets(this.options);
 
-            dataSources.forEach(({key, content}) => {
-                content = JSON.stringify(content);
+            dataSources.forEach(({key, content, size}) => {
                 compilation.assets[key] = {
                     source: () => content,
-                    size: () => content.length
+                    size: () => size
                 };
             });
         });
