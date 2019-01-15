@@ -29,11 +29,12 @@ export default merge(baseWebpackConfig, {
         new DataSourcePlugin({
             sourceDir: resolvePath('data'),
             namespace: 'api',
-            dataSourceConfigs: {
+            resourceConfigs: {
                 articles: {
                     sourceDir: resolvePath('data/articles'),
                     orderBy: '-date_published',
-                    itemsPerPage: 5
+                    itemsPerPage: 5,
+                    shouldInclude: item => item.published
                 },
                 events: {
                     orderBy: '-date',
