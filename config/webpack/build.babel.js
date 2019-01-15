@@ -1,5 +1,6 @@
 import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import DataSourcePlugin from './plugins/data-source-plugin';
 import baseWebpackConfig, {resolvePath} from './base';
 import config from '..';
 
@@ -22,6 +23,22 @@ export default merge(baseWebpackConfig, {
             minify: {
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true
+            }
+        }),
+
+        new DataSourcePlugin({
+            sourceDir: resolvePath('data'),
+            namespace: 'api',
+            dataSourceConfigs: {
+                articles: {
+                    sourceDir: resolvePath('data/articles'),
+                    orderBy: '-date_published',
+                    itemsPerPage: 5
+                },
+                events: {
+                    orderBy: '-date',
+                    itemsPerPage: 5
+                }
             }
         })
     ]
