@@ -6,6 +6,11 @@ import {
     readFileContents,
     separateFrontMatterAndContent
 } from './utils';
+import config from '../../..';
+
+function getAbsoluteUrl(url) {
+    return path.join(config.BASE_URL, url);
+}
 
 function getResourcePath(resource, options) {
     return path.join(options.sourceDir, resource);
@@ -93,10 +98,10 @@ function evaluateResourcePipeline(resource, options) {
 
         const getResourcePageUrls = page => ({
             nextPage: page < totalPages
-                ? getAssetKey(`${resourceName}/pages/${page + 1}.json`, options)
+                ? getAbsoluteUrl(getAssetKey(`${resourceName}/pages/${page + 1}.json`, options))
                 : null,
             previousPage: page > 1
-                ? getAssetKey(`${resourceName}/pages/${page - 1}.json`, options)
+                ? getAbsoluteUrl(getAssetKey(`${resourceName}/pages/${page - 1}.json`, options))
                 : null
         });
 
