@@ -166,12 +166,19 @@ async function getDataSourceAssetsForResource(resourceName, options) {
     });
     /* eslint-enable function-paren-newline */
 
-    const resourceAssets = evaluateResourcePipeline({
+    let resourceAssets = evaluateResourcePipeline({
         key: getAssetKey(`${resourceName}.json`, options),
         content: resourceEntries.map(entry => entry.frontMatter)
     }, options);
 
-    // TODO: Generate output assets for each entry.
+    resourceAssets = resourceAssets.concat(resourceEntries.map(entry => ({
+        key: entry.key,
+        content: {
+            data: entry.content
+        },
+        _finalize: content => JSON.stringify(content),
+        _getSize: content => JSON.stringify(content).length
+    })));
 
     return resourceAssets;
 }
