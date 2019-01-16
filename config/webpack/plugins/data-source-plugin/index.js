@@ -15,22 +15,6 @@ function getAssetKey(asset, options) {
     return path.join(options.namespace, asset);
 }
 
-function getResourcePageUrls(resourceName, page, totalPages, options) {
-    const pages = {};
-
-    if (page === 2) {
-        pages.previousPage = getAssetKey(`${resourceName}.json`, options);
-    } else if (page > 1) {
-        pages.previousPage = getAssetKey(`${resourceName}/pages/${page - 1}.json`, options);
-    }
-
-    if (page < totalPages) {
-        pages.nextPage = getAssetKey(`${resourceName}/pages/${page + 1}.json`, options);
-    }
-
-    return pages;
-}
-
 function finalizeDataSourceAsset(asset) {
     const content = typeof asset._finalize === 'function'
         ? asset._finalize(asset.content)
@@ -107,17 +91,42 @@ function evaluateResourcePipeline(resource, options) {
         const paginatedEntries = paginateResourceEntries(resource.content.data, resourceConfig.itemsPerPage);
         const totalPages = paginatedEntries.length;
 
-        resources = paginatedEntries.map(({page, entries}) => ({
-            key: page === 1
-                ? getAssetKey(`${resourceName}.json`, options)
-                : getAssetKey(`${resourceName}/pages/${page}.json`, options),
+        const getResourcePageUrls = page => ({
+            nextPage: page < totalPages
+                ? getAssetKey(`${resourceName}/pages/${page + 1}.json`, options)
+                : null,
+            previousPage: page > 1
+                ? getAssetKey(`${resourceName}/pages/${page - 1}.json`, options)
+                : null
+        });
+
+        const createResource = ({key, page, entries}) => ({
+            key,
             content: {
                 data: entries,
-                ...getResourcePageUrls(resourceName, page, totalPages, options)
+                ...getResourcePageUrls(page)
             },
             _finalize: resource._finalize,
             _getSize: resource._getSize
-        }));
+        });
+
+        resources = paginatedEntries.reduce((results, {page, entries}) => {
+            if (page === 1) {
+                results = [...results, createResource({
+                    page,
+                    entries,
+                    key: getAssetKey(`${resourceName}.json`, options)
+                })];
+            }
+
+            results = [...results, createResource({
+                page,
+                entries,
+                key: getAssetKey(`${resourceName}/pages/${page}.json`, options)
+            })];
+
+            return results;
+        }, []);
     }
 
     return resources;
