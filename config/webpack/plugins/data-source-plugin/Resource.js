@@ -78,7 +78,10 @@ export default class Resource {
             const asset = new MarkdownAsset(entryPath, {data: extracted.content}, this);
             this.assets.set(asset.outputKey, asset);
 
-            return extracted.frontMatter;
+            return {
+                ...extracted.frontMatter,
+                url: this.plugin.getAbsoluteUrl(asset.inputRelativePath)
+            };
         })).then(entries => entries.filter(Boolean));
     }
 }

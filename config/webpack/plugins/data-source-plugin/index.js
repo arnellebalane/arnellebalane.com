@@ -12,7 +12,7 @@ export default class DataSourcePlugin {
         };
 
         this.baseUrl = this.options.sourceDir;
-        this.absoluteBaseUrl = path.join(config.BASE_URL, this.options.namespace);
+        this.absoluteBaseUrl = config.BASE_URL + this.options.namespace;
         this.outputRelativePath = this.options.namespace;
 
         this.assets = new Map();
@@ -51,6 +51,6 @@ export default class DataSourcePlugin {
     }
 
     getAbsoluteUrl(relativeAssetPath) {
-        return path.join(this.absoluteBaseUrl, relativeAssetPath);
+        return `${this.absoluteBaseUrl}/${relativeAssetPath}`;
     }
 }
