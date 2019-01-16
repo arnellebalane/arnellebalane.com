@@ -18,6 +18,17 @@ export function normalizeJsonValue(value) {
     return value;
 }
 
+export function normalizeSortableValue(value) {
+    const date = new Date(value);
+    if (!Number.isNaN(date.valueOf())) {
+        return date;
+    // eslint-disable-next-line unicorn/no-unsafe-regex
+    } else if (/^(\d+(\.\d+)?)|(\.\d+)$/.test(value)) {
+        return parseFloat(value, 10);
+    }
+    return value;
+}
+
 export async function getFilesWithExtension(directoryPath, extension) {
     const directoryItems = await readDir(directoryPath);
     return directoryItems.filter(item => item.endsWith(`.${extension}`));

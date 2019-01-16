@@ -1,6 +1,7 @@
 import '@babel/polyfill';
 import path from 'path';
 import {
+    normalizeSortableValue,
     getFilesWithExtension,
     readFileContents,
     separateFrontMatterAndContent
@@ -12,6 +13,22 @@ function getResourcePath(resource, options) {
 
 function getAssetKey(asset, options) {
     return path.join(options.namespace, asset);
+}
+
+function getResourcePageUrls(resourceName, page, totalPages, options) {
+    const pages = {};
+
+    if (page === 2) {
+        pages.previousPage = getAssetKey(`${resourceName}.json`, options);
+    } else if (page > 1) {
+        pages.previousPage = getAssetKey(`${resourceName}/pages/${page - 1}.json`, options);
+    }
+
+    if (page < totalPages) {
+        pages.nextPage = getAssetKey(`${resourceName}/pages/${page + 1}.json`, options);
+    }
+
+    return pages;
 }
 
 function finalizeDataSourceAsset(asset) {
@@ -27,6 +44,83 @@ function finalizeDataSourceAsset(asset) {
         size,
         key: asset.key
     };
+}
+
+function sortResourceEntries(resourceEntries, orderByKey) {
+    if (!orderByKey) {
+        return resourceEntries;
+    }
+
+    const isDescending = orderByKey.startsWith('-');
+    const direction = isDescending ? 1 : -1;
+    const key = isDescending ? orderByKey.substring(1) : orderByKey;
+
+    return [...resourceEntries].sort((a, b) => {
+        const _a = normalizeSortableValue(a[key]);
+        const _b = normalizeSortableValue(b[key]);
+
+        if (_a < _b) {
+            return direction;
+        } else if (_a > _b) {
+            return -direction;
+        }
+        return 0;
+    });
+}
+
+function paginateResourceEntries(resourceEntries, itemsPerPage) {
+    return resourceEntries.reduce((pages, entry, i) => {
+        const index = Math.floor(i / itemsPerPage);
+
+        if (!pages[index]) {
+            pages[index] = {
+                page: index + 1,
+                entries: []
+            };
+        }
+
+        pages[index].entries.push(entry);
+
+        return pages;
+    }, []);
+}
+
+function evaluateResourcePipeline(resource, options) {
+    resource = {
+        ...resource,
+        content: {
+            data: resource.content
+        },
+        _finalize: content => JSON.stringify(content, null, '  '),
+        _getSize: content => JSON.stringify(content, null, '  ').length
+    };
+    const resourceName = path.basename(resource.key, '.json');
+    const resourceConfig = options.resourceConfigs[resourceName] || {};
+
+    if (resourceConfig.orderBy) {
+        resource.content.data = sortResourceEntries(resource.content.data, resourceConfig.orderBy);
+    }
+
+    let resources = [resource];
+
+    if (resourceConfig.itemsPerPage) {
+        const paginatedEntries = paginateResourceEntries(resource.content.data, resourceConfig.itemsPerPage);
+        const totalPages = paginatedEntries.length;
+
+        resources = paginatedEntries.map(({page, entries}) => ({
+            key: page === 1
+                ? getAssetKey(`${resourceName}.json`, options)
+                : getAssetKey(`${resourceName}/pages/${page}.json`, options),
+            content: {
+                data: entries,
+                ...getResourcePageUrls(resourceName, page, totalPages, options)
+            },
+            _finalize: resource._finalize,
+            _getSize: resource._getSize
+        }));
+    }
+
+    return resources;
 }
 
 async function getDataSourceAssetsForResource(resourceName, options) {
@@ -59,12 +153,12 @@ async function getDataSourceAssetsForResource(resourceName, options) {
     });
     /* eslint-enable function-paren-newline */
 
-    const resourceAssets = [{
+    const resourceAssets = evaluateResourcePipeline({
         key: getAssetKey(`${resourceName}.json`, options),
-        content: resourceEntries,
-        _finalize: content => JSON.stringify(content, null, '  '),
-        _getSize: content => JSON.stringify(content, null, '  ').length
-    }];
+        content: resourceEntries
+    }, options);
+
+    // TODO: Generate output assets for each entry.
 
     return resourceAssets;
 }
@@ -84,13 +178,10 @@ async function getDataSourceAssets(options) {
                 ...(await getDataSourceAssetsForResource(resourceName, options))
             ];
         } else {
-            const resourcePath = getResourcePath(resourceFile, options);
-            assets = [...assets, {
+            assets = [...assets, ...evaluateResourcePipeline({
                 key: getAssetKey(resourceFile, options),
-                content: require(resourcePath),
-                _finalize: content => JSON.stringify(content, null, '  '),
-                _getSize: content => JSON.stringify(content, null, '  ').length
-            }];
+                content: require(getResourcePath(resourceFile, options))
+            }, options)];
         }
     }
 
