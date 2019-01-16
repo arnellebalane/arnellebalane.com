@@ -33,12 +33,12 @@ export default merge(baseWebpackConfig, {
                 articles: {
                     sourceDir: resolvePath('data/articles'),
                     orderBy: '-date_published',
-                    itemsPerPage: 5,
+                    itemsPerPage: 1,
                     shouldInclude: item => item.published
                 },
                 events: {
                     orderBy: '-date',
-                    itemsPerPage: 5
+                    itemsPerPage: 1
                 }
             }
         })
