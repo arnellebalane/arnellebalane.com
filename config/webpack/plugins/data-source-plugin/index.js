@@ -169,7 +169,7 @@ async function getDataSourceAssetsForResource(resourceName, options) {
 
     const resourceAssets = evaluateResourcePipeline({
         key: getAssetKey(`${resourceName}.json`, options),
-        content: resourceEntries
+        content: resourceEntries.map(entry => entry.frontMatter)
     }, options);
 
     // TODO: Generate output assets for each entry.
