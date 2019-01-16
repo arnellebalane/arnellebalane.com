@@ -96,11 +96,12 @@ function evaluateResourcePipeline(resource, options) {
         const paginatedEntries = paginateResourceEntries(resource.content.data, resourceConfig.itemsPerPage);
         const totalPages = paginatedEntries.length;
 
+        /* eslint camelcase: ['error', {allow: ['next_page', 'previous_page']}] */
         const getResourcePageUrls = page => ({
-            nextPage: page < totalPages
+            next_page: page < totalPages
                 ? getAbsoluteUrl(getAssetKey(`${resourceName}/pages/${page + 1}.json`, options))
                 : null,
-            previousPage: page > 1
+            previous_page: page > 1
                 ? getAbsoluteUrl(getAssetKey(`${resourceName}/pages/${page - 1}.json`, options))
                 : null
         });
