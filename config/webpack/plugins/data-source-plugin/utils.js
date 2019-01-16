@@ -29,6 +29,35 @@ export function normalizeSortableValue(value) {
     return value;
 }
 
+export function sortObjectsByKey(objects, key) {
+    const isDescending = key.startsWith('-');
+    const direction = isDescending ? 1 : -1;
+    const sortKey = isDescending ? key.substring(1) : key;
+
+    return [...objects].sort((a, b) => {
+        const _a = normalizeSortableValue(a[sortKey]);
+        const _b = normalizeSortableValue(b[sortKey]);
+
+        if (_a < _b) {
+            return direction;
+        } else if (_a > _b) {
+            return -direction;
+        }
+        return 0;
+    });
+}
+
+export function paginate(array, itemsPerPage) {
+    return array.reduce((paginated, item, i) => {
+        const index = Math.floor(i / itemsPerPage);
+        if (!paginated[index]) {
+            paginated[index] = [];
+        }
+        paginated[index].push(item);
+        return paginated;
+    }, []);
+}
+
 export async function getFilesWithExtension(directoryPath, extension) {
     const directoryItems = await readDir(directoryPath);
     return directoryItems.filter(item => item.endsWith(`.${extension}`));
