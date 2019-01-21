@@ -1,9 +1,11 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import ProjectCard from './components/ProjectCard/ProjectCard.tsx';
+import useApiData from '@/lib/useApiData.tsx';
 import shared from '@/stylesheets/pages.css';
 
-export default function Projects() {
-    const projects = [];
+function Projects(props) {
+    const {data: projects} = useApiData('projects', props.location);
 
     return (
         <div>
@@ -17,3 +19,5 @@ export default function Projects() {
         </div>
     );
 }
+
+export default withRouter(Projects);

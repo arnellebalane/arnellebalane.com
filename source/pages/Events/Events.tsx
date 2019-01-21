@@ -1,10 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import EventCard from './components/EventCard/EventCard.tsx';
+import useApiData from '@/lib/useApiData.tsx';
 import shared from '@/stylesheets/pages.css';
 
-export default function Events() {
-    const events = [];
+function Events(props) {
+    const {
+        data: events,
+        nextPage,
+        previousPage
+    } = useApiData('events', props.location);
 
     return (
         <div>
@@ -16,9 +21,21 @@ export default function Events() {
                 <EventCard key={eventItem.title} event={eventItem} />
             ))}
 
-            <Link className={shared.link} to="#">
-                See older events
-            </Link>
+            <div className={shared.links}>
+                {nextPage && (
+                    <Link className={shared.link} to={nextPage}>
+                        See older events
+                    </Link>
+                )}
+
+                {previousPage && (
+                    <Link className={shared.link} to={previousPage}>
+                        See newer events
+                    </Link>
+                )}
+            </div>
         </div>
     );
 }
+
+export default withRouter(Events);

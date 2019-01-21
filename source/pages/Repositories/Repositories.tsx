@@ -1,9 +1,11 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import RepositoryCard from './components/RepositoryCard/RepositoryCard.tsx';
+import useApiData from '@/lib/useApiData.tsx';
 import shared from '@/stylesheets/pages.css';
 
-export default function Repositories() {
-    const repositories = [];
+function Repositories(props) {
+    const {data: repositories} = useApiData('repositories', props.location);
 
     return (
         <div>
@@ -26,3 +28,5 @@ export default function Repositories() {
         </div>
     );
 }
+
+export default withRouter(Repositories);
