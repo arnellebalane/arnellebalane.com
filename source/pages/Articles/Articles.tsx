@@ -6,10 +6,14 @@ import shared from '@/stylesheets/pages.css';
 
 export default function ArticleList() {
     const [articles, setArticles] = useState([]);
+    const [hasOlderArticles, setHasOlderArticles] = useState(false);
+    const [hasNewerArticles, setHasNewerArticles] = useState(false);
 
     useEffect(() => {
-        fetchData('articles').then(response => {
+        fetchData('articles').then(({data: response}) => {
             setArticles(response.data);
+            setHasOlderArticles(Boolean(response.next_page));
+            setHasNewerArticles(Boolean(response.previous_page));
         });
     }, []);
 
@@ -23,9 +27,17 @@ export default function ArticleList() {
                 <ArticleCard key={article.url} article={article} />
             ))}
 
-            <Link className={shared.link} to="#">
-                See older articles
-            </Link>
+            {hasOlderArticles && (
+                <Link className={shared.link} to="#">
+                    See older articles
+                </Link>
+            )}
+
+            {hasNewerArticles && (
+                <Link className={shared.link} to="#">
+                    See newer articles
+                </Link>
+            )}
         </div>
     );
 }
