@@ -57,6 +57,7 @@ export default {
         new DefinePlugin({
             'process.env': {
                 API_ENDPOINT: JSON.stringify(config.API_ENDPOINT),
+                API_PAGE_FORMAT: JSON.stringify(config.API_PAGE_FORMAT),
                 API_PATH_EXTENSION: JSON.stringify(config.API_PATH_EXTENSION)
             }
         }),
