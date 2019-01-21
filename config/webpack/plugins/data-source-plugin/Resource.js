@@ -1,3 +1,5 @@
+/* eslint camelcase: ['error', {allow: ['next_page', 'previous_page', 'full_url']}] */
+
 import path from 'path';
 import {
     sortObjectsByKey,
@@ -47,7 +49,6 @@ export default class Resource {
                 const page = i + 1;
                 const assetPath = getAssetPath(page);
 
-                /* eslint camelcase: ['error', {allow: ['next_page', 'previous_page']}] */
                 const content = {
                     data: entries,
                     next_page: page < totalPages ? getPageUrl(page + 1) : null,
@@ -86,7 +87,8 @@ export default class Resource {
 
             return {
                 ...extracted.frontMatter,
-                url: this.plugin.getAbsoluteUrl(asset.inputRelativePath)
+                url: asset.inputRelativePath,
+                full_url: this.plugin.getAbsoluteUrl(asset.inputRelativePath)
             };
         })).then(entries => entries.filter(Boolean));
     }
