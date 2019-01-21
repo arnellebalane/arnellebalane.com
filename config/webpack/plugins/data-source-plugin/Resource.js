@@ -71,7 +71,12 @@ export default class Resource {
                 return null;
             }
 
-            const asset = this.addAsset(new MarkdownAsset(entryPath, {data: extracted.content}, this));
+            const asset = this.addAsset(new MarkdownAsset(entryPath, {
+                data: {
+                    ...extracted.frontMatter,
+                    content: extracted.content
+                }
+            }, this));
 
             return {
                 ...extracted.frontMatter,
