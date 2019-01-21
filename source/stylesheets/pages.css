@@ -4,6 +4,12 @@
     text-transform: uppercase;
 }
 
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3.6rem;
+}
+
 .link {
     font-style: italic;
     text-decoration: none;
