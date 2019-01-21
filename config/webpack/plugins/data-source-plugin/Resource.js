@@ -33,7 +33,7 @@ export default class Resource {
         }
 
         if (itemsPerPage) {
-            const getAssetPath = page => path.join(this.name, 'pages', `${page}.json`);
+            const getAssetPath = page => path.join(this.outputBaseUrl, this.name, 'pages', `${page}.json`);
             const getPageUrl = page => this.plugin.getAbsoluteUrl(getAssetPath(page));
 
             paginate(contents, itemsPerPage).forEach((entries, i, arr) => {
@@ -80,7 +80,7 @@ export default class Resource {
 
             return {
                 ...extracted.frontMatter,
-                url: this.plugin.getAbsoluteUrl(asset.inputRelativePath)
+                url: this.plugin.getAbsoluteUrl(asset.outputKey)
             };
         })).then(entries => entries.filter(Boolean));
     }
