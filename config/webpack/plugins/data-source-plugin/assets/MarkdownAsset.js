@@ -4,7 +4,7 @@ export default class MarkdownAsset extends Asset {
     constructor(...args) {
         super(...args);
 
-        this.outputKey = this.outputKey.replace(/\.md$/, '');
+        this.outputKey = this.outputKey.replace(/\.md$/, '.json');
     }
 
     getContent() {
