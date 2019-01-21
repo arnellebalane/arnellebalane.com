@@ -9,6 +9,10 @@ const javascriptRegex = /\.jsx?$/;
 const stylesheetRegex = /\.(css)$/;
 const imagesRegex = /\.(png|jpe?g|gif|svg)$/;
 
+export function resolvePath(relativePath) {
+    return path.resolve(__dirname, `../../${relativePath}`);
+}
+
 export default {
     mode: config.NODE_ENV,
 
@@ -42,7 +46,7 @@ export default {
 
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, '../../source')
+            '@': resolvePath('source')
         }
     },
 

@@ -1,12 +1,8 @@
-import path from 'path';
 import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import baseWebpackConfig from './base.babel';
+import DataSourcePlugin from './plugins/data-source-plugin';
+import baseWebpackConfig, {resolvePath} from './base';
 import config from '..';
-
-function resolvePath(relativePath) {
-    return path.resolve(__dirname, `../../${relativePath}`);
-}
 
 export default merge(baseWebpackConfig, {
     entry: '@/index.tsx',
@@ -27,6 +23,23 @@ export default merge(baseWebpackConfig, {
             minify: {
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true
+            }
+        }),
+
+        new DataSourcePlugin({
+            sourceDir: resolvePath('data'),
+            namespace: 'api',
+            resourceConfigs: {
+                articles: {
+                    sourceDir: resolvePath('data/articles'),
+                    orderBy: '-date_published',
+                    itemsPerPage: 1,
+                    shouldInclude: item => item.published
+                },
+                events: {
+                    orderBy: '-date',
+                    itemsPerPage: 1
+                }
             }
         })
     ]

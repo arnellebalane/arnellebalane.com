@@ -8,5 +8,5 @@ const {
 
 export default {
     NODE_ENV,
-    BASE_URL: CONTEXT === 'production' ? URL : DEPLOY_URL
+    BASE_URL: (CONTEXT === 'production' ? URL : DEPLOY_URL).replace(/\/$/, '')
 };
