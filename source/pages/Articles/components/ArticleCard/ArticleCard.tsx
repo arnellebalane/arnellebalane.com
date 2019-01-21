@@ -6,7 +6,7 @@ type ArticleType = {
     title: string,
     url: string,
     date_published: string,
-    summary: string
+    description: string
 }
 
 type ArticleCardProps = {
@@ -30,7 +30,7 @@ export default function ArticleCard({article}: ArticleCardProps) {
             </time>
 
             <p className={shared.content}>
-                {article.summary}
+                {article.description}
             </p>
         </article>
     );
