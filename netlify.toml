@@ -15,6 +15,11 @@
   status = 200
 
 [[redirects]]
+  from = "/api/*"
+  to = "/api/:splat.json"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/"
   status = 200
