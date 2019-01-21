@@ -33,8 +33,12 @@ export default class Resource {
         }
 
         if (itemsPerPage) {
-            const getAssetPath = page => path.join(this.outputBaseUrl, this.name, 'pages', `${page}.json`);
-            const getPageUrl = page => this.plugin.getAbsoluteUrl(getAssetPath(page));
+            const getAssetPath = page => path.join(this.name, 'pages', `${page}.json`);
+            /* eslint-disable function-paren-newline */
+            const getPageUrl = page => this.plugin.getAbsoluteUrl(
+                path.join(this.outputBaseUrl, this.name, 'pages', `${page}.json`)
+            );
+            /* eslint-enable function-paren-newline */
 
             paginate(contents, itemsPerPage).forEach((entries, i, arr) => {
                 const totalPages = arr.length;
