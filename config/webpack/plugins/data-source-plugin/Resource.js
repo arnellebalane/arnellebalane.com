@@ -49,16 +49,12 @@ export default class Resource {
                 };
 
                 if (page === 1) {
-                    const indexAsset = new JSONAsset(this.inputAbsolutePath, content, this);
-                    this.assets.set(indexAsset.outputKey, indexAsset);
+                    this.addAsset(new JSONAsset(this.inputAbsolutePath, content, this));
                 }
-
-                const asset = new JSONAsset(assetPath, content, this);
-                this.assets.set(asset.outputKey, asset);
+                this.addAsset(new JSONAsset(assetPath, content, this));
             });
         } else {
-            const asset = new JSONAsset(this.inputAbsolutePath, {data: contents}, this);
-            this.assets.set(asset.outputKey, asset);
+            this.addAsset(new JSONAsset(this.inputAbsolutePath, {data: contents}, this));
         }
     }
 
@@ -75,13 +71,17 @@ export default class Resource {
                 return null;
             }
 
-            const asset = new MarkdownAsset(entryPath, {data: extracted.content}, this);
-            this.assets.set(asset.outputKey, asset);
+            const asset = this.addAsset(new MarkdownAsset(entryPath, {data: extracted.content}, this));
 
             return {
                 ...extracted.frontMatter,
                 url: this.plugin.getAbsoluteUrl(asset.outputKey)
             };
         })).then(entries => entries.filter(Boolean));
+    }
+
+    addAsset(asset) {
+        this.assets.set(asset.outputKey, asset);
+        return asset;
     }
 }
