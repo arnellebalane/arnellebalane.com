@@ -8,6 +8,7 @@ import {
 } from './utils';
 import JSONAsset from './assets/JSONAsset';
 import MarkdownAsset from './assets/MarkdownAsset';
+import config from '../../..';
 
 export default class Resource {
     constructor(resourcePath, options, plugin) {
@@ -33,11 +34,12 @@ export default class Resource {
         }
 
         if (itemsPerPage) {
+            const formatPage = page => config.API_PAGE_FORMAT.replace('{page}', page);
             const getAssetPath = page => path.join(this.name, 'pages', `${page}.json`);
             /* eslint-disable function-paren-newline */
             const getPageUrl = page => this.plugin.getAbsoluteUrl(
-                path.join(this.outputBaseUrl, this.name, 'pages', `${page}.json`)
-            );
+                path.join(this.outputBaseUrl, this.name)
+            ) + formatPage(page);
             /* eslint-enable function-paren-newline */
 
             paginate(contents, itemsPerPage).forEach((entries, i, arr) => {

@@ -2,6 +2,9 @@
   publish = "build"
   command = "npm run build"
 
+[build.environment]
+  API_PAGE_FORMAT = '?page={page}'
+
 [[headers]]
   for = "/*"
 
