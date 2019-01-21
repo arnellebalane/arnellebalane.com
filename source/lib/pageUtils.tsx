@@ -1,5 +1,7 @@
 const pageFormat = process.env.API_PAGE_FORMAT;
-const pageFormatRegex = new RegExp(pageFormat.replace('{page}', '(\\d+)'));
+const pageFormatRegex = new RegExp(pageFormat
+    .replace('{page}', '(\\d+)')
+    .replace('?', '\\?'));
 
 export function extractPage(url) {
     const match = url.match(pageFormatRegex);
