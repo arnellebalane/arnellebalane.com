@@ -1,4 +1,5 @@
 import path from 'path';
+import {DefinePlugin} from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -53,6 +54,13 @@ export default {
     },
 
     plugins: [
+        new DefinePlugin({
+            'process.env': {
+                API_ENDPOINT: JSON.stringify(config.API_ENDPOINT),
+                API_PATH_EXTENSION: JSON.stringify(config.API_PATH_EXTENSION)
+            }
+        }),
+
         new HtmlWebpackPlugin({
             template: resolvePath('source/index.html'),
             templateParameters: {
