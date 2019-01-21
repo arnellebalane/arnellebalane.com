@@ -4,6 +4,7 @@
 
 [build.environment]
   API_PAGE_FORMAT = '?page={page}'
+  API_PATH_EXTENSION = ''
 
 [[headers]]
   for = "/*"
