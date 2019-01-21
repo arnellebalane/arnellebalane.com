@@ -84,7 +84,7 @@ export default class Resource {
 
             return {
                 ...extracted.frontMatter,
-                url: this.plugin.getAbsoluteUrl(asset.outputKey)
+                url: this.plugin.getAbsoluteUrl(asset.inputRelativePath)
             };
         })).then(entries => entries.filter(Boolean));
     }
