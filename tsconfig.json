@@ -3,6 +3,7 @@
     "module": "esnext",
     "target": "esnext",
     "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
     "jsx": "react"
   },
   "include": [

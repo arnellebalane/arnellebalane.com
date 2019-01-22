@@ -4,9 +4,10 @@ import shared from '@/stylesheets/cards.css';
 
 type ArticleType = {
     title: string,
+    slug: string,
     url: string,
     date_published: string,
-    summary: string
+    description: string
 }
 
 type ArticleCardProps = {
@@ -16,7 +17,7 @@ type ArticleCardProps = {
 export default function ArticleCard({article}: ArticleCardProps) {
     return (
         <article className={shared.card}>
-            <Link className={shared.link} to={article.url}>
+            <Link className={shared.link} to={`/articles/${article.slug}`}>
                 <h1 className={shared.title}>
                     {article.title}
                 </h1>
@@ -30,7 +31,7 @@ export default function ArticleCard({article}: ArticleCardProps) {
             </time>
 
             <p className={shared.content}>
-                {article.summary}
+                {article.description}
             </p>
         </article>
     );

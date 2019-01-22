@@ -1,10 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import ArticleCard from './components/ArticleCard/ArticleCard.tsx';
+import PaginationLinks from '@/components/PaginationLinks/PaginationLinks.tsx';
+import useApiData from '@/lib/useApiData.tsx';
 import shared from '@/stylesheets/pages.css';
 
-export default function ArticleList() {
-    const articles = [];
+function ArticleList(props) {
+    const {
+        data: articles,
+        nextPage,
+        previousPage
+    } = useApiData('articles', props.location);
 
     return (
         <div>
@@ -16,9 +22,13 @@ export default function ArticleList() {
                 <ArticleCard key={article.url} article={article} />
             ))}
 
-            <Link className={shared.link} to="#">
-                See older articles
-            </Link>
+            <PaginationLinks
+                label="articles"
+                nextPage={nextPage}
+                previousPage={previousPage}
+            />
         </div>
     );
 }
+
+export default withRouter(ArticleList);

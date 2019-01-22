@@ -3,7 +3,12 @@
   command = "npm run build"
 
 [build.environment]
-  API_PAGE_FORMAT = '?page={page}'
+  API_PAGE_FORMAT = "?page={page}"
+
+  # It looks like empty string values for env variables are being ignored,
+  # so I'm setting this to some value that gets manually checked in the build
+  # code where the default value is manually set.
+  API_PATH_EXTENSION = "[none]"
 
 [[headers]]
   for = "/*"

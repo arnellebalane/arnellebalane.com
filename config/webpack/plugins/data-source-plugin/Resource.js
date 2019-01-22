@@ -1,3 +1,5 @@
+/* eslint camelcase: ['error', {allow: ['next_page', 'previous_page', 'full_url']}] */
+
 import path from 'path';
 import {
     sortObjectsByKey,
@@ -47,11 +49,16 @@ export default class Resource {
                 const page = i + 1;
                 const assetPath = getAssetPath(page);
 
-                /* eslint camelcase: ['error', {allow: ['next_page', 'previous_page']}] */
+                /*
+                 * The pages number looks like it doesn't make sense
+                 * (previous_page = page + 1, whut?), but this is so that the
+                 * newer items are on the first page, and older items are in the
+                 * previous, older pages.
+                 */
                 const content = {
                     data: entries,
-                    next_page: page < totalPages ? getPageUrl(page + 1) : null,
-                    previous_page: page > 1 ? getPageUrl(page - 1) : null
+                    previous_page: page < totalPages ? getPageUrl(page + 1) : null,
+                    next_page: page > 1 ? getPageUrl(page - 1) : null
                 };
 
                 if (page === 1) {
@@ -86,7 +93,8 @@ export default class Resource {
 
             return {
                 ...extracted.frontMatter,
-                url: this.plugin.getAbsoluteUrl(asset.inputRelativePath)
+                url: this.plugin.getAbsoluteUrl(asset.inputRelativePath),
+                slug: asset.inputRelativePath.split('/').pop()
             };
         })).then(entries => entries.filter(Boolean));
     }
