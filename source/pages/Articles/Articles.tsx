@@ -22,19 +22,19 @@ function ArticleList(props) {
             ))}
 
             <div className={shared.links}>
-                {nextPage && (
+                {previousPage && (
                     <Link
                         className={[shared.link, shared.previousLink].join(' ')}
-                        to={nextPage}
+                        to={previousPage}
                     >
                         See older articles
                     </Link>
                 )}
 
-                {previousPage && (
+                {nextPage && (
                     <Link
                         className={[shared.link, shared.nextLink].join(' ')}
-                        to={previousPage}
+                        to={nextPage}
                     >
                         See newer articles
                     </Link>
