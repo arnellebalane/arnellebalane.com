@@ -87,8 +87,8 @@ export default class Resource {
 
             return {
                 ...extracted.frontMatter,
-                url: asset.inputRelativePath,
-                full_url: this.plugin.getAbsoluteUrl(asset.inputRelativePath)
+                url: this.plugin.getAbsoluteUrl(asset.inputRelativePath),
+                slug: asset.inputRelativePath.split('/').pop()
             };
         })).then(entries => entries.filter(Boolean));
     }
