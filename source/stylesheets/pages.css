@@ -6,7 +6,6 @@
 
 .links {
     display: flex;
-    justify-content: space-between;
     margin-top: 3.6rem;
 }
 
@@ -19,4 +18,12 @@
 .link:hover,
 .link:focus {
     text-decoration: underline;
+}
+
+.previousLink {
+    margin-right: auto;
+}
+
+.nextLink {
+    margin-left: auto;
 }

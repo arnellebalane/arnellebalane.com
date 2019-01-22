@@ -23,13 +23,19 @@ function Events(props) {
 
             <div className={shared.links}>
                 {nextPage && (
-                    <Link className={shared.link} to={nextPage}>
+                    <Link
+                        className={[shared.link, shared.previousLink].join(' ')}
+                        to={nextPage}
+                    >
                         See older events
                     </Link>
                 )}
 
                 {previousPage && (
-                    <Link className={shared.link} to={previousPage}>
+                    <Link
+                        className={[shared.link, shared.nextLink].join(' ')}
+                        to={previousPage}
+                    >
                         See newer events
                     </Link>
                 )}
