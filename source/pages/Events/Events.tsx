@@ -1,6 +1,7 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import EventCard from './components/EventCard/EventCard.tsx';
+import PaginationLinks from '@/components/PaginationLinks/PaginationLinks.tsx';
 import useApiData from '@/lib/useApiData.tsx';
 import shared from '@/stylesheets/pages.css';
 
@@ -21,25 +22,11 @@ function Events(props) {
                 <EventCard key={eventItem.title} event={eventItem} />
             ))}
 
-            <div className={shared.links}>
-                {previousPage && (
-                    <Link
-                        className={[shared.link, shared.previousLink].join(' ')}
-                        to={previousPage}
-                    >
-                        See older events
-                    </Link>
-                )}
-
-                {nextPage && (
-                    <Link
-                        className={[shared.link, shared.nextLink].join(' ')}
-                        to={nextPage}
-                    >
-                        See newer events
-                    </Link>
-                )}
-            </div>
+            <PaginationLinks
+                label="events"
+                nextPage={nextPage}
+                previousPage={previousPage}
+            />
         </div>
     );
 }

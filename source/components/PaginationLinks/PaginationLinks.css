@@ -1,0 +1,23 @@
+.links {
+    display: flex;
+    margin-top: 3.6rem;
+}
+
+.link {
+    font-style: italic;
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
+
+.link:hover,
+.link:focus {
+    text-decoration: underline;
+}
+
+.previousLink {
+    margin-right: auto;
+}
+
+.nextLink {
+    margin-left: auto;
+}
