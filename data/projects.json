@@ -1,5 +1,10 @@
 [
     {
+        "name": "arnellebalane/monokai-social",
+        "description": " A Chrome extension that enables Monokai theme for social media sites",
+        "url": " https://github.com/arnellebalane/monokai-social"
+    },
+    {
         "name": "arnellebalane/citrine",
         "description": " Augment JavaScript arrays with Ruby array methods, using Proxies",
         "url": " https://github.com/arnellebalane/citrine"
@@ -8,10 +13,5 @@
         "name": "arnellebalane/streaks",
         "description": " Keep track of anything using Github-style streaks",
         "url": " https://github.com/arnellebalane/streaks"
-    },
-    {
-        "name": "arnellebalane/parcel-plugin-data-src",
-        "description": " ParcelJS plugin to bundle resources defined in data-* attributes",
-        "url": " https://github.com/arnellebalane/parcel-plugin-data-src"
     }
 ]
