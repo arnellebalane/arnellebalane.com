@@ -69,7 +69,7 @@
 
                 {%- for event in events %}
                     <article class="Event">
-                        <h1 class="Event__Title">{{ event.name }}</h1>
+                        <h1 class="Event__Title">{% externalLink event.name, event.url %}</h1>
                         <h2 class="Event__Subtitle">{{ event.description }}</h2>
 
                         <time class="Event__Date" datetime="2019-05-11">{{ event.date }}</time>
