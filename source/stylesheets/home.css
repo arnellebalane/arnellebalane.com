@@ -42,6 +42,26 @@
 
 
 
+/* SECTIONS */
+
+.Section {
+    margin: 12rem 0;
+}
+
+.Section__Title {
+    margin-bottom: 2.4rem;
+    font-size: 3.6rem;
+    font-weight: 900;
+}
+
+.Section p {
+    margin: 2.4rem 0;
+    font-size: 2.4rem;
+    line-height: 1.5;
+}
+
+
+
 /* HERO SECTION */
 
 .Hero {

@@ -63,7 +63,7 @@ body {
 
 a {
     font: inherit;
-    color: inherit;
+    color: var(--primary-400);
     text-decoration: none;
 }
 
