@@ -264,3 +264,38 @@
     height: 100%;
     background-color: var(--primary-700);
 }
+
+
+
+/* FOOTER */
+
+.Footer {
+    padding-top: 6rem;
+    padding-bottom: 11rem;
+    margin-top: 12rem;
+    position: relative;
+    text-align: center;
+}
+
+.Footer::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: var(--wrapper-padding);
+    bottom: 0;
+    width: 28rem;
+    height: 3rem;
+    background-color: var(--primary-700);
+}
+
+.Footer__Copyright {
+    margin-bottom: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.Footer__BuiltWith {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--gray-400);
+}
