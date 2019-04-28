@@ -13,6 +13,7 @@
 /* HEADER */
 
 .Header {
+    height: 17.5rem;
     padding-top: 7.2rem;
     padding-bottom: 4.2rem;
     position: relative;
@@ -77,8 +78,8 @@
 
 .Hero {
     display: flex;
-    padding-top: 3rem;
-    margin-top: 6rem;
+    padding-top: 5rem;
+    margin-top: 4rem;
 }
 
 .Hero::before {
@@ -88,7 +89,7 @@
     top: 0;
     left: calc(var(--wrapper-padding-left) - 15rem);
     width: 62rem;
-    height: 18rem;
+    height: 20rem;
     background: url("../images/dot.png") repeat;
 }
 
@@ -246,18 +247,18 @@
 /* GET IN TOUCH SECTION */
 
 .GetInTouch {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    /*padding-top: 5rem;
+    padding-bottom: 5rem;*/
 }
 
 .GetInTouch::before {
     content: "";
     position: absolute;
     z-index: -1;
-    top: 0;
+    top: -5rem;
     left: calc(var(--wrapper-padding-left) - 9rem);
+    bottom: -5rem;
     width: 18rem;
-    height: 100%;
     background: url("../images/dot.png") repeat;
 }
 
