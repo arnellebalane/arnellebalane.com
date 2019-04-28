@@ -39,6 +39,8 @@ html {
     font-size: 62.5%;
 
     --primary-400: #d45d79;
+    --primary-700: #fff5f7;
+
     --gray-100: #141a24;
     --gray-200: #242a33;
     --gray-300: #3c4149;
@@ -60,4 +62,17 @@ body {
 a {
     font: inherit;
     color: inherit;
+    text-decoration: none;
+}
+
+
+
+/* UTILITIES */
+
+.l-Wrapper {
+    --wrapper-width: 114rem;
+    --wrapper-padding: calc((100vw - var(--wrapper-width)) / 2);
+
+    padding-left: var(--wrapper-padding);
+    padding-right: var(--wrapper-padding);
 }

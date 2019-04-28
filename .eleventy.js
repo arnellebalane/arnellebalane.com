@@ -5,12 +5,9 @@ module.exports = {
     },
     templateFormats: [
         // Regular templates
-        'html',
-        'njk',
-        'md',
+        'html', 'njk', 'md',
 
         // Static files that needs to be copied (passthrough)
-        'css',
-        'ttf'
+        'css', 'ttf', 'jpg', 'png', 'svg'
     ]
 };
