@@ -233,3 +233,24 @@
 .TechnologyList__Item img {
     display: block;
 }
+
+
+
+/* GET IN TOUCH SECTION */
+
+.GetInTouch {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+.GetInTouch::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: calc(var(--wrapper-padding) + 29rem - 9rem);
+    bottom: 0;
+    width: 18rem;
+    background-color: var(--primary-700);
+}
