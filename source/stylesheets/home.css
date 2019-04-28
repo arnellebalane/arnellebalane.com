@@ -62,6 +62,7 @@
 }
 
 .Avatar {
+    flex-shrink: 0;
     display: block;
     width: 34rem;
     height: 34rem;
