@@ -67,21 +67,15 @@
             <div class="UpcomingEvents">
                 <h2 class="UpcomingEvents__Label">Upcoming Events</h2>
 
-                <article class="Event">
-                    <h1 class="Event__Title">GCP Next Extended Cebu 2019</h1>
-                    <h2 class="Event__Subtitle">Scheduling Cloud Functions for Firebase</h2>
+                {%- for event in events %}
+                    <article class="Event">
+                        <h1 class="Event__Title">{{ event.name }}</h1>
+                        <h2 class="Event__Subtitle">{{ event.description }}</h2>
 
-                    <time class="Event__Date" datetime="2019-05-11">May 11, 2019</time>
-                    <p class="Event__Venue">The Company, IT Park, Cebu City</p>
-                </article>
-
-                <article class="Event">
-                    <h1 class="Event__Title">Facebook Developer Circles Cebu</h1>
-                    <h2 class="Event__Subtitle">Building GraphQL Projects</h2>
-
-                    <time class="Event__Date" datetime="2019-05-25">May 25, 2019</time>
-                    <p class="Event__Venue">Mabuhay Tower, Cebu City</p>
-                </article>
+                        <time class="Event__Date" datetime="2019-05-11">{{ event.date }}</time>
+                        <p class="Event__Venue">{{ event.venue }}</p>
+                    </article>
+                {% endfor -%}
             </div>
 
             <a class="SeeAllEvents" href="/events">See all talks and workshops</a>
