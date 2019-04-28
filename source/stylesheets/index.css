@@ -48,6 +48,8 @@ html {
     --gray-500: #c6cbd2;
     --gray-600: #e7eaef;
     --gray-700: #f9fafb;
+
+    --accent-yellow-200: #cc8f00;
 }
 
 body {
