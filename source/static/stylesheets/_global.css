@@ -36,7 +36,8 @@
 }
 
 html {
-    font-size: 62.5%;
+    /* Following value was obtained by trial-and-error 😅 */
+    font-size: 0.694445vw;
 
     --primary-400: #d45d79;
     --primary-700: #fff5f7;
@@ -50,6 +51,12 @@ html {
     --gray-700: #f9fafb;
 
     --accent-yellow-200: #cc8f00;
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: 62.5%;
+    }
 }
 
 body {
