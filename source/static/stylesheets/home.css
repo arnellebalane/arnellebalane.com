@@ -54,7 +54,7 @@
     font-weight: 900;
 }
 
-.Section p {
+.Section > p {
     margin: 2.4rem 0;
     font-size: 2.4rem;
     line-height: 1.5;
@@ -135,4 +135,81 @@
 
 .SocialIcon--linkedin {
     background-image: url("../images/icons/linkedin.svg");
+}
+
+
+
+/* TALKS & WORKSHOPS SECTION */
+
+.TalksAndWorkshops {
+    position: relative;
+}
+
+.TalksAndWorkshops::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 10rem;
+    left: calc(var(--wrapper-padding) - 15rem);
+    width: 41rem;
+    height: 30rem;
+    background-color: var(--primary-700);
+}
+
+.TalksAndWorkshops img {
+    float: left;
+    width: 38rem;
+    margin-left: -44rem;
+    margin-right: 6rem;
+}
+
+.TalksAndWorkshops .SeeAllEvents {
+    font-size: 2rem;
+}
+
+.UpcomingEvents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 12rem;
+
+    margin-top: 6rem;
+    margin-bottom: 7.2rem;
+}
+
+.UpcomingEvents__Label {
+    grid-column-end: span 2;
+
+    margin-bottom: 2.4rem;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.Event {
+    display: flex;
+    flex-direction: column;
+}
+
+.Event__Title {
+    margin-bottom: 1.2rem;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--primary-400);
+}
+
+.Event__Subtitle {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.Event__Date,
+.Event__Venue {
+    font-size: 1.8rem;
+    color: var(--gray-400);
+}
+
+.Event__Date {
+    margin-top: auto;
+    margin-bottom: 1rem;
 }

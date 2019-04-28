@@ -78,3 +78,9 @@ a {
     padding-left: var(--wrapper-padding);
     padding-right: var(--wrapper-padding);
 }
+
+.u-Clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
