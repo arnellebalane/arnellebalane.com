@@ -29,11 +29,11 @@
 
                 <p>I love experimenting with and sharing about cool new Web technologies and techniques.</p>
                 <p>I'm <strong>@arnellebalane</strong> on
-                    <a class="SocialIcon SocialIcon--github" href="https://github.com/arnellebalane" target="_blank" rel="noopener noreferrer">Github</a>
-                    <a class="SocialIcon SocialIcon--twitter" href="https://twitter.com/arnellebalane" target="_blank" rel="noopener noreferrer">Twitter</a>
-                    <a class="SocialIcon SocialIcon--devto" href="https://dev.to/arnellebalane" target="_blank" rel="noopener noreferrer">Dev.to</a>
-                    <a class="SocialIcon SocialIcon--instagram" href="https://instagram.com/arnellebalane/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    <a class="SocialIcon SocialIcon--linkedin" href="https://linkedin.com/in/arnellebalane/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    {% externalLink 'Github', 'https://github.com/arnellebalane', ['SocialIcon', 'SocialIcon--github'] %}
+                    {% externalLink 'Twitter', 'https://twitter.com/arnellebalane', ['SocialIcon', 'SocialIcon--twitter'] %}
+                    {% externalLink 'Dev.to', 'https://dev.to/arnellebalane', ['SocialIcon', 'SocialIcon--devto'] %}
+                    {% externalLink 'Instagram', 'https://instagram.com/arnellebalane', ['SocialIcon', 'SocialIcon--instagram'] %}
+                    {% externalLink 'LinkedIn', 'https://linkedin.com/in/arnellebalane', ['SocialIcon', 'SocialIcon--linkedin'] %}
                 </p>
             </div>
         </section>
@@ -42,14 +42,15 @@
             <h1 class="Section__Title">About</h1>
 
             <p>
-                I’m currently a Software Developer at <a href="https://newlogic.io" target="_blank" rel="noopener noreferrer">Newlogic</a>. Previously, I was
-                the Lead Frontend Developer at <a href="https://channelfix.com" target="_blank" rel="noopener noreferrer">Channelfix</a>. I also used to teach a
+                I’m currently a Software Developer at {% externalLink 'Newlogic', 'https://newlogic.io/' %}. Previously, I was the
+                Lead Frontend Developer at {% externalLink 'Channelfix', 'https://channelfix.com' %}. I also used to teach a
                 Web Engineering class at the University of the Philippines Cebu as a part-time lecturer.
             </p>
 
             <p>
-                On weekends, I’m a co-organizer for <a href="https://gdgcebu.org" target="_blank" rel="noopener noreferrer">Google Developers Group Cebu</a>,
-                a small team that sets up tech events around the Visayas region. You’ll often find me giving talks and workshops at those and other community events.
+                On weekends, I’m a co-organizer for {% externalLink 'Google Developers Group Cebu', 'https://gdgcebu.org' %},
+                a small team that sets up tech events around the Visayas region. You’ll often find me giving talks and workshops at
+                those and other community events.
             </p>
         </section>
     </body>
