@@ -1,0 +1,63 @@
+/* CUSTOM FONTS */
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-display: swap;
+    src: local("Gilroy-Regular"),
+        url("../fonts/Gilroy-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 700;
+    font-display: swap;
+    src: local("Gilroy-Bold"),
+        url("../fonts/Gilroy-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 900;
+    font-display: swap;
+    src: local("Gilroy-Heavy"),
+        url("../fonts/Gilroy-Heavy.ttf") format("truetype");
+}
+
+
+
+/* GLOBAL STYLES */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    --primary-400: #d45d79;
+    --gray-100: #141a24;
+    --gray-200: #242a33;
+    --gray-300: #3c4149;
+    --gray-400: #5c636e;
+    --gray-500: #c6cbd2;
+    --gray-600: #e7eaef;
+    --gray-700: #f9fafb;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Gilroy", sans-serif;
+    font-size: 1.8rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--gray-100);
+}
+
+a {
+    font: inherit;
+    color: inherit;
+}
