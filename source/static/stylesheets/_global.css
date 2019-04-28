@@ -74,9 +74,11 @@ a {
 .l-Wrapper {
     --wrapper-width: 114rem;
     --wrapper-padding: calc((100vw - var(--wrapper-width)) / 2);
+    --wrapper-padding-left: var(--wrapper-padding);
+    --wrapper-padding-right: var(--wrapper-padding);
 
-    padding-left: var(--wrapper-padding);
-    padding-right: var(--wrapper-padding);
+    padding-left: var(--wrapper-padding-left);
+    padding-right: var(--wrapper-padding-right);
 }
 
 .u-Clearfix::after {

@@ -1,11 +1,11 @@
 /* LAYOUT */
 
 .l-LeftTwoThirds {
-    padding-right: calc(var(--wrapper-padding) + 29rem);
+    --wrapper-padding-right: calc(var(--wrapper-padding) + 29rem);
 }
 
 .l-RightTwoThirds {
-    padding-left: calc(var(--wrapper-padding) + 29rem);
+    --wrapper-padding-left: calc(var(--wrapper-padding) + 29rem);
 }
 
 
@@ -13,13 +13,23 @@
 /* HEADER */
 
 .Header {
-    padding-top: 4.2rem;
+    padding-top: 7.2rem;
     padding-bottom: 4.2rem;
-    border-top: 2rem solid var(--primary-700);
+    position: relative;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.Header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    background: url("../images/dot.png") repeat;
 }
 
 .SiteName {
@@ -76,10 +86,10 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: calc(var(--wrapper-padding) - 15rem);
+    left: calc(var(--wrapper-padding-left) - 15rem);
     width: 62rem;
     height: 18rem;
-    background-color: var(--primary-700);
+    background: url("../images/dot.png") repeat;
 }
 
 .Avatar {
@@ -140,20 +150,6 @@
 
 
 
-/* ABOUT SECTION */
-
-.About::before {
-    content: "";
-    position: absolute;
-    top: -12rem;
-    right: 0;
-    width: 3rem;
-    height: 100%;
-    background-color: var(--primary-700);
-}
-
-
-
 /* TALKS & WORKSHOPS SECTION */
 
 .TalksAndWorkshops::before {
@@ -161,10 +157,10 @@
     position: absolute;
     z-index: -1;
     top: 10rem;
-    left: calc(var(--wrapper-padding) - 15rem);
+    left: calc(var(--wrapper-padding-left) - 44rem);
     width: 41rem;
     height: 30rem;
-    background-color: var(--primary-700);
+    background: url("../images/dot.png") repeat;
 }
 
 .TalksAndWorkshops img {
@@ -259,10 +255,10 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: calc(var(--wrapper-padding) + 29rem - 9rem);
+    left: calc(var(--wrapper-padding-left) - 9rem);
     width: 18rem;
     height: 100%;
-    background-color: var(--primary-700);
+    background: url("../images/dot.png") repeat;
 }
 
 
@@ -281,11 +277,11 @@
     content: "";
     position: absolute;
     z-index: -1;
-    right: var(--wrapper-padding);
+    right: var(--wrapper-padding-right);
     bottom: 0;
     width: 28rem;
     height: 3rem;
-    background-color: var(--primary-700);
+    background: url("../images/dot.png") repeat;
 }
 
 .Footer__Copyright {
