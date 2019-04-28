@@ -46,6 +46,7 @@
 
 .Section {
     margin: 12rem 0;
+    position: relative;
 }
 
 .Section__Title {
@@ -66,8 +67,8 @@
 
 .Hero {
     display: flex;
-    position: relative;
     padding-top: 3rem;
+    margin-top: 6rem;
 }
 
 .Hero::before {
@@ -139,11 +140,21 @@
 
 
 
-/* TALKS & WORKSHOPS SECTION */
+/* ABOUT SECTION */
 
-.TalksAndWorkshops {
-    position: relative;
+.About::before {
+    content: "";
+    position: absolute;
+    top: -12rem;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    background-color: var(--primary-700);
 }
+
+
+
+/* TALKS & WORKSHOPS SECTION */
 
 .TalksAndWorkshops::before {
     content: "";
@@ -241,7 +252,6 @@
 .GetInTouch {
     padding-top: 5rem;
     padding-bottom: 5rem;
-    position: relative;
 }
 
 .GetInTouch::before {
@@ -250,7 +260,7 @@
     z-index: -1;
     top: 0;
     left: calc(var(--wrapper-padding) + 29rem - 9rem);
-    bottom: 0;
     width: 18rem;
+    height: 100%;
     background-color: var(--primary-700);
 }
