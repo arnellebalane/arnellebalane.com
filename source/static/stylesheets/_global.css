@@ -36,8 +36,7 @@
 }
 
 html {
-    /* Following value was obtained by trial-and-error 😅 */
-    font-size: 0.694445vw;
+    font-size: 62.5%;
 
     --primary-400: #d45d79;
     --primary-700: #fff5f7;
@@ -51,12 +50,6 @@ html {
     --gray-700: #f9fafb;
 
     --accent-yellow-200: #cc8f00;
-}
-
-@media (min-width: 1440px) {
-    html {
-        font-size: 62.5%;
-    }
 }
 
 body {
@@ -79,13 +72,19 @@ a {
 /* UTILITIES */
 
 .l-Wrapper {
-    --wrapper-width: 114rem;
+    --wrapper-width: calc(100vw - 4.8rem);
     --wrapper-padding: calc((100vw - var(--wrapper-width)) / 2);
     --wrapper-padding-left: var(--wrapper-padding);
     --wrapper-padding-right: var(--wrapper-padding);
 
     padding-left: var(--wrapper-padding-left);
     padding-right: var(--wrapper-padding-right);
+}
+
+@media (min-width: 820px) {
+    .l-Wrapper {
+        --wrapper-width: 114rem;
+    }
 }
 
 .u-Clearfix::after {
