@@ -1,12 +1,22 @@
 /* LAYOUT */
 
-@media (min-width: 820px) {
+@media (min-width: 800px) {
     .l-LeftTwoThirds {
-        --wrapper-padding-right: calc(var(--wrapper-padding) + 29rem);
+        padding-right: calc(0.853 * 100vw - 682.35px);
     }
 
     .l-RightTwoThirds {
-        --wrapper-padding-left: calc(var(--wrapper-padding) + 29rem);
+        padding-left: calc(0.853 * 100vw - 682.35px);
+    }
+}
+
+@media (min-width: 1140px) {
+    .l-LeftTwoThirds {
+        padding-right: 29rem;
+    }
+
+    .l-RightTwoThirds {
+        padding-left: 29rem;
     }
 }
 
@@ -89,13 +99,13 @@
 /* SECTIONS */
 
 .Section {
-    margin: 6rem 0;
+    margin: 8rem 0;
     position: relative;
 }
 
 .Section__Title {
     margin-bottom: 2.4rem;
-    font-size: 2rem;
+    font-size: calc(0.043 * 100vw + 4.24px); /* CSS Lock */
     font-weight: 900;
 }
 
@@ -105,20 +115,32 @@
     line-height: 1.5;
 }
 
-@media (min-width: 600px) {
-    .Section {
-        margin: 12rem 0;
-    }
-
+@media (min-width: 460px) {
     .Section__Title {
-        font-size: 3.6rem;
+        font-size: 2.4rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .Section__Title {
+        font-size: calc(0.022 * 100vw + 10.8px); /* CSS Lock */
     }
 }
 
 @media (min-width: 800px) {
+    .Section {
+        margin: 12rem 0;
+    }
+
     .Section p {
         margin: 2.4rem 0;
         font-size: 2.4rem;
+    }
+}
+
+@media (min-width: 1140px) {
+    .Section__Title {
+        font-size: 3.6rem;
     }
 }
 
@@ -139,7 +161,7 @@
 
 .Hero__Title {
     margin-top: calc(0.086 * 100vw - 9.52px); /* CSS Lock */
-    font-size: calc(0.043 * 100vw + 4.24px); /* CSS Lock */
+    font-weight: 700;
 }
 
 .Hero__Title strong {
@@ -185,7 +207,6 @@
 @media (min-width: 460px) {
     .Hero__Title {
         margin-top: 3rem;
-        font-size: 2.4rem;
     }
 
     .Avatar {
@@ -205,7 +226,6 @@
 
     .Hero__Title {
         margin-bottom: calc(0.056 * 100vw - 3.6px); /* CSS Lock */
-        font-size: calc(0.022 * 100vw + 10.8px); /* CSS Lock */
     }
 
     .Hero p {
@@ -232,7 +252,6 @@
 
     .Hero__Title {
         margin-bottom: 6rem;
-        font-size: 3.6rem;
     }
 
     .Avatar {
