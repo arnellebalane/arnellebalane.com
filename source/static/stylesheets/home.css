@@ -20,11 +20,6 @@
 
     height: calc(var(--topbar-height) + var(--header-height));
     padding-top: var(--topbar-height);
-    position: relative;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .Header::before {
@@ -32,9 +27,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100vw;
     height: var(--topbar-height);
     background: url("../images/dot.png") repeat;
+}
+
+.Header .l-Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 .SiteName {
@@ -42,10 +44,22 @@
     font-weight: 900;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 600px) {
+    .Header {
+        /* NOTE: Using the CSS Locks technique */
+        --header-height: calc(0.167 * 100vw - 30.2px);
+        --topbar-height: 3rem;
+    }
+
+    .SiteName {
+        /* NOTE: Using the CSS Locks technique */
+        font-size: calc(0.0444 * 100vw - 2.64px);
+    }
+}
+
+@media (min-width: 1140px) {
     .Header {
         --header-height: 16rem;
-        --topbar-height: 3rem;
     }
 
     .SiteName {
@@ -61,12 +75,12 @@
     margin-left: 4rem;
 
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 900;
     text-transform: uppercase;
     color: var(--gray-400);
 }
 
-@media (max-width: 819px) {
+@media (max-width: 599px) {
     .Navigation {
         display: none;
     }

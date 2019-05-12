@@ -72,19 +72,10 @@ a {
 /* UTILITIES */
 
 .l-Wrapper {
-    --wrapper-width: calc(100vw - 4.8rem);
-    --wrapper-padding: calc((100vw - var(--wrapper-width)) / 2);
-    --wrapper-padding-left: var(--wrapper-padding);
-    --wrapper-padding-right: var(--wrapper-padding);
-
-    padding-left: var(--wrapper-padding-left);
-    padding-right: var(--wrapper-padding-right);
-}
-
-@media (min-width: 820px) {
-    .l-Wrapper {
-        --wrapper-width: 114rem;
-    }
+    width: 100vw;
+    max-width: 114rem;
+    padding: 0 2.4rem;
+    margin: 0 auto;
 }
 
 .u-Clearfix::after {
