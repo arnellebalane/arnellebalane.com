@@ -46,14 +46,12 @@
 
 @media (min-width: 600px) {
     .Header {
-        /* NOTE: Using the CSS Locks technique */
-        --header-height: calc(0.167 * 100vw - 30.2px);
+        --header-height: calc(0.167 * 100vw - 30.2px); /* CSS Lock */
         --topbar-height: 3rem;
     }
 
     .SiteName {
-        /* NOTE: Using the CSS Locks technique */
-        font-size: calc(0.0444 * 100vw - 2.64px);
+        font-size: calc(0.0444 * 100vw - 2.64px); /* CSS Lock */
     }
 }
 
@@ -91,32 +89,34 @@
 /* SECTIONS */
 
 .Section {
-    --section-title-size: 2rem;
-
     margin: 6rem 0;
     position: relative;
 }
 
 .Section__Title {
     margin-bottom: 2.4rem;
-    font-size: var(--section-title-size);
+    font-size: 2rem;
     font-weight: 900;
 }
 
-.Section > p {
+.Section p {
     margin: 1.6rem 0;
     font-size: 1.8rem;
     line-height: 1.5;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 600px) {
     .Section {
-        --section-title-size: 3.6rem;
-
         margin: 12rem 0;
     }
 
-    .Section > p {
+    .Section__Title {
+        font-size: 3.6rem;
+    }
+}
+
+@media (min-width: 800px) {
+    .Section p {
         margin: 2.4rem 0;
         font-size: 2.4rem;
     }
@@ -128,27 +128,18 @@
 
 .Hero {
     --hero-avatar-size: 30%;
-    --hero-dotgrid-extra-width: 13.4rem;
     --hero-social-icon-size: 2.4rem;
 
-    padding-top: 1.2rem;
     margin-top: 1.2rem;
 }
 
-.Hero::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: calc(var(--hero-avatar-size) + var(--hero-dotgrid-extra-width));
-    height: 11.2rem;
-    background: url("../images/dot.png") repeat;
+.Hero .l-Wrapper {
+    position: relative;
 }
 
 .Hero__Title {
-    margin-top: 3rem;
-    font-size: var(--section-title-size);
+    margin-top: calc(0.086 * 100vw - 9.52px); /* CSS Lock */
+    font-size: calc(0.043 * 100vw + 4.24px); /* CSS Lock */
 }
 
 .Hero__Title strong {
@@ -166,6 +157,7 @@
     width: var(--hero-avatar-size);
     height: var(--hero-avatar-size);
     max-width: 12.4rem;
+    margin-left: calc(var(--l-wrapper-padding) * -1);
     margin-right: 2.4rem;
     margin-bottom: 2.4rem;
 }
@@ -184,43 +176,36 @@
     background-size: contain;
 }
 
-.SocialIcon--github {
-    background-image: url("../images/icons/github.svg");
-}
+.SocialIcon--github    { background-image: url("../images/icons/github.svg"); }
+.SocialIcon--twitter   { background-image: url("../images/icons/twitter.svg"); }
+.SocialIcon--devto     { background-image: url("../images/icons/devto.svg"); }
+.SocialIcon--instagram { background-image: url("../images/icons/instagram.svg"); }
+.SocialIcon--linkedin  { background-image: url("../images/icons/linkedin.svg"); }
 
-.SocialIcon--twitter {
-    background-image: url("../images/icons/twitter.svg");
-}
-
-.SocialIcon--devto {
-    background-image: url("../images/icons/devto.svg");
-}
-
-.SocialIcon--instagram {
-    background-image: url("../images/icons/instagram.svg");
-}
-
-.SocialIcon--linkedin {
-    background-image: url("../images/icons/linkedin.svg");
-}
-
-@media (min-width: 820px) {
-    .Hero {
-        --hero-avatar-size: 34rem;
-        --hero-dotgrid-extra-width: 27rem;
-        --hero-social-icon-size: 3.2rem;
-
-        padding-top: 5rem;
-        margin-top: 4rem;
+@media (min-width: 460px) {
+    .Hero__Title {
+        margin-top: 3rem;
+        font-size: 2.4rem;
     }
 
-    .Hero::before {
-        left: calc(var(--wrapper-padding-left) - 15rem);
-        height: 20rem;
+    .Avatar {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 600px) {
+    .Hero {
+        --hero-avatar-size: calc(0.4 * 100vw - 116px); /* CSS Lock */
+    }
+
+    .Hero .l-Wrapper {
+        display: flex;
+        padding-top: 3rem;
     }
 
     .Hero__Title {
-        margin-bottom: 6rem;
+        margin-bottom: calc(0.056 * 100vw - 3.6px); /* CSS Lock */
+        font-size: calc(0.022 * 100vw + 10.8px); /* CSS Lock */
     }
 
     .Hero p {
@@ -228,9 +213,37 @@
     }
 
     .Avatar {
-        max-width: initial;
+        float: none;
+        max-width: 34rem;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 800px) {
+    .Hero {
+        --hero-social-icon-size: 3.2rem;
+    }
+}
+
+@media (min-width: 1140px) {
+    .Hero {
+        --hero-avatar-size: 34rem;
+    }
+
+    .Hero__Title {
+        margin-bottom: 6rem;
+        font-size: 3.6rem;
+    }
+
+    .Avatar {
+        margin-right: 3.2rem;
+    }
+}
+
+/* 1140 + 160 (80px on both sides) + 48 (2.4rem horizontal padding) */
+@media (min-width: 1348px) {
+    .Avatar {
         margin-left: -8rem;
-        margin-right: 3rem;
     }
 }
 

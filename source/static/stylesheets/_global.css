@@ -72,10 +72,15 @@ a {
 /* UTILITIES */
 
 .l-Wrapper {
+    --l-wrapper-padding: 2.4rem;
+
     width: 100vw;
-    max-width: 114rem;
-    padding: 0 2.4rem;
+    max-width: calc(114rem + 2 * var(--l-wrapper-padding));
+    padding: 0 var(--l-wrapper-padding);
     margin: 0 auto;
+
+    /* Prevent collapsing margins between this and its children */
+    border-top: 0.1px solid transparent;
 }
 
 .u-Clearfix::after {
