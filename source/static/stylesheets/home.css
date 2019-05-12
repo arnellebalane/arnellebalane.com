@@ -2,15 +2,15 @@
 
 @media (min-width: 800px) {
     .l-LeftTwoThirds {
-        padding-right: calc(0.853 * 100vw - 682.35px);
+        padding-right: calc(0.747 * 100vw - 597.94px); /* CSS Lock */
     }
 
     .l-RightTwoThirds {
-        padding-left: calc(0.853 * 100vw - 682.35px);
+        padding-left: calc(0.747 * 100vw - 597.94px); /* CSS Lock */
     }
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1188px) {
     .l-LeftTwoThirds {
         padding-right: 29rem;
     }
@@ -56,16 +56,16 @@
 
 @media (min-width: 600px) {
     .Header {
-        --header-height: calc(0.167 * 100vw - 30.2px); /* CSS Lock */
+        --header-height: calc(0.177 * 100vw - 50.12px); /* CSS Lock */
         --topbar-height: 3rem;
     }
 
     .SiteName {
-        font-size: calc(0.0444 * 100vw - 2.64px); /* CSS Lock */
+        font-size: calc(0.041 * 100vw - 0.49px); /* CSS Lock */
     }
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1188px) {
     .Header {
         --header-height: 16rem;
     }
@@ -105,7 +105,7 @@
 
 .Section__Title {
     margin-bottom: 2.4rem;
-    font-size: calc(0.043 * 100vw + 4.24px); /* CSS Lock */
+    font-size: calc(0.043 * 100vw + 4.29px); /* CSS Lock */
     font-weight: 900;
 }
 
@@ -123,7 +123,7 @@
 
 @media (min-width: 600px) {
     .Section__Title {
-        font-size: calc(0.022 * 100vw + 10.8px); /* CSS Lock */
+        font-size: calc(0.02 * 100vw + 11.76px); /* CSS Lock */
     }
 }
 
@@ -138,7 +138,7 @@
     }
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1188px) {
     .Section__Title {
         font-size: 3.6rem;
     }
@@ -160,7 +160,7 @@
 }
 
 .Hero__Title {
-    margin-top: calc(0.086 * 100vw - 9.52px); /* CSS Lock */
+    margin-top: calc(0.086 * 100vw - 9.43px); /* CSS Lock */
     font-weight: 700;
 }
 
@@ -216,7 +216,7 @@
 
 @media (min-width: 600px) {
     .Hero {
-        --hero-avatar-size: calc(0.4 * 100vw - 116px); /* CSS Lock */
+        --hero-avatar-size: calc(0.367 * 100vw - 96.41px); /* CSS Lock */
     }
 
     .Hero .l-Wrapper {
@@ -225,7 +225,7 @@
     }
 
     .Hero__Title {
-        margin-bottom: calc(0.056 * 100vw - 3.6px); /* CSS Lock */
+        margin-bottom: calc(0.051 * 100vw - 0.612px); /* CSS Lock */
     }
 
     .Hero p {
@@ -245,7 +245,7 @@
     }
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1188px) {
     .Hero {
         --hero-avatar-size: 34rem;
     }
@@ -259,7 +259,7 @@
     }
 }
 
-/* 1140 + 160 (80px on both sides) + 48 (2.4rem horizontal padding) */
+/* 1188 + 160 (80px on both sides) */
 @media (min-width: 1348px) {
     .Avatar {
         margin-left: -8rem;
