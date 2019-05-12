@@ -270,30 +270,8 @@
 
 /* TALKS & WORKSHOPS SECTION */
 
-.TalksAndWorkshops::before {
+.TalksAndWorkshops__Image {
     display: none;
-
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 10rem;
-    left: calc(var(--wrapper-padding-left) - 44rem);
-    width: 41rem;
-    height: 30rem;
-    background: url("../images/dot.png") repeat;
-}
-
-.TalksAndWorkshops img {
-    display: none;
-
-    float: left;
-    width: 38rem;
-    margin-left: -44rem;
-    margin-right: 6rem;
-}
-
-.TalksAndWorkshops .SeeAllEvents {
-    font-size: 1.8rem;
 }
 
 .UpcomingEvents {
@@ -301,12 +279,16 @@
     grid-gap: 2.4rem 0;
 
     margin-top: 4rem;
-    margin-bottom: 3.2rem;
 }
 
 .UpcomingEvents__Label {
     font-size: 1.8rem;
     font-weight: 900;
+}
+
+.UpcomingEvents__SeeAll {
+    margin-top: 3.2rem;
+    font-size: 1.8rem;
 }
 
 .Event {
@@ -315,7 +297,6 @@
 }
 
 .Event__Title {
-    margin-bottom: 1.2rem;
     font-size: 1.8rem;
     font-weight: 900;
     color: var(--primary-400);
@@ -336,25 +317,50 @@
 
 .Event__Date {
     margin-top: auto;
-    margin-bottom: 1rem;
 }
 
-@media (min-width: 820px) {
-    .TalksAndWorkshops .SeeAllEvents {
-        font-size: 2rem;
+@media (min-width: 600px) {
+    .TalksAndWorkshops .l-Wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: ". ." "image .";
+        grid-gap: 2.4rem;
+        align-items: start;
+    }
+
+    .TalksAndWorkshops__Details {
+        grid-column-end: span 2;
+    }
+
+    .TalksAndWorkshops__Image {
+        --talks-image-size: calc(0.367 * 100vw - 96.41px); /* CSS Lock, 250px -> 340px */
+
+        display: block;
+        grid-area: image;
+
+        width: calc(var(--talks-image-size) + var(--l-wrapper-padding));
+        margin-left: calc(var(--l-wrapper-padding) * -1);
     }
 
     .UpcomingEvents {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2.4rem 12rem;
+        margin-top: 0;
+    }
+}
 
-        margin-top: 6rem;
-        margin-bottom: 7.2rem;
+@media (min-width: 800px) {
+    .TalksAndWorkshops__Details {
+        --talks-padding-right: calc(0.747 * 100vw - 597.94px); /* CSS Lock, 0px -> 290px */
+
+        padding-right: calc(var(--talks-padding-right) - var(--l-wrapper-padding));
     }
 
     .UpcomingEvents__Label {
         font-size: 3rem;
-        grid-column-end: span 2;
+    }
+
+    .UpcomingEvents__SeeAll {
+        font-size: 2rem;
     }
 
     .Event__Title {
@@ -369,6 +375,49 @@
     .Event__Date,
     .Event__Venue {
         font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 1188px) {
+    .TalksAndWorkshops .l-Wrapper {
+        grid-template-areas: "image ." "image .";
+        grid-gap: 4.4rem 3.6rem;
+    }
+
+    .TalksAndWorkshops__Details {
+        --talks-padding-right: 0;
+
+        grid-column-end: span 1;
+        padding-top: 5rem;
+    }
+
+    .TalksAndWorkshops__Image {
+        width: calc(0.183 * 100vw + 147.14px); /* CSS Lock, 340px -> 410px */
+        max-width: 41rem;
+        margin-left: calc(-0.5 * 100vw + 570px); /* CSS Lock, -24px -> -150px */
+    }
+
+    .UpcomingEvents {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2.4rem 12rem;
+    }
+
+    .UpcomingEvents__Label {
+        grid-column-end: span 2;
+    }
+
+    .Event__Title {
+        margin-bottom: 1.2rem;
+    }
+
+    .Event__Date {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .TalksAndWorkshops__Image {
+        margin-left: -15rem;
     }
 }
 

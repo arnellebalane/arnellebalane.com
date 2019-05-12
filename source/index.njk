@@ -62,34 +62,38 @@
             </div>
         </section>
 
-        <!--
-        <section class="Section TalksAndWorkshops l-Wrapper l-RightTwoThirds u-Clearfix">
-            <img src="static/images/speaking.jpg" alt="Arnelle Balane">
+        <section class="Section TalksAndWorkshops">
+            <div class="l-Wrapper">
+                <img class="TalksAndWorkshops__Image" src="static/images/speaking.jpg" alt="Arnelle Balane">
 
-            <h1 class="Section__Title">Talks &amp; Workshops</h1>
+                <div class="TalksAndWorkshops__Details">
+                    <h1 class="Section__Title">Talks &amp; Workshops</h1>
 
-            <p>
-                I give talks and conduct workshops for community events. I’ve spoken at GDG events, VueJS Cebu, and other meetups,
-                usually about Web Platform APIs, Progressive Web Apps, and Firebase.
-            </p>
+                    <p>
+                        I give talks and conduct workshops for community events. I’ve spoken at GDG events, VueJS Cebu, and other meetups,
+                        usually about Web Platform APIs, Progressive Web Apps, and Firebase.
+                    </p>
+                </div>
 
-            <div class="UpcomingEvents">
-                <h2 class="UpcomingEvents__Label">Upcoming Events</h2>
+                <div class="UpcomingEvents">
+                    <h2 class="UpcomingEvents__Label">Upcoming Events</h2>
 
-                {%- for event in events %}
-                    <article class="Event">
-                        <h1 class="Event__Title">{% externalLink event.name, event.url %}</h1>
-                        <h2 class="Event__Subtitle">{{ event.description }}</h2>
+                    {%- for event in events %}
+                        <article class="Event">
+                            <h1 class="Event__Title">{% externalLink event.name, event.url %}</h1>
+                            <h2 class="Event__Subtitle">{{ event.description }}</h2>
 
-                        <time class="Event__Date" datetime="2019-05-11">{{ event.date }}</time>
-                        <p class="Event__Venue">{{ event.venue }}</p>
-                    </article>
-                {% endfor -%}
+                            <time class="Event__Date" datetime="2019-05-11">{{ event.date }}</time>
+                            <data class="Event__Venue">{{ event.venue }}</data>
+                        </article>
+                    {% endfor -%}
+
+                    <a class="UpcomingEvents__SeeAll" href="/events">See all talks and workshops</a>
+                </div>
             </div>
-
-            <a class="SeeAllEvents" href="/events">See all talks and workshops</a>
         </section>
 
+        <!--
         <section class="Section Technology l-Wrapper l-LeftTwoThirds">
             <h1 class="Section__Title">Technology</h1>
 
