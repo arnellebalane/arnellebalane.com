@@ -14,7 +14,6 @@
 .Section p {
     margin: 1.6rem 0;
     font-size: 1.8rem;
-    line-height: 1.5;
 }
 
 @media (min-width: 460px) {

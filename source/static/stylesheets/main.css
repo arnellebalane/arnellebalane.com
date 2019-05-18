@@ -67,6 +67,16 @@ a {
     text-decoration: none;
 }
 
+p {
+    line-height: 1.5;
+}
+
+@media (min-width: 800px) {
+    body {
+        font-size: 2rem;
+    }
+}
+
 
 
 /* UTILITIES */
