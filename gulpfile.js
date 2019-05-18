@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
+const imagemin = require('gulp-imagemin');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
@@ -15,4 +16,14 @@ gulp.task('build:css', () =>
         .pipe(gulp.dest('_site'))
 );
 
-gulp.task('build', gulp.series('build:css'));
+gulp.task('build:images', () =>
+    gulp.src('_site/**/*.{png,jpg,svg}')
+        .pipe(imagemin([
+            imagemin.jpegtran({progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo()
+        ]))
+        .pipe(gulp.dest('_site'))
+);
+
+gulp.task('build', gulp.series('build:css', 'build:images'));
