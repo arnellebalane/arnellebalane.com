@@ -461,26 +461,6 @@
 
 
 
-/* GET IN TOUCH SECTION */
-
-.GetInTouch {
-    /*padding-top: 5rem;
-    padding-bottom: 5rem;*/
-}
-
-.GetInTouch::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: -5rem;
-    left: calc(var(--wrapper-padding-left) - 9rem);
-    bottom: -5rem;
-    width: 18rem;
-    background: url("../images/dot.png") repeat;
-}
-
-
-
 /* FOOTER */
 
 .Footer {
