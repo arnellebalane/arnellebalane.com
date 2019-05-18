@@ -1,3 +1,116 @@
+/* PAGE */
+
 .PageDescription {
+    font-size: 1.8rem;
+}
+
+@media (min-width: 800px) {
+    .PageDescription {
+        font-size: 2.4rem;
+    }
+}
+
+
+
+/* SECTIONS */
+
+.Section {
+    margin: 8rem 0;
+}
+
+.Section__Title {
+    margin-bottom: 2rem;
     font-size: 2.4rem;
+    font-weight: 900;
+}
+
+@media (min-width: 800px) {
+    .Section {
+        margin: 12rem 0;
+    }
+
+    .Section:first-of-type {
+        margin-top: 8rem;
+    }
+
+    .Section__Title {
+        margin-bottom: 4rem;
+        font-size: 3.6rem;
+    }
+}
+
+
+
+/* EVENTS */
+
+.Events {
+    display: grid;
+    grid-gap: 5rem;
+
+    padding: 0;
+    list-style: none;
+}
+
+.Event {
+    display: flex;
+    flex-direction: column;
+}
+
+.Event__Title {
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.Event__Subtitle {
+    margin-bottom: 1.8rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.Event__Date,
+.Event__Venue {
+    font-size: 1.6rem;
+    color: var(--gray-400);
+}
+
+.Event__Date {
+    margin-top: auto;
+}
+
+@media (min-width: 600px) {
+    .Events {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 12rem 5rem;
+    }
+}
+
+@media (min-width: 800px) {
+    .Event__Title {
+        font-size: 2.4rem;
+    }
+
+    .Event__Subtitle {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+    }
+
+    .Event__Date,
+    .Event__Venue {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 1188px) {
+    .Events {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .Event__Title {
+        margin-bottom: 1.2rem;
+    }
+
+    .Event__Date {
+        margin-bottom: 1rem;
+    }
 }

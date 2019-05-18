@@ -125,7 +125,7 @@ p {
 
     height: calc(var(--topbar-height) + var(--header-height));
     padding-top: var(--topbar-height);
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 .Header--home {
@@ -172,6 +172,8 @@ p {
         --header-height: calc(0.177 * 100vw - 50.12px); /* CSS Lock */
         --header-logo-size: calc(0.024 * 100vw + 21.71px); /* CSS Lock, 32px -> 50px */
         --topbar-height: 3rem;
+
+        margin-bottom: 5rem;
     }
 
     .SiteLogo {

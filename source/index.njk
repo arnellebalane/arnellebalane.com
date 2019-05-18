@@ -61,8 +61,8 @@ stylesheets:
 
             {%- for event in (events | filterUpcomingEvents | firstTwoEvents) %}
                 <article class="Event">
-                    <h3 class="Event__Title">{% externalLink event.name, event.url %}</h1>
-                    <h4 class="Event__Subtitle">{{ event.description }}</h2>
+                    <h3 class="Event__Title">{% externalLink event.name, event.url %}</h3>
+                    <h4 class="Event__Subtitle">{{ event.description }}</h4>
 
                     <time class="Event__Date" datetime="2019-05-11">{{ event.start_date }}</time>
                     <data class="Event__Venue">{{ event.venue }}</data>
