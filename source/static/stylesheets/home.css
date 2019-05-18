@@ -303,7 +303,8 @@
         grid-gap: 2.4rem 12rem;
     }
 
-    .UpcomingEvents__Label {
+    .UpcomingEvents__Label,
+    .UpcomingEvents__SeeAll {
         grid-column-end: span 2;
     }
 
