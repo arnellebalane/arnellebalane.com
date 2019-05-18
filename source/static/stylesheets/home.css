@@ -464,22 +464,8 @@
 /* FOOTER */
 
 .Footer {
-    padding-top: 6rem;
-    padding-bottom: 11rem;
-    margin-top: 12rem;
-    position: relative;
-    text-align: center;
-}
-
-.Footer::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    right: var(--wrapper-padding-right);
-    bottom: 0;
-    width: 28rem;
-    height: 3rem;
-    background: url("../images/dot.png") repeat;
+    padding: 6rem 0;
+    margin-top: 6rem;
 }
 
 .Footer__Copyright {
@@ -494,7 +480,7 @@
     color: var(--gray-400);
 }
 
-@media (min-width: 820px) {
+@media (min-width: 800px) {
     .Footer__Copyright {
         font-size: 2rem;
     }
