@@ -27,9 +27,9 @@
                 {% endif -%}
 
                 <nav class="Navigation">
-                    <a class="Navigation__Item" href="/articles">Articles</a>
-                    <a class="Navigation__Item" href="/projects">Projects</a>
-                    <a class="Navigation__Item" href="/events">Events</a>
+                    <a class="Navigation__Item {% if page.url.startsWith('/articles') %}Navigation__Item--active{% endif %}" href="/articles">Articles</a>
+                    <a class="Navigation__Item {% if page.url.startsWith('/projects') %}Navigation__Item--active{% endif %}" href="/projects">Projects</a>
+                    <a class="Navigation__Item {% if page.url.startsWith('/events') %}Navigation__Item--active{% endif %}" href="/events">Events</a>
                 </nav>
             </div>
         </header>

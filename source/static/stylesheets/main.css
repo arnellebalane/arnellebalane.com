@@ -224,6 +224,10 @@ p {
     margin-left: 2rem;
 }
 
+.Navigation__Item--active {
+    color: var(--primary-400);
+}
+
 @media (min-width: 600px) {
     .Navigation {
         display: block;
