@@ -1,0 +1,11 @@
+/* PAGE */
+
+.PageDescription {
+    font-size: 1.8rem;
+}
+
+@media (min-width: 800px) {
+    .PageDescription {
+        font-size: 2.4rem;
+    }
+}
