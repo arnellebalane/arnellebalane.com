@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "eleventy --serve --port 5000",
-    "build": "eleventy"
+    "build": "eleventy && gulp build"
   },
   "repository": {
     "type": "git",
