@@ -439,7 +439,8 @@
 }
 
 .TechnologyList__Item {
-    margin: var(--technology-icon-margin-y) var(--technology-icon-margin-x) var(--technology-icon-margin-y) 0;
+    margin: var(--technology-icon-margin-y) var(--technology-icon-margin-x);
+    margin-left: 0;
 }
 
 .TechnologyList__Item img {
@@ -447,7 +448,7 @@
     height: 2.4rem;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 800px) {
     .Technology {
         --technology-icon-margin-x: 4rem;
         --technology-icon-margin-y: 1.6rem;
