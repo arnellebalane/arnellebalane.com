@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="static/stylesheets/main.css">
+
+        {%- for stylesheet in stylesheets %}
+        <link rel="stylesheet" href="{{ stylesheet }}">
+        {% endfor -%}
+
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+        <header class="Header">
+            <div class="l-Wrapper">
+                <h1 class="SiteName">Hey, I'm Arnelle!</h1>
+
+                <nav class="Navigation">
+                    <a class="Navigation__Item" href="/articles">Articles</a>
+                    <a class="Navigation__Item" href="/projects">Projects</a>
+                    <a class="Navigation__Item" href="/events">Events</a>
+                </nav>
+            </div>
+        </header>
+
+        {{ content | safe }}
+
+        <footer class="Footer">
+            <div class="l-Wrapper">
+                <p class="Footer__Copyright">&copy; 2019 Arnelle Balane. All Rights Reserved.</p>
+                <small class="Footer__BuiltWith">
+                    This site is built with {% externalLink 'Eleventy', 'https://www.11ty.io/' %} and hosted on {% externalLink 'Netlify', 'https://www.netlify.com/' %}.<br>
+                    The source code is hosted on {% externalLink 'Github', 'https://github.com/' %}.
+                </small>
+            </div>
+        </footer>
+
+        {%- for javascript in javascripts %}
+        <script defer src="{{ javascript }}"></script>
+        {% endfor -%}
+    </body>
+</html>

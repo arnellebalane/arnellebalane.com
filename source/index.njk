@@ -1,138 +1,108 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: layouts/main.njk
+title: Arnelle Balane
+stylesheets:
+    - static/stylesheets/home.css
+---
 
-        <link rel="stylesheet" href="static/stylesheets/_global.css">
-        <link rel="stylesheet" href="static/stylesheets/home.css">
+<section class="Section Hero u-Clearfix">
+    <div class="l-Wrapper">
+        <img class="Avatar" src="static/images/avatar.jpg" alt="Arnelle Balane">
 
-        <title>Arnelle Balane</title>
-    </head>
+        <div>
+            <h2 class="Section__Title Hero__Title">Web Developer from <strong>Cebu, Philippines</strong></h2>
 
-    <body>
-        <header class="Header">
-            <div class="l-Wrapper">
-                <h1 class="SiteName">Hey, I'm Arnelle!</h1>
+            <p class="l-LeftTwoThirds">I love experimenting with and sharing about cool new Web technologies and techniques.</p>
+            <p>I'm <strong>@arnellebalane</strong> on
+                <span class="SocialIcons">
+                    {% externalLink 'Github', 'https://github.com/arnellebalane', ['SocialIcon', 'SocialIcon--github'] %}
+                    {% externalLink 'Twitter', 'https://twitter.com/arnellebalane', ['SocialIcon', 'SocialIcon--twitter'] %}
+                    {% externalLink 'Dev.to', 'https://dev.to/arnellebalane', ['SocialIcon', 'SocialIcon--devto'] %}
+                    {% externalLink 'Instagram', 'https://instagram.com/arnellebalane', ['SocialIcon', 'SocialIcon--instagram'] %}
+                    {% externalLink 'LinkedIn', 'https://linkedin.com/in/arnellebalane', ['SocialIcon', 'SocialIcon--linkedin'] %}
+                </span>
+            </p>
+        </div>
+    </div>
+</section>
 
-                <nav class="Navigation">
-                    <a class="Navigation__Item" href="/articles">Articles</a>
-                    <a class="Navigation__Item" href="/projects">Projects</a>
-                    <a class="Navigation__Item" href="/events">Events</a>
-                </nav>
-            </div>
-        </header>
+<section class="Section About">
+    <div class="l-Wrapper l-LeftTwoThirds">
+        <h1 class="Section__Title">About</h1>
 
-        <section class="Section Hero u-Clearfix">
-            <div class="l-Wrapper">
-                <img class="Avatar" src="static/images/avatar.jpg" alt="Arnelle Balane">
+        <p>
+            I’m currently a Software Developer at {% externalLink 'Newlogic', 'https://newlogic.io/' %}. Previously, I was the
+            Lead Frontend Developer at {% externalLink 'Channelfix', 'https://channelfix.com' %}. I also used to teach a
+            Web Engineering class at the University of the Philippines Cebu as a part-time lecturer.
+        </p>
 
-                <div>
-                    <h2 class="Section__Title Hero__Title">Web Developer from <strong>Cebu, Philippines</strong></h2>
+        <p>
+            On weekends, I’m a co-organizer for {% externalLink 'Google Developers Group Cebu', 'https://gdgcebu.org' %},
+            a small team that sets up tech events around the Visayas region. You’ll often find me giving talks and workshops at
+            those and other community events.
+        </p>
+    </div>
+</section>
 
-                    <p class="l-LeftTwoThirds">I love experimenting with and sharing about cool new Web technologies and techniques.</p>
-                    <p>I'm <strong>@arnellebalane</strong> on
-                        <span class="SocialIcons">
-                            {% externalLink 'Github', 'https://github.com/arnellebalane', ['SocialIcon', 'SocialIcon--github'] %}
-                            {% externalLink 'Twitter', 'https://twitter.com/arnellebalane', ['SocialIcon', 'SocialIcon--twitter'] %}
-                            {% externalLink 'Dev.to', 'https://dev.to/arnellebalane', ['SocialIcon', 'SocialIcon--devto'] %}
-                            {% externalLink 'Instagram', 'https://instagram.com/arnellebalane', ['SocialIcon', 'SocialIcon--instagram'] %}
-                            {% externalLink 'LinkedIn', 'https://linkedin.com/in/arnellebalane', ['SocialIcon', 'SocialIcon--linkedin'] %}
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </section>
+<section class="Section TalksAndWorkshops">
+    <div class="l-Wrapper">
+        <img class="TalksAndWorkshops__Image" src="static/images/speaking.jpg" alt="Arnelle Balane">
 
-        <section class="Section About">
-            <div class="l-Wrapper l-LeftTwoThirds">
-                <h1 class="Section__Title">About</h1>
+        <div class="TalksAndWorkshops__Details">
+            <h1 class="Section__Title">Talks &amp; Workshops</h1>
 
-                <p>
-                    I’m currently a Software Developer at {% externalLink 'Newlogic', 'https://newlogic.io/' %}. Previously, I was the
-                    Lead Frontend Developer at {% externalLink 'Channelfix', 'https://channelfix.com' %}. I also used to teach a
-                    Web Engineering class at the University of the Philippines Cebu as a part-time lecturer.
-                </p>
+            <p>
+                I give talks and conduct workshops for community events. I’ve spoken at GDG events, VueJS Cebu, and other meetups,
+                usually about Web Platform APIs, Progressive Web Apps, and Firebase.
+            </p>
+        </div>
 
-                <p>
-                    On weekends, I’m a co-organizer for {% externalLink 'Google Developers Group Cebu', 'https://gdgcebu.org' %},
-                    a small team that sets up tech events around the Visayas region. You’ll often find me giving talks and workshops at
-                    those and other community events.
-                </p>
-            </div>
-        </section>
+        <div class="UpcomingEvents">
+            <h2 class="UpcomingEvents__Label">Upcoming Events</h2>
 
-        <section class="Section TalksAndWorkshops">
-            <div class="l-Wrapper">
-                <img class="TalksAndWorkshops__Image" src="static/images/speaking.jpg" alt="Arnelle Balane">
+            {%- for event in events %}
+                <article class="Event">
+                    <h3 class="Event__Title">{% externalLink event.name, event.url %}</h1>
+                    <h4 class="Event__Subtitle">{{ event.description }}</h2>
 
-                <div class="TalksAndWorkshops__Details">
-                    <h1 class="Section__Title">Talks &amp; Workshops</h1>
+                    <time class="Event__Date" datetime="2019-05-11">{{ event.date }}</time>
+                    <data class="Event__Venue">{{ event.venue }}</data>
+                </article>
+            {% endfor -%}
 
-                    <p>
-                        I give talks and conduct workshops for community events. I’ve spoken at GDG events, VueJS Cebu, and other meetups,
-                        usually about Web Platform APIs, Progressive Web Apps, and Firebase.
-                    </p>
-                </div>
+            <a class="UpcomingEvents__SeeAll" href="/events">See all talks and workshops</a>
+        </div>
+    </div>
+</section>
 
-                <div class="UpcomingEvents">
-                    <h2 class="UpcomingEvents__Label">Upcoming Events</h2>
+<section class="Section Technology">
+    <div class="l-Wrapper l-LeftTwoThirds">
+        <h1 class="Section__Title">Technology</h1>
 
-                    {%- for event in events %}
-                        <article class="Event">
-                            <h3 class="Event__Title">{% externalLink event.name, event.url %}</h1>
-                            <h4 class="Event__Subtitle">{{ event.description }}</h2>
+        <p>Here are some of the technologies that I have experience using on my projects, both professional and personal ones:</p>
 
-                            <time class="Event__Date" datetime="2019-05-11">{{ event.date }}</time>
-                            <data class="Event__Venue">{{ event.venue }}</data>
-                        </article>
-                    {% endfor -%}
+        <ul class="TechnologyList">
+            <li class="TechnologyList__Item"><img src="static/images/icons/html5.png" alt="HTML5"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/css3.png" alt="CSS3"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/javascript.png" alt="JavaScript"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/vue.png" alt="VueJS"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/firebase.png" alt="Firebase"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/nodejs.png" alt="NodeJS"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/pwa.png" alt="Progressive Web Apps"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/sass.png" alt="SASS"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/django.png" alt="Django"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/electron.png" alt="Electron"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/react.png" alt="ReactJS"></li>
+            <li class="TechnologyList__Item"><img src="static/images/icons/netlify.png" alt="Netlify"></li>
+        </ul>
+    </div>
+</section>
 
-                    <a class="UpcomingEvents__SeeAll" href="/events">See all talks and workshops</a>
-                </div>
-            </div>
-        </section>
+<section class="Section GetInTouch">
+    <div class="l-Wrapper l-LeftTwoThirds">
+        <h1 class="Section__Title">Get In Touch</h1>
 
-        <section class="Section Technology">
-            <div class="l-Wrapper l-LeftTwoThirds">
-                <h1 class="Section__Title">Technology</h1>
-
-                <p>Here are some of the technologies that I have experience using on my projects, both professional and personal ones:</p>
-
-                <ul class="TechnologyList">
-                    <li class="TechnologyList__Item"><img src="static/images/icons/html5.png" alt="HTML5"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/css3.png" alt="CSS3"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/javascript.png" alt="JavaScript"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/vue.png" alt="VueJS"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/firebase.png" alt="Firebase"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/nodejs.png" alt="NodeJS"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/pwa.png" alt="Progressive Web Apps"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/sass.png" alt="SASS"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/django.png" alt="Django"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/electron.png" alt="Electron"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/react.png" alt="ReactJS"></li>
-                    <li class="TechnologyList__Item"><img src="static/images/icons/netlify.png" alt="Netlify"></li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="Section GetInTouch">
-            <div class="l-Wrapper l-LeftTwoThirds">
-                <h1 class="Section__Title">Get In Touch</h1>
-
-                <p>Feel free to <a href="mailto:arnellebalane@gmail.com">send me an email</a> or reach me through social media and let’s make the Web more awesome!</p>
-                <p>Have a great day!</p>
-            </div>
-        </section>
-
-        <footer class="Footer">
-            <div class="l-Wrapper">
-                <p class="Footer__Copyright">&copy; 2019 Arnelle Balane. All Rights Reserved.</p>
-                <small class="Footer__BuiltWith">
-                    This site is built with {% externalLink 'Eleventy', 'https://www.11ty.io/' %} and hosted on {% externalLink 'Netlify', 'https://www.netlify.com/' %}.<br>
-                    The source code is hosted on {% externalLink 'Github', 'https://github.com/' %}.
-                </small>
-            </div>
-        </footer>
-    </body>
-</html>
+        <p>Feel free to <a href="mailto:arnellebalane@gmail.com">send me an email</a> or reach me through social media and let’s make the Web more awesome!</p>
+        <p>Have a great day!</p>
+    </div>
+</section>
