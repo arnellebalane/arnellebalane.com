@@ -53,6 +53,9 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+
     min-height: 100vh;
     font-family: "Gilroy", sans-serif;
     font-size: 1.8rem;
@@ -237,11 +240,18 @@ p {
 
 
 
+/* CONTENT */
+
+.Content {
+    flex-grow: 1;
+}
+
+
+
 /* FOOTER */
 
 .Footer {
     padding: 6rem 0;
-    margin-top: 6rem;
 }
 
 .Footer .l-Wrapper {
