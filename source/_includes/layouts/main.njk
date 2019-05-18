@@ -4,19 +4,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="static/stylesheets/main.css">
+        <link rel="stylesheet" href="/static/stylesheets/main.css">
 
         {%- for stylesheet in stylesheets %}
         <link rel="stylesheet" href="{{ stylesheet }}">
         {% endfor -%}
 
-        <title>{{ title }}</title>
+        <title>{{ title or 'Arnelle Balane' }}</title>
     </head>
 
     <body>
-        <header class="Header">
+        <header class="Header {% if page.url === '/' %}Header--home{% endif %}">
             <div class="l-Wrapper">
-                <h1 class="SiteName">Hey, I'm Arnelle!</h1>
+
+                {%- if page.url === '/' %}
+                <h1 class="SiteName SiteName--home">Hey, I'm Arnelle!</h1>
+                {% else %}
+                <a class="SiteLink" href="/">
+                    <img class="SiteLogo" src="/static/images/avatar.jpg" alt="Arnelle Balane">
+                    <h1 class="SiteName">Arnelle Balane</h1>
+                </a>
+                {% endif -%}
 
                 <nav class="Navigation">
                     <a class="Navigation__Item" href="/articles">Articles</a>
