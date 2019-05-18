@@ -460,6 +460,10 @@
     margin-top: 6rem;
 }
 
+.Footer .l-Wrapper {
+    text-align: center;
+}
+
 .Footer__Copyright {
     margin-bottom: 1.8rem;
     font-size: 1.6rem;
@@ -467,14 +471,24 @@
 }
 
 .Footer__BuiltWith {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.5;
     color: var(--gray-400);
 }
 
 @media (min-width: 800px) {
+    .Footer .l-Wrapper {
+        display: flex;
+        align-items: baseline;
+        text-align: left;
+    }
+
     .Footer__Copyright {
-        font-size: 2rem;
+        width: 20rem;
+        margin-right: 2.4rem;
+        margin-bottom: 0;
+        font-size: 1.8rem;
+        text-align: right;
     }
 
     .Footer__BuiltWith {
