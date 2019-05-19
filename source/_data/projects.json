@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Streaks",
+    "description": "A Web application for tracking personal streaks, GitHub-style.",
+    "year": "2018",
+    "tags": ["vuejs", "vue-cli", "indexeddb"],
+    "url": "",
+    "type": "project"
+  },
+  {
+    "name": "Endpoints",
+    "description": "Worked on the frontend for a Web application for creating URL endpoints with customizable responses that can be used when developing other applications. Built in collaboration with Emmanuel and Aldrin.",
+    "year": "2018",
+    "tags": ["vuejs", "webpack", "websockets"],
+    "url": "",
+    "type": "project"
+  },
+  {
+    "name": "Snippets",
+    "description": "A Web application for hosting code snippets.",
+    "year": "2018",
+    "tags": ["vuejs", "webpack", "nodejs", "sequelize", "docker"],
+    "url": "",
+    "type": "project"
+  },
+  {
+    "name": "BPOSeats.com",
+    "description": "Led a development team to build a seat-leasing and recruitment platform for BPO companies.",
+    "year": "2017-2019",
+    "tags": ["work", "django", "vuejs", "webpack"],
+    "url": "",
+    "type": "project"
+  },
+  {
+    "name": "ChannelFix.com",
+    "description": "Worked as part of a team to build an online video tournament platform for people to compete in and win prizes.",
+    "year": "2015-2019",
+    "tags": ["work", "django", "requirejs", "zeptojs", "mustachejs", "gulpjs", "vuejs", "webpack"],
+    "url": "",
+    "type": "project"
+  },
+  {
+    "name": "Document Tracker",
+    "description": "A Web application that allows UP Cebu staff to track their documents as they go around different offices for processing.",
+    "year": "2014-2015",
+    "tags": ["work", "ruby-on-rails", "haml", "sass", "coffeescript"],
+    "type": "project"
+  },
+  {
+    "name": "Alumni Tracker",
+    "description": "Worked as part of a team to build a Web application for a questionnaire that gathers information about UP Cebu alumni.",
+    "year": "2014",
+    "tags": ["work", "php", "codeigniter", "jquery"],
+    "type": "project"
+  },
+  {
+    "name": "Ideya Challenge",
+    "description": "A Web application for ideas submission for UP Cebu's Ideya Challenge competition.",
+    "year": "2013",
+    "tags": ["work", "ruby-on-rails", "haml", "sass", "coffeescript"],
+    "type": "project"
+  },
+  {
+    "name": "Codetoki",
+    "description": "Worked as part of the Bootyard team to build an online platform that helps fresh IT graduates build their portfolios according to the needs of potential employers.",
+    "year": "2012",
+    "tags": ["work", "ruby-on-rails", "haml", "sass", "coffeescript"],
+    "type": "project"
+  },
+  {
+    "name": "Foodtoki",
+    "description": "Worked as part of the Bootyard team to build an online food directory for food establishments in the Philippines.",
+    "year": "2012",
+    "tags": ["work", "ruby-on-rails", "haml", "sass", "coffeescript"],
+    "type": "project"
+  },
+  {
+    "name": "mdi-cli",
+    "description": "A command-line tool for generating Material Design icons.",
+    "tags": ["cli", "nodejs", "puppeteer"],
+    "url": "",
+    "type": "library"
+  },
+  {
+    "name": "hermes",
+    "description": "Client-side messaging channel for sending data from one browser tab to another.",
+    "tags": ["broadcast-channel-api", "shared-workers-api", "localstorage"],
+    "url": "",
+    "type": "library"
+  },
+  {
+    "name": "imgur-upload-cli",
+    "description": "Upload images to imgur.com from the command-line.",
+    "tags": ["cli", "nodejs"],
+    "url": "",
+    "type": "library"
+  },
+  {
+    "name": "parcel-plugin-data-src",
+    "description": "A ParcelJS plugin to bundle resources defined in data-src and data-srcset attributes.",
+    "tags": ["parcel-plugin"],
+    "url": "",
+    "type": "library"
+  },
+  {
+    "name": "vue-intersect",
+    "description": "A VueJS plugin that reports element intersections using the Intersection Observer API.",
+    "tags": ["vue-plugin", "intersection-observer-api"],
+    "url": "",
+    "type": "library"
+  },
+  {
+    "name": "sublime-open-in-git-repository",
+    "description": "A Sublime Text 3 plugin for opening the remote git URL for the current file.",
+    "tags": ["sublime-text"],
+    "url": "",
+    "type": "library"
+  }
+]
