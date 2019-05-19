@@ -2,6 +2,7 @@
 layout: layouts/main.njk
 stylesheets:
     - /static/stylesheets/home.css
+    - /static/stylesheets/components/items.css
 ---
 
 <section class="Section Hero u-Clearfix">
@@ -60,12 +61,12 @@ stylesheets:
             <h2 class="UpcomingEvents__Label">Upcoming Events</h2>
 
             {%- for event in (events | filterUpcomingEvents | firstTwoEvents) %}
-                <article class="Event">
-                    <h3 class="Event__Title">{% externalLink event.name, event.url %}</h3>
-                    <h4 class="Event__Subtitle">{{ event.description }}</h4>
+                <article class="Event Item">
+                    <h3 class="Item__Name">{% externalLink event.name, event.url %}</h3>
+                    <h4 class="Item__Description">{{ event.description }}</h4>
 
-                    <time class="Event__Date" datetime="2019-05-11">{{ event.start_date }}</time>
-                    <data class="Event__Venue">{{ event.venue }}</data>
+                    <time class="Item__Date" datetime="2019-05-11">{{ event.start_date }}</time>
+                    <data class="Item__Venue">{{ event.venue }}</data>
                 </article>
             {% endfor -%}
 

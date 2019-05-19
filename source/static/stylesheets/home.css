@@ -192,34 +192,6 @@
     font-size: 1.8rem;
 }
 
-.Event {
-    display: flex;
-    flex-direction: column;
-}
-
-.Event__Title {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--primary-400);
-}
-
-.Event__Subtitle {
-    margin-bottom: 1.8rem;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-.Event__Date,
-.Event__Venue {
-    font-size: 1.6rem;
-    color: var(--gray-400);
-}
-
-.Event__Date {
-    margin-top: auto;
-}
-
 @media (min-width: 600px) {
     .TalksAndWorkshops .l-Wrapper {
         display: grid;
@@ -263,20 +235,6 @@
     .UpcomingEvents__SeeAll {
         font-size: 2rem;
     }
-
-    .Event__Title {
-        font-size: 2.4rem;
-    }
-
-    .Event__Subtitle {
-        margin-bottom: 3rem;
-        font-size: 2rem;
-    }
-
-    .Event__Date,
-    .Event__Venue {
-        font-size: 1.8rem;
-    }
 }
 
 @media (min-width: 1188px) {
@@ -306,14 +264,6 @@
     .UpcomingEvents__Label,
     .UpcomingEvents__SeeAll {
         grid-column-end: span 2;
-    }
-
-    .Event__Title {
-        margin-bottom: 1.2rem;
-    }
-
-    .Event__Date {
-        margin-bottom: 1rem;
     }
 }
 

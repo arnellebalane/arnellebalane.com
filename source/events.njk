@@ -3,6 +3,7 @@ layout: layouts/main.njk
 title: Events | Arnelle Balane
 stylesheets:
     - /static/stylesheets/events.css
+    - /static/stylesheets/components/items.css
 ---
 
 <div class="l-Wrapper l-LeftTwoThirds">
@@ -18,12 +19,12 @@ stylesheets:
 
         <ol class="Events">
             {%- for event in (events | filterUpcomingEvents) %}
-            <li class="Event">
-                <h2 class="Event__Title">{% externalLink event.name, event.url %}</h2>
-                <h3 class="Event__Subtitle">{{ event.description }}</h3>
+            <li class="Event Item">
+                <h2 class="Item__Name">{% externalLink event.name, event.url %}</h2>
+                <h3 class="Item__Description">{{ event.description }}</h3>
 
-                <time class="Event__Date" datetime="{{ event.start_date }}">{{ event.start_date }}</time>
-                <data class="Event__Venue">{{ event.venue }}</data>
+                <time class="Item__Date" datetime="{{ event.start_date }}">{{ event.start_date }}</time>
+                <data class="Item__Data">{{ event.venue }}</data>
             </li>
             {% endfor -%}
         </ol>
@@ -36,12 +37,12 @@ stylesheets:
 
         <ol class="Events">
             {%- for event in (events | filterPastEvents) %}
-            <li class="Event">
-                <h2 class="Event__Title">{% externalLink event.name, event.url %}</h2>
-                <h3 class="Event__Subtitle">{{ event.description }}</h3>
+            <li class="Event Item">
+                <h2 class="Item__Name">{% externalLink event.name, event.url %}</h2>
+                <h3 class="Item__Description">{{ event.description }}</h3>
 
-                <time class="Event__Date" datetime="{{ event.start_date }}">{{ event.start_date }}</time>
-                <data class="Event__Venue">{{ event.venue }}</data>
+                <time class="Item__Date" datetime="{{ event.start_date }}">{{ event.start_date }}</time>
+                <data class="Item__Data">{{ event.venue }}</data>
             </li>
             {% endfor -%}
         </ol>

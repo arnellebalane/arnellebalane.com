@@ -1,0 +1,53 @@
+.Item {
+    display: flex;
+    flex-direction: column;
+}
+
+.Item__Name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-400);
+}
+
+.Item__Description {
+    margin-bottom: 1.8rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.Item__Date,
+.Item__Data {
+    font-size: 1.6rem;
+    color: var(--gray-400);
+}
+
+.Item__Date {
+    margin-top: auto;
+}
+
+@media (min-width: 800px) {
+    .Item__Name {
+        font-size: 2.4rem;
+    }
+
+    .Item__Description {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+    }
+
+    .Item__Date,
+    .Item__Data {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 1188px) {
+    .Item__Name {
+        margin-bottom: 1.2rem;
+    }
+
+    .Item__Date {
+        margin-bottom: 1rem;
+    }
+}
