@@ -146,6 +146,9 @@ p {
 .SiteLink {
     display: flex;
     align-items: center;
+}
+
+.Header .l-Wrapper {
     height: 100%;
 }
 

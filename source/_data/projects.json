@@ -4,7 +4,7 @@
     "description": "A Web application for tracking personal streaks, GitHub-style.",
     "year": "2018",
     "tags": ["vuejs", "vue-cli", "indexeddb"],
-    "url": "",
+    "url": "https://streaks.patootie.app/",
     "type": "project"
   },
   {
@@ -12,7 +12,7 @@
     "description": "Worked on the frontend for a Web application for creating URL endpoints with customizable responses that can be used when developing other applications. Built in collaboration with Emmanuel and Aldrin.",
     "year": "2018",
     "tags": ["vuejs", "webpack", "websockets"],
-    "url": "",
+    "url": "https://endpoints.uncaughtexception.wtf/",
     "type": "project"
   },
   {
@@ -20,7 +20,7 @@
     "description": "A Web application for hosting code snippets.",
     "year": "2018",
     "tags": ["vuejs", "webpack", "nodejs", "sequelize", "docker"],
-    "url": "",
+    "url": "https://snippets.arnellebalane.com/",
     "type": "project"
   },
   {
@@ -28,7 +28,7 @@
     "description": "Led a development team to build a seat-leasing and recruitment platform for BPO companies.",
     "year": "2017-2019",
     "tags": ["work", "django", "vuejs", "webpack"],
-    "url": "",
+    "url": "https://new.bposeats.com/",
     "type": "project"
   },
   {
@@ -36,7 +36,7 @@
     "description": "Worked as part of a team to build an online video tournament platform for people to compete in and win prizes.",
     "year": "2015-2019",
     "tags": ["work", "django", "requirejs", "zeptojs", "mustachejs", "gulpjs", "vuejs", "webpack"],
-    "url": "",
+    "url": "https://channelfix.com/",
     "type": "project"
   },
   {

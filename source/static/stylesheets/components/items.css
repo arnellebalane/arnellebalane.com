@@ -6,7 +6,6 @@
 .Item__Name {
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--primary-400);
 }
 
 .Item__Description {
@@ -24,6 +23,21 @@
 
 .Item__Date {
     margin-top: auto;
+}
+
+.Item__Tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0;
+    list-style: none;
+}
+
+.Item__Tag {
+    margin-right: 1.2rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--gray-400);
 }
 
 @media (min-width: 800px) {

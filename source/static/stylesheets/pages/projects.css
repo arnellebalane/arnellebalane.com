@@ -9,3 +9,60 @@
         font-size: 2.4rem;
     }
 }
+
+
+
+/* SECTIONS */
+
+.Section {
+    margin: 8rem 0;
+}
+
+.Section__Title {
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    font-weight: 900;
+}
+
+@media (min-width: 800px) {
+    .Section {
+        margin: 12rem 0;
+    }
+
+    .Section:first-of-type {
+        margin-top: 8rem;
+    }
+
+    .Section__Title {
+        margin-bottom: 4rem;
+        font-size: 3.6rem;
+    }
+}
+
+
+
+/* PROJECTS AND LIBRARIES */
+
+.Projects,
+.Libraries {
+    display: grid;
+    grid-gap: 5rem;
+
+    padding: 0;
+    list-style: none;
+}
+
+@media (min-width: 600px) {
+    .Projects,
+    .Libraries {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 8rem;
+    }
+}
+
+@media (min-width: 1188px) {
+    .Libraries {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8rem 5rem;
+    }
+}

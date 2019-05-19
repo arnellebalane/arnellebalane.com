@@ -3,6 +3,7 @@ layout: layouts/main.njk
 title: Projects | Arnelle Balane
 stylesheets:
     - /static/stylesheets/pages/projects.css
+    - /static/stylesheets/components/items.css
 ---
 
 <div class="l-Wrapper l-LeftTwoThirds">
@@ -11,3 +12,50 @@ stylesheets:
         more about them, feel free to <a href="mailto:arnellebalane@gmail.com">get in touch</a>.
     </p>
 </div>
+
+<section class="Section">
+    <div class="l-Wrapper">
+        <ol class="Projects">
+            {%- for project in (projects | filterProjects) %}
+            <li class="Project Item">
+                <h2 class="Item__Name">
+                    {%- if project.url %}
+                        {% externalLink project.name, project.url %}
+                    {% else %}
+                        {{ project.name }}
+                    {% endif -%}
+                </h2>
+                <h3 class="Item__Description">{{ project.description }}</h3>
+
+                <ul class="Item__Tags">
+                    {%- for tag in project.tags %}
+                    <li class="Item__Tag">#{{ tag }}</li>
+                    {% endfor -%}
+                </ul>
+            </li>
+            {% endfor -%}
+        </ol>
+    </div>
+</section>
+
+<section class="Section">
+    <div class="l-Wrapper">
+        <h1 class="Section__Title">Tools & Libraries</h1>
+
+        <ol class="Libraries">
+            {%- for project in (projects | filterLibraries) %}
+            <li class="Library Item">
+                <h2 class="Item__Name">{% externalLink project.name, project.url %}</h2>
+                <h3 class="Item__Description">{{ project.description }}</h3>
+
+                <ul class="Item__Tags">
+                    {%- for tag in project.tags %}
+                    <li class="Item__Tag">#{{ tag }}</li>
+                    {% endfor -%}
+                </ul>
+            </li>
+            </li>
+            {% endfor -%}
+        </ol>
+    </div>
+</section>
