@@ -1,1 +1,1 @@
-module.exports = projects => projects.filter(project => project.type !== 'project');
+module.exports = projects => projects.filter(project => project.type === 'library');

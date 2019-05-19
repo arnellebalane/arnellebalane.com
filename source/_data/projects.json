@@ -78,42 +78,42 @@
     "name": "mdi-cli",
     "description": "A command-line tool for generating Material Design icons.",
     "tags": ["cli", "nodejs", "puppeteer"],
-    "url": "",
+    "url": "https://github.com/arnellebalane/mdi-cli",
     "type": "library"
   },
   {
     "name": "hermes",
     "description": "Client-side messaging channel for sending data from one browser tab to another.",
     "tags": ["broadcast-channel-api", "shared-workers-api", "localstorage"],
-    "url": "",
+    "url": "https://github.com/arnellebalane/hermes",
     "type": "library"
   },
   {
     "name": "imgur-upload-cli",
     "description": "Upload images to imgur.com from the command-line.",
     "tags": ["cli", "nodejs"],
-    "url": "",
+    "url": "https://github.com/arnellebalane/imgur-upload-cli",
     "type": "library"
   },
   {
     "name": "parcel-plugin-data-src",
     "description": "A ParcelJS plugin to bundle resources defined in data-src and data-srcset attributes.",
     "tags": ["parcel-plugin"],
-    "url": "",
+    "url": "https://github.com/arnellebalane/parcel-plugin-data-src",
     "type": "library"
   },
   {
     "name": "vue-intersect",
     "description": "A VueJS plugin that reports element intersections using the Intersection Observer API.",
     "tags": ["vue-plugin", "intersection-observer-api"],
-    "url": "",
+    "url": "https://github.com/arnellebalane/vue-intersect",
     "type": "library"
   },
   {
     "name": "sublime-open-in-git-repository",
     "description": "A Sublime Text 3 plugin for opening the remote git URL for the current file.",
     "tags": ["sublime-text"],
-    "url": "",
+    "url": "https://github.com/arnellebalane/sublime-open-in-git-repository",
     "type": "library"
   }
 ]
