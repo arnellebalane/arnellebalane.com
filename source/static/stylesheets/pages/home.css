@@ -99,11 +99,11 @@
     background-size: contain;
 }
 
-.SocialIcon--github    { background-image: url("../images/icons/github.svg"); }
-.SocialIcon--twitter   { background-image: url("../images/icons/twitter.svg"); }
-.SocialIcon--devto     { background-image: url("../images/icons/devto.svg"); }
-.SocialIcon--instagram { background-image: url("../images/icons/instagram.svg"); }
-.SocialIcon--linkedin  { background-image: url("../images/icons/linkedin.svg"); }
+.SocialIcon--github    { background-image: url("../../images/icons/github.svg"); }
+.SocialIcon--twitter   { background-image: url("../../images/icons/twitter.svg"); }
+.SocialIcon--devto     { background-image: url("../../images/icons/devto.svg"); }
+.SocialIcon--instagram { background-image: url("../../images/icons/instagram.svg"); }
+.SocialIcon--linkedin  { background-image: url("../../images/icons/linkedin.svg"); }
 
 @media (min-width: 460px) {
     .Hero__Title {
