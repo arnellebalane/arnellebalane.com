@@ -58,7 +58,7 @@ body {
 
     min-height: 100vh;
     font-family: "Gilroy", sans-serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--gray-100);
@@ -76,7 +76,7 @@ p {
 
 @media (min-width: 800px) {
     body {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 }
 
