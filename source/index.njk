@@ -60,7 +60,8 @@ stylesheets:
         <div class="UpcomingEvents">
             <h2 class="UpcomingEvents__Label">Upcoming Events</h2>
 
-            {%- for event in (events | filterUpcomingEvents | firstTwoEvents) %}
+            {% if (events | filterUpcomingEvents).length > 0 %}
+                {%- for event in (events | filterUpcomingEvents | firstTwoEvents) %}
                 <article class="Event Item">
                     <h3 class="Item__Name">{% externalLink event.name, event.url %}</h3>
                     <h4 class="Item__Description">{{ event.description }}</h4>
@@ -68,9 +69,15 @@ stylesheets:
                     <time class="Item__Date" datetime="2019-05-11">{{ event.start_date }}</time>
                     <data class="Item__Venue">{{ event.venue }}</data>
                 </article>
-            {% endfor -%}
+                {% endfor -%}
 
-            <a class="UpcomingEvents__SeeAll" href="/events">See all talks and workshops</a>
+                <a class="UpcomingEvents__SeeAll" href="/events">See all talks and workshops</a>
+            {% else %}
+                <p class="UpcomingEvents__Empty">
+                    I don't have any upcoming events at the moment, but you can check out my talks and workshops from
+                    <a href="/events">previous events</a>.
+                </p>
+            {% endif %}
         </div>
     </div>
 </section>

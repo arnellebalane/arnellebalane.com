@@ -265,8 +265,13 @@
     }
 
     .UpcomingEvents__Label,
-    .UpcomingEvents__SeeAll {
+    .UpcomingEvents__SeeAll,
+    .UpcomingEvents__Empty {
         grid-column-end: span 2;
+    }
+
+    .UpcomingEvents__Empty {
+        width: 70%;
     }
 }
 

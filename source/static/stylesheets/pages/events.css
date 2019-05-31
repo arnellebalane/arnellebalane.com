@@ -51,15 +51,33 @@
     list-style: none;
 }
 
+.NoEvents {
+    font-size: 1.8rem;
+}
+
 @media (min-width: 600px) {
     .Events {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 12rem 5rem;
+    }
+
+    .NoEvents {
+        grid-column-end: span 2;
+    }
+}
+
+@media (min-width: 800px) {
+    .NoEvents {
+        font-size: 2.4rem;
     }
 }
 
 @media (min-width: 1188px) {
     .Events {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .NoEvents {
+        grid-column-end: span 3;
     }
 }
