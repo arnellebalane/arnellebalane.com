@@ -160,6 +160,11 @@ p {
     margin-right: 1.2rem;
 }
 
+.SiteLink,
+.SiteName {
+    margin-right: auto;
+}
+
 .SiteName {
     font-size: 2.4rem;
     font-weight: 900;
@@ -213,7 +218,6 @@ p {
 
 .Navigation {
     display: none;
-    margin-left: auto;
 }
 
 .Navigation__Item {
@@ -223,12 +227,65 @@ p {
     color: var(--gray-400);
 }
 
-.Navigation__Item:not(:first-child) {
-    margin-left: 2rem;
-}
-
 .Navigation__Item--active {
     color: var(--primary-400);
+}
+
+.MenuToggle,
+.MenuToggle__Checkbox {
+    display: none;
+}
+
+@media (max-width: 599px) {
+    .Navigation {
+        padding: var(--l-wrapper-padding);
+        padding-top: calc(var(--header-height) + var(--topbar-height));
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .Navigation__Item {
+        display: block;
+        padding: 8px;
+        margin: 1.2rem 0;
+    }
+
+    .MenuToggle {
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-right: -4px;
+        position: relative;
+        z-index: 2;
+        background: url("../images/icons/menu.svg") center center no-repeat;
+    }
+
+    .MenuToggle__Checkbox {
+        display: block;
+        transform: scale(0.01);
+        opacity: 0.01;
+    }
+
+    .MenuToggle__Checkbox:focus + .MenuToggle {
+        outline: 2px solid var(--primary-400);
+    }
+
+    .MenuToggle__Checkbox:checked + .MenuToggle {
+        position: fixed;
+        top: calc((var(--header-height) / 2) + var(--topbar-height) - 1.6rem);
+        right: calc(var(--l-wrapper-padding));
+        background-image: url("../images/icons/close.svg");
+    }
+
+    .MenuToggle__Checkbox:checked ~ .Navigation {
+        display: block;
+    }
 }
 
 @media (min-width: 600px) {
