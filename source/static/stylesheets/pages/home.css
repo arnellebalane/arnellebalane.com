@@ -78,6 +78,7 @@
     float: left;
     display: block;
     width: var(--hero-avatar-size);
+    min-width: var(--hero-avatar-size);
     height: var(--hero-avatar-size);
     max-width: 12.4rem;
     margin-left: calc(var(--l-wrapper-padding) * -1);
@@ -118,6 +119,8 @@
 @media (min-width: 600px) {
     .Hero {
         --hero-avatar-size: calc(0.367 * 100vw - 96.41px); /* CSS Lock */
+
+        margin-top: 0;
     }
 
     .Hero .l-Wrapper {

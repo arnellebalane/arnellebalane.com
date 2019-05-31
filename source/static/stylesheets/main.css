@@ -261,6 +261,7 @@ p {
 
 .Footer {
     padding: 6rem 0;
+    margin-top: 3rem;
 }
 
 .Footer .l-Wrapper {
@@ -274,24 +275,16 @@ p {
 }
 
 .Footer__BuiltWith {
+    display: inline-block;
+    max-width: 40rem;
     font-size: 1.4rem;
     line-height: 1.5;
     color: var(--gray-400);
 }
 
 @media (min-width: 800px) {
-    .Footer .l-Wrapper {
-        display: flex;
-        align-items: baseline;
-        text-align: left;
-    }
-
     .Footer__Copyright {
-        width: 20rem;
-        margin-right: 2.4rem;
-        margin-bottom: 0;
         font-size: 1.8rem;
-        text-align: right;
     }
 
     .Footer__BuiltWith {
