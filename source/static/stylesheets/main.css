@@ -1,0 +1,117 @@
+/* Web Fonts */
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-display: swap;
+    src: local("Gilroy-Regular"),
+        url("../fonts/Gilroy/Gilroy-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 700;
+    font-display: swap;
+    src: local("Gilroy-Bold"),
+        url("../fonts/Gilroy/Gilroy-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 900;
+    font-display: swap;
+    src: local("Gilroy-Heavy"),
+        url("../fonts/Gilroy/Gilroy-Heavy.ttf") format("truetype");
+}
+
+
+
+/* Globals Styles */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --primary-text-color: #141a24;
+    --secondary-text-color: #5c636e;
+    --primary-accent-color: #c13355;
+    --gray: #e7eaef;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Gilroy", sans-serif;
+    font-size: 2rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.4;
+    color: var(--primary-text-color);
+}
+
+a {
+    font: inherit;
+    text-decoration: none;
+    color: var(--primary-accent-color);
+}
+
+p {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+
+/* Utilities: Generic */
+
+.Wrapper {
+    width: 90vw;
+    max-width: 80rem;
+    padding-top: 6rem;
+    margin: 0 auto;
+}
+
+
+
+/* Utilities: Typography */
+
+.fs-36 { font-size: 3.6rem; }
+.fs-24 { font-size: 2.4rem; }
+.fs-20 { font-size: 2rem; }
+.fs-18 { font-size: 1.8rem; }
+.fs-16 { font-size: 1.6rem; }
+.fs-14 { font-size: 1.4rem; }
+
+.fw-400 { font-weight: 400; }
+.fw-700 { font-weight: 700; }
+.fw-900 { font-weight: 900; }
+
+
+
+/* Navigation */
+
+.Navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 1.6rem 3.6rem;
+    text-align: right;
+}
+
+.Navigation__Link {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.8rem;
+}
+
+.Navigation__Link:not(:first-child) {
+    margin-left: 8px;
+}

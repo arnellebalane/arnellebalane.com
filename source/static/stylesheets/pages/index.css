@@ -1,0 +1,43 @@
+/* Hero Section */
+
+.Hero__Body {
+    display: flex;
+    align-items: flex-start;
+
+    padding: 3rem 0;
+}
+
+.Hero__Image {
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    margin-right: 3rem;
+}
+
+.Hero__Subheading {
+    margin-top: 3rem;
+}
+
+.SocialLinks {
+    display: inline-flex;
+    vertical-align: top;
+    margin-left: 8px;
+}
+
+.SocialLink {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 0;
+    background: center center no-repeat;
+    background-size: contain;
+}
+
+.SocialLink:not(:last-child) {
+    margin-right: 8px;
+}
+
+.SocialLink--github     { background-image: url("../../images/icons/github.svg"); }
+.SocialLink--twitter    { background-image: url("../../images/icons/twitter.svg"); }
+.SocialLink--devto      { background-image: url("../../images/icons/devto.svg"); }
+.SocialLink--instagram  { background-image: url("../../images/icons/instagram.svg"); }
+.SocialLink--linkedin   { background-image: url("../../images/icons/linkedin.svg"); }

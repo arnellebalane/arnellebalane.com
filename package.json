@@ -4,8 +4,8 @@
   "description": "Arnelle Balane's Personal Website",
   "main": "index.js",
   "scripts": {
-    "serve": "eleventy --serve",
-    "build": "eleventy"
+    "serve": "eleventy --input=source --serve",
+    "build": "eleventy --input=source"
   },
   "repository": {
     "type": "git",
