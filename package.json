@@ -1,0 +1,27 @@
+{
+  "name": "arnellebalane.com",
+  "version": "5.0.0",
+  "description": "Arnelle Balane's Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "serve": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnellebalane/arnellebalane.com.git"
+  },
+  "keywords": [
+    "personal-website",
+    "portfolio"
+  ],
+  "author": "Arnelle Balane <arnellebalane@gmail.com> (https://arnellebalane.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnellebalane/arnellebalane.com/issues"
+  },
+  "homepage": "https://github.com/arnellebalane/arnellebalane.com#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "0.8.3"
+  }
+}
