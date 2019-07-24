@@ -46,6 +46,10 @@
     margin-right: 1.6rem;
 }
 
+.Item__Heading + .Item__Tags {
+    margin-top: 0;
+}
+
 
 
 /* Custom styles for items in special cases */
