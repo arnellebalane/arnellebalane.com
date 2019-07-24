@@ -18,11 +18,11 @@ stylesheets:
             <p>
                 I am <strong>@arnellebalane</strong> on
                 <span class="SocialLinks">
-                    <a class="SocialLink SocialLink--github" href="https://github.com/arnellebalane" rel="noopener noreferrer">GitHub</a>
-                    <a class="SocialLink SocialLink--twitter" href="https://twitter.com/arnellebalane" rel="noopener noreferrer">Twitter</a>
-                    <a class="SocialLink SocialLink--devto" href="https://dev.to/arnellebalane" rel="noopener noreferrer">DEV</a>
-                    <a class="SocialLink SocialLink--instagram" href="https://www.instagram.com/arnellebalane/" rel="noopener noreferrer">Instagram</a>
-                    <a class="SocialLink SocialLink--linkedin" href="https://www.linkedin.com/in/arnellebalane/" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="SocialLink SocialLink--github" href="https://github.com/arnellebalane" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="SocialLink SocialLink--twitter" href="https://twitter.com/arnellebalane" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a class="SocialLink SocialLink--devto" href="https://dev.to/arnellebalane" target="_blank" rel="noopener noreferrer">DEV</a>
+                    <a class="SocialLink SocialLink--instagram" href="https://www.instagram.com/arnellebalane/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a class="SocialLink SocialLink--linkedin" href="https://www.linkedin.com/in/arnellebalane/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </span>
             </p>
         </div>
@@ -33,12 +33,12 @@ stylesheets:
     <h2 class="fs-24 fw-900">About Me</h2>
 
     <p>
-        I'm currently a Software Developer at <a href="https://newlogic.io/" rel="noopener noreferrer">Newlogic</a>.
-        Previously, I was the Lead Frontend Developer at <a href="https://channelfix.com/" rel="noopener noreferrer">Channelfix.</a>
+        I'm currently a Software Developer at <a href="https://newlogic.io/" target="_blank" rel="noopener noreferrer">Newlogic</a>.
+        Previously, I was the Lead Frontend Developer at <a href="https://channelfix.com/" target="_blank" rel="noopener noreferrer">Channelfix.</a>
         I also used to teach a Web Engineering class at the University of the Philippines Cebu as a part-time lecturer.
     </p>
     <p>
-        On weekends, I'm a co-organizer for <a href="https://gdgcebu.org/" rel="noopener noreferrer">Google Developers Group Cebu</a>,
+        On weekends, I'm a co-organizer for <a href="https://gdgcebu.org/" target="_blank" rel="noopener noreferrer">Google Developers Group Cebu</a>,
         a small team that sets up tech events around the Visayas region. You'll often find me giving talks and workshops at those
         and other community events.
     </p>
@@ -54,27 +54,15 @@ stylesheets:
     <p>Here's a list of my upcoming talks and workshops:</p>
 
     <ol class="Items">
+        {% for event in (events | filterUpcomingEvents) %}
         <li class="Item">
-            <time class="Item__Date fs-16">08/24</time>
+            <time class="Item__Date fs-16">{{ event.start_date | formatDate }}</time>
             <div>
-                <a class="Item__Heading" href='#' rel="noopener noreferrer">VueJS Cebu Meetup</a>
-                <p class="Item__Subheading fs-18">Talk: Firebase Workshop</p>
+                <a class="Item__Heading" href="{{ event.url }}" target="_blank" rel="noopener noreferrer">{{ event.name }}</a>
+                <p class="Item__Subheading fs-18">{{ event.description }}</p>
             </div>
         </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">09/13</time>
-            <div>
-                <a class="Item__Heading" href='#' rel="noopener noreferrer">GDG Bacolod: Angular + Firebase Codelabs</a>
-                <p class="Item__Subheading fs-18">Workshop: Angular + Firebase</p>
-            </div>
-        </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">09/14</time>
-            <div>
-                <a class="Item__Heading" href='#' rel="noopener noreferrer">GDG Bacolod: Angular + Firebase Codelabs</a>
-                <p class="Item__Subheading fs-18">Workshop: Angular + Firebase</p>
-            </div>
-        </li>
+        {% endfor %}
     </ol>
 
     <p>The <a href="/events">events page</a> contains a list of my previous talks and workshops.</p>

@@ -1,4 +1,7 @@
 module.exports = config => {
+    config.addFilter('filterUpcomingEvents', require('./source/_filters/filterUpcomingEvents'));
+    config.addFilter('formatDate', require('./source/_filters/formatDate'));
+
     return {
         templateFormats: [
             // These are recognized template formats and will be processed
