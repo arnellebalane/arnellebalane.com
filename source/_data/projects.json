@@ -98,7 +98,7 @@
   {
     "name": "parcel-plugin-data-src",
     "description": "A ParcelJS plugin to bundle resources defined in data-src and data-srcset attributes.",
-    "tags": ["parcel-plugin"],
+    "tags": ["parceljs", "parcel-plugin"],
     "url": "https://github.com/arnellebalane/parcel-plugin-data-src",
     "type": "library"
   },

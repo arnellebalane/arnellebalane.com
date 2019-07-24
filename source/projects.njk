@@ -12,31 +12,24 @@ stylesheets:
 
 <section class="Section Projects">
     <ol class="Items">
+        {% for project in (projects | filterProjects) %}
         <li class="Item">
             <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">Streaks</a>
-                <p class="Item__Subheading">A Web application for tracking personal streaks, GitHub-style.</p>
+                {% if project.url %}
+                    <a class="Item__Heading fs-20 fw-900" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+                {% else %}
+                    <span class="Item__Heading fs-20 fw-900">{{ project.name }}</span>
+                {% endif %}
+
+                <p class="Item__Subheading">{{ project.description }}</p>
                 <ul class="Item__Tags fs-16">
-                    <li>#vuejs</li>
-                    <li>#vue-cli</li>
-                    <li>#indexeddb</li>
+                    {% for tag in project.tags %}
+                    <li>#{{ tag }}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </li>
-        <li class="Item">
-            <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">Endpoints</a>
-                <p class="Item__Subheading">
-                    Worked on the frontend for a Web application for creating URL endpoints with customizable responses
-                    that can be used when developing other applications. Built in collaboration with Emmanuel and Aldrin.
-                </p>
-                <ul class="Item__Tags fs-16">
-                    <li>#vuejs</li>
-                    <li>#webpack</li>
-                    <li>#websockets</li>
-                </ul>
-            </div>
-        </li>
+        {% endfor %}
     </ol>
 </section>
 
@@ -44,28 +37,19 @@ stylesheets:
     <h2 class="Section__Title fs-24 fw-900">Tools & Libraries</h2>
 
     <ol class="Items">
+        {% for project in (projects | filterLibraries) %}
         <li class="Item">
             <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">mdi-cli</a>
-                <p class="Item__Subheading">A command-line tool for generating Material Design icons.</p>
+                <a class="Item__Heading fs-20 fw-900" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+                <p class="Item__Subheading">{{ project.description }}</p>
                 <ul class="Item__Tags fs-16">
-                    <li>#cli</li>
-                    <li>#nodejs</li>
-                    <li>#puppeteer</li>
+                    {% for tag in project.tags %}
+                    <li>#{{ tag }}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </li>
-        <li class="Item">
-            <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">hermes</a>
-                <p class="Item__Subheading">Client-side messaging channel for sending data from one browser tab to another.</p>
-                <ul class="Item__Tags fs-16">
-                    <li>#broadcast-channel-api</li>
-                    <li>#shared-workers-api</li>
-                    <li>#localstorage</li>
-                </ul>
-            </div>
-        </li>
+        {% endfor %}
     </ol>
 </section>
 
