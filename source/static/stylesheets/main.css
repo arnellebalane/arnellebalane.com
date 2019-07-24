@@ -142,9 +142,14 @@ p {
 
 /* Profile Widget */
 
+.MeHeader {
+    font-size: 0;
+}
+
 .ProfileWidget {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    color: var(--primary-text-color);
 }
 
 .ProfileWidget__Image {
