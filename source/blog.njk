@@ -7,81 +7,20 @@ stylesheets:
 
 <section class="Section Blog">
     <ol class="Items">
+        {% for article in articles %}
         <li class="Item">
-            <time class="Item__Date fs-16">01/20</time>
+            <time class="Item__Date fs-16">{{ article.date | formatDate }}</time>
             <div>
-                <a class="Item__Heading fs-24 fw-900" href='#' rel="noopener noreferrer">Building a site navigation menu using React Hooks</a>
-                <p class="Item__Subheading">
-                    My first look at React's latest feature, React Hooks, and how I used it to build my site's navigation menu
-                    as a functional React component that maintains its own state.
-                </p>
+                <a class="Item__Heading fs-24 fw-900" href="{{ article.url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+                <p class="Item__Subheading">{{ article.summary }}</p>
                 <ul class="Item__Tags fs-16">
-                    <li>#vuejs</li>
-                    <li>#vue-cli</li>
-                    <li>#indexeddb</li>
+                    {% for tag in article.tags %}
+                    <li>#{{ tag }}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">01/20</time>
-            <div>
-                <a class="Item__Heading fs-24 fw-900" href='#' rel="noopener noreferrer">Building a site navigation menu using React Hooks</a>
-                <p class="Item__Subheading">
-                    My first look at React's latest feature, React Hooks, and how I used it to build my site's navigation menu
-                    as a functional React component that maintains its own state.
-                </p>
-                <ul class="Item__Tags fs-16">
-                    <li>#vuejs</li>
-                    <li>#vue-cli</li>
-                    <li>#indexeddb</li>
-                </ul>
-            </div>
-        </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">01/20</time>
-            <div>
-                <a class="Item__Heading fs-24 fw-900" href='#' rel="noopener noreferrer">Building a site navigation menu using React Hooks</a>
-                <p class="Item__Subheading">
-                    My first look at React's latest feature, React Hooks, and how I used it to build my site's navigation menu
-                    as a functional React component that maintains its own state.
-                </p>
-                <ul class="Item__Tags fs-16">
-                    <li>#vuejs</li>
-                    <li>#vue-cli</li>
-                    <li>#indexeddb</li>
-                </ul>
-            </div>
-        </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">01/20</time>
-            <div>
-                <a class="Item__Heading fs-24 fw-900" href='#' rel="noopener noreferrer">Building a site navigation menu using React Hooks</a>
-                <p class="Item__Subheading">
-                    My first look at React's latest feature, React Hooks, and how I used it to build my site's navigation menu
-                    as a functional React component that maintains its own state.
-                </p>
-                <ul class="Item__Tags fs-16">
-                    <li>#vuejs</li>
-                    <li>#vue-cli</li>
-                    <li>#indexeddb</li>
-                </ul>
-            </div>
-        </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">01/20</time>
-            <div>
-                <a class="Item__Heading fs-24 fw-900" href='#' rel="noopener noreferrer">Building a site navigation menu using React Hooks</a>
-                <p class="Item__Subheading">
-                    My first look at React's latest feature, React Hooks, and how I used it to build my site's navigation menu
-                    as a functional React component that maintains its own state.
-                </p>
-                <ul class="Item__Tags fs-16">
-                    <li>#vuejs</li>
-                    <li>#vue-cli</li>
-                    <li>#indexeddb</li>
-                </ul>
-            </div>
-        </li>
+        {% endfor %}
     </ol>
 </section>
 
