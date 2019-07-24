@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/arnellebalane/arnellebalane.com#readme",
   "devDependencies": {
-    "@11ty/eleventy": "0.8.3"
+    "@11ty/eleventy": "0.8.3",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-cssnano": "^2.1.3"
   }
 }
