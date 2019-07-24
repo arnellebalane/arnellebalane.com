@@ -69,16 +69,26 @@ p {
 
 
 
-/* Utilities: Generic */
+/* Utilities: Components */
 
 .Wrapper {
-    width: 90vw;
     max-width: 80rem;
+    padding: 3rem;
     margin: 0 auto;
 }
 
 .Section {
     margin: 6rem 0;
+}
+
+
+
+/* Utilities: Generic */
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 
