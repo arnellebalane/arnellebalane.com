@@ -14,27 +14,15 @@ stylesheets:
     <h2 class="Section__Title fs-24 fw-900">Upcoming Events</h2>
 
     <ol class="Items">
+        {% for event in (events | filterUpcomingEvents) %}
         <li class="Item">
-            <time class="Item__Date fs-16">08/24</time>
+            <time class="Item__Date fs-16">{{ event.start_date | formatDate }}</time>
             <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">VueJS Cebu Meetup</a>
-                <p class="Item__Subheading">Talk: Firebase Workshop</p>
+                <a class="Item__Heading fs-20 fw-900" href="{{ event.url }}" target="_blank" rel="noopener noreferrer">{{ event.name }}</a>
+                <p class="Item__Subheading">{{ event.description }}</p>
             </div>
         </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">09/13</time>
-            <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">GDG Bacolod: Angular + Firebase Codelabs</a>
-                <p class="Item__Subheading">Workshop: Angular + Firebase</p>
-            </div>
-        </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">09/14</time>
-            <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">GDG Bacolod: Angular + Firebase Codelabs</a>
-                <p class="Item__Subheading">Workshop: Angular + Firebase</p>
-            </div>
-        </li>
+        {% endfor %}
     </ol>
 </section>
 
@@ -42,26 +30,14 @@ stylesheets:
     <h2 class="Section__Title fs-24 fw-900">Previous Events</h2>
 
     <ol class="Items">
+        {% for event in (events | filterPreviousEvents) %}
         <li class="Item">
-            <time class="Item__Date fs-16">08/24</time>
+            <time class="Item__Date fs-16">{{ event.start_date | formatDate }}</time>
             <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">VueJS Cebu Meetup</a>
-                <p class="Item__Subheading">Talk: Firebase Workshop</p>
+                <a class="Item__Heading fs-20 fw-900" href="{{ event.url }}" target="_blank" rel="noopener noreferrer">{{ event.name }}</a>
+                <p class="Item__Subheading">{{ event.description }}</p>
             </div>
         </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">09/13</time>
-            <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">GDG Bacolod: Angular + Firebase Codelabs</a>
-                <p class="Item__Subheading">Workshop: Angular + Firebase</p>
-            </div>
-        </li>
-        <li class="Item">
-            <time class="Item__Date fs-16">09/14</time>
-            <div>
-                <a class="Item__Heading fs-20 fw-900" href='#' rel="noopener noreferrer">GDG Bacolod: Angular + Firebase Codelabs</a>
-                <p class="Item__Subheading">Workshop: Angular + Firebase</p>
-            </div>
-        </li>
+        {% endfor %}
     </ol>
 </section>

@@ -1,5 +1,6 @@
 module.exports = config => {
     config.addFilter('filterUpcomingEvents', require('./source/_filters/filterUpcomingEvents'));
+    config.addFilter('filterPreviousEvents', require('./source/_filters/filterPreviousEvents'));
     config.addFilter('formatDate', require('./source/_filters/formatDate'));
 
     return {
