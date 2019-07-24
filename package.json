@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "eleventy --input=source --serve",
-    "build": "eleventy --input=source"
+    "build": "eleventy --input=source",
+    "postbuild": "gulp build"
   },
   "repository": {
     "type": "git",
