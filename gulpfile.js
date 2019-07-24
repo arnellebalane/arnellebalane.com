@@ -1,7 +1,16 @@
 const gulp = require('gulp');
+const htmlmin = require('gulp-htmlmin');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const imageminJpegOptim = require('imagemin-jpegoptim');
+
+gulp.task('build:html', () => {
+    return gulp.src('_site/**/*.html')
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest('_site'));
+});
 
 gulp.task('build:css', () => {
     return gulp.src('_site/**/*.css')
@@ -22,6 +31,7 @@ gulp.task('build:images', () => {
 });
 
 gulp.task('build', gulp.parallel(
+    'build:html',
     'build:css',
     'build:images'
 ));
