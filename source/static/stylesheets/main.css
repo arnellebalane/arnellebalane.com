@@ -73,12 +73,17 @@ p {
 
 .Wrapper {
     max-width: 80rem;
-    padding: 3rem;
+    padding: 0 3rem;
     margin: 0 auto;
 }
 
 .Section {
     margin: 6rem 0;
+}
+
+.Section:first-of-type {
+    /* Compensate for the padding of the Navigation element */
+    margin-top: 4.2rem;
 }
 
 
@@ -112,20 +117,25 @@ p {
 
 .Navigation {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 
-    padding: 1.6rem 3.6rem;
+    padding: 2.4rem 3rem;
     text-align: right;
 }
 
 .Navigation__Link {
     display: inline-block;
-    padding: 0.8rem 1.6rem;
 }
 
-.Navigation__Link:not(:first-child) {
-    margin-left: 8px;
+@media (min-width: 500px) {
+    .Navigation {
+        justify-content: flex-end;
+    }
+
+    .Navigation__Link:not(:first-child) {
+        margin-left: 3rem;
+    }
 }
 
 
@@ -150,8 +160,7 @@ p {
 /* Footer */
 
 .Footer {
-    padding-top: 3rem;
-    padding-bottom: 8rem;
+    padding: 3rem 0;
     border-top: 1px solid var(--gray);
     margin-top: 15rem;
 
