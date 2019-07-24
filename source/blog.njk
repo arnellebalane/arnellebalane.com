@@ -1,5 +1,8 @@
 ---
 layout: layouts/me-header.njk
+pagination:
+    data: articles
+    size: 7
 stylesheets:
     - /static/stylesheets/pages/blog.css
     - /static/stylesheets/components/items.css
@@ -7,7 +10,7 @@ stylesheets:
 
 <section class="Section Blog">
     <ol class="Items">
-        {% for article in articles %}
+        {% for article in pagination.items %}
         <li class="Item">
             <time class="Item__Date fs-16">{{ article.date | formatDate }}</time>
             <div>
@@ -25,12 +28,17 @@ stylesheets:
 </section>
 
 <section class="Section Pagination">
-    <a class="Paginator Paginator--previous fs-18" href="#">
+    {% if pagination.previousPageHref %}
+    <a class="Paginator Paginator--previous fs-18" href="{{ pagination.previousPageHref }}">
         <img src="/static/images/icons/left.svg" alt="Previous">
-        7 older articles
+        Newer articles
     </a>
-    <a class="Paginator Paginator--next fs-18" href="#">
-        5 newer articles
+    {% endif %}
+
+    {% if pagination.nextPageHref %}
+    <a class="Paginator Paginator--next fs-18" href="{{ pagination.nextPageHref }}">
+        Older articles
         <img src="/static/images/icons/right.svg" alt="Next">
     </a>
+    {% endif %}
 </section>

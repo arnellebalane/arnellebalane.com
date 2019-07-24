@@ -23,8 +23,16 @@
     height: 2rem;
 }
 
+.Paginator--previous {
+    margin-right: auto;
+}
+
 .Paginator--previous img {
     margin-right: 8px;
+}
+
+.Paginator--next {
+    margin-left: auto;
 }
 
 .Paginator--next img {
