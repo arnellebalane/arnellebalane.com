@@ -1,5 +1,9 @@
 /* Projects Section */
 
+.Projects .Items--grid {
+    grid-row-gap: 4.2rem;
+}
+
 .Projects .Item {
     margin: 4.2rem 0;
 }

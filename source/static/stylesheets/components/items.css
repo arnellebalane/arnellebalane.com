@@ -5,8 +5,18 @@
     list-style: none;
 }
 
+.Items--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    grid-gap: 3rem;
+}
+
 .Item {
     margin: 3rem 0;
+}
+
+.Items--grid .Item {
+    margin: 0;
 }
 
 .Item__Date {
