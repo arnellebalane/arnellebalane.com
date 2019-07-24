@@ -15,15 +15,12 @@
     margin-right: 2rem;
 
     font-family: monospace;
-    font-size: 1.6rem;
     color: var(--secondary-text-color);
 }
 
 .Item__Heading {
     display: block;
     margin-bottom: 4px;
-    font-size: 2rem;
-    font-weight: 700;
 }
 
 .Item__Subheading {
@@ -38,7 +35,6 @@
     margin-top: 1rem;
 
     list-style: none;
-    font-size: 1.6rem;
     color: var(--secondary-text-color);
 }
 

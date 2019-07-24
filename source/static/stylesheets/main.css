@@ -112,7 +112,6 @@ p {
 .Navigation__Link {
     display: inline-block;
     padding: 0.8rem 1.6rem;
-    font-size: 1.8rem;
 }
 
 .Navigation__Link:not(:first-child) {
