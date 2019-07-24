@@ -14,7 +14,7 @@ stylesheets:
         <li class="Item">
             <time class="Item__Date fs-16">{{ article.date | formatDate }}</time>
             <div>
-                <a class="Item__Heading fs-24 fw-900" href="{{ article.url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+                {% externalLink article.title, article.url, 'Item__Heading fs-24 fw-900' %}
                 <p class="Item__Subheading">{{ article.summary }}</p>
                 <ul class="Item__Tags fs-16">
                     {% for tag in article.tags %}

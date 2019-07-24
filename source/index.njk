@@ -18,11 +18,11 @@ stylesheets:
             <p>
                 I am <strong>@arnellebalane</strong> on
                 <span class="SocialLinks">
-                    <a class="SocialLink SocialLink--github" href="https://github.com/arnellebalane" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a class="SocialLink SocialLink--twitter" href="https://twitter.com/arnellebalane" target="_blank" rel="noopener noreferrer">Twitter</a>
-                    <a class="SocialLink SocialLink--devto" href="https://dev.to/arnellebalane" target="_blank" rel="noopener noreferrer">DEV</a>
-                    <a class="SocialLink SocialLink--instagram" href="https://www.instagram.com/arnellebalane/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    <a class="SocialLink SocialLink--linkedin" href="https://www.linkedin.com/in/arnellebalane/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    {% externalLink 'GitHub', 'https://github.com/arnellebalane', 'SocialLink SocialLink--github' %}
+                    {% externalLink 'Twitter', 'https://twitter.com/arnellebalane', 'SocialLink SocialLink--twitter' %}
+                    {% externalLink 'DEV', 'https://dev.to/arnellebalane', 'SocialLink SocialLink--devto' %}
+                    {% externalLink 'Instagram', 'https://www.instagram.com/arnellebalane/', 'SocialLink SocialLink--instagram' %}
+                    {% externalLink 'LinkedIn', 'https://www.linkedin.com/in/arnellebalane/', 'SocialLink SocialLink--linkedin' %}
                 </span>
             </p>
         </div>
@@ -33,14 +33,14 @@ stylesheets:
     <h2 class="fs-24 fw-900">About Me</h2>
 
     <p>
-        I'm currently a Software Developer at <a href="https://newlogic.io/" target="_blank" rel="noopener noreferrer">Newlogic</a>.
-        Previously, I was the Lead Frontend Developer at <a href="https://channelfix.com/" target="_blank" rel="noopener noreferrer">Channelfix.</a>
-        I also used to teach a Web Engineering class at the University of the Philippines Cebu as a part-time lecturer.
+        I'm currently a Software Developer at {% externalLink 'Newlogic', 'https://newlogic.io/' %}. Previously, I was
+        the Lead Frontend Developer at {% externalLink 'Channelfix', 'https://channelfix.com/' %}. I also used to teach
+        a Web Engineering class at the University of the Philippines Cebu as a part-time lecturer.
     </p>
     <p>
-        On weekends, I'm a co-organizer for <a href="https://gdgcebu.org/" target="_blank" rel="noopener noreferrer">Google Developers Group Cebu</a>,
-        a small team that sets up tech events around the Visayas region. You'll often find me giving talks and workshops at those
-        and other community events.
+        On weekends, I'm a co-organizer for {% externalLink 'Google Developers Group Cebu', 'https://gdgcebu.org/' %},
+        a small team that sets up tech events around the Visayas region. You'll often find me giving talks and workshops
+        at those and other community events.
     </p>
 </section>
 
@@ -58,7 +58,7 @@ stylesheets:
         <li class="Item">
             <time class="Item__Date fs-16">{{ event.start_date | formatDate }}</time>
             <div>
-                <a class="Item__Heading" href="{{ event.url }}" target="_blank" rel="noopener noreferrer">{{ event.name }}</a>
+                {% externalLink event.name, event.url, 'Item__Heading' %}
                 <p class="Item__Subheading fs-18">{{ event.description }}</p>
             </div>
         </li>

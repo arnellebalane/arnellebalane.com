@@ -16,7 +16,7 @@ stylesheets:
         <li class="Item">
             <div>
                 {% if project.url %}
-                    <a class="Item__Heading fs-20 fw-900" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+                    {% externalLink project.name, project.url, 'Item__Heading fs-20 fw-900' %}
                 {% else %}
                     <span class="Item__Heading fs-20 fw-900">{{ project.name }}</span>
                 {% endif %}
@@ -40,7 +40,7 @@ stylesheets:
         {% for project in (projects | filterLibraries) %}
         <li class="Item">
             <div>
-                <a class="Item__Heading fs-20 fw-900" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+                {% externalLink project.name, project.url, 'Item__Heading fs-20 fw-900' %}
                 <p class="Item__Subheading">{{ project.description }}</p>
                 <ul class="Item__Tags fs-16">
                     {% for tag in project.tags %}
@@ -53,4 +53,7 @@ stylesheets:
     </ol>
 </section>
 
-<p>See more of my projects, tools, libraries, and demos over at my <a href="https://github.com/arnellebalane">GitHub profile</a>.</p>
+<p>
+    See more of my projects, tools, libraries, and demos over at my
+    {% externalLink 'GitHub profile', 'https://github.com/arnellebalane' %}.
+</p>

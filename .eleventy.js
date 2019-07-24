@@ -4,6 +4,7 @@ module.exports = config => {
     config.addFilter('filterProjects', require('./source/_filters/filterProjects'));
     config.addFilter('filterLibraries', require('./source/_filters/filterLibraries'));
     config.addFilter('formatDate', require('./source/_filters/formatDate'));
+    config.addShortcode('externalLink', require('./source/_shortcodes/externalLink'));
 
     return {
         templateFormats: [

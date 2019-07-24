@@ -18,7 +18,7 @@ stylesheets:
         <li class="Item">
             <time class="Item__Date fs-16">{{ event.start_date | formatDate }}</time>
             <div>
-                <a class="Item__Heading fs-20 fw-900" href="{{ event.url }}" target="_blank" rel="noopener noreferrer">{{ event.name }}</a>
+                {% externalLink event.name, event.url, 'Item__Heading fs-20 fw-900' %}
                 <p class="Item__Subheading">{{ event.description }}</p>
             </div>
         </li>
@@ -34,7 +34,7 @@ stylesheets:
         <li class="Item">
             <time class="Item__Date fs-16">{{ event.start_date | formatDate }}</time>
             <div>
-                <a class="Item__Heading fs-20 fw-900" href="{{ event.url }}" target="_blank" rel="noopener noreferrer">{{ event.name }}</a>
+                {% externalLink event.name, event.url, 'Item__Heading fs-20 fw-900' %}
                 <p class="Item__Subheading">{{ event.description }}</p>
             </div>
         </li>
