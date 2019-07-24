@@ -30,3 +30,26 @@
     margin: 0;
     font-size: 1.8rem;
 }
+
+.Item__Tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: 1rem;
+
+    list-style: none;
+    font-size: 1.6rem;
+    color: var(--secondary-text-color);
+}
+
+.Item__Tags li {
+    margin-right: 1.6rem;
+}
+
+
+
+/* Custom styles for items in special cases */
+
+.Section__Title + .Items .Item:first-child {
+    margin-top: 0;
+}
