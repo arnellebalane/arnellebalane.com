@@ -6,7 +6,9 @@
   "scripts": {
     "serve": "eleventy --input=source --serve",
     "build": "eleventy --input=source",
-    "postbuild": "gulp build"
+    "postbuild": "npm run optimize",
+    "optimize": "gulp build",
+    "clean": "rm -rf _site"
   },
   "repository": {
     "type": "git",
