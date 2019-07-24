@@ -48,6 +48,10 @@
 
 /* Talks Section */
 
+.Talks .Items {
+    padding-left: 5rem;
+}
+
 .Talks .Item {
     margin: 2rem 0;
 }

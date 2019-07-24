@@ -121,6 +121,23 @@ p {
 
 
 
+/* Profile Widget */
+
+.ProfileWidget {
+    display: flex;
+    align-items: center;
+}
+
+.ProfileWidget__Image {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1.6rem;
+    border-radius: 50%;
+}
+
+
+
 /* Footer */
 
 .Footer {
