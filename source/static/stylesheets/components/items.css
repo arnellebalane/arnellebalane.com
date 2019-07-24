@@ -6,13 +6,12 @@
 }
 
 .Item {
-    display: flex;
-    align-items: baseline;
     margin: 3rem 0;
 }
 
 .Item__Date {
-    margin-right: 2rem;
+    display: block;
+    margin-bottom: 1rem;
 
     font-family: monospace;
     color: var(--secondary-text-color);
@@ -25,6 +24,9 @@
 
 .Item__Subheading {
     margin: 0;
+}
+
+.Item__Subheading:not(:last-child) {
     margin-bottom: 1.6rem;
 }
 
@@ -44,6 +46,17 @@
 
 .Item__Heading + .Item__Tags {
     margin-top: 0;
+}
+
+@media (min-width: 500px) {
+    .Item {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .Item__Date {
+        margin-right: 2rem;
+    }
 }
 
 

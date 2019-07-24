@@ -51,14 +51,20 @@
 
 /* Talks Section */
 
-.Talks .Items {
-    padding-left: 5rem;
-}
-
 .Talks .Item {
     margin: 2rem 0;
 }
 
+.Talks .Item__Date {
+    margin-bottom: 8px;
+}
+
 .Talks .Item__Heading {
     margin-bottom: 0;
+}
+
+@media (min-width: 500px) {
+    .Talks .Items {
+        padding-left: 5rem;
+    }
 }
