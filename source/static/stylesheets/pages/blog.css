@@ -3,3 +3,30 @@
 .Blog .Item {
     margin: 5.4rem 0;
 }
+
+
+
+/* Pagination Section */
+
+.Pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Paginator {
+    display: flex;
+    align-items: flex-start;
+}
+
+.Paginator img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.Paginator--previous img {
+    margin-right: 8px;
+}
+
+.Paginator--next img {
+    margin-left: 8px;
+}
