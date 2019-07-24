@@ -118,3 +118,16 @@ p {
 .Navigation__Link:not(:first-child) {
     margin-left: 8px;
 }
+
+
+
+/* Footer */
+
+.Footer {
+    padding-top: 3rem;
+    padding-bottom: 8rem;
+    border-top: 1px solid var(--gray);
+    margin-top: 15rem;
+
+    color: var(--secondary-text-color);
+}
