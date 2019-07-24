@@ -1,0 +1,164 @@
+[
+  {
+    "name": "GDG Bacolod: Angular + Firebase Codelabs",
+    "description": "Workshop: Angular + Firebase",
+    "url": "https://www.meetup.com/GDG-Bacolod/events/263378638/",
+    "start_date": "September 14, 2019",
+    "venue": "STI-WNU, Bacolod City"
+  },
+  {
+    "name": "GDG Bacolod: Angular + Firebase Codelabs",
+    "description": "Workshop: Angular + Firebase",
+    "url": "https://www.meetup.com/GDG-Bacolod/events/263378509/",
+    "start_date": "September 13, 2019",
+    "venue": "University of St. La Salle, Bacolod City"
+  },
+  {
+    "name": "Vue.js Cebu",
+    "description": "Workshop: Collaborative To-Do App with VueJS and Firebase",
+    "url": "",
+    "start_date": "August 24, 2019",
+    "venue": "Cebu City"
+  },
+  {
+    "name": "Google I/O Extended Cebu 2019",
+    "description": "What's New in Chrome and the Web",
+    "url": "https://www.meetup.com/GDGCebu/events/261780936/",
+    "start_date": "July 20, 2019",
+    "venue": "J Center Mall, Cebu City"
+  },
+  {
+    "name": "Faceboook Developer Circles Cebu",
+    "description": "Building GraphQL Projects",
+    "url": "https://www.facebook.com/events/270482970543471/",
+    "start_date": "May 25, 2019",
+    "venue": "Mabuhay Tower, Cebu City"
+  },
+  {
+    "name": "GCP Next Extended Cebu 2019",
+    "description": "Scheduling Cloud Functions for Firebase",
+    "url": "https://www.meetup.com/GDGCebu/events/260932605/",
+    "start_date": "May 11, 2019",
+    "venue": "The Company, IT Park, Cebu City"
+  },
+  {
+    "name": "Vue.js Cebu",
+    "description": "Moving on from old stack to Vue.js",
+    "url": "",
+    "start_date": "January 30, 2019",
+    "venue": "The Company, Mandaue City"
+  },
+  {
+    "name": "GDG Devfest Bacolod 2018",
+    "description": "Introduction to Firebase for Web Developers",
+    "url": "",
+    "start_date": "November 24, 2018",
+    "venue": "NWTF, Bacolod City"
+  },
+  {
+    "name": "Google I/O Extended Leyte 2018",
+    "description": "Build the Future of the Web with Modern JavaScript",
+    "url": "",
+    "start_date": "August 4, 2018",
+    "venue": "PSHS-EVC, Tacloban City"
+  },
+  {
+    "name": "Google I/O Extended Dumaguete 2018",
+    "description": "Exploring Chrome DevTools Features",
+    "url": "",
+    "start_date": "July 28, 2018",
+    "venue": "Silliman University, Dumaguete"
+  },
+  {
+    "name": "Google I/O Extended Cebu",
+    "description": "Build the Future of the Web with Modern JavaScript",
+    "url": "",
+    "start_date": "July 21, 2018",
+    "venue": "USC - Talamban, Cebu City"
+  },
+  {
+    "name": "Mobile Sites Certification Study Jam",
+    "description": "Co-presented with Emmanuel and Franchette",
+    "url": "",
+    "start_date": "April 14, 2018",
+    "venue": "USJR - Basak, Cebu City"
+  },
+  {
+    "name": "Women TechMakers Cebu 2018",
+    "description": "Mobile Site Certification Study Jam, co-presented with Emmanuel and Franchette",
+    "url": "",
+    "start_date": "April 14, 2018",
+    "venue": "USJR - Basak, Cebu City"
+  },
+  {
+    "name": "Mobile Sites Certification Study Jam",
+    "description": "Co-presented with Emmanuel and Franchette",
+    "url": "",
+    "start_date": "March 14, 2018",
+    "venue": "UP Cebu, Cebu City"
+  },
+  {
+    "name": "Mobile Sites Certification Study Jam",
+    "description": "Co-presented with Emmanuel and Franchette",
+    "url": "",
+    "start_date": "March 10, 2018",
+    "venue": "CIT-U, Cebu City"
+  },
+  {
+    "name": "Startup Weekend Cebu Youth Edition",
+    "description": "Mentor",
+    "url": "",
+    "start_date": "February 16, 2018",
+    "end_date": "February 18, 2018",
+    "venue": "The Grid, Cebu City"
+  },
+  {
+    "name": "Devfest gDayX Cebu 2017",
+    "description": "New Web Platform APIs",
+    "url": "",
+    "start_date": "November 18, 2017",
+    "venue": "J Center Mall, Cebu City"
+  },
+  {
+    "name": "Google I/O Extended Leyte 2017",
+    "description": "Introduction to Firebase",
+    "url": "",
+    "start_date": "August 19, 2017",
+    "venue": "Ritz Tower, Tacloban City"
+  },
+  {
+    "name": "DevMeets: Firebase Workshop",
+    "description": "Co-facilitated with Emmanuel and Kevin",
+    "url": "",
+    "start_date": "August 18, 2017",
+    "venue": "Symph Office, Cebu City"
+  },
+  {
+    "name": "Google I/O Extended Cebu 2017",
+    "description": "Progressive Web Apps, co-presented with Julia",
+    "url": "",
+    "start_date": "July 1, 2017",
+    "venue": "J Center Mall, Cebu City"
+  },
+  {
+    "name": "Polymer Workshop",
+    "description": "Material Design with Polymer paper elements",
+    "url": "",
+    "start_date": "September 20, 2016",
+    "venue": "A SPACE, Cebu City"
+  },
+  {
+    "name": "Manila JavaScript #11",
+    "description": "JavaScript All The Things!",
+    "url": "",
+    "start_date": "September 16, 2016",
+    "venue": "iioffice CEBU, Cebu City"
+  },
+  {
+    "name": "GCP Next Extended Cebu 2016",
+    "description": "Introduction to Service Workers",
+    "url": "",
+    "start_date": "May 4, 2016",
+    "venue": "Diamond Suites, Cebu City"
+  }
+]
