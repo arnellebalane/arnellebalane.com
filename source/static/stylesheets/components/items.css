@@ -21,14 +21,14 @@
 
 .Item__Heading {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 4px;
     font-size: 2rem;
     font-weight: 700;
 }
 
 .Item__Subheading {
     margin: 0;
-    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
 }
 
 .Item__Tags {
