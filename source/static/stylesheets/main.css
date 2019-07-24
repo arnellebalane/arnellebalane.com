@@ -74,8 +74,11 @@ p {
 .Wrapper {
     width: 90vw;
     max-width: 80rem;
-    padding-top: 6rem;
     margin: 0 auto;
+}
+
+.Section {
+    margin: 6rem 0;
 }
 
 

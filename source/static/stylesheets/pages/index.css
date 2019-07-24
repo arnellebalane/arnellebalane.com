@@ -1,10 +1,12 @@
 /* Hero Section */
 
+.Hero__Title {
+    margin-bottom: 3rem;
+}
+
 .Hero__Body {
     display: flex;
     align-items: flex-start;
-
-    padding: 3rem 0;
 }
 
 .Hero__Image {
@@ -41,3 +43,16 @@
 .SocialLink--devto      { background-image: url("../../images/icons/devto.svg"); }
 .SocialLink--instagram  { background-image: url("../../images/icons/instagram.svg"); }
 .SocialLink--linkedin   { background-image: url("../../images/icons/linkedin.svg"); }
+
+
+
+/* Talks Section */
+
+.Talks .Item {
+    margin: 2rem 0;
+}
+
+.Talks .Item__Heading {
+    margin-bottom: 0;
+    font-weight: 400;
+}

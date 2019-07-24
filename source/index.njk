@@ -2,10 +2,12 @@
 layout: layouts/main.njk
 stylesheets:
     - /static/stylesheets/pages/index.css
+    - /static/stylesheets/components/lists.css
 ---
 
 <Section class="Section Hero">
-    <h1 class="fs-36 fw-900">Hey, I'm Arnelle!</h1>
+    <h1 class="Hero__Title fs-36 fw-900">Hey, I'm Arnelle!</h1>
+
     <div class="Hero__Body">
         <img
             class="Hero__Image"
@@ -15,18 +17,79 @@ stylesheets:
             height="200px"
         >
         <div>
-            <h2 class="Hero__Subheading fs-30 fw-700">Web Developer from Cebu, Philippines</h2>
+            <p>I'm a Web Developer from Cebu, Philippines.</p>
             <p>I love experimenting with and sharing about cool new Web technologies and techniques.</p>
             <p>
                 I am <strong>@arnellebalane</strong> on
                 <span class="SocialLinks">
-                    <a class="SocialLink SocialLink--github" rel="noopener noreferrer" href="https://github.com/arnellebalane">GitHub</a>
-                    <a class="SocialLink SocialLink--twitter" rel="noopener noreferrer" href="https://twitter.com/arnellebalane">Twitter</a>
-                    <a class="SocialLink SocialLink--devto" rel="noopener noreferrer" href="https://dev.to/arnellebalane">DEV</a>
-                    <a class="SocialLink SocialLink--instagram" rel="noopener noreferrer" href="https://www.instagram.com/arnellebalane/">Instagram</a>
-                    <a class="SocialLink SocialLink--linkedin" rel="noopener noreferrer" href="https://www.linkedin.com/in/arnellebalane/">LinkedIn</a>
+                    <a class="SocialLink SocialLink--github" href="https://github.com/arnellebalane" rel="noopener noreferrer">GitHub</a>
+                    <a class="SocialLink SocialLink--twitter" href="https://twitter.com/arnellebalane" rel="noopener noreferrer">Twitter</a>
+                    <a class="SocialLink SocialLink--devto" href="https://dev.to/arnellebalane" rel="noopener noreferrer">DEV</a>
+                    <a class="SocialLink SocialLink--instagram" href="https://www.instagram.com/arnellebalane/" rel="noopener noreferrer">Instagram</a>
+                    <a class="SocialLink SocialLink--linkedin" href="https://www.linkedin.com/in/arnellebalane/" rel="noopener noreferrer">LinkedIn</a>
                 </span>
             </p>
         </div>
     </div>
 </Section>
+
+<section class="Section About">
+    <h2 class="fs-24 fw-900">About Me</h2>
+
+    <p>
+        I'm currently a Software Developer at <a href="https://newlogic.io/" rel="noopener noreferrer">Newlogic</a>.
+        Previously, I was the Lead Frontend Developer at <a href="https://channelfix.com/" rel="noopener noreferrer">Channelfix.</a>
+        I also used to teach a Web Engineering class at the University of the Philippines Cebu as a part-time lecturer.
+    </p>
+    <p>
+        On weekends, I'm a co-organizer for <a href="https://gdgcebu.org/" rel="noopener noreferrer">Google Developers Group Cebu</a>,
+        a small team that sets up tech events around the Visayas region. You'll often find me giving talks and workshops at those
+        and other community events.
+    </p>
+</section>
+
+<section class="Section Talks">
+    <h2 class="fs-24 fw-900">Talks & Workshops</h2>
+
+    <p>
+        I give talks and conduct workshops for community events, usually about Web Platform APIs, Progressive Web Apps,
+        and Firebase.
+    </p>
+    <p>Here's a list of my upcoming talks and workshops:</p>
+
+    <ol class="Items">
+        <li class="Item">
+            <time class="Item__Date">08/24</time>
+            <div>
+                <a class="Item__Heading" href='#' rel="noopener noreferrer">VueJS Cebu Meetup</a>
+                <p class="Item__Subheading">Talk: Firebase Workshop</p>
+            </div>
+        </li>
+        <li class="Item">
+            <time class="Item__Date">09/13</time>
+            <div>
+                <a class="Item__Heading" href='#' rel="noopener noreferrer">GDG Bacolod: Angular + Firebase Codelabs</a>
+                <p class="Item__Subheading">Workshop: Angular + Firebase</p>
+            </div>
+        </li>
+        <li class="Item">
+            <time class="Item__Date">09/14</time>
+            <div>
+                <a class="Item__Heading" href='#' rel="noopener noreferrer">GDG Bacolod: Angular + Firebase Codelabs</a>
+                <p class="Item__Subheading">Workshop: Angular + Firebase</p>
+            </div>
+        </li>
+    </ol>
+
+    <p>The <a href="/events">events page</a> contains a list of my previous talks and workshops.</p>
+</section>
+
+<section class="Section Contact">
+    <h2 class="fs-24 fw-900">Get In Touch</h2>
+
+    <p>
+        Feel free to <a href="mailto:arnellebalane@gmail.com">send me an email</a> or reach me through social media and
+        let's make the Web more awesome!
+    </p>
+    <p>Have a great day!</p>
+</section>

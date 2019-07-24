@@ -1,0 +1,31 @@
+.Items {
+    padding: 0;
+    padding-left: 5rem;
+    margin-bottom: 3rem;
+    list-style: none;
+}
+
+.Item {
+    display: flex;
+    align-items: baseline;
+    margin: 3rem 0;
+}
+
+.Item__Date {
+    margin-right: 2rem;
+
+    font-family: monospace;
+    font-size: 1.6rem;
+    color: var(--secondary-text-color);
+}
+
+.Item__Heading {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.Item__Subheading {
+    margin: 0;
+}
