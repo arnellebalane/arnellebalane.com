@@ -7,11 +7,11 @@
         <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/static/stylesheets/themes/dark.css">
         <link rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="/static/stylesheets/themes/light.css">
         <script>
-            console.log(window.matchMedia('(prefers-color-scheme)').media);
-            if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
-                document.head.insertAdjacentElement(
+            if (window.matchMedia('(prefers-color-scheme: no-preference)').media === 'not all') {
+                document.documentElement.style.display = 'none';
+                document.head.insertAdjacentHTML(
                     'beforeend',
-                    '<link rel="stylesheet" href="/static/stylesheets/themes/light.css">'
+                    '<link rel="stylesheet" href="/static/stylesheets/themes/light.css" onload="document.documentElement.style.display = ``;">'
                 );
             }
         </script>
