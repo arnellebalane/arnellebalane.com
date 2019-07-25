@@ -129,6 +129,10 @@ dark-mode-toggle {
     --dark-mode-toggle-light-icon: url("/static/images/icons/theme-light.svg");
     --dark-mode-toggle-dark-icon: url("/static/images/icons/theme-dark.svg");
     --dark-mode-toggle-icon-size: 2rem;
+
+    margin-top: -8px;
+    margin-right: -1.6rem;
+    margin-bottom: -1.2rem;
 }
 
 @media (min-width: 500px) {

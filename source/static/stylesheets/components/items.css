@@ -7,7 +7,7 @@
 
 .Items--grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    grid-template-columns: 1fr;
     grid-gap: 3rem;
 }
 
@@ -59,6 +59,10 @@
 }
 
 @media (min-width: 500px) {
+    .Items--grid {
+        grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    }
+
     .Item {
         display: flex;
         align-items: baseline;
