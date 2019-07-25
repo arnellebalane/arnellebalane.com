@@ -14,7 +14,7 @@ module.exports = config => {
 
             // These are unrecognized template formats and will just be copied
             // directly by Eleventy.
-            'css', 'jpg', 'svg', 'ttf'
+            'css', 'jpg', 'svg', 'ttf', 'mjs'
         ]
     };
 };

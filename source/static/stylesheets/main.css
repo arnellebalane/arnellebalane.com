@@ -48,6 +48,9 @@ body {
     line-height: 1.4;
     color: var(--primary-text-color);
     background-color: var(--primary-background-color);
+
+    transition: 150ms ease;
+    transition-property: color, background-color;
 }
 
 a {
@@ -122,6 +125,12 @@ p {
     display: inline-block;
 }
 
+dark-mode-toggle {
+    --dark-mode-toggle-light-icon: url("/static/images/icons/theme-light.svg");
+    --dark-mode-toggle-dark-icon: url("/static/images/icons/theme-dark.svg");
+    --dark-mode-toggle-icon-size: 2rem;
+}
+
 @media (min-width: 500px) {
     .Navigation {
         justify-content: flex-end;
@@ -129,6 +138,10 @@ p {
 
     .Navigation__Link:not(:first-child) {
         margin-left: 3rem;
+    }
+
+    dark-mode-toggle {
+        margin-left: 1.6rem;
     }
 }
 

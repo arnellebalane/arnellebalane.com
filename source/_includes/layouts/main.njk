@@ -6,15 +6,6 @@
 
         <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/static/stylesheets/themes/dark.css">
         <link rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="/static/stylesheets/themes/light.css">
-        <script>
-            if (window.matchMedia('(prefers-color-scheme: no-preference)').media === 'not all') {
-                document.documentElement.style.display = 'none';
-                document.head.insertAdjacentHTML(
-                    'beforeend',
-                    '<link rel="stylesheet" href="/static/stylesheets/themes/light.css" onload="document.documentElement.style.display = ``;">'
-                );
-            }
-        </script>
 
         <link rel="stylesheet" href="/static/stylesheets/main.css">
         {% for stylesheet in stylesheets %}
@@ -36,6 +27,7 @@
             <a class="Navigation__Link fs-18" href="/blog">Blog</a>
             <a class="Navigation__Link fs-18" href="/events">Events</a>
             <a class="Navigation__Link fs-18" href="/projects">Projects</a>
+            <dark-mode-toggle permanent></dark-mode-toggle>
         </nav>
 
         <div class="Wrapper">
@@ -45,5 +37,8 @@
                 <small>&copy; Copyright 2019 Arnelle Balane</small>
             </footer>
         </div>
+
+        <script type="module" src="/static/javascripts/main.mjs"></script>
+        <script nomodule src="/static/javascripts/main.js"></script>
     </body>
 </html>
