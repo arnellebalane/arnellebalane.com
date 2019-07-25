@@ -35,13 +35,6 @@
     margin: 0;
 }
 
-:root {
-    --primary-text-color: #141a24;
-    --secondary-text-color: #5c636e;
-    --primary-accent-color: #c13355;
-    --gray: #e7eaef;
-}
-
 html {
     font-size: 62.5%;
 }
@@ -54,6 +47,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.4;
     color: var(--primary-text-color);
+    background-color: var(--primary-background-color);
 }
 
 a {

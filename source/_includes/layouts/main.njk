@@ -4,6 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/static/stylesheets/themes/dark.css">
+        <link rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="/static/stylesheets/themes/light.css">
+        <script>
+            console.log(window.matchMedia('(prefers-color-scheme)').media);
+            if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
+                document.head.insertAdjacentElement(
+                    'beforeend',
+                    '<link rel="stylesheet" href="/static/stylesheets/themes/light.css">'
+                );
+            }
+        </script>
+
         <link rel="stylesheet" href="/static/stylesheets/main.css">
         {% for stylesheet in stylesheets %}
         <link rel="stylesheet" href="{{ stylesheet }}">
