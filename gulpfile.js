@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const critical = require('critical').stream;
 const htmlmin = require('gulp-htmlmin');
+const terser = require('gulp-terser');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const imageminJpegOptim = require('imagemin-jpegoptim');
@@ -14,6 +15,12 @@ gulp.task('build:html', () => {
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
+        .pipe(gulp.dest('_site'));
+});
+
+gulp.task('build:js', () => {
+    return gulp.src('_site/**/*.{js,mjs}')
+        .pipe(terser())
         .pipe(gulp.dest('_site'));
 });
 
@@ -37,6 +44,7 @@ gulp.task('build:images', () => {
 
 gulp.task('build', gulp.parallel(
     'build:html',
+    'build:js',
     'build:css',
     'build:images'
 ));
