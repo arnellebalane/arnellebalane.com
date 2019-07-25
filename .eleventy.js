@@ -6,15 +6,5 @@ module.exports = config => {
     config.addFilter('formatDate', require('./source/_filters/formatDate'));
     config.addShortcode('externalLink', require('./source/_shortcodes/externalLink'));
 
-    return {
-        templateFormats: [
-            // These are recognized template formats and will be processed
-            // by Eleventy.
-            'njk', 'md', 'html',
-
-            // These are unrecognized template formats and will just be copied
-            // directly by Eleventy.
-            'css', 'jpg', 'svg', 'ttf', 'mjs'
-        ]
-    };
+    config.addPassthroughCopy('source/static');
 };
