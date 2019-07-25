@@ -5,3 +5,8 @@
     --primary-background-color: #141A24;
     --gray: #5c636e;
 }
+
+img,
+.SocialLink {
+    filter: saturate(0.75);
+}
