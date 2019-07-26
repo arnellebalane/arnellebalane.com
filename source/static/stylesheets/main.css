@@ -48,9 +48,7 @@ body {
     line-height: 1.4;
     color: var(--primary-text-color);
     background-color: var(--primary-background-color);
-
-    transition: 150ms ease;
-    transition-property: color, background-color;
+    transition: background-color 150ms ease;
 }
 
 a {
