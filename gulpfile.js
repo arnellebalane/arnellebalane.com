@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const critical = require('critical').stream;
 const htmlmin = require('gulp-htmlmin');
 const terser = require('gulp-terser');
 const cssnano = require('gulp-cssnano');
@@ -7,6 +8,10 @@ const imageminJpegOptim = require('imagemin-jpegoptim');
 
 gulp.task('build:html', () => {
     return gulp.src('_site/**/*.html')
+        .pipe(critical({
+            base: '_site',
+            inline: true
+        }))
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
