@@ -33,19 +33,19 @@
     width: 2.4rem;
     height: 2.4rem;
     font-size: 0;
-    background: center center no-repeat;
-    background-size: contain;
+    background: url("../../images/icons/social-icons.svg") center center no-repeat;
+    background-size: auto 100%;
 }
 
 .SocialLink:not(:last-child) {
     margin-right: 8px;
 }
 
-.SocialLink--github     { background-image: url("../../images/icons/github.svg"); }
-.SocialLink--twitter    { background-image: url("../../images/icons/twitter.svg"); }
-.SocialLink--devto      { background-image: url("../../images/icons/devto.svg"); }
-.SocialLink--instagram  { background-image: url("../../images/icons/instagram.svg"); }
-.SocialLink--linkedin   { background-image: url("../../images/icons/linkedin.svg"); }
+.SocialLink--github     { background-position-x: 0; }
+.SocialLink--twitter    { background-position-x: calc(24px * -1); }
+.SocialLink--devto      { background-position-x: calc(24px * -2) }
+.SocialLink--instagram  { background-position-x: calc(24px * -3); }
+.SocialLink--linkedin   { background-position-x: calc(24px * -4); }
 
 
 
