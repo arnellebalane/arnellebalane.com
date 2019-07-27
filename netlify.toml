@@ -1,3 +1,9 @@
 [build]
   command = "npm run build"
   publish = "_site"
+
+[[headers]]
+  for = "/static/*"
+
+  [headers.values]
+    Cache-Control = "max-age=31536000, immutable"
