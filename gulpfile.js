@@ -6,6 +6,8 @@ const terser = require('gulp-terser');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const imageminJpegOptim = require('imagemin-jpegoptim');
+const revall = require('gulp-rev-all');
+const revdel = require('gulp-rev-delete-original');
 
 gulp.task('build:html', () => {
     return gulp.src('_site/**/*.html')
@@ -63,9 +65,21 @@ gulp.task('build:images', () => {
         .pipe(gulp.dest('_site'));
 });
 
-gulp.task('build', gulp.parallel(
-    'build:html',
-    'build:js',
-    'build:css',
-    'build:images'
-));
+gulp.task('build:rev', () => {
+    return gulp.src('_site/**/*')
+        .pipe(revall.revision({
+            dontRenameFile: [/\.html$/, 'sw.js']
+        }))
+        .pipe(revdel())
+        .pipe(gulp.dest('_site'));
+});
+
+gulp.task('build', gulp.series([
+    gulp.parallel(
+        'build:html',
+        'build:js',
+        'build:css',
+        'build:images'
+    ),
+    'build:rev'
+]));

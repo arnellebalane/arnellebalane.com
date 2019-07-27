@@ -33,6 +33,8 @@
     "gulp-dom": "1.0.0",
     "gulp-htmlmin": "5.0.1",
     "gulp-imagemin": "^6.0.0",
+    "gulp-rev-all": "2.0.2",
+    "gulp-rev-delete-original": "0.2.3",
     "gulp-terser": "1.2.0",
     "imagemin-jpegoptim": "^6.0.0"
   }
