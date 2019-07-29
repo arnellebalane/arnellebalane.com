@@ -96,11 +96,9 @@ gulp.task('build:rev', () => {
 });
 
 gulp.task('build', gulp.series([
-    gulp.parallel(
-        'build:html',
-        'build:js',
-        'build:css',
-        'build:images'
-    ),
+    'build:html',
+    'build:js',
+    'build:css',
+    'build:images',
     'build:rev'
 ]));
