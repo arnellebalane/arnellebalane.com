@@ -114,13 +114,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 2.4rem 3rem;
-    text-align: right;
-}
-
-.Navigation__Link {
-    display: inline-block;
 }
 
 .DarkModeToggle {
