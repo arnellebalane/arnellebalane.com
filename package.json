@@ -35,6 +35,7 @@
     "gulp-imagemin": "^6.0.0",
     "gulp-rev-all": "2.0.2",
     "gulp-rev-delete-original": "0.2.3",
+    "gulp-size": "3.0.0",
     "gulp-terser": "1.2.0",
     "imagemin-jpegoptim": "^6.0.0",
     "subfont": "3.6.3"

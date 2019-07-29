@@ -8,9 +8,15 @@ const imagemin = require('gulp-imagemin');
 const imageminJpegOptim = require('imagemin-jpegoptim');
 const revall = require('gulp-rev-all');
 const revdel = require('gulp-rev-delete-original');
+const size = require('gulp-size');
 
 gulp.task('build:html', () => {
     return gulp.src('_site/**/*.html')
+        .pipe(size({
+            title: 'build:html',
+            gzip: true,
+            showFiles: true
+        }))
         .pipe(critical({
             base: '_site',
             inline: true,
@@ -43,18 +49,33 @@ gulp.task('build:html', () => {
 
 gulp.task('build:js', () => {
     return gulp.src('_site/**/*.{js,mjs}')
+        .pipe(size({
+            title: 'build:js',
+            gzip: true,
+            showFiles: true
+        }))
         .pipe(terser())
         .pipe(gulp.dest('_site'));
 });
 
 gulp.task('build:css', () => {
     return gulp.src('_site/**/*.css')
+        .pipe(size({
+            title: 'build:css',
+            gzip: true,
+            showFiles: true
+        }))
         .pipe(cssnano())
         .pipe(gulp.dest('_site'));
 });
 
 gulp.task('build:images', () => {
     return gulp.src('_site/**/*.{jpg,svg}')
+        .pipe(size({
+            title: 'build:images',
+            gzip: true,
+            showFiles: true
+        }))
         .pipe(imagemin([
             imageminJpegOptim({
                 progressive: true,
