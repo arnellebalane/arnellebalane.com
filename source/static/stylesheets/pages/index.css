@@ -6,17 +6,28 @@
 
 .Hero__Image {
     float: left;
+    position: relative;
 
     width: calc(50% - 3rem);
     max-width: 20rem;
     margin-right: 3rem;
     margin-bottom: 1rem;
+    background-color: var(--gray);
+}
+
+.Hero__Image::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
 }
 
 .Hero__Image img {
     display: block;
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .Hero__Content {
