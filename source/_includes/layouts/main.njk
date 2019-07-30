@@ -1,3 +1,10 @@
+---
+title: Arnelle Balane
+description:
+    Web Developer from Cebu, Philippines. Software Engineer at Newlogic.
+    Google Developer Expert in Web Technologies. I love building things on the
+    Web and sharing about it.
+---
 <!doctype html>
 <html lang="en">
     <head>
@@ -13,15 +20,15 @@
         <link rel="stylesheet" href="{{ stylesheet }}">
         {% endfor %}
 
-        <meta property="og:title" content="Arnelle Balane">
-        <meta property="og:description" content="Arnelle Balane's Personal Website">
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:description" content="{{ description }}">
         <meta property="og:image" content="https://arnellebalane.com/static/images/social-share.jpg">
-        <meta property="og:url" content="https://arnellebalane.com/">
-        <meta name="description" content="Arnelle Balane's Personal Website">
+        <meta property="og:url" content="https://arnellebalane.com{{ page.url }}">
+        <meta name="description" content="{{ description }}">
         <meta name="twitter:card" content="summary_large_image">
 
         <link rel="icon" href="/static/images/favicon.png">
-        <title>{{ title or 'Arnelle Balane'}}</title>
+        <title>{{ title }}</title>
     </head>
 
     <body>
