@@ -186,7 +186,6 @@ input:checked + #checkboxLabel + aside #permanentLabel::before {
 }
 
 aside {
-  display: none;
   visibility: hidden;
   margin-top: 0.15rem;
 }
