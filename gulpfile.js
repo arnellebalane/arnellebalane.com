@@ -70,7 +70,7 @@ gulp.task('build:css', () => {
 });
 
 gulp.task('build:images', () => {
-    return gulp.src('_site/**/*.{jpg,svg}')
+    return gulp.src('_site/**/*.{jpg,png,svg}')
         .pipe(size({
             title: 'build:images',
             gzip: true,
