@@ -10,13 +10,17 @@ const revall = require('gulp-rev-all');
 const revdel = require('gulp-rev-delete-original');
 const size = require('gulp-size');
 
+function sizeStream(title) {
+    return size({
+        title,
+        gzip: true,
+        showFiles: true
+    });
+}
+
 gulp.task('build:html', () => {
     return gulp.src('_site/**/*.html')
-        .pipe(size({
-            title: 'build:html',
-            gzip: true,
-            showFiles: true
-        }))
+        .pipe(sizeStream('build:html'))
         .pipe(critical({
             base: '_site',
             inline: true,
@@ -49,33 +53,21 @@ gulp.task('build:html', () => {
 
 gulp.task('build:js', () => {
     return gulp.src('_site/**/*.{js,mjs}')
-        .pipe(size({
-            title: 'build:js',
-            gzip: true,
-            showFiles: true
-        }))
+        .pipe(sizeStream('build:js'))
         .pipe(terser())
         .pipe(gulp.dest('_site'));
 });
 
 gulp.task('build:css', () => {
     return gulp.src('_site/**/*.css')
-        .pipe(size({
-            title: 'build:css',
-            gzip: true,
-            showFiles: true
-        }))
+        .pipe(sizeStream('build:css'))
         .pipe(cssnano())
         .pipe(gulp.dest('_site'));
 });
 
 gulp.task('build:images', () => {
     return gulp.src('_site/**/*.{jpg,png,svg}')
-        .pipe(size({
-            title: 'build:images',
-            gzip: true,
-            showFiles: true
-        }))
+        .pipe(sizeStream('build:images'))
         .pipe(imagemin([
             imageminJpegOptim({
                 progressive: true,
