@@ -11,5 +11,11 @@ const notStaticUrl = ({url}) => !staticUrlRegex.test(url);
 
 workbox.routing.registerRoute(
     notStaticUrl,
-    new workbox.strategies.StaleWhileRevalidate()
+    new workbox.strategies.StaleWhileRevalidate({
+        plugins: [
+            new workbox.broadcastUpdate.Plugin({
+                channelName: 'page-updated'
+            })
+        ]
+    })
 );

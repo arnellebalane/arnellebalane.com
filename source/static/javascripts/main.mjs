@@ -35,4 +35,15 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('DOMContentLoaded', () => {
         navigator.serviceWorker.register('sw.js');
     });
+
+    const channel = new BroadcastChannel('page-updated');
+    channel.addEventListener('message', event => {
+        const url = event.data.payload.updatedURL;
+        if (url === location.href) {
+            const reload = confirm('Page updated. Reload?');
+            if (reload) {
+                location.reload();
+            }
+        }
+    });
 }
