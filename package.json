@@ -8,6 +8,7 @@
     "build": "eleventy --input=source",
     "postbuild": "npm run optimize",
     "optimize": "gulp build",
+    "subset-fonts": "./scripts/subset-fonts.sh",
     "clean": "rm -rf _site"
   },
   "repository": {

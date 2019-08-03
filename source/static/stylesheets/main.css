@@ -5,7 +5,7 @@
     font-weight: 400;
     font-display: swap;
     src: local("Gilroy-Regular"),
-        url("../fonts/Gilroy/Gilroy-Regular.woff2") format("woff2");
+        url("../fonts/Gilroy/Gilroy-Regular-subset.woff2") format("woff2");
 }
 
 @font-face {
@@ -13,7 +13,7 @@
     font-weight: 700;
     font-display: swap;
     src: local("Gilroy-Bold"),
-        url("../fonts/Gilroy/Gilroy-Bold.woff2") format("woff2");
+        url("../fonts/Gilroy/Gilroy-Bold-subset.woff2") format("woff2");
 }
 
 @font-face {
@@ -21,7 +21,7 @@
     font-weight: 900;
     font-display: swap;
     src: local("Gilroy-Heavy"),
-        url("../fonts/Gilroy/Gilroy-Heavy.woff2") format("woff2");
+        url("../fonts/Gilroy/Gilroy-Heavy-subset.woff2") format("woff2");
 }
 
 
