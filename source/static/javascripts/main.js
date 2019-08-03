@@ -1,5 +1,5 @@
-// Fallback when DarkModeToggle doesn't get loaded, explicitly load the
-// light theme instead.
+// NOTE: If prefers-color-scheme is not supported, we fallback to just using
+// the light theme.
 
 if (window.matchMedia('(prefers-color-scheme: no-preference)').media === 'not all') {
     document.documentElement.style.display = 'none';
