@@ -62,6 +62,11 @@ p {
     margin-bottom: 2rem;
 }
 
+button {
+    font: inherit;
+    color: inherit;
+}
+
 
 
 /* Utilities: Components */

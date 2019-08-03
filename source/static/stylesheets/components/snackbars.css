@@ -1,0 +1,58 @@
+.Snackbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: appear 100ms ease-out forwards;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 32rem;
+    padding: 0 2.4rem;
+
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+.Snackbar__Text {
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 5rem;
+}
+
+.Snackbar__Action {
+    padding: 4px 8px;
+    margin-right: -8px;
+    border: none;
+    background: none;
+
+    font-size: 1.6rem;
+    color: var(--primary-accent-color);
+    cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    .Snackbar {
+        left: initial;
+        right: 2rem;
+        bottom: 2rem;
+
+        border-radius: 4px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(calc(100% + 2rem));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
