@@ -6,6 +6,5 @@ module.exports = config => {
     config.addFilter('formatDate', require('./source/_filters/formatDate'));
     config.addShortcode('externalLink', require('./source/_shortcodes/externalLink'));
 
-    config.addPassthroughCopy('source/sw.js');
     config.addPassthroughCopy('source/static');
 };

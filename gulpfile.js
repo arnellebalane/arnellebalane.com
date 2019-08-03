@@ -9,6 +9,7 @@ const imageminJpegOptim = require('imagemin-jpegoptim');
 const revall = require('gulp-rev-all');
 const revdel = require('gulp-rev-delete-original');
 const size = require('gulp-size');
+const workbox = require('workbox-build');
 
 function sizeStream(title) {
     return size({
@@ -78,16 +79,27 @@ gulp.task('build:images', () => {
         .pipe(gulp.dest('_site'));
 });
 
+gulp.task('build:sw', () => {
+    return workbox.injectManifest({
+        swSrc: 'source/sw.js',
+        swDest: '_site/sw.js',
+        globDirectory: '_site',
+        globPatterns: ['**\/*.{mjs,js,css,png,jpg,svg,woff2}']
+    });
+});
+
 gulp.task('build:rev', () => {
     return gulp.src('_site/**/*')
         .pipe(revall.revision({
-            dontRenameFile: [/\.html$/, 'sw.js']
+            dontRenameFile: [/\.html$/, 'sw.js'],
+            dontUpdateReference: ['sw.js']
         }))
         .pipe(revdel())
         .pipe(gulp.dest('_site'));
 });
 
 gulp.task('build', gulp.series([
+    'build:sw',
     'build:html',
     'build:js',
     'build:css',
