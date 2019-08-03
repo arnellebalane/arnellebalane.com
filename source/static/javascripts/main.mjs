@@ -33,7 +33,7 @@ if (window.matchMedia('(prefers-color-scheme: no-preference)').media === 'not al
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('DOMContentLoaded', () => {
-        navigator.serviceWorker.register('sw.js');
+        navigator.serviceWorker.register('/sw.js');
     });
 
     const channel = new BroadcastChannel('page-updated');
