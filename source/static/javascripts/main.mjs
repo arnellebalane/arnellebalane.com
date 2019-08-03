@@ -26,3 +26,13 @@ if (window.matchMedia('(prefers-color-scheme: no-preference)').media === 'not al
         '<link rel="stylesheet" href="/static/stylesheets/themes/light.css" onload="document.documentElement.style.display = ``;">'
     );
 }
+
+
+
+// Register the ServiceWorker after the page loads.
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('DOMContentLoaded', () => {
+        navigator.serviceWorker.register('sw.js');
+    });
+}
