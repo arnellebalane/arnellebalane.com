@@ -1,0 +1,19 @@
+/* 404 Page */
+
+.NotFound__Heading {
+    text-align: center;
+}
+
+.NotFound__Oops {
+    color: var(--primary-accent-color);
+}
+
+
+
+/* Other Links Section */
+
+.NotFoundActions {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
