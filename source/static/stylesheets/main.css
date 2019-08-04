@@ -40,6 +40,9 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+
     min-height: 100vh;
     font-family: "Gilroy", sans-serif;
     font-size: 2rem;
@@ -178,9 +181,18 @@ dark-mode-toggle {
 /* Footer */
 
 .Footer {
+    margin-top: auto;
+}
+
+.Footer::before {
+    content: "";
+    display: block;
+    margin-top: 9rem;
+}
+
+.Footer__Content {
     padding: 3rem 0;
     border-top: 1px solid var(--gray);
-    margin-top: 15rem;
 
     color: var(--secondary-text-color);
 }
