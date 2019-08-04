@@ -4,6 +4,8 @@ description:
     Web Developer from Cebu, Philippines. Software Developer at Newlogic.
     Google Developer Expert in Web Technologies. I love building things on the
     Web and sharing about it.
+showNavigation: true
+showProfileHeader: true
 ---
 <!doctype html>
 <html lang="en">
@@ -36,6 +38,7 @@ description:
     </head>
 
     <body>
+        {% if showNavigation %}
         <nav class="Navigation">
             <a class="Navigation__Link fs-18" href="/blog/">Blog</a>
             <a class="Navigation__Link fs-18" href="/events/">Events</a>
@@ -45,14 +48,26 @@ description:
                 <dark-mode-toggle permanent></dark-mode-toggle>
             </span>
         </nav>
+        {% endif %}
 
         <div class="Wrapper">
-            {{ content | safe }}
+            {% if showProfileHeader %}
+            <section class="Section MeHeader">
+                <a class="ProfileWidget" href="/">
+                    <img class="ProfileWidget__Image" src="/static/images/avatar-40.jpg" alt="Arnelle Balane" width="40px" height="40px">
+                    <h1 class="fs-24 fw-900">Arnelle Balane</h1>
+                </a>
+            </section>
+            {% endif %}
 
-            <footer class="Footer">
-                <small>&copy; Copyright 2019 Arnelle Balane</small>
-            </footer>
+            {{ content | safe }}
         </div>
+
+        <footer class="Footer">
+            <div class="Wrapper Footer__Content">
+                <small>&copy; Copyright 2019 Arnelle Balane</small>
+            </div>
+        </footer>
 
         <script type="module" src="/static/javascripts/main.mjs"></script>
         <script nomodule src="/static/javascripts/main.js"></script>
