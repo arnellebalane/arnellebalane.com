@@ -9,11 +9,11 @@
 
 /* 404 Page */
 
-.NotFound__Heading {
+.Standalone__Heading {
     text-align: center;
 }
 
-.NotFound__Oops {
+.Standalone__Highlight {
     color: var(--primary-accent-color);
 }
 
@@ -21,7 +21,7 @@
 
 /* Other Links Section */
 
-.NotFoundActions {
+.StandaloneActions {
     max-width: 50rem;
     margin-left: auto;
     margin-right: auto;

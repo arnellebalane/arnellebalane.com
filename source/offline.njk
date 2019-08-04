@@ -1,11 +1,45 @@
 ---
 layout: layouts/main.njk
 showNavigation: false
-title: Looks like you're offline.
+title: It looks like you're offline.
 description:
     Web Developer from Cebu, Philippines. Software Developer at Newlogic.
     Google Developer Expert in Web Technologies. I love building things on the
     Web and sharing about it.
+stylesheets:
+    - /static/stylesheets/pages/standalone.css
 ---
 
-<h1>OFFLINE!!!</h1>
+<section class="Section Standalone">
+    <h1 class="Standalone__Heading fs-30 fw-900">
+        It looks like you're
+        <span class="Standalone__Highlight">offline!</span>
+    </h1>
+</section>
+
+<section class="Section StandaloneActions">
+    <p>Please check your network connection. Or you can visit these links that are available offline:</p>
+
+    <ul class="OfflineLinks"></ul>
+</section>
+
+<script>
+    const links = document.querySelector('.OfflineLinks');
+
+    (async () => {
+        const cache = await caches.open('persistent-pages');
+        const pages = await cache.matchAll();
+
+        const responses = await Promise.all(pages.map(page => page.text()));
+        responses.forEach((response, i) => {
+            const url = new URL(pages[i].url);
+            let [_, title] = response.match(/<title>(.*?)<\/title>/);
+            title = title.replace(/( \| )?Arnelle Balane$/, '') || 'Home';
+
+            links.insertAdjacentHTML(
+                'beforeend',
+                `<li><a href="${url}">${title}</a></li>`
+            );
+        });
+    })();
+</script>
