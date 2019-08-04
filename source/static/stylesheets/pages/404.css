@@ -1,3 +1,12 @@
+/* Profile Header Overrides */
+
+.Section.MeHeader {
+    margin-top: 8rem;
+    text-align: center;
+}
+
+
+
 /* 404 Page */
 
 .NotFound__Heading {
