@@ -32,10 +32,6 @@ if (window.matchMedia('(prefers-color-scheme: no-preference)').media === 'not al
 // Register the ServiceWorker after the page loads.
 
 if ('serviceWorker' in navigator) {
-    window.addEventListener('DOMContentLoaded', () => {
-        navigator.serviceWorker.register('/sw.js');
-    });
-
     const channel = new BroadcastChannel('page-updated');
     channel.addEventListener('message', event => {
         const url = event.data.payload.updatedURL;

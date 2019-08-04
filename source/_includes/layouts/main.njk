@@ -71,5 +71,15 @@ showProfileHeader: true
 
         <script type="module" src="/static/javascripts/main.mjs"></script>
         <script nomodule src="/static/javascripts/main.js"></script>
+
+        {% if config.env === 'production' %}
+        <script defer>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('DOMContentLoaded', () => {
+                    navigator.serviceWorker.register('/sw.js');
+                });
+            }
+        </script>
+        {% endif %}
     </body>
 </html>
