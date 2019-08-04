@@ -25,3 +25,7 @@ workbox.routing.setCatchHandler(context => {
     }
     return Response.error();
 });
+
+workbox.routing.setDefaultHandler(
+    new workbox.strategies.NetworkOnly()
+);
