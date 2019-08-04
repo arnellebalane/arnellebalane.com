@@ -99,6 +99,10 @@ button {
     clear: both;
 }
 
+.hidden {
+    display: none !important;
+}
+
 
 
 /* Utilities: Typography */

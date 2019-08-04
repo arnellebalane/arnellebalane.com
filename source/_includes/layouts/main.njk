@@ -48,6 +48,8 @@ showProfileHeader: true
                 <dark-mode-toggle permanent></dark-mode-toggle>
             </span>
         </nav>
+        {% else %}
+            <dark-mode-toggle class="hidden" permanent></dark-mode-toggle>
         {% endif %}
 
         <div class="Wrapper">
