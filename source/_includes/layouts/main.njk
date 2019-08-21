@@ -86,6 +86,19 @@ showProfileHeader: true
                 });
             }
         </script>
+        <script>
+            // Firebase Performance Monitoring - Standalone SDK
+            const performanceStandalone = 'https://www.gstatic.com/firebasejs/6.4.0/firebase-performance-standalone.js';
+            const firebaseConfig = {
+                apiKey: 'AIzaSyBJZqn-KWmYvl9rvA_nn3tIp6BkIXYB0WE',
+                projectId: 'arnellebalane-com',
+                appId: '1:913849576353:web:7e83e1346afebd10'
+            };
+            (function(sa,fbc){function load(f,c){var a=document.createElement('script');
+            a.async=1;a.src=f;var s=document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(a,s);}load(sa);window.onload = function() {firebase.initializeApp(fbc).performance();};
+            })(performanceStandalone, firebaseConfig);
+        </script>
         {% endif %}
     </body>
 </html>
