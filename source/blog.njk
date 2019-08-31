@@ -5,7 +5,7 @@ description:
     I experiement a lot with cool new Web technologies and techniques, and I
     write about my experiences with them. Here are what I've written so far.
 pagination:
-    data: articles
+    data: collections.articles
     size: 7
 stylesheets:
     - /static/stylesheets/pages/blog.css
@@ -21,8 +21,8 @@ stylesheets:
                 {% externalLink article.title, article.url, 'Item__Heading fs-24 fw-900' %}
                 <p class="Item__Subheading">{{ article.summary }}</p>
                 <ul class="Item__Tags fs-16">
-                    {% for tag in article.tags %}
-                    <li>#{{ tag }}</li>
+                    {% for category in article.categories %}
+                    <li>#{{ category }}</li>
                     {% endfor %}
                 </ul>
             </div>

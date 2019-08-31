@@ -5,7 +5,7 @@
     "date": "July 22, 2019",
     "url": "https://dev.to/arnellebalane/playing-the-t-rex-runner-game-inside-a-picture-in-picture-window-kpc",
     "source": "devto",
-    "tags": ["javascript", "web-development", "web-api", "experiment"]
+    "categories": ["javascript", "web-development", "web-api", "experiment"]
   },
   {
     "title": "Setting up multiple GitHub accounts, the nicer way",
@@ -13,7 +13,7 @@
     "date": "March 7, 2019",
     "url": "https://medium.com/uncaught-exception/setting-up-multiple-github-accounts-the-nicer-way-5ab732078a7e",
     "source": "medium",
-    "tags": ["git", "github", "version-control"]
+    "categories": ["git", "github", "version-control"]
   },
   {
     "title": "Negative indexes in JavaScript arrays using Proxies",
@@ -21,7 +21,7 @@
     "date": "February 8, 2019",
     "url": "https://medium.com/uncaught-exception/javascript-array-negative-index-using-proxies-ed096dc84416",
     "source": "medium",
-    "tags": ["javascript", "web-development", "es6-proxies"]
+    "categories": ["javascript", "web-development", "es6-proxies"]
   },
   {
     "title": "Using lazysizes to lazyload images on the Web",
@@ -29,7 +29,7 @@
     "date": "January 13, 2019",
     "url": "https://blog.arnellebalane.com/using-lazysizes-to-lazyload-images-on-the-web-a0fbcbf58975",
     "source": "medium",
-    "tags": ["javascript", "web-development", "lazy-loading"]
+    "categories": ["javascript", "web-development", "lazy-loading"]
   },
   {
     "title": "Building a site navigation menu using React Hooks",
@@ -37,7 +37,7 @@
     "date": "January 20, 2019",
     "url": "https://blog.arnellebalane.com/building-a-site-navigation-menu-using-react-hooks-efc13d658353",
     "source": "medium",
-    "tags": ["javascript", "web-development", "react", "react-hooks"]
+    "categories": ["javascript", "web-development", "react", "react-hooks"]
   },
   {
     "title": "Using the Ambient Light Sensor API to add brightness-sensitive dark mode to my website",
@@ -45,7 +45,7 @@
     "date": "June 9, 2018",
     "url": "https://blog.arnellebalane.com/using-the-ambient-light-sensor-api-to-add-brightness-sensitive-dark-mode-to-my-website-82223e754630",
     "source": "medium",
-    "tags": ["javascript", "web-development", "web-api", "sensors", "ambient-light-sensor"]
+    "categories": ["javascript", "web-development", "web-api", "sensors", "ambient-light-sensor"]
   },
   {
     "title": "The Picture-in-Picture API",
@@ -53,7 +53,7 @@
     "date": "June 7, 2018",
     "url": "https://blog.arnellebalane.com/the-picture-in-picture-api-30415372009f",
     "source": "medium",
-    "tags": ["javascript", "web-development", "web-api", "picture-in-picture-api"]
+    "categories": ["javascript", "web-development", "web-api", "picture-in-picture-api"]
   },
   {
     "title": "The Intersection Observer API",
@@ -61,7 +61,7 @@
     "date": "February 25, 2018",
     "url": "https://blog.arnellebalane.com/the-intersection-observer-api-d441be0b088d",
     "source": "medium",
-    "tags": ["javascript", "web-development", "web-api", "intersection-observer-api"]
+    "categories": ["javascript", "web-development", "web-api", "intersection-observer-api"]
   },
   {
     "title": "Building the frontend for the Endpoints project",
@@ -69,7 +69,7 @@
     "date": "February 17, 2018",
     "url": "https://medium.com/uncaught-exception/building-the-frontend-for-the-endpoints-project-55e8d7cc97c6",
     "source": "medium",
-    "tags": ["javascript", "web-development", "vuejs", "webpack", "web-api"]
+    "categories": ["javascript", "web-development", "vuejs", "webpack", "web-api"]
   },
   {
     "title": "Setting up multiple GitLab accounts",
@@ -77,7 +77,7 @@
     "date": "December 19, 2017",
     "url": "https://medium.com/uncaught-exception/setting-up-multiple-gitlab-accounts-82b70e88c437",
     "source": "medium",
-    "tags": ["git", "gitlab", "version-control"]
+    "categories": ["git", "gitlab", "version-control"]
   },
   {
     "title": "Sending data across different browser tabs",
@@ -85,7 +85,7 @@
     "date": "December 1, 2017",
     "url": "https://blog.arnellebalane.com/sending-data-across-different-browser-tabs-6225daac93ec",
     "source": "medium",
-    "tags": ["javascript", "web-development", "web-api"]
+    "categories": ["javascript", "web-development", "web-api"]
   },
   {
     "title": "Introduction to RequireJS",
@@ -93,7 +93,7 @@
     "date": "September 12, 2017",
     "url": "https://medium.com/uncaught-exception/introduction-to-requirejs-18c5d30ab3a7",
     "source": "medium",
-    "tags": ["javascript", "web-development", "requirejs"]
+    "categories": ["javascript", "web-development", "requirejs"]
   },
   {
     "title": "Updating my website to use JavaScript Modules",
@@ -101,7 +101,7 @@
     "date": "September 1, 2017",
     "url": "https://blog.arnellebalane.com/updating-my-website-to-use-javascript-modules-78e9b9c71071",
     "source": "medium",
-    "tags": ["javascript", "web-development", "modules"]
+    "categories": ["javascript", "web-development", "modules"]
   },
   {
     "title": "The Credential Management API",
@@ -109,7 +109,7 @@
     "date": "August 27, 2017",
     "url": "https://blog.arnellebalane.com/the-credential-management-api-7eb5650d23ca",
     "source": "medium",
-    "tags": ["javascript", "web-development", "web-api", "credential-management-api"]
+    "categories": ["javascript", "web-development", "web-api", "credential-management-api"]
   },
   {
     "title": "The Shape Detection API",
@@ -117,7 +117,7 @@
     "date": "July 3, 2017",
     "url": "https://blog.arnellebalane.com/introduction-to-the-shape-detection-api-e07425396861",
     "source": "medium",
-    "tags": ["javascript", "web-development", "web-api", "shape-detection-api"]
+    "categories": ["javascript", "web-development", "web-api", "shape-detection-api"]
   },
   {
     "title": "The Web Share API",
@@ -125,7 +125,7 @@
     "date": "April 5, 2017",
     "url": "https://blog.arnellebalane.com/the-web-share-api-2cbb3e6cf007",
     "source": "medium",
-    "tags": ["javascript", "web-development", "web-api", "web-share-api"]
+    "categories": ["javascript", "web-development", "web-api", "web-share-api"]
   },
   {
     "title": "Offline web applications with Service Workers",
@@ -133,6 +133,6 @@
     "date": "August 14, 2016",
     "url": "https://blog.arnellebalane.com/offline-web-applications-with-service-workers-29b23b49b305",
     "source": "medium",
-    "tags": ["javascript", "web-development", "pwa", "service-worker", "offline"]
+    "categories": ["javascript", "web-development", "pwa", "service-worker", "offline"]
   }
 ]

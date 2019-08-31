@@ -8,4 +8,14 @@ module.exports = config => {
     config.addShortcode('externalLink', require('./source/_shortcodes/externalLink'));
 
     config.addPassthroughCopy('source/static');
+
+    config.addCollection('articles', collection => {
+        const externalArticles = require('./source/_data/articles.json');
+        const internalArticles = collection.getFilteredByTag('article')
+            .map(article => article.template.frontMatter.data)
+            .filter(article => article.published);
+        return [...externalArticles, ...internalArticles].sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+        });
+    });
 };
