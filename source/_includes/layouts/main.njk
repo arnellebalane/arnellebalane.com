@@ -19,6 +19,7 @@ showProfileHeader: true
 
         <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Gilroy/Gilroy-Regular-subset.woff2">
         <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Gilroy/Gilroy-Heavy-subset.woff2">
+        <link rel="preconnect" href="https://unpkg.com">
 
         <link rel="stylesheet" href="/static/stylesheets/main.css">
         {% for stylesheet in stylesheets %}
@@ -56,7 +57,7 @@ showProfileHeader: true
             </span>
         </nav>
         {% else %}
-            <dark-mode-toggle class="hidden" permanent></dark-mode-toggle>
+        <dark-mode-toggle class="hidden" permanent></dark-mode-toggle>
         {% endif %}
 
         <div class="Wrapper">
