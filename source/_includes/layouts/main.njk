@@ -1,5 +1,4 @@
 ---
-title: Arnelle Balane
 description:
     Web Developer from Cebu, Philippines. Software Developer at Newlogic.
     Google Developer Expert in Web Technologies. I love building things on the
@@ -37,7 +36,7 @@ showProfileHeader: true
         <link rel="icon" href="/static/images/favicon.png">
         <link rel="apple-touch-icon" href="/static/images/icons/icon-apple-touch.png">
         <link rel="manifest" href="/static/manifest.webmanifest">
-        <title>{{ title }}</title>
+        <title>{{ title | formatPageTitle }}</title>
 
         {% if config.env === 'production' %}
             {% include 'fid-polyfill.njk' %}
