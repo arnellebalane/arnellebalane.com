@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const critical = require('critical').stream;
 const htmlmin = require('gulp-htmlmin');
 const dom = require('gulp-dom');
+const babel = require('gulp-babel');
 const terser = require('gulp-terser');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
@@ -52,9 +53,15 @@ gulp.task('build:html', () => {
         .pipe(gulp.dest('_site'));
 });
 
+gulp.task('build:modules', () => {
+    return gulp.src('_site/static/javascripts/main.mjs')
+        .pipe(sizeStream('build:js'))
+        .pipe(babel())
+        .pipe(gulp.dest('_site/static/javascripts'));
+});
+
 gulp.task('build:js', () => {
     return gulp.src('_site/**/*.{js,mjs}')
-        .pipe(sizeStream('build:js'))
         .pipe(terser())
         .pipe(gulp.dest('_site'));
 });
@@ -101,6 +108,7 @@ gulp.task('build:rev', () => {
 gulp.task('build', gulp.series([
     'build:sw',
     'build:html',
+    'build:modules',
     'build:js',
     'build:css',
     'build:images',
