@@ -1,18 +1,18 @@
-import * as DarkModeToggle from './custom-elements/dark-mode-toggle.mjs';
+import('https://unpkg.com/dark-mode-toggle').then(() => {
+    const themeColors = {
+        dark: '#141A24',
+        light: '#fff'
+    };
 
-const themeColors = {
-    dark: '#141A24',
-    light: '#fff'
-};
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const darkModeToggle = document.querySelector('dark-mode-toggle');
+    const updateThemeColor = () => {
+        themeColor.content = themeColors[darkModeToggle.mode];
+    };
+    updateThemeColor();
 
-const themeColor = document.querySelector('meta[name="theme-color"]');
-const darkModeToggle = document.querySelector('dark-mode-toggle');
-const updateThemeColor = () => {
-    themeColor.content = themeColors[darkModeToggle.mode];
-};
-updateThemeColor();
-
-document.addEventListener('colorschemechange', updateThemeColor);
+    document.addEventListener('colorschemechange', updateThemeColor);
+});
 
 
 
