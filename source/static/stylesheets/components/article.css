@@ -52,8 +52,9 @@
 
 .Article img {
     display: block;
-    max-width: 100%;
-    border-radius: 4px;
+    width: calc(100% + 6rem);
+    margin-left: -3rem;
+    margin-right: -3rem;
     margin-bottom: 4rem;
 }
 
@@ -65,14 +66,13 @@
     padding: 2px 8px;
     border-radius: 4px;
     font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     background-color: var(--code-inline-background-color);
 }
 
 .Article pre {
     overflow: auto;
-    padding: 2.4rem;
-    border-radius: 4px;
+    padding: 2.4rem 3rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     background-color: var(--code-inline-background-color);
@@ -109,4 +109,22 @@
 
 .Article main li {
     margin: 1rem 0;
+}
+
+
+
+/* Needs to be more specific than the styles in the syntax highlight theme. */
+
+.Article main pre {
+    padding: 2.4rem 3rem;
+    border-radius: 0;
+    margin-left: -3rem;
+    margin-right: -3rem;
+}
+
+@media (min-width: 800px) {
+    .Article main pre,
+    .Article main img {
+        border-radius: 4px;
+    }
 }
