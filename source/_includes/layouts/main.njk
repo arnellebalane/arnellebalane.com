@@ -68,7 +68,10 @@ showProfileHeader: true
             {% if showProfileHeader %}
             <section class="Section MeHeader">
                 <a class="ProfileWidget" href="/">
-                    <img class="ProfileWidget__Image" src="/static/images/avatar-40.jpg" alt="Arnelle Balane" width="40px" height="40px">
+                    <picture>
+                        <source srcset="/static/images/avatar-40.webp" type="image/webp">
+                        <img class="ProfileWidget__Image" src="/static/images/avatar-40.jpg" alt="Arnelle Balane" width="40px" height="40px">
+                    </picture>
                     <h1 class="fs-24 fw-900">Arnelle Balane</h1>
                 </a>
             </section>
