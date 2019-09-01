@@ -9,6 +9,7 @@ const imagemin = require('gulp-imagemin');
 const imageminJpegOptim = require('imagemin-jpegoptim');
 const revall = require('gulp-rev-all');
 const revdel = require('gulp-rev-delete-original');
+const replace = require('gulp-replace');
 const size = require('gulp-size');
 const workbox = require('workbox-build');
 
@@ -55,13 +56,14 @@ gulp.task('build:html', () => {
 
 gulp.task('build:modules', () => {
     return gulp.src('_site/static/javascripts/main.mjs')
-        .pipe(sizeStream('build:js'))
+        .pipe(sizeStream('build:modules'))
         .pipe(babel())
         .pipe(gulp.dest('_site/static/javascripts'));
 });
 
 gulp.task('build:js', () => {
     return gulp.src('_site/**/*.{js,mjs}')
+        .pipe(sizeStream('build:js'))
         .pipe(terser())
         .pipe(gulp.dest('_site'));
 });
@@ -99,9 +101,26 @@ gulp.task('build:rev', () => {
     return gulp.src('_site/**/*')
         .pipe(revall.revision({
             dontRenameFile: [/\.html$/, 'sw.js'],
-            dontUpdateReference: ['sw.js']
+            dontUpdateReference: [/\.html$/, 'sw.js']
         }))
         .pipe(revdel())
+        .pipe(gulp.dest('_site'));
+});
+
+gulp.task('build:metatags', () => {
+    // gulp-rev-all doesn't update references to assets that are loaded using
+    // absolute paths, e.g. og:image metatag, so I had to load them using
+    // relative paths and use gulp-replace to convert them back to absolute
+    // paths after gulp-rev-all processes them.
+    return gulp.src('_site/**/*.html')
+        .pipe(replace(/<meta .+?>/g, match => {
+            const baseUrl = 'https://arnellebalane';
+            const metatags = ['og:image', 'og:url'];
+            if (metatags.some(property => match.includes(property))) {
+                return match.replace(/content="(.+?)"/, `content="${baseUrl}$1"`);
+            }
+            return match;
+        }))
         .pipe(gulp.dest('_site'));
 });
 
@@ -112,5 +131,6 @@ gulp.task('build', gulp.series([
     'build:js',
     'build:css',
     'build:images',
-    'build:rev'
+    'build:rev',
+    'build:metatags'
 ]));
