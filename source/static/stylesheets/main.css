@@ -75,6 +75,7 @@ button {
 /* Utilities: Components */
 
 .Wrapper {
+    width: 100%;
     max-width: 80rem;
     padding: 0 3rem;
     margin: 0 auto;
