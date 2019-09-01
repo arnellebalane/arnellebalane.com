@@ -1,3 +1,5 @@
+const format = require('date-fns/format');
+
 module.exports = date => {
-    return 'August 31, 2019';
+    return format(date, 'MMMM d, yyyy');
 };
