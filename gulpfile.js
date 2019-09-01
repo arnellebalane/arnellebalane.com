@@ -138,13 +138,13 @@ gulp.task('build:metatags', () => {
 });
 
 gulp.task('build:cloudinary', () => {
-    const baseUrl = 'https://res.cloudinary.com/arnellebalane/image/upload/arnellebalane.com';
+    const baseUrl = 'https://res.cloudinary.com/arnellebalane/image/upload';
 
-    return gulp.src('_site/**/*.html')
+    return gulp.src('_site/**/*.{html,webmanifest}')
         .pipe(replace(/\/?([\w-]+?\/)+?[\w.-]+?\.\w+\?cloudinary=(\w|,)+/g, match => {
             const [_, transforms] = match.match(/\?cloudinary=(.+)$/);
             const path = match.replace(/(^\/|\?cloudinary=.+$)/g, '');
-            return [baseUrl, transforms, path].join('/');
+            return [baseUrl, transforms, 'arnellebalane.com', path].join('/');
         }))
         .pipe(gulp.dest('_site'));
 });
