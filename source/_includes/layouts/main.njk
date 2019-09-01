@@ -25,7 +25,7 @@ showProfileHeader: true
         <link rel="stylesheet" href="{{ stylesheet }}">
         {% endfor %}
 
-        <meta property="og:title" content="{{ title }}">
+        <meta property="og:title" content="{{ title | formatPageTitle }}">
         <meta property="og:description" content="{{ description }}">
         <meta property="og:image" content="/static/images/social-share.jpg">
         <meta property="og:url" content="{{ page.url }}">
