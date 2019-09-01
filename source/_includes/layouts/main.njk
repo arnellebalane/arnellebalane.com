@@ -4,6 +4,7 @@ description:
     Google Developer Expert in Web Technologies. I love building things on the
     Web and sharing about it.
 showNavigation: true
+showHomeNavigation: false
 showProfileHeader: true
 ---
 <!doctype html>
@@ -48,6 +49,9 @@ showProfileHeader: true
     <body>
         {% if showNavigation %}
         <nav class="Navigation">
+            {% if showHomeNavigation %}
+            <a class="Navigation__Link fs-18" href="/">Home</a>
+            {% endif %}
             <a class="Navigation__Link fs-18" href="/blog/">Blog</a>
             <a class="Navigation__Link fs-18" href="/events/">Events</a>
             <a class="Navigation__Link fs-18" href="/projects/">Projects</a>

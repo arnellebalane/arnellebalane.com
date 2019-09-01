@@ -1,0 +1,22 @@
+---
+layout: layouts/main.njk
+stylesheets:
+    - /static/stylesheets/components/article.css
+showHomeNavigation: true
+showProfileHeader: false
+---
+
+<article class="Article">
+    <header>
+        <h1>{{ title }}</h1>
+
+        <time>{{ date | formatArticleDate }}</time>
+        <ul>
+            {% for category in categories %}
+            <li>#{{ category }}</li>
+            {% endfor %}
+        </ul>
+    </header>
+
+    {{ content | safe }}
+</article>

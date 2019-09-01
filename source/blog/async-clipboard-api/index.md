@@ -1,5 +1,5 @@
 ---
-layout: layouts/main.njk
+layout: layouts/article.njk
 title: "Async Clipboard API: Programatically read from and write to the clipboard"
 summary:
     This article shows how to use the Async Clipboard API to access the system
@@ -9,7 +9,7 @@ categories:
     - web-development
     - web-api
 tags: article
-date: 2019-09-01
+date: 2019-08-31
 published: false
 ---
 
