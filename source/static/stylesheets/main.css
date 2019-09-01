@@ -140,8 +140,8 @@ button {
 }
 
 dark-mode-toggle {
-    --dark-mode-toggle-light-icon: url("/static/images/icons/theme-light.svg");
-    --dark-mode-toggle-dark-icon: url("/static/images/icons/theme-dark.svg");
+    --dark-mode-toggle-light-icon: url("/static/images/svg/theme-light.svg");
+    --dark-mode-toggle-dark-icon: url("/static/images/svg/theme-dark.svg");
     --dark-mode-toggle-icon-size: 2rem;
 }
 
