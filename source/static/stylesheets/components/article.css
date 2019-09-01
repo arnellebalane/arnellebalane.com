@@ -53,6 +53,7 @@
 .Article img {
     display: block;
     max-width: 100%;
+    border-radius: 4px;
     margin-bottom: 4rem;
 }
 
@@ -63,7 +64,8 @@
 .Article code {
     padding: 2px 8px;
     border-radius: 4px;
-    font-size: 2.4rem;
+    font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 1.8rem;
     background-color: var(--code-inline-background-color);
 }
 
@@ -78,7 +80,6 @@
 
 .Article pre code {
     padding: 0;
-    font-size: 1.8rem;
     background: none;
 }
 

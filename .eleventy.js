@@ -11,6 +11,8 @@ module.exports = config => {
     config.addPassthroughCopy('source/static');
     config.addPassthroughCopy('source/blog/**/assets/*');
 
+    config.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
+
     config.addCollection('articles', collection => {
         const externalArticles = require('./source/_data/articles.json');
         const internalArticles = collection.getFilteredByTag('article')
