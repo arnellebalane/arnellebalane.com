@@ -114,7 +114,7 @@ gulp.task('build:metatags', () => {
     // paths after gulp-rev-all processes them.
     return gulp.src('_site/**/*.html')
         .pipe(replace(/<meta .+?>/g, match => {
-            const baseUrl = 'https://arnellebalane';
+            const baseUrl = 'https://arnellebalane.com';
             const metatags = ['og:url'];
             if (metatags.some(property => match.includes(property))) {
                 return match.replace(/content="(.+?)"/, `content="${baseUrl}$1"`);
