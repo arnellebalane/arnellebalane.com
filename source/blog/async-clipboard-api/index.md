@@ -103,7 +103,8 @@ or not:
         assets/clipboard-permission-prompt.jpg?cloudinary=w_360,f_auto 360w,
         assets/clipboard-permission-prompt.jpg?cloudinary=w_580,f_auto 580w,
         assets/clipboard-permission-prompt.jpg?cloudinary=w_800,f_auto 800w"
-    src="assets/clipboard-permission-prompt.jpg?cloudinary=w_800,f_auto">
+    src="assets/clipboard-permission-prompt.jpg?cloudinary=w_800,f_auto"
+    alt="Clipboard access permission prompt in Chrome">
 
 > **Note:** In Chrome, permission to read the clipboard is automatically denied
 > when the user has dismissed it several times (~3 times from my observation).
