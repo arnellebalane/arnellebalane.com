@@ -6,7 +6,6 @@ const babel = require('gulp-babel');
 const terser = require('gulp-terser');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
-const imageminJpegOptim = require('imagemin-jpegoptim');
 const revall = require('gulp-rev-all');
 const revdel = require('gulp-rev-delete-original');
 const replace = require('gulp-replace');
@@ -94,15 +93,11 @@ gulp.task('build:css', () => {
 });
 
 gulp.task('build:images', () => {
-    return gulp.src('_site/**/*.{jpg,png,svg}')
+    // Only optiomize SVG images, since PNG and JPG are now uploaded to
+    // Cloudinary who will do the processing for us.
+    return gulp.src('_site/**/*.svg')
         .pipe(sizeStream('build:images'))
-        .pipe(imagemin([
-            imageminJpegOptim({
-                progressive: true,
-                max: 80
-            }),
-            imagemin.svgo()
-        ]))
+        .pipe(imagemin())
         .pipe(gulp.dest('_site'));
 });
 
