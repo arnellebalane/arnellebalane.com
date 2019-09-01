@@ -8,6 +8,7 @@ module.exports = config => {
     config.addShortcode('externalLink', require('./source/_shortcodes/externalLink'));
 
     config.addPassthroughCopy('source/static');
+    config.addPassthroughCopy('source/blog/**/assets/*');
 
     config.addCollection('articles', collection => {
         const externalArticles = require('./source/_data/articles.json');
