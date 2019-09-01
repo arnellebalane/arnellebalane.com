@@ -28,7 +28,7 @@ showProfileHeader: true
 
         <meta property="og:title" content="{{ title | formatPageTitle }}">
         <meta property="og:description" content="{{ description }}">
-        <meta property="og:image" content="/static/images/social-share.jpg">
+        <meta property="og:image" content="/static/images/social-share.jpg?cloudinary=w_1200,f_auto">
         <meta property="og:url" content="{{ page.url }}">
         <meta name="description" content="{{ description }}">
         <meta name="twitter:card" content="summary_large_image">
@@ -68,10 +68,13 @@ showProfileHeader: true
             {% if showProfileHeader %}
             <section class="Section MeHeader">
                 <a class="ProfileWidget" href="/">
-                    <picture>
-                        <source srcset="/static/images/avatar-40.webp" type="image/webp">
-                        <img class="ProfileWidget__Image" src="/static/images/avatar-40.jpg" alt="Arnelle Balane" width="40px" height="40px">
-                    </picture>
+                    <img
+                        class="ProfileWidget__Image"
+                        src="/static/images/avatar.jpg?cloudinary=w_40,f_auto"
+                        alt="Arnelle Balane"
+                        width="40px"
+                        height="40px"
+                    >
                     <h1 class="fs-24 fw-900">Arnelle Balane</h1>
                 </a>
             </section>

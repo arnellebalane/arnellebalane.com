@@ -98,7 +98,12 @@ the clipboard. The first time a site tries to read the contents of the
 clipboard, the browser prompts the user whether they want to allow the request
 or not:
 
-![Clipboard read access prompt in Chrome](assets/clipboard-permission-prompt.jpg)
+<img
+    srcset="
+        assets/clipboard-permission-prompt.jpg?cloudinary=w_360,f_auto 360w,
+        assets/clipboard-permission-prompt.jpg?cloudinary=w_580,f_auto 580w,
+        assets/clipboard-permission-prompt.jpg?cloudinary=w_800,f_auto 800w"
+    src="assets/clipboard-permission-prompt.jpg?cloudinary=w_800,f_auto">
 
 > **Note:** In Chrome, permission to read the clipboard is automatically denied
 > when the user has dismissed it several times (~3 times from my observation).

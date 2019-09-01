@@ -115,11 +115,23 @@ gulp.task('build:metatags', () => {
     return gulp.src('_site/**/*.html')
         .pipe(replace(/<meta .+?>/g, match => {
             const baseUrl = 'https://arnellebalane';
-            const metatags = ['og:image', 'og:url'];
+            const metatags = ['og:url'];
             if (metatags.some(property => match.includes(property))) {
                 return match.replace(/content="(.+?)"/, `content="${baseUrl}$1"`);
             }
             return match;
+        }))
+        .pipe(gulp.dest('_site'));
+});
+
+gulp.task('build:cloudinary', () => {
+    const baseUrl = 'http://res.cloudinary.com/arnellebalane/image/upload';
+
+    return gulp.src('_site/**/*.html')
+        .pipe(replace(/\/?([\w-]+?\/)+?[\w.-]+?\.\w+\?cloudinary=(\w|,)+/g, match => {
+            const [_, transforms] = match.match(/\?cloudinary=(.+)$/);
+            const path = match.replace(/(^\/|\?cloudinary=.+$)/g, '');
+            return [baseUrl, transforms, path].join('/');
         }))
         .pipe(gulp.dest('_site'));
 });
@@ -132,5 +144,6 @@ gulp.task('build', gulp.series([
     'build:css',
     'build:images',
     'build:rev',
-    'build:metatags'
+    'build:metatags',
+    'build:cloudinary'
 ]));
