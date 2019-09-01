@@ -12,12 +12,30 @@ const revdel = require('gulp-rev-delete-original');
 const replace = require('gulp-replace');
 const size = require('gulp-size');
 const workbox = require('workbox-build');
+const gulpif = require('gulp-if');
+const cloudinaryUpload = require('gulp-cloudinary-upload');
 
 function sizeStream(title) {
     return size({
         title,
         gzip: true,
         showFiles: true
+    });
+}
+
+function cloudinaryUploadStream(folder) {
+    require('dotenv').config();
+
+    return cloudinaryUpload({
+        config: {
+            cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+            api_key: process.env.CLOUDINARY_API_KEY,
+            api_secret: process.env.CLOUDINARY_API_SECRET
+        },
+        params: {
+            overwrite: true,
+            folder
+        }
     });
 }
 
@@ -125,7 +143,7 @@ gulp.task('build:metatags', () => {
 });
 
 gulp.task('build:cloudinary', () => {
-    const baseUrl = 'http://res.cloudinary.com/arnellebalane/image/upload';
+    const baseUrl = 'https://res.cloudinary.com/arnellebalane/image/upload/arnellebalane.com';
 
     return gulp.src('_site/**/*.html')
         .pipe(replace(/\/?([\w-]+?\/)+?[\w.-]+?\.\w+\?cloudinary=(\w|,)+/g, match => {
@@ -134,6 +152,17 @@ gulp.task('build:cloudinary', () => {
             return [baseUrl, transforms, path].join('/');
         }))
         .pipe(gulp.dest('_site'));
+});
+
+gulp.task('upload:cloudinary', () => {
+    require('dotenv').config();
+
+    return gulp.src('_site/**/*.{jpg,png}')
+        .pipe(gulpif(
+            /static\/images/,
+            cloudinaryUploadStream('arnellebalane.com/static/images'),
+            cloudinaryUploadStream('arnellebalane.com/assets')
+        ))
 });
 
 gulp.task('build', gulp.series([
