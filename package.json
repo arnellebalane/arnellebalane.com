@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "eleventy --input=source --serve",
-    "build": "eleventy --input=source",
+    "build": "NODE_ENV=production eleventy --input=source",
     "postbuild": "npm run optimize",
     "optimize": "gulp build",
     "subset-fonts": "./scripts/subset-fonts.sh",
