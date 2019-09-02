@@ -2,7 +2,11 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 
 workbox.core.skipWaiting();
 workbox.precaching.precacheAndRoute([]);
-workbox.precaching.precache(['/offline/']);
+workbox.precaching.precache([
+    '/offline/',
+    '/static/images/avatar.jpg?cloudinary=w_200,f_auto',
+    '/static/images/avatar.jpg?cloudinary=w_40,f_auto'
+]);
 
 const persistentPages = ['/', '/blog/', '/events/', '/projects/'];
 const persistentPagesStrategy = new workbox.strategies.StaleWhileRevalidate({

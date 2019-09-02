@@ -140,7 +140,10 @@ gulp.task('build:metatags', () => {
 gulp.task('build:cloudinary', () => {
     const baseUrl = 'https://res.cloudinary.com/arnellebalane/image/upload';
 
-    return gulp.src('_site/**/*.{html,webmanifest}')
+    return gulp.src([
+            '_site/**/*.{html,webmanifest}',
+            '_site/sw.js'
+        ])
         .pipe(replace(/\/?([\w-]+?\/)+?[\w.-]+?\.\w+\?cloudinary=(\w|,)+/g, match => {
             const [_, transforms] = match.match(/\?cloudinary=(.+)$/);
             const path = match.replace(/(^\/|\?cloudinary=.+$)/g, '');
