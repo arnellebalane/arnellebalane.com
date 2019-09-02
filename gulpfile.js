@@ -14,6 +14,8 @@ const workbox = require('workbox-build');
 const gulpif = require('gulp-if');
 const cloudinaryUpload = require('gulp-cloudinary-upload');
 
+const SITE_BASE_URL = 'https://arnellebalane.com';
+const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/arnellebalane/image/upload';
 const SELF_HOSTED_IMAGES = [
     '**/static/images/favicon.png',
     '**/static/images/icon-apple-touch.png'
@@ -135,10 +137,9 @@ gulp.task('build:metatags', () => {
     // paths after gulp-rev-all processes them.
     return gulp.src('_site/**/*.html')
         .pipe(replace(/<meta .+?>/g, match => {
-            const baseUrl = 'https://arnellebalane.com';
             const metatags = ['og:url'];
             if (metatags.some(property => match.includes(property))) {
-                return match.replace(/content="(.+?)"/, `content="${baseUrl}$1"`);
+                return match.replace(/content="(.+?)"/, `content="${SITE_BASE_URL}$1"`);
             }
             return match;
         }))
@@ -146,8 +147,6 @@ gulp.task('build:metatags', () => {
 });
 
 gulp.task('build:cloudinary', () => {
-    const baseUrl = 'https://res.cloudinary.com/arnellebalane/image/upload';
-
     return gulp.src([
             '_site/**/*.{html,webmanifest}',
             '_site/sw.js'
@@ -155,7 +154,7 @@ gulp.task('build:cloudinary', () => {
         .pipe(replace(/\/?([\w-]+?\/)+?[\w.-]+?\.\w+\?cloudinary=(\w|,)+/g, match => {
             const [_, transforms] = match.match(/\?cloudinary=(.+)$/);
             const path = match.replace(/(^\/|\?cloudinary=.+$)/g, '');
-            return [baseUrl, transforms, 'arnellebalane.com', path].join('/');
+            return [CLOUDINARY_BASE_URL, transforms, 'arnellebalane.com', path].join('/');
         }))
         .pipe(gulp.dest('_site'));
 });
