@@ -40,7 +40,6 @@ function cloudinaryUploadStream(folder) {
 
 gulp.task('build:html', () => {
     return gulp.src('_site/**/*.html')
-        .pipe(sizeStream('build:html'))
         .pipe(critical({
             base: '_site',
             inline: true,
@@ -68,27 +67,28 @@ gulp.task('build:html', () => {
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
+        .pipe(sizeStream('build:html'))
         .pipe(gulp.dest('_site'));
 });
 
 gulp.task('build:modules', () => {
     return gulp.src('_site/static/javascripts/main.mjs')
-        .pipe(sizeStream('build:modules'))
         .pipe(babel())
+        .pipe(sizeStream('build:modules'))
         .pipe(gulp.dest('_site/static/javascripts'));
 });
 
 gulp.task('build:js', () => {
     return gulp.src('_site/**/*.{js,mjs}')
-        .pipe(sizeStream('build:js'))
         .pipe(terser())
+        .pipe(sizeStream('build:js'))
         .pipe(gulp.dest('_site'));
 });
 
 gulp.task('build:css', () => {
     return gulp.src('_site/**/*.css')
-        .pipe(sizeStream('build:css'))
         .pipe(cssnano())
+        .pipe(sizeStream('build:css'))
         .pipe(gulp.dest('_site'));
 });
 
@@ -96,8 +96,8 @@ gulp.task('build:images', () => {
     // Only optiomize SVG images, since PNG and JPG are now uploaded to
     // Cloudinary who will do the processing for us.
     return gulp.src('_site/**/*.svg')
-        .pipe(sizeStream('build:images'))
         .pipe(imagemin())
+        .pipe(sizeStream('build:images'))
         .pipe(gulp.dest('_site'));
 });
 
