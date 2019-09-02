@@ -14,6 +14,11 @@ const workbox = require('workbox-build');
 const gulpif = require('gulp-if');
 const cloudinaryUpload = require('gulp-cloudinary-upload');
 
+const SELF_HOSTED_IMAGES = [
+    '**/static/images/favicon.png',
+    '**/static/images/icon-apple-touch.png'
+];
+
 function sizeStream(title) {
     return size({
         title,
@@ -106,7 +111,10 @@ gulp.task('build:sw', () => {
         swSrc: 'source/sw.js',
         swDest: '_site/sw.js',
         globDirectory: '_site',
-        globPatterns: ['**\/*.{mjs,js,css,png,jpg,svg,woff2}']
+        globPatterns: [
+            '**\/*.{mjs,js,css,svg,woff2}',
+            ...SELF_HOSTED_IMAGES
+        ]
     });
 });
 
