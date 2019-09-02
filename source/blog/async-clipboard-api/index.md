@@ -4,6 +4,7 @@ title: "Async Clipboard API: Programatically read from and write to the clipboar
 description:
     This article shows how to use the Async Clipboard API to access the system
     clipboard very easily.
+image: assets/async-clipboard-api.jpg?cloudinary=w_1200,f_auto
 categories:
     - javascript
     - web-development
