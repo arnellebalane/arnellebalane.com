@@ -1,31 +1,3 @@
-/* Web Fonts */
-
-@font-face {
-    font-family: "Gilroy";
-    font-weight: 400;
-    font-display: swap;
-    src: local("Gilroy-Regular"),
-        url("../fonts/Gilroy/Gilroy-Regular-subset.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    font-weight: 700;
-    font-display: swap;
-    src: local("Gilroy-Bold"),
-        url("../fonts/Gilroy/Gilroy-Bold-subset.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    font-weight: 900;
-    font-display: swap;
-    src: local("Gilroy-Heavy"),
-        url("../fonts/Gilroy/Gilroy-Heavy-subset.woff2") format("woff2");
-}
-
-
-
 /* Globals Styles */
 
 *,
@@ -44,11 +16,9 @@ body {
     flex-direction: column;
 
     min-height: 100vh;
-    font-family: "Gilroy", sans-serif;
-    font-size: 2rem;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    line-height: 1.4;
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.7;
     color: var(--primary-text-color);
     background-color: var(--primary-background-color);
     transition: background-color 150ms ease;
