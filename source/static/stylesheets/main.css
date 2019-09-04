@@ -18,8 +18,9 @@ body {
     min-height: 100vh;
     font-family: "Inter", sans-serif;
     font-size: 1.8rem;
-    font-weight: 200;
-    line-height: 1.7;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: var(--primary-text-color);
     background-color: var(--primary-background-color);
     transition: background-color 150ms ease;
@@ -86,6 +87,7 @@ button {
 .fs-16 { font-size: 1.6rem; }
 .fs-14 { font-size: 1.4rem; }
 
+.fw-300 { font-weight: 300; }
 .fw-400 { font-weight: 400; }
 .fw-700 { font-weight: 700; }
 .fw-900 { font-weight: 900; }
