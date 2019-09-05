@@ -1,3 +1,21 @@
+// Load Web fonts programmatically using the Font Loading API
+// `PAGE_FONTS` is defined in a <script> tag in the template.
+
+Promise.all(PAGE_FONTS.map(async fontUrl => {
+    const [_, name, weight, style] = fontUrl.match(/(\w+)-(\d+)-(\w+)-\w+(?:\.\w+)?\.\w+$/);
+    const font = new FontFace(name, `url("${fontUrl}")`, {
+        weight,
+        style,
+        display: 'swap'
+    });
+    await font.load();
+    document.fonts.add(font)
+})).then(() => {
+    document.body.classList.add('fontsLoaded');
+});
+
+
+
 import('https://unpkg.com/dark-mode-toggle').then(() => {
     const themeColors = {
         dark: '#141A24',
