@@ -18,12 +18,9 @@ showProfileHeader: true
         <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/static/stylesheets/themes/dark.css">
         <link rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="/static/stylesheets/themes/light.css">
 
-        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Gilroy/Gilroy-Regular-subset.woff2">
-        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Gilroy/Gilroy-Heavy-subset.woff2">
         <link rel="preconnect" href="https://unpkg.com">
         <link rel="preconnect" href="https://res.cloudinary.com">
 
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         <link rel="stylesheet" href="/static/stylesheets/main.css">
         {% for stylesheet in stylesheets %}
         <link rel="stylesheet" href="{{ stylesheet }}">
