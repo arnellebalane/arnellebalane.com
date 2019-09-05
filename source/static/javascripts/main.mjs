@@ -3,11 +3,7 @@
 
 Promise.all(PAGE_FONTS.map(async fontUrl => {
     const [_, name, weight, style] = fontUrl.match(/(\w+)-(\d+)-(\w+)-\w+(?:\.\w+)?\.\w+$/);
-    const font = new FontFace(name, `url("${fontUrl}")`, {
-        weight,
-        style,
-        display: 'swap'
-    });
+    const font = new FontFace(name, `url("${fontUrl}")`, {weight, style});
     await font.load();
     document.fonts.add(font)
 })).then(() => {
