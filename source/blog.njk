@@ -20,11 +20,6 @@ stylesheets:
             <div>
                 {% externalLink article.title, article.url, 'Item__Heading fs-24 fw-900' %}
                 <p class="Item__Subheading">{{ article.description }}</p>
-                <ul class="Item__Tags fs-16">
-                    {% for category in article.categories %}
-                    <li>#{{ category }}</li>
-                    {% endfor %}
-                </ul>
             </div>
         </li>
         {% endfor %}
