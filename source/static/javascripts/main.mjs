@@ -8,20 +8,15 @@ function supportsVariableFonts() {
     return CSS.supports('(font-variation-settings: normal)');
 }
 
-if (!supportsVariableFonts()) {
-    if (document.fonts) {
-        Promise.all(PAGE_FONTS.map(async fontUrl => {
-            const [_, name, weight, style] = fontUrl.match(/(\w+)-(\d+)-(\w+)-\w+(?:\.\w+)?\.\w+$/);
-            const font = new FontFace(name, `url("${fontUrl}")`, {weight, style});
-            await font.load();
-            document.fonts.add(font)
-        })).then(() => {
-            document.body.classList.add('fontsLoaded');
-        });
-    } else {
-        document.body.classList.add('fontsLoaded');
-    }
-}
+const fontUrl = supportsVariableFonts()
+    ? '/static/fonts/Inter/Inter-variable-upright-subset.woff2'
+    : '/static/fonts/Inter/Inter-400-normal-subset.woff2';
+
+const font = new FontFace('Inter', `url("${fontUrl}")`);
+font.load().then(() => {
+    document.fonts.add(font);
+    document.body.classList.add('fontsLoaded');
+});
 
 
 

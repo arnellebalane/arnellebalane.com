@@ -15,6 +15,7 @@ showProfileHeader: true
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#fff">
 
+        <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/fonts/Inter/Inter-variable-upright-subset.woff2">
         <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/static/stylesheets/themes/dark.css">
         <link rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="/static/stylesheets/themes/light.css">
 
@@ -91,16 +92,6 @@ showProfileHeader: true
             </div>
         </footer>
 
-        <script>
-            const PAGE_FONTS = [
-                '/static/fonts/Inter/Inter-300-normal-subset.woff2',
-                '/static/fonts/Inter/Inter-400-normal-subset.woff2',
-                '/static/fonts/Inter/Inter-900-normal-subset.woff2',
-                // {% for font in extraFonts %}
-                '{{ font }}',
-                // {% endfor %}
-            ];
-        </script>
         <script type="module" src="/static/javascripts/main.mjs"></script>
         <script nomodule src="/static/javascripts/main.js"></script>
 

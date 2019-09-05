@@ -100,6 +100,7 @@ body {
     font-family: "Arial", sans-serif;
     font-size: 1.8rem;
     line-height: 1.5;
+    letter-spacing: 0.5px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--primary-text-color);
@@ -107,15 +108,15 @@ body {
     transition: background-color 150ms ease;
 }
 
-@supports (font-variation-settings: normal) {
-    body {
-        font-family: "Inter Var", "Arial", sans-serif;
-    }
-}
-
 body.fontsLoaded {
     font-family: "Inter", sans-serif;
     letter-spacing: 0;
+}
+
+@supports (font-variation-settings: normal) {
+    body.fontsLoaded {
+        font-family: "Inter Var", sans-serif;
+    }
 }
 
 a {
