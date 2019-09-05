@@ -16,7 +16,10 @@ module.exports = config => {
     config.addCollection('articles', collection => {
         const externalArticles = require('./source/_data/articles.json');
         const internalArticles = collection.getFilteredByTag('article')
-            .map(article => article.template.frontMatter.data)
+            .map(article => Object.assign({}, article.template.frontMatter.data, {
+                source: 'self',
+                url: article.url
+            }))
             .filter(article => article.published);
         return [...externalArticles, ...internalArticles].sort((a, b) => {
             return new Date(b.date) - new Date(a.date);

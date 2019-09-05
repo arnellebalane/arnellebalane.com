@@ -4,6 +4,16 @@
     margin: 5.4rem 0;
 }
 
+.Article--medium .Item__Subheading::before {
+    content: "Posted on Medium. ";
+    color: #02b875;
+}
+
+.Article--devto .Item__Subheading::before {
+    content: "Posted on DEV. ";
+    color: #4e57ef;
+}
+
 
 
 /* Pagination Section */

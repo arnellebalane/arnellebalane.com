@@ -15,7 +15,7 @@ stylesheets:
 <section class="Section Blog">
     <ol class="Items">
         {% for article in pagination.items %}
-        <li class="Item">
+        <li class="Item Article--{{article.source}}">
             <time class="Item__Date fs-16">{{ article.date | formatDate }}</time>
             <div>
                 {% externalLink article.title, article.url, 'Item__Heading fs-24 fw-900' %}
