@@ -15,6 +15,13 @@ showProfileHeader: true
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#fff">
 
+        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Inter/Inter-Light-BETA-subset.woff2">
+        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Inter/Inter-Regular-subset.woff2">
+        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Inter/Inter-Black-subset.woff2">
+        {% for preloadFont in preloadFonts %}
+        <link rel="preload" as="font" crossorigin="anonymous" href="{{ preloadFont }}">
+        {% endfor %}
+
         <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/static/stylesheets/themes/dark.css">
         <link rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="/static/stylesheets/themes/light.css">
 
