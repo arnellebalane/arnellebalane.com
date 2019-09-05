@@ -5,8 +5,8 @@
     font-style:  normal;
     font-weight: 300;
     font-display: swap;
-    src: url("../fonts/Inter/Inter-Light-BETA.woff2") format("woff2"),
-         url("../fonts/Inter/Inter-Light-BETA.woff") format("woff");
+    src: url("../fonts/Inter/Inter-Light-BETA-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Light-BETA-subset.woff") format("woff");
 }
 
 @font-face {
@@ -14,16 +14,16 @@
     font-style:  normal;
     font-weight: 400;
     font-display: swap;
-    src: url("../fonts/Inter/Inter-Regular.woff2") format("woff2"),
-         url("../fonts/Inter/Inter-Regular.woff") format("woff");
+    src: url("../fonts/Inter/Inter-Regular-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Regular-subset.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-style:  italic;
     font-weight: 400;
     font-display: swap;
-    src: url("../fonts/Inter/Inter-Italic.woff2") format("woff2"),
-         url("../fonts/Inter/Inter-Italic.woff") format("woff");
+    src: url("../fonts/Inter/Inter-Italic-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Italic-subset.woff") format("woff");
 }
 
 @font-face {
@@ -31,16 +31,16 @@
     font-style:  normal;
     font-weight: 700;
     font-display: swap;
-    src: url("../fonts/Inter/Inter-Bold.woff2") format("woff2"),
-         url("../fonts/Inter/Inter-Bold.woff") format("woff");
+    src: url("../fonts/Inter/Inter-Bold-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Bold-subset.woff") format("woff");
 }
 @font-face {
     font-family: "Inter";
     font-style:  italic;
     font-weight: 700;
     font-display: swap;
-    src: url("../fonts/Inter/Inter-BoldItalic.woff2") format("woff2"),
-         url("../fonts/Inter/Inter-BoldItalic.woff") format("woff");
+    src: url("../fonts/Inter/Inter-BoldItalic-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-BoldItalic-subset.woff") format("woff");
 }
 
 @font-face {
@@ -48,16 +48,16 @@
     font-style:  normal;
     font-weight: 900;
     font-display: swap;
-    src: url("../fonts/Inter/Inter-Black.woff2") format("woff2"),
-         url("../fonts/Inter/Inter-Black.woff") format("woff");
+    src: url("../fonts/Inter/Inter-Black-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Black-subset.woff") format("woff");
 }
 @font-face {
     font-family: 'Inter';
     font-style:  italic;
     font-weight: 900;
     font-display: swap;
-    src: url("../fonts/Inter/Inter-BlackItalic.woff2") format("woff2"),
-         url("../fonts/Inter/Inter-BlackItalic.woff") format("woff");
+    src: url("../fonts/Inter/Inter-BlackItalic-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-BlackItalic-subset.woff") format("woff");
 }
 
 
