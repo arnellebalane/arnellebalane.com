@@ -15,11 +15,16 @@ showProfileHeader: true
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#fff">
 
+        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Inter/Inter-Light-BETA-subset.woff2">
+        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Inter/Inter-Regular-subset.woff2">
+        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Inter/Inter-Black-subset.woff2">
+        {% for preloadFont in preloadFonts %}
+        <link rel="preload" as="font" crossorigin="anonymous" href="{{ preloadFont }}">
+        {% endfor %}
+
         <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/static/stylesheets/themes/dark.css">
         <link rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="/static/stylesheets/themes/light.css">
 
-        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Gilroy/Gilroy-Regular-subset.woff2">
-        <link rel="preload" as="font" crossorigin="anonymous" href="/static/fonts/Gilroy/Gilroy-Heavy-subset.woff2">
         <link rel="preconnect" href="https://unpkg.com">
         <link rel="preconnect" href="https://res.cloudinary.com">
 
@@ -52,11 +57,11 @@ showProfileHeader: true
         {% if showNavigation %}
         <nav class="Navigation">
             {% if showHomeNavigation %}
-            <a class="Navigation__Link fs-18" href="/">Home</a>
+            <a class="Navigation__Link fs-18 fw-300" href="/">Home</a>
             {% endif %}
-            <a class="Navigation__Link fs-18" href="/blog/">Blog</a>
-            <a class="Navigation__Link fs-18" href="/events/">Events</a>
-            <a class="Navigation__Link fs-18" href="/projects/">Projects</a>
+            <a class="Navigation__Link fs-18 fw-300" href="/blog/">Blog</a>
+            <a class="Navigation__Link fs-18 fw-300" href="/events/">Events</a>
+            <a class="Navigation__Link fs-18 fw-300" href="/projects/">Projects</a>
 
             <span class="DarkModeToggle">
                 <dark-mode-toggle permanent></dark-mode-toggle>

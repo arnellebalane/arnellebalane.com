@@ -4,6 +4,8 @@ showProfileHeader: false
 stylesheets:
     - /static/stylesheets/pages/index.css
     - /static/stylesheets/components/items.css
+preloadFonts:
+    - /static/fonts/Inter/Inter-Bold-subset.woff2
 ---
 
 <Section class="Section Hero">
@@ -59,7 +61,7 @@ stylesheets:
         <li class="Item">
             <time class="Item__Date fs-16">{{ event.start_date | formatDate }}</time>
             <div>
-                {% externalLink event.name, event.url, 'Item__Heading' %}
+                {% externalLink event.name, event.url, 'Item__Heading fw-700' %}
                 <p class="Item__Subheading fs-18">{{ event.description }}</p>
             </div>
         </li>

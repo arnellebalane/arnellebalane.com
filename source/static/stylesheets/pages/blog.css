@@ -15,7 +15,7 @@
 
 .Paginator {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .Paginator img {

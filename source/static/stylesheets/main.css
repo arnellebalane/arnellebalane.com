@@ -1,27 +1,63 @@
 /* Web Fonts */
 
 @font-face {
-    font-family: "Gilroy";
+    font-family: "Inter";
+    font-style:  normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("../fonts/Inter/Inter-Light-BETA-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Light-BETA-subset.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style:  normal;
     font-weight: 400;
     font-display: swap;
-    src: local("Gilroy-Regular"),
-        url("../fonts/Gilroy/Gilroy-Regular-subset.woff2") format("woff2");
+    src: url("../fonts/Inter/Inter-Regular-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Regular-subset.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter";
+    font-style:  italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/Inter/Inter-Italic-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Italic-subset.woff") format("woff");
 }
 
 @font-face {
-    font-family: "Gilroy";
+    font-family: "Inter";
+    font-style:  normal;
     font-weight: 700;
     font-display: swap;
-    src: local("Gilroy-Bold"),
-        url("../fonts/Gilroy/Gilroy-Bold-subset.woff2") format("woff2");
+    src: url("../fonts/Inter/Inter-Bold-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Bold-subset.woff") format("woff");
+}
+@font-face {
+    font-family: "Inter";
+    font-style:  italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/Inter/Inter-BoldItalic-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-BoldItalic-subset.woff") format("woff");
 }
 
 @font-face {
-    font-family: "Gilroy";
+    font-family: 'Inter';
+    font-style:  normal;
     font-weight: 900;
     font-display: swap;
-    src: local("Gilroy-Heavy"),
-        url("../fonts/Gilroy/Gilroy-Heavy-subset.woff2") format("woff2");
+    src: url("../fonts/Inter/Inter-Black-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-Black-subset.woff") format("woff");
+}
+@font-face {
+    font-family: 'Inter';
+    font-style:  italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url("../fonts/Inter/Inter-BlackItalic-subset.woff2") format("woff2"),
+         url("../fonts/Inter/Inter-BlackItalic-subset.woff") format("woff");
 }
 
 
@@ -44,11 +80,11 @@ body {
     flex-direction: column;
 
     min-height: 100vh;
-    font-family: "Gilroy", sans-serif;
-    font-size: 2rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.4;
     color: var(--primary-text-color);
     background-color: var(--primary-background-color);
     transition: background-color 150ms ease;
@@ -115,6 +151,7 @@ button {
 .fs-16 { font-size: 1.6rem; }
 .fs-14 { font-size: 1.4rem; }
 
+.fw-300 { font-weight: 300; }
 .fw-400 { font-weight: 400; }
 .fw-700 { font-weight: 700; }
 .fw-900 { font-weight: 900; }
