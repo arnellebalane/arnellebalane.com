@@ -1,14 +1,27 @@
 // Load Web fonts programmatically using the Font Loading API
 // `PAGE_FONTS` is defined in a <script> tag in the template.
 
-Promise.all(PAGE_FONTS.map(async fontUrl => {
-    const [_, name, weight, style] = fontUrl.match(/(\w+)-(\d+)-(\w+)-\w+(?:\.\w+)?\.\w+$/);
-    const font = new FontFace(name, `url("${fontUrl}")`, {weight, style});
-    await font.load();
-    document.fonts.add(font)
-})).then(() => {
-    document.body.classList.add('fontsLoaded');
-});
+function supportsVariableFonts() {
+    if (!('CSS' in window) || !('supports' in window.CSS)) {
+        return false;
+    }
+    return CSS.supports('(font-variation-settings: normal)');
+}
+
+if (!supportsVariableFonts()) {
+    if (document.fonts) {
+        Promise.all(PAGE_FONTS.map(async fontUrl => {
+            const [_, name, weight, style] = fontUrl.match(/(\w+)-(\d+)-(\w+)-\w+(?:\.\w+)?\.\w+$/);
+            const font = new FontFace(name, `url("${fontUrl}")`, {weight, style});
+            await font.load();
+            document.fonts.add(font)
+        })).then(() => {
+            document.body.classList.add('fontsLoaded');
+        });
+    } else {
+        document.body.classList.add('fontsLoaded');
+    }
+}
 
 
 
