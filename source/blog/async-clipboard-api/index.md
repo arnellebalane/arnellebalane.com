@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.njk
-title: "Async Clipboard API: Programatically read from and write to the clipboard"
+title: "Async Clipboard API: Write to and read from the clipboard with JavaScript"
 description:
     This article shows how to use the Async Clipboard API to access the system
     clipboard very easily.
@@ -10,8 +10,8 @@ categories:
     - web-development
     - web-api
 tags: article
-date: 2019-08-31
-published: false
+date: 2019-09-06
+published: true
 ---
 
 

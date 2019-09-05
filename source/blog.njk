@@ -18,7 +18,11 @@ stylesheets:
         <li class="Item Article--{{article.source}}">
             <time class="Item__Date fs-16">{{ article.date | formatDate }}</time>
             <div>
-                {% externalLink article.title, article.url, 'Item__Heading fs-24 fw-900' %}
+                {% if article.source === 'self' %}
+                    <a class="Item__Heading fs-24 fw-900" href="{{ article.url }}">{{ article.title }}</a>
+                {% else %}
+                    {% externalLink article.title, article.url, 'Item__Heading fs-24 fw-900' %}
+                {% endif %}
                 <p class="Item__Subheading">{{ article.description }}</p>
             </div>
         </li>
