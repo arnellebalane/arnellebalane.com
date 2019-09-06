@@ -123,8 +123,8 @@ gulp.task('build:sw', () => {
 gulp.task('build:rev', () => {
     return gulp.src('_site/**/*')
         .pipe(revall.revision({
-            dontRenameFile: [/\.html$/, 'sw.js'],
-            dontUpdateReference: [/\.html$/, 'sw.js']
+            dontRenameFile: [/\.(html|xml)$/, 'sw.js'],
+            dontUpdateReference: [/\.(html|xml)$/, 'sw.js']
         }))
         .pipe(revdel())
         .pipe(gulp.dest('_site'));
@@ -148,7 +148,7 @@ gulp.task('build:metatags', () => {
 
 gulp.task('build:cloudinary', () => {
     return gulp.src([
-            '_site/**/*.{html,webmanifest}',
+            '_site/**/*.{html,xml,webmanifest}',
             '_site/sw.js'
         ])
         .pipe(replace(/\/?([\w-]+?\/)+?[\w.-]+?\.\w+\?cloudinary=(\w|,)+/g, match => {
