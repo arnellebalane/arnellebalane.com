@@ -16,7 +16,7 @@ stylesheets:
     <ol class="Items">
         {% for article in pagination.items %}
         <li class="Item Article--{{article.source}}">
-            <time class="Item__Date fs-16">{{ article.date | formatDate }}</time>
+            <time class="Item__Date fs-16">{{ article.date | formatDate('MM/dd') }}</time>
             <div>
                 {% if article.source === 'self' %}
                     <a class="Item__Heading fs-24 fw-900" href="{{ article.url }}">{{ article.title }}</a>

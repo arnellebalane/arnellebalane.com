@@ -59,7 +59,7 @@ extraFonts:
     <ol class="Items">
         {% for event in (events | filterUpcomingEvents) %}
         <li class="Item">
-            <time class="Item__Date fs-16">{{ event.start_date | formatDate }}</time>
+            <time class="Item__Date fs-16">{{ event.start_date | formatDate('MM/dd') }}</time>
             <div>
                 {% externalLink event.name, event.url, 'Item__Heading fw-700' %}
                 <p class="Item__Subheading fs-18">{{ event.description }}</p>
