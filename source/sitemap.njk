@@ -1,5 +1,7 @@
 ---
 permalink: /sitemap.xml
+metadata:
+    url: https://arnellebalane.com/
 excludeFromSitemap: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -7,8 +9,8 @@ excludeFromSitemap: true
 {%- for page in collections.all %}
     {%- if not page.data.excludeFromSitemap %}
     <url>
-        <loc>{{ page.url }}</loc>
-        <lastmod>{{ page.date }}</lastmod>
+        <loc>{{ page.url | absoluteUrl(metadata.url) }}</loc>
+        <lastmod>{{ page.date | formatDate('yyyy-MM-dd') }}</lastmod>
     </url>
     {%- endif %}
 {%- endfor %}
