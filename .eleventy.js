@@ -12,6 +12,7 @@ module.exports = config => {
     config.addPassthroughCopy('source/blog/**/assets/*');
 
     config.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
+    config.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
     config.addCollection('articles', collection => {
         const externalArticles = require('./source/_data/articles.json');

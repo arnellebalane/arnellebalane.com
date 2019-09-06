@@ -1,0 +1,39 @@
+---
+permalink: /feed.xml
+metadata:
+    title: Arnelle Balane
+    subtitle:
+        Web Developer from Cebu, Philippines. Software Developer at Newlogic.
+        Google Developer Expert in Web Technologies. I love building things on the
+        Web and sharing about it.
+    url: http://arnellebalane.com/
+    author:
+        name: Arnelle Balane
+        email: arnellebalane@gmail.com
+    feed:
+        url: https://arnellebalane.com/feed.xml
+        id: https://arnellebalane.com/
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ metadata.title }}</title>
+    <subtitle>{{ metadata.subtitle }}</subtitle>
+    <link href="{{ metadata.feed.url }}" rel="self" />
+    <link href="{{ metadata.url }}" />
+    <updated>{{ collections.article | rssLastUpdatedDate }}</updated>
+    <id>{{ metadata.feed.id }}</id>
+    <author>
+        <name>{{ metadata.author.name }}</name>
+        <email>{{ metadata.author.email }}</email>
+    </author>
+    {%- for article in collections.article %}
+    {% set absolutePostUrl %}{{ article.url | url | absoluteUrl(metadata.url) }}{% endset %}
+    <entry>
+        <title>{{ article.data.title }}</title>
+        <link href="{{ absolutePostUrl }}"/>
+        <updated>{{ article.date | rssDate }}</updated>
+        <id>{{ absolutePostUrl }}</id>
+        <content type="html">{{ article.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    </entry>
+    {%- endfor %}
+</feed>
