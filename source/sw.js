@@ -9,7 +9,7 @@ workbox.precaching.precache([
 ]);
 
 const persistentPages = ['/', '/blog/', '/events/', '/projects/'];
-const persistentPagesStrategy = new workbox.strategies.StaleWhileRevalidate({
+const persistentPagesStrategy = new workbox.strategies.NetworkFirst({
     cacheName: 'persistent-pages',
     plugins: [
         new workbox.broadcastUpdate.Plugin({
