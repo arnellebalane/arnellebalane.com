@@ -114,7 +114,8 @@ gulp.task('build:sw', () => {
         swDest: '_site/sw.js',
         globDirectory: '_site',
         globPatterns: [
-            '**\/*.{mjs,js,css,svg,woff2}',
+            '**\/*.{mjs,js,css,svg}',
+            '**\/Inter-variable-*-subset.*',
             ...SELF_HOSTED_IMAGES
         ]
     });
