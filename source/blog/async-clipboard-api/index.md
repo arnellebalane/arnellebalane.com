@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.njk
-title: "Async Clipboard API: Write to and read from the clipboard with JavaScript"
+title: "Async Clipboard API: Accessing the clipboard using JavaScript"
 description:
     This article shows how to use the Async Clipboard API to access the system
     clipboard very easily.
