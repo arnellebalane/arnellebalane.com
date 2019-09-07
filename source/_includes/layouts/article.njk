@@ -12,11 +12,7 @@ showProfileHeader: false
         <h1>{{ title }}</h1>
 
         <time>{{ date | formatDate('MMMM d, yyyy') }}</time>
-        <ul>
-            {% for category in categories %}
-            <li>#{{ category }}</li>
-            {% endfor %}
-        </ul>
+        <a href="#" target="_blank" class="js-Share"></a>
     </header>
 
     <main>

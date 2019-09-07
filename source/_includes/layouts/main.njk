@@ -95,6 +95,8 @@ showProfileHeader: true
         <script type="module" src="/static/javascripts/main.mjs"></script>
         <script nomodule src="/static/javascripts/main.js"></script>
 
+        <script type="module" src="/static/javascripts/article.mjs"></script>
+
         {% if config.env === 'production' %}
             {% include 'service-worker.njk' %}
         {% endif %}

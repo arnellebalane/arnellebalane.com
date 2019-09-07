@@ -79,7 +79,7 @@ gulp.task('build:html', () => {
 });
 
 gulp.task('build:modules', () => {
-    return gulp.src('_site/static/javascripts/main.mjs')
+    return gulp.src('_site/static/javascripts/*.mjs')
         .pipe(babel())
         .pipe(sizeStream('build:modules'))
         .pipe(gulp.dest('_site/static/javascripts'));
