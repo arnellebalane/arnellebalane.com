@@ -1,11 +1,13 @@
 ---
 layout: layouts/main.njk
-stylesheets:
-    - /static/stylesheets/components/article.css
-    - /static/stylesheets/components/code-snippets.css
 showHomeNavigation: true
 showProfileHeader: false
 ---
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/stylesheets/components/article.css">
+<link rel="stylesheet" href="/static/stylesheets/components/code-snippets.css">
+{% endblock %}
 
 <article class="Article">
     <header>
@@ -19,3 +21,8 @@ showProfileHeader: false
         {{ content | safe }}
     </main>
 </article>
+
+{% block javascripts %}
+<script type="module" src="/static/javascripts/article.mjs"></script>
+<script nomodule src="/static/javascripts/article.js"></script>
+{% endblock %}

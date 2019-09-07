@@ -1,10 +1,12 @@
 ---
 layout: layouts/main.njk
 title: Projects
-stylesheets:
-    - /static/stylesheets/pages/projects.css
-    - /static/stylesheets/components/items.css
 ---
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/stylesheets/pages/projects.css">
+<link rel="stylesheet" href="/static/stylesheets/components/items.css">
+{% endblock %}
 
 <p>
     Here are some of the projects that I've worked on, including professional projects and my own personal

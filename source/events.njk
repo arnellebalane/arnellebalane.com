@@ -6,10 +6,12 @@ description:
     APIs, Progressive Web Apps, Firebase, amd Web Platform APIs. Here are some
     that I did before and the ones that are upcoming. You can also invite me to
     speak or do a workshop at your event!
-stylesheets:
-    - /static/stylesheets/pages/events.css
-    - /static/stylesheets/components/items.css
 ---
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/stylesheets/pages/events.css">
+<link rel="stylesheet" href="/static/stylesheets/components/items.css">
+{% endblock %}
 
 <p>
     Below are my upcoming and previous talks and workshops. I talk about Web Platform APIs, Progressive Web Apps,

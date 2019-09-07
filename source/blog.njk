@@ -8,10 +8,12 @@ pagination:
     data: collections.articles
     size: 7
     addAllPagesToCollections: true
-stylesheets:
-    - /static/stylesheets/pages/blog.css
-    - /static/stylesheets/components/items.css
 ---
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/stylesheets/pages/blog.css">
+<link rel="stylesheet" href="/static/stylesheets/components/items.css">
+{% endblock %}
 
 <section class="Section Blog">
     <ol class="Items">

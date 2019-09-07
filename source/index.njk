@@ -1,12 +1,14 @@
 ---
 layout: layouts/main.njk
 showProfileHeader: false
-stylesheets:
-    - /static/stylesheets/pages/index.css
-    - /static/stylesheets/components/items.css
 extraFonts:
     - /static/fonts/Inter/Inter-700-normal-subset.woff
 ---
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/stylesheets/pages/index.css">
+<link rel="stylesheet" href="/static/stylesheets/components/items.css">
+{% endblock %}
 
 <Section class="Section Hero">
     <h1 class="Hero__Title fs-36 fw-900">Hey, I'm Arnelle!</h1>

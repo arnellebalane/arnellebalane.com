@@ -23,9 +23,7 @@ showProfileHeader: true
         <link rel="preconnect" href="https://res.cloudinary.com">
 
         <link rel="stylesheet" href="/static/stylesheets/main.css">
-        {% for stylesheet in stylesheets %}
-        <link rel="stylesheet" href="{{ stylesheet }}">
-        {% endfor %}
+        {% block stylesheets %}{% endblock %}
 
         <meta property="og:title" content="{{ title | formatPageTitle }}">
         <meta property="og:description" content="{{ description }}">
@@ -94,8 +92,7 @@ showProfileHeader: true
 
         <script type="module" src="/static/javascripts/main.mjs"></script>
         <script nomodule src="/static/javascripts/main.js"></script>
-
-        <script type="module" src="/static/javascripts/article.mjs"></script>
+        {% block javascripts %}{% endblock %}
 
         {% if config.env === 'production' %}
             {% include 'service-worker.njk' %}

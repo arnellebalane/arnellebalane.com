@@ -7,10 +7,12 @@ description:
     Web Developer from Cebu, Philippines. Software Developer at Newlogic.
     Google Developer Expert in Web Technologies. I love building things on the
     Web and sharing about it.
-stylesheets:
-    - /static/stylesheets/pages/standalone.css
 excludeFromSitemap: true
 ---
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/stylesheets/pages/standalone.css">
+{% endblock %}
 
 <section class="Section Standalone">
     <h1 class="Standalone__Heading fs-30 fw-900">
