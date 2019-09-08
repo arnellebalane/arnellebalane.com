@@ -324,13 +324,14 @@ async function readFromClipboard() {
 
 ## Browser Support & Feature Detection
 
-The Async Clipboard API with text support shipped in Chrome 66 and FireFox 63
-(with `readText()` not yet available for Web apps). For PNG image support, only
-Chrome supports it at the time of writing, shipping it in Chrome 76. See this
+The Async Clipboard API with text support shipped in **Chrome 66** and
+**FireFox 63** (with `readText()` not yet available for Web apps). For PNG
+image support, only Chrome supports it at the time of writing, shipping it in
+**Chrome 76**. See this
 [browser compatibility table](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API#Browser_compatibility)
 for more info.
 
-We can take advantage of this API already on browsers that support it by using
+We can take advantage of this API already on browsers that support it through
 feature detection, by checking if `navigator.clipboard` is present.
 
 ```js
