@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const link = document.querySelector('.js-Share');
     const url = location.origin + location.pathname
-    const title = document.title.replace(/|\s*Arnelle Balane$/, '');
+    const title = document.title.replace(/\s*\|\s*Arnelle Balane$/, '');
 
     if (navigator.share) {
         link.textContent = 'Share this article';
