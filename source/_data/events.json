@@ -1,5 +1,19 @@
 [
   {
+    "name": "Devfest & Bizfest Georgetown 2019",
+    "description": "Talk: Project Fugu - Unlocking new capabilities for the Web",
+    "url": "https://devfest-bizfest.gdggeorgetown.com",
+    "start_date": "November 30, 2019",
+    "venue": "Penang, Malaysia"
+  },
+  {
+    "name": "GDG DevFest Cebu 2019",
+    "description": "Talk: Leveling up creativity on the Web with CSS Houdini",
+    "url": "https://devfest.gdgcebu.org",
+    "start_date": "November 16, 2019",
+    "venue": "Golden Peak Hotel, Cebu City"
+  },
+  {
     "name": "GDG Bacolod: Angular + Firebase Codelabs",
     "description": "Workshop: Angular + Firebase",
     "url": "https://www.meetup.com/GDG-Bacolod/events/263378638/",
