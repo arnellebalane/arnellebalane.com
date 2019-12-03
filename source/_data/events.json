@@ -1,10 +1,31 @@
 [
   {
+    "name": "GBG BizFest GenSan 2019 - Wired Weekend Series",
+    "description": "Web Apps for Business",
+    "url": "",
+    "start_date": "December 14, 2019",
+    "venue": "General Santos City, Philippines"
+  },
+  {
+    "name": "GDG DevFest Zamboanga 2019",
+    "description": "Talk: Project Fugu - Unlocking new capabilities for the Web",
+    "url": "https://www.meetup.com/gdgzamboanga/events/264979234/",
+    "start_date": "December 7, 2019",
+    "venue": "Zamboanga City, Philippines"
+  },
+  {
     "name": "Devfest & Bizfest Georgetown 2019",
     "description": "Talk: Project Fugu - Unlocking new capabilities for the Web",
     "url": "https://devfest-bizfest.gdggeorgetown.com",
     "start_date": "November 30, 2019",
     "venue": "Penang, Malaysia"
+  },
+  {
+    "name": "CDS Extended Cebu 2019",
+    "description": "Talk: Project Fugu - Unlocking new capabilities for the Web",
+    "url": "https://cds.jscebu.org/",
+    "start_date": "November 23, 2019",
+    "venue": "Cebu City, Philippines"
   },
   {
     "name": "GDG DevFest Cebu 2019",
